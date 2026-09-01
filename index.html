@@ -1,0 +1,1501 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manual eJUD — Interativo</title>
+<style>
+:root {
+  --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
+  --border:#dbe2ea; --accent:#2457c5; --accent2:#eaf0ff; --warn:#fff7df;
+  --code:#f2f4f7; --shadow:0 8px 28px rgba(20,35,60,.08);
+}
+body.dark {
+  --bg:#11151c; --panel:#181e27; --text:#e8edf5; --muted:#9aa8bc;
+  --border:#2c3645; --accent:#84a9ff; --accent2:#1d2a43; --warn:#332d19;
+  --code:#222a35; --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--panel) 94%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.toolbar{max-width:1500px;margin:auto;padding:10px 18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:800;margin-right:auto}
+input[type=search]{min-width:280px;flex:1;max-width:560px;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px 12px;color:var(--text)}
+button{background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:9px;padding:9px 11px;cursor:pointer}
+button:hover{border-color:var(--accent)}
+.layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:290px minmax(0,1fr) 270px;gap:20px;padding:20px}
+aside{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+main{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:28px 34px;box-shadow:var(--shadow);min-width:0}
+#toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 7px;border-radius:7px;font-size:13px}
+#toc a:hover,#toc a.active{background:var(--accent2);color:var(--accent)}
+#toc .toc-main{display:flex;align-items:center;gap:4px;margin-top:5px}
+#toc .toc-main>a{font-weight:800;color:var(--text);flex:1}
+#toc .toc-toggle{width:24px;height:24px;padding:0;border-radius:6px;font-weight:800;line-height:1;background:var(--bg)}
+#toc .toc-toggle[aria-expanded="true"]{background:var(--accent2);color:var(--accent)}
+#toc .toc-children{display:none;padding-left:14px;border-left:1px solid var(--border);margin-left:7px}
+#toc .toc-group.open>.toc-children{display:block}
+h1,h2,h3{line-height:1.25;scroll-margin-top:85px}
+h1{font-size:2rem;border-bottom:1px solid var(--border);padding-bottom:.35em}
+h2{font-size:1.45rem;margin-top:2.1em}
+h3{font-size:1.1rem;margin-top:1.5em}
+blockquote{margin:16px 0;padding:12px 16px;border-left:4px solid var(--accent);background:var(--accent2);border-radius:6px}
+pre{position:relative;background:var(--code);padding:16px;border-radius:10px;overflow:auto;border:1px solid var(--border)}
+code{background:var(--code);padding:.12em .35em;border-radius:5px}
+pre code{padding:0;background:none}
+table{width:100%;border-collapse:collapse;margin:14px 0}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--accent2)}
+.task{list-style:none;margin-left:-20px}
+.task input{margin-right:8px;transform:scale(1.1)}
+mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
+.hidden-search{display:none!important}
+.badge{display:inline-block;padding:2px 7px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:700}
+.warn{background:var(--warn);border:1px solid #d7b24d55;padding:10px;border-radius:8px}
+.critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
+body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
+.version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
+.rightbox h3{margin-top:0}
+#codeSearch{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
+.code-item{padding:8px 4px;border-bottom:1px solid var(--border);font-size:13px}
+.code-item b{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent)}
+.small{font-size:12px;color:var(--muted)}
+.progress{height:8px;background:var(--code);border-radius:10px;overflow:hidden;margin:8px 0}
+.progress>div{height:100%;width:0;background:var(--accent);transition:width .2s}
+details.collapse-block{margin:12px 0 18px;border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden}
+details.collapse-block>summary{cursor:pointer;font-weight:800;padding:12px 14px;list-style:none}
+details.collapse-block>summary::-webkit-details-marker{display:none}
+details.collapse-block>summary::before{content:"+";display:inline-block;width:22px;font-weight:900;color:var(--accent)}
+details.collapse-block[open]>summary::before{content:"−"}
+details.collapse-block>.collapse-content{padding:0 16px 14px}
+.manual-img{display:block;max-width:min(100%,900px);height:auto;margin:14px auto;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow)}
+.manual-img.pequena{max-width:320px}
+@media(max-width:1100px){.layout{grid-template-columns:240px 1fr}.rightbox{display:none}}
+@media(max-width:760px){.layout{display:block;padding:10px}aside{display:none}main{padding:20px 17px}input[type=search]{min-width:160px}}
+@media print{header,aside,.rightbox,.no-print{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}main{border:0;box-shadow:none;padding:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="toolbar">
+    <div class="brand">eJUD · Manual interativo · v1.5</div>
+    <input id="search" type="search" placeholder="Pesquisar no manual…">
+    <button id="clearSearch">Limpar</button>
+    <button id="theme">Tema</button>
+    <button onclick="window.print()">Imprimir</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside>
+    <div class="small">NAVEGAÇÃO</div>
+    <nav id="toc"></nav>
+  </aside>
+
+  <main id="content">
+    <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
+<div class="version-tag">Versão 1.5 · 01-09-26 · 12:58</div>
+<h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
+<div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
+<blockquote>
+<p><strong>Base:</strong> consolidação das anotações de Carla, Laís, Mônica e do material “Atribuição ao Rensor (1º PASSO)”.</p>
+<p><strong>Importante:</strong> as fontes são anotações manuscritas de treinamento. Por isso, os passos foram organizados e padronizados, mas códigos, nomes de pastas, modelos e prazos marcados como <strong>CONFIRMAR</strong> devem ser conferidos no próprio eJUD, preferencialmente pela pesquisa com <strong>F2</strong>, antes da prática.</p>
+</blockquote>
+<hr />
+<h2 id="1-objetivo-do-manual">1. Objetivo do manual</h2>
+<p>Este manual reúne em um único fluxo as rotinas anotadas para trabalho no eJUD, especialmente em unidade criminal de 2º grau:</p>
+<ul>
+<li>receber e conferir processos;</li>
+<li>pegar e atribuir processos;</li>
+<li>movimentar;</li>
+<li>intimar Ministério Público e Defensoria;</li>
+<li>juntar petições e outras peças;</li>
+<li>fazer conclusão ao relator ou revisor;</li>
+<li>controlar pauta e publicação;</li>
+<li>expedir memorandos e pedidos de informação;</li>
+<li>usar o Malote Digital;</li>
+<li>lançar certidões;</li>
+<li>baixar autos em diligência;</li>
+<li>receber autos externos;</li>
+<li>encaminhar recursos e remessas.</li>
+</ul>
+<p>A ideia é servir como <strong>manual de mesa</strong>, não como substituto das regras processuais ou das orientações internas da unidade.</p>
+<hr />
+<h1 id="2-antes-de-mexer-no-processo">2. Antes de mexer no processo</h1>
+<p>Antes de criar qualquer movimentação, confira o processo.</p>
+<details class="collapse-block" id="checklist-inicial">
+<summary>Checklist inicial</summary>
+<div class="collapse-content">
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> Confirmar o número do processo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir classe e assunto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar a Câmara ou Grupo responsável.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Se houver dúvida sobre quais magistrados compõem o órgão, consultar a composição atual no eJUD.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há segredo de justiça.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há réu preso.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir prevenção.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir impedimento ou suspeição.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há petição pendente de juntada.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há razões/contrarrazões pendentes.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há manifestação do MP pendente.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir a pasta atual do processo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir se já existe movimentação igual para evitar duplicidade.</li>
+</ul>
+</div>
+</details>
+<h3 id="observacoes-anotadas">Observações anotadas</h3>
+<ul>
+<li>Em apelação, o processo mantém o mesmo número da 1ª instância.</li>
+<li>O <strong>Termo de Recebimento</strong> é um dos primeiros documentos a conferir.</li>
+<li>O termo pode indicar se há <strong>réu preso</strong>.</li>
+<li>Processo com réu preso deve receber atenção prioritária.</li>
+<li>Em violência doméstica/segredo de justiça, evitar exposição indevida do nome da vítima/ofendido.</li>
+</ul>
+<hr />
+<h1 id="3-elementos-basicos-do-ejud">3. Elementos básicos do eJUD</h1>
+<h2 id="3-1-mesa-de-trabalho">3.1. Mesa de Trabalho</h2>
+<p>A Mesa de Trabalho é o ponto de entrada para a maior parte das rotinas.</p>
+<p>Fluxo típico:</p>
+<pre><code class="language-text">Localizar processo
+→ Pegar
+→ processo vai para a Minha Mesa de Trabalho
+→ Atribuir, quando necessário
+→ Movimentar
+→ Salvar
+→ Encaminhar para a pasta seguinte
+</code></pre>
+<h3 id="atalho-pela-mesa-de-trabalho">Atalho pela Mesa de Trabalho</h3>
+<p>As novas anotações também registram este caminho para abrir rapidamente as opções do processo:</p>
+<pre><code class="language-text">Mesa de Trabalho
+→ selecionar o número do processo
+→ botão direito
+→ Visualizar ou Movimentar
+→ para nova movimentação, abrir a folha em branco
+</code></pre>
+<p>Depois de salvar uma movimentação, use a visualização/menu do processo para confirmar que ela realmente ficou registrada antes de encaminhar.</p>
+<h2 id="3-2-pegar">3.2. Pegar</h2>
+<p>Use <strong>Pegar</strong> quando a intenção for trazer um ou vários processos diretamente para <strong>a sua própria mesa de trabalho</strong>.</p>
+<h3 id="selecao-de-varios-processos">Seleção de vários processos</h3>
+<p>É possível pegar vários processos de uma vez:</p>
+<ul>
+<li>processos em sequência: selecione o primeiro e, mantendo <strong>Shift</strong> pressionado, selecione o último;</li>
+<li>processos fora de sequência: mantenha <strong>Ctrl</strong> pressionado e selecione individualmente os processos desejados.</li>
+</ul>
+<pre><code class="language-text">Mesa
+→ Pegar
+→ selecionar um ou vários processos
+→ confirmar/processar
+</code></pre>
+<blockquote>
+<p><strong>OBSERVAÇÃO:</strong> no <strong>Pegar</strong>, não é necessário informar seu usuário (<code>nome.sobrenome</code>). O eJUD entende automaticamente que os processos selecionados serão levados para a mesa do usuário que está executando a ação.</p>
+</blockquote>
+<h3 id="quando-usar-o-pegar">Quando usar o Pegar</h3>
+<ul>
+<li>quando o processo deve ir para <strong>sua própria mesa</strong>;</li>
+<li>quando não há necessidade de indicar um motivo específico para a atribuição;</li>
+<li>quando você quer trazer vários processos para si de forma rápida.</li>
+</ul>
+<h2 id="3-3-atribuir">3.3. Atribuir</h2>
+<p>O <strong>Atribuir</strong> é mais flexível que o <strong>Pegar</strong> porque permite escolher <strong>para qual usuário</strong> o processo será enviado e também registrar um <strong>Motivo</strong>.</p>
+<pre><code class="language-text">Geral
+→ Atribuir
+→ selecionar o(s) processo(s)
+→ informar o login/usuário de destino
+→ informar o Motivo, quando aplicável
+→ salvar
+</code></pre>
+<h3 id="diferencas-principais-em-relacao-ao-pegar">Diferenças principais em relação ao Pegar</h3>
+<ul>
+<li>permite direcionar o processo para <strong>terceiros</strong>;</li>
+<li>exige a escolha do usuário de destino;</li>
+<li>permite preencher o campo <strong>Motivo</strong>, registrando por que o processo está sendo colocado na mesa daquela pessoa ou qual providência deverá ser realizada;</li>
+<li>também pode ser usado para atribuir o processo <strong>a você mesmo</strong>: basta selecionar seu próprio usuário (<code>nome.sobrenome</code>) e, se necessário, informar um Motivo.</li>
+</ul>
+<div class="critical"><strong>DIFERENÇA PRINCIPAL:</strong> <strong>Pegar</strong> manda automaticamente o processo para a sua própria mesa; <strong>Atribuir</strong> permite escolher o destinatário e registrar um Motivo, inclusive quando o destinatário é você mesmo.</div>
+<h3 id="comparacao-rapida-pegar-atribuir">Comparação rápida</h3>
+<table>
+<thead><tr><th>Recurso</th><th>Pegar</th><th>Atribuir</th></tr></thead>
+<tbody>
+<tr><td>Levar processo para sua própria mesa</td><td>Sim, automaticamente</td><td>Sim, selecionando seu usuário</td></tr>
+<tr><td>Enviar processo para outra pessoa</td><td>Não</td><td>Sim</td></tr>
+<tr><td>Precisa escolher usuário</td><td>Não</td><td>Sim</td></tr>
+<tr><td>Permite informar Motivo</td><td>Não é a finalidade da ferramenta</td><td>Sim</td></tr>
+<tr><td>Selecionar vários processos</td><td>Sim, com Shift/Ctrl</td><td>Não tratado nesta anotação</td></tr>
+<tr><td>Uso mais comum</td><td>Trazer processos rapidamente para si</td><td>Direcionar processos e registrar a finalidade/motivo</td></tr>
+</tbody>
+</table>
+<h2 id="3-4-encaminhar">3.4. Encaminhar</h2>
+<p>Use <strong>Encaminhar</strong> quando o processamento naquele momento terminou e o processo deve ir para outra pasta.</p>
+<p>Exemplo:</p>
+<pre><code class="language-text">Intimação do MP concluída
+→ Encaminhar
+→ Aguardando Parecer do MP
+</code></pre>
+<h2 id="3-5-f2">3.5. F2</h2>
+<p><strong>F2 é uma das teclas mais importantes nas anotações.</strong></p>
+<p>Ela aparece para pesquisar:</p>
+<ul>
+<li>destinatário;</li>
+<li>magistrado;</li>
+<li>motivo;</li>
+<li>subtipo;</li>
+<li>modelo;</li>
+<li>código de movimentação.</li>
+</ul>
+<blockquote>
+<p>Regra prática: quando houver um campo codificado e houver dúvida sobre o número, use <strong>F2</strong> e confirme pela descrição.</p>
+</blockquote>
+<h2 id="3-6-folha-em-branco-novo">3.6. Folha em branco / Novo</h2>
+<p>Muitas movimentações começam assim:</p>
+<pre><code class="language-text">Selecionar processo
+→ Movimentar
+→ Novo / folha em branco
+→ preencher Fase
+→ preencher Destinatário/Magistrado
+→ preencher Motivo/Tipo
+→ Salvar
+</code></pre>
+<h2 id="3-7-disquete-caneta-e-carimbo">3.7. Disquete, caneta e carimbo</h2>
+<p>Nas anotações:</p>
+<ul>
+<li><strong>Disquete</strong> = salvar;</li>
+<li><strong>Caneta</strong> = assinar/finalizar documento;</li>
+<li><strong>Carimbo</strong> = selecionar modelo ou complemento de documento.</li>
+</ul>
+<p>Algumas rotinas exigem:</p>
+<pre><code class="language-text">Salvar
+→ abrir a movimentação com duplo clique
+→ Carimbo
+→ selecionar modelo
+→ salvar
+→ assinar na Caneta
+</code></pre>
+<hr />
+<h1 id="4-conferencias-especificas-em-processos-criminais">4. Conferências específicas em processos criminais</h1>
+<h2 id="4-1-termo-de-recebimento">4.1. Termo de Recebimento</h2>
+<p>Ao receber processo criminal:</p>
+<pre><code class="language-text">Abrir processo
+→ localizar Termo de Recebimento
+→ conferir dados
+→ verificar réu preso
+→ verificar prevenção/impedimento/suspeição
+</code></pre>
+<h2 id="4-2-prevencao-impedimento-e-suspeicao">4.2. Prevenção, impedimento e suspeição</h2>
+<p>Antes da distribuição/atribuição definitiva:</p>
+<ul>
+<li>conferir eventual prevenção;</li>
+<li>conferir impedimento;</li>
+<li>conferir suspeição;</li>
+<li>verificar certidão correspondente.</li>
+</ul>
+<h2 id="4-3-vitima-ofendido-em-segredo-de-justica">4.3. Vítima/ofendido em segredo de justiça</h2>
+<p>As anotações reforçam que o nome da vítima não deve aparecer indevidamente.</p>
+<p>Antes de publicar ou expedir:</p>
+<ul>
+<li>conferir cabeçalho;</li>
+<li>conferir corpo do texto;</li>
+<li>conferir nome das partes;</li>
+<li>conferir se a identificação deve aparecer como <strong>ofendido(a)</strong>.</li>
+</ul>
+<hr />
+<h1 id="5-apelacao-criminal">5. Apelação criminal</h1>
+<h2 id="5-1-conferencia-inicial">5.1. Conferência inicial</h2>
+<pre><code class="language-text">Receber
+→ Termo de Recebimento
+→ conferir se o réu está preso
+→ conferir prevenção/impedimento/suspeição
+→ verificar razões
+→ verificar contrarrazões
+</code></pre>
+<h2 id="5-2-numero-do-processo">5.2. Número do processo</h2>
+<p>Segundo as anotações, a apelação de 2º grau conserva o mesmo número da origem.</p>
+<h2 id="5-3-razoes-e-contrarrazoes">5.3. Razões e contrarrazões</h2>
+<p>As anotações fazem referência ao art. 600, §4º, do CPP e ao prazo de <strong>8 dias para razões</strong>.</p>
+<p>Fluxo operacional anotado:</p>
+<pre><code class="language-text">Apelação
+→ verificar se as razões foram apresentadas
+→ se necessário, intimar para razões
+→ depois, intimar a parte contrária para contrarrazões
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> prazo e forma de intimação no caso concreto. Não use este manual como fonte jurídica de prazo.</p>
+</blockquote>
+<hr />
+<h1 id="6-intimacao-do-ministerio-publico-para-parecer">6. Intimação do Ministério Público para parecer</h1>
+<p>Este é o fluxo mais consistente entre as anotações.</p>
+<h2 id="passo-a-passo">Passo a passo</h2>
+<pre><code class="language-text">1. Pegar/selecionar o processo.
+2. Movimentar.
+3. Abrir Novo / folha em branco.
+4. Fase: 8.
+5. Destinatário: Ministério Público.
+6. Código anotado do MP: 50675.
+7. Motivo: Parecer do MP.
+8. Código anotado do motivo: 50083.
+9. Salvar.
+10. Conferir a movimentação.
+11. Encaminhar para “Aguardando Parecer do MP”.
+</code></pre>
+<h3 id="resumo">Resumo</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>8</code></td>
+<td>Intimação</td>
+</tr>
+<tr>
+<td>Destinatário</td>
+<td style="text-align:right"><code>50675</code></td>
+<td>Ministério Público</td>
+</tr>
+<tr>
+<td>Motivo</td>
+<td style="text-align:right"><code>50083</code></td>
+<td>Parecer do MP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="checklist">Checklist</h3>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> Processo correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Fase 8.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Destinatário 50675 conferido por F2.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Motivo 50083 conferido por F2.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Salvou.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferiu dentro do processo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Encaminhou para “Aguardando Parecer do MP”.</li>
+</ul>
+<h3 id="prazo-visualizacao">Prazo/visualização</h3>
+<p>Há anotações sobre período de visualização pelo MP e posterior início do prazo.</p>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> a contagem concreta no sistema. Os registros manuscritos sobre 10/30/60 dias não são suficientemente consistentes para virar regra neste manual.</p>
+</blockquote>
+<hr />
+<h1 id="7-envio-a-defensoria-publica">7. Envio à Defensoria Pública</h1>
+<p>Fluxo anotado:</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 8
+→ Destinatário 50671
+→ selecionar motivo
+→ Contrarrazões: 50055
+→ Salvar
+→ Encaminhar
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>8</code></td>
+<td>Intimação</td>
+</tr>
+<tr>
+<td>Destinatário</td>
+<td style="text-align:right"><code>50671</code></td>
+<td>Defensoria Pública</td>
+</tr>
+<tr>
+<td>Motivo</td>
+<td style="text-align:right"><code>50055</code></td>
+<td>Contrarrazões</td>
+</tr>
+</tbody>
+</table>
+<h3 id="codigos-uteis-defensoria">Códigos úteis da Defensoria</h3>
+<ul>
+<li><strong>Defensoria Pública (destinatário): <code>50671</code></strong></li>
+<li><strong>Motivo — Ciência: <code>50056</code></strong></li>
+</ul>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> escolha o motivo de acordo com a providência do processo e valide destinatário e motivo com F2.</p>
+</blockquote>
+<hr />
+<h1 id="8-juntada-de-peticao">8. Juntada de petição</h1>
+<p>As anotações mostram duas formas de perceber uma petição pendente:</p>
+<ol>
+<li>aviso/peça pendente no processo;</li>
+<li>indicação em vermelho para <strong>Juntar</strong>.</li>
+</ol>
+<h2 id="8-1-juntada-a-partir-do-proprio-processo">8.1. Juntada a partir do próprio processo</h2>
+<pre><code class="language-text">Abrir processo
+→ verificar petição pendente
+→ Juntar
+→ selecionar subtipo, se solicitado
+→ F2 para pesquisar
+→ confirmar
+→ visualizar a peça juntada
+</code></pre>
+<p>Nas novas anotações, o comando <strong>Juntar</strong> aparece destacado <strong>em vermelho</strong> quando há peça pendente. Ao abrir a juntada, pode ser necessário selecionar o <strong>subtipo</strong>; nesse caso, use <strong>F2</strong> e pesquise pela descrição, em vez de decorar o código.</p>
+<h2 id="8-2-juntada-usando-numero-do-processo-de-origem">8.2. Juntada usando número do processo de origem</h2>
+<p>Fluxo anotado em HC:</p>
+<pre><code class="language-text">Abrir o processo
+→ localizar o nº de origem
+→ copiar o número
+→ Movimentação unitária (1º ícone)
+→ colar o número
+→ Enter
+→ sistema localiza a petição pendente
+→ Juntar
+</code></pre>
+<h2 id="8-3-codigos-de-pecas-anotados">8.3. Códigos de peças anotados</h2>
+<blockquote>
+<p>Use como atalho, mas <strong>confirme por F2</strong>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Código</th>
+<th>Peça/descrição anotada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>625</code></td>
+<td>Petição comum</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50011</code></td>
+<td>Embargos de Declaração</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50018</code></td>
+<td>Recurso Especial</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50040</code></td>
+<td>Recurso Ordinário</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50055</code></td>
+<td>Contrarrazões</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50056</code></td>
+<td>Ciência</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50083</code></td>
+<td>Parecer</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50127</code></td>
+<td>Razões</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-4-juntada-seguida-de-conclusao">8.4. Juntada seguida de conclusão</h2>
+<p>As novas anotações confirmam um fluxo recorrente: quando a petição já foi juntada e o processo deve seguir imediatamente para conclusão, faça a conclusão <strong>somente depois de conferir que a juntada aparece corretamente no processo</strong>.</p>
+<pre><code class="language-text">Juntar a petição
+→ visualizar/conferir a peça juntada
+→ selecionar o processo
+→ Movimentar
+→ Novo / folha em branco
+→ Fase 51
+→ Magistrado 50006 — Relator
+→ Motivo 50042 — Despacho/Decisão
+→ Salvar
+→ abrir a movimentação, se necessário
+→ Carimbo/assinatura
+</code></pre>
+<div class="critical"><strong>HORÁRIO:</strong> para a <strong>9ª Câmara Criminal</strong> e o <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão só pode ser aberta <strong>até as 17h</strong>.</div>
+<hr />
+<h1 id="9-conclusao-ao-relator">9. Conclusão ao relator</h1>
+<div class="critical"><strong>REGRA OPERACIONAL IMPORTANTE:</strong> se o processo for da <strong>9ª Câmara Criminal</strong> ou do <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>deve ser aberta até as 17h</strong>. Após esse horário, não abrir a conclusão.</div>
+<p>Fluxo consolidado das anotações:</p>
+<pre><code class="language-text">Selecionar processo
+→ Movimentar
+→ Novo / folha em branco
+→ Fase 51
+→ Magistrado: Relator
+→ código anotado: 50006
+→ Motivo: Despacho/Decisão
+→ código anotado: 50042
+→ Salvar
+→ abrir com duplo clique, se necessário
+→ Carimbo
+→ salvar/assinar
+→ Encaminhar
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>51</code></td>
+<td>Conclusão</td>
+</tr>
+<tr>
+<td>Magistrado</td>
+<td style="text-align:right"><code>50006</code></td>
+<td>Relator</td>
+</tr>
+<tr>
+<td>Motivo</td>
+<td style="text-align:right"><code>50042</code></td>
+<td>Despacho/Decisão</td>
+</tr>
+</tbody>
+</table>
+<h3 id="checklist-2">Checklist</h3>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> Não há peça pendente de juntada.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Não há providência anterior pendente.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Relator correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Se houver dúvida sobre quem integra atualmente o órgão julgador, consultar Consulta → Composição antes de prosseguir.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Se for 9ª Câmara Criminal ou 5º Grupo de Câmaras Criminais, a conclusão está sendo aberta até as 17h.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Fase 51.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Magistrado 50006 conferido.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Motivo 50042 conferido.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Salvou.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Assinou/finalizou quando necessário.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Encaminhou para a pasta correta.</li>
+</ul>
+<hr />
+<h1 id="10-atribuicao-ao-revisor">10. Atribuição ao revisor</h1>
+<p>O material chama esta rotina de <strong>“Atribuição ao Rensor”</strong>, mas o contexto indica que se trata do <strong>revisor</strong>.</p>
+<p>A anotação separa a rotina em dois passos.</p>
+<h2 id="10-1-primeiro-passo-atribuir-escolher-o-revisor">10.1. Primeiro passo — atribuir/escolher o revisor</h2>
+<p>Fluxo anotado:</p>
+<pre><code class="language-text">Movimentar
+→ Novo / folha em branco
+→ fase/código anotado no material como 50009
+→ selecionar o revisor
+→ Salvar
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> o número <code>50009</code> está pouco legível no manuscrito. Pesquise a opção pelo nome no F2.</p>
+</blockquote>
+<p>O material contém uma lista manuscrita de magistrados/códigos, mas ela não foi reproduzida aqui porque pode mudar e alguns nomes/números não estão legíveis com segurança.</p>
+<h2 id="10-2-segundo-passo-conclusao-ao-revisor">10.2. Segundo passo — conclusão ao revisor</h2>
+<div class="critical"><strong>HORÁRIO:</strong> para processos da <strong>9ª Câmara Criminal</strong> e do <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão ao revisor também <strong>só pode ser aberta até as 17h</strong>.</div>
+<pre><code class="language-text">Novo / folha em branco
+→ Fase 51
+→ Magistrado: Revisor
+→ código anotado: 50010
+→ Motivo: Para apreciação
+→ código anotado: 50126
+→ Salvar
+→ duplo clique
+→ Carimbo
+→ assinar
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>51</code></td>
+<td>Conclusão</td>
+</tr>
+<tr>
+<td>Magistrado</td>
+<td style="text-align:right"><code>50010</code></td>
+<td>Revisor</td>
+</tr>
+<tr>
+<td>Motivo</td>
+<td style="text-align:right"><code>50126</code></td>
+<td>Para apreciação</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="11-relator-ou-revisor-ausente">11. Relator ou revisor ausente</h1>
+<p>Há anotações específicas para férias/licença/recesso.</p>
+<p>A lógica registrada é:</p>
+<pre><code class="language-text">Antes de concluir
+→ consultar as movimentações/documentos do processo
+→ verificar quem está atuando no lugar do magistrado ausente
+→ somente então criar a conclusão
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> a anotação manuscrita deste ponto é incompleta. Não use automaticamente o nome/código do magistrado titular se houver informação de afastamento.</p>
+</blockquote>
+<hr />
+<h1 id="12-pauta-e-sessao-de-julgamento">12. Pauta e sessão de julgamento</h1>
+<p>As anotações distinguem:</p>
+<ul>
+<li>pauta;</li>
+<li>sessão de julgamento;</li>
+<li>processo aguardando julgamento;</li>
+<li>retirada de pauta;</li>
+<li>publicação.</li>
+</ul>
+<h2 id="12-1-processo-em-pauta">12.1. Processo em pauta</h2>
+<p>Antes de publicar ou movimentar, conferir:</p>
+<ul>
+<li>se o processo realmente permanece na pauta;</li>
+<li>se houve retirada;</li>
+<li>se houve pedido pendente;</li>
+<li>se existe sustentação oral;</li>
+<li>se há alguma providência anterior à sessão.</li>
+</ul>
+<p>Há anotação de que, em <strong>pauta virtual</strong>, não há sustentação oral. Isso deve ser conferido conforme a modalidade de julgamento utilizada.</p>
+<h2 id="12-2-pedido-de-retirada-de-pauta">12.2. Pedido de retirada de pauta</h2>
+<p>Há anotação de peça/pedido de retirada de pauta.</p>
+<p>Fluxo genérico:</p>
+<pre><code class="language-text">Abrir processo
+→ verificar pedido pendente
+→ Juntar
+→ conferir conteúdo
+→ movimentar conforme determinação
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> código específico do pedido, pois a anotação não está suficientemente legível.</p>
+</blockquote>
+<hr />
+<h1 id="13-publicacao">13. Publicação</h1>
+<p>As anotações mostram uma rotina de publicação vinculada ao símbolo do Diário Oficial/DO e a macro.</p>
+<h2 id="fluxo-operacional-anotado">Fluxo operacional anotado</h2>
+<pre><code class="language-text">1. Conferir se o documento realmente está pronto para publicar.
+2. Copiar/usar a macro, quando aplicável.
+3. Abrir o símbolo do D.O.
+4. Conferir o local indicado.
+5. Inserir o tipo de ato (ex.: despacho).
+6. Confirmar.
+7. Informar o nº do processo quando a nova tela solicitar.
+8. Aguardar o sistema salvar/processar.
+9. Retornar à tela anterior.
+10. Conferir se o processo aparece como destinado à publicação.
+</code></pre>
+<h3 id="codigo-local-anotado">Código/local anotado</h3>
+<ul>
+<li><code>498</code> aparece nas anotações associado a <strong>local</strong> em algumas rotinas.</li>
+</ul>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> a sequência exata da tela de publicação e o uso do código <code>498</code>, pois essa parte do manuscrito é abreviada.</p>
+</blockquote>
+<h3 id="antes-de-publicar">Antes de publicar</h3>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir segredo de justiça.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir nome da vítima/ofendido.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir relator/revisor.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir texto do despacho/decisão.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Verificar se há determinação de expedir ofício ou cumprir outra providência antes da publicação; uma das novas anotações registra um caso com ofício prévio.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir se o processo ainda está em pauta, quando aplicável.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir se não existe diligência pendente.</li>
+</ul>
+<hr />
+<h1 id="14-malote-digital">14. Malote Digital</h1>
+<p>Fluxo anotado por Laís:</p>
+<pre><code class="language-text">Servidores
+→ Malote
+→ Enviar
+→ Destinatário
+→ selecionar órgão
+→ Prioridade
+→ Motivo
+→ Assunto
+→ Adicionar documentos
+→ Enviar documentos
+</code></pre>
+<h2 id="checklist-do-malote">Checklist do Malote</h2>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> Órgão destinatário correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Prioridade correta.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Motivo correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Assunto objetivo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Todos os documentos anexados.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Conferir antes de enviar.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Guardar/juntar comprovante quando necessário.</li>
+</ul>
+<hr />
+<h1 id="15-juntar-comprovante-de-malote">15. Juntar comprovante de Malote</h1>
+<p>Anotação específica:</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 60
+→ Tipo 66721
+→ colar/inserir a imagem do comprovante no texto
+→ Salvar
+→ abrir com duplo clique
+→ finalizar/assinar pela Caneta
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>60</code></td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td style="text-align:right"><code>66721</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> descrição do tipo no F2.</p>
+</blockquote>
+<hr />
+<h1 id="16-juntar-comprovante-de-e-mail">16. Juntar comprovante de e-mail</h1>
+<p>Fluxo anotado:</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 60
+→ Tipo 70230
+→ inserir o texto/comprovante
+→ Salvar
+→ duplo clique
+→ finalizar/assinar
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>60</code></td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td style="text-align:right"><code>70230</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Um número anterior aparece rasurado no manuscrito; <code>70230</code> é o código final anotado, mas deve ser conferido por F2.</p>
+</blockquote>
+<hr />
+<h1 id="17-memorando-comunicacao">17. Memorando / comunicação</h1>
+<p>O material registra:</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 60
+→ Tipo 657
+→ Salvar
+→ duplo clique
+→ Carimbo
+→ selecionar o modelo
+→ salvar
+→ assinar
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th style="text-align:right">Código anotado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fase</td>
+<td style="text-align:right"><code>60</code></td>
+</tr>
+<tr>
+<td>Tipo</td>
+<td style="text-align:right"><code>657</code></td>
+</tr>
+</tbody>
+</table>
+<p>Há menção ao modelo <code>5346</code> em comunicação relacionada a <strong>Agravo de Execução/VEP</strong>.</p>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> o uso do modelo depende da hipótese. As notas citam ainda violência doméstica, alteração de acórdão/HC, recurso em sentido estrito e conflito de jurisdição como situações com comunicações específicas.</p>
+</blockquote>
+<hr />
+<h1 id="18-pedido-de-informacao">18. Pedido de informação</h1>
+<p>Fluxo anotado:</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 60
+→ Tipo 50007
+→ Salvar
+→ duplo clique
+→ Carimbo
+→ escolher modelo “Pedido de Informação”
+→ salvar
+→ assinar
+</code></pre>
+<p>Após assinar, o sistema pode solicitar um valor/número, registrado nas anotações como o <strong>número do ofício</strong>.</p>
+<p>Também aparece a orientação:</p>
+<blockquote>
+<p>Ao trocar o juiz/modelo, conferir o texto inteiro e apagar eventual linha final que tenha permanecido do modelo anterior.</p>
+</blockquote>
+<hr />
+<h1 id="19-certidoes">19. Certidões</h1>
+<h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
+<p>Anotação:</p>
+<pre><code class="language-text">Movimentar
+→ Fase 50002
+→ Cumprimento 01: 59998
+→ Salvar
+→ duplo clique
+→ Carimbo 398
+→ salvar
+→ assinar
+</code></pre>
+<blockquote>
+<p>O manuscrito relaciona esta certidão a embargos/recursos. Confirme o modelo adequado.</p>
+</blockquote>
+<h2 id="19-2-certidao-livre">19.2. Certidão livre</h2>
+<pre><code class="language-text">Novo
+→ Fase 50002
+→ Tipo 9999
+→ escrever/colar o texto
+→ Salvar
+→ assinar
+</code></pre>
+<h2 id="19-3-outras-certidoes-anotadas">19.3. Outras certidões anotadas</h2>
+<p>Também aparecem:</p>
+<ul>
+<li>certidão de multas;</li>
+<li>certidão de trânsito;</li>
+<li>certidão de processo que se encontra/paralisa na 1ª instância;</li>
+<li>certidão de prevenção/impedimento/suspeição.</li>
+</ul>
+<p>Para processo na 1ª instância há anotação:</p>
+<pre><code class="language-text">Novo
+→ Fase 50002
+→ Cumprimento 01: 9999
+→ inserir o modelo no texto
+→ Salvar
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> carimbo/modelo de cada hipótese antes de assinar.</p>
+</blockquote>
+<hr />
+<h1 id="20-baixa-dos-autos-em-diligencia">20. Baixa dos autos em diligência</h1>
+<p>O material possui uma rotina intitulada <strong>“Baixar autos em diligência”</strong>, ligada principalmente a apelação/RSE.</p>
+<h2 id="etapa-documental">Etapa documental</h2>
+<p>As anotações indicam uso de:</p>
+<ul>
+<li>Fase <code>50002</code>;</li>
+<li>Cumprimento <code>01</code>;</li>
+<li>código <code>59998</code>;</li>
+<li>escolha de carimbo/modelo.</li>
+</ul>
+<h2 id="remessa">Remessa</h2>
+<p>Também consta:</p>
+<pre><code class="language-text">Novo
+→ código/fase 50007
+→ Cumprimento 9999
+→ selecionar destino
+→ Salvar
+→ duplo clique
+→ Carimbo
+→ assinar
+</code></pre>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> esta parte varia bastante conforme a diligência. Verifique destino e modelo antes de efetivar a baixa.</p>
+</blockquote>
+<hr />
+<h1 id="21-recebimento-de-autos-externos">21. Recebimento de autos externos</h1>
+<p>Anotação:</p>
+<pre><code class="language-text">Guia de Remessa / Recebimento de processo
+→ informar o nº do processo
+→ seguir a pergunta apresentada pelo sistema
+</code></pre>
+<p>O manuscrito registra que, em determinada tela, quando o sistema pergunta se deseja receber, deve-se marcar <strong>“NÃO”</strong>.</p>
+<blockquote>
+<p><strong>CONFIRMAR OBRIGATORIAMENTE:</strong> este passo é contraintuitivo e depende da tela exata. Não reproduza automaticamente sem validar com a unidade.</p>
+</blockquote>
+<hr />
+<h1 id="22-recursos-e-remessas">22. Recursos e remessas</h1>
+<h2 id="22-1-recurso-especial">22.1. Recurso Especial</h2>
+<p>Há anotação de:</p>
+<ul>
+<li>Fase <code>123</code>;</li>
+<li>juntada/encaminhamento relacionado à Vice-Presidência;</li>
+<li>uso posterior de carimbo e assinatura.</li>
+</ul>
+<p>Os demais códigos da linha estão pouco legíveis.</p>
+<h2 id="22-2-recurso-ordinario">22.2. Recurso Ordinário</h2>
+<p>As notas indicam:</p>
+<pre><code class="language-text">Novo
+→ Fase 123
+→ destinatário ligado à 2ª Vice-Presidência
+→ salvar
+→ duplo clique
+→ Carimbo
+→ assinar
+</code></pre>
+<p>O código <code>50666</code> aparece associado ao destinatário em uma das anotações.</p>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> destinatário e cumprimento por F2.</p>
+</blockquote>
+<h2 id="22-3-recurso-extraordinario">22.3. Recurso Extraordinário</h2>
+<p>Há início de rotina semelhante no manuscrito, mas os códigos não estão completos.</p>
+<blockquote>
+<p>Use a mesma lógica de conferência: fase → destinatário → cumprimento/motivo → salvar → carimbo → assinatura, sempre pesquisando pela descrição.</p>
+</blockquote>
+<hr />
+<h1 id="23-camaras-e-grupos-anotados">23. Câmaras e grupos anotados</h1>
+<p>Dois números aparecem em mais de uma fonte:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Código anotado</th>
+<th>Referência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>17902</code></td>
+<td>9ª Câmara Criminal</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>23429</code></td>
+<td>5º Grupo de Câmaras Criminais</td>
+</tr>
+</tbody>
+</table>
+<div class="critical"><strong>REGRA DE HORÁRIO:</strong> tanto para a <strong>9ª Câmara Criminal (17902)</strong> quanto para o <strong>5º Grupo de Câmaras Criminais (23429)</strong>, a <strong>conclusão só pode ser aberta até as 17h</strong>.</div>
+<h2 id="23-1-consultar-a-composicao-atual-do-orgao-julgador">23.1. Consultar a composição atual do órgão julgador</h2>
+<p>Esta consulta é importante para saber <strong>quais magistrados compõem efetivamente a Câmara ou o Grupo naquele momento</strong>, inclusive substitutos/convocados e afastamentos, antes de decidir com quais desembargadores o processo deve ser trabalhado.</p>
+<h3 id="caminho-no-ejud">Caminho no eJUD</h3>
+<pre><code class="language-text">Abrir o eJUD
+→ Consulta
+→ Composição
+→ informar o Órgão Julgador
+→ marcar “Incluir magistrados que constam do mapa”
+→ executar a consulta
+</code></pre>
+<h3 id="codigos-uteis-composicao">Códigos úteis</h3>
+<ul>
+<li><code>17902</code> — <strong>9ª Câmara Criminal</strong>.</li>
+<li><code>23429</code> — <strong>5º Grupo de Câmaras Criminais</strong>.</li>
+</ul>
+<blockquote>
+<p><strong>IMPORTANTE:</strong> marque <strong>“Incluir magistrados que constam do mapa”</strong>. Essa opção é importante para incluir também magistrados de <strong>1ª instância convocados</strong> que estejam compondo o órgão.</p>
+</blockquote>
+<p>O relatório de <strong>Consulta de Composição dos Órgãos Julgadores</strong> mostra, entre outros dados:</p>
+<ul>
+<li>os magistrados que integram o órgão naquela data/hora;</li>
+<li>eventuais afastamentos, como <strong>férias</strong>, com período informado;</li>
+<li>magistrados convocados/substitutos incluídos no mapa;</li>
+<li>total de magistrados do órgão.</li>
+</ul>
+<h2 id="23-2-composicao-consultada-em-31-08-2026">23.2. Composição consultada em 31/08/2026</h2>
+<div class="critical"><strong>CONSULTA TEMPORÁRIA:</strong> a composição abaixo foi consultada no eJUD em <strong>31/08/2026 às 17:29</strong>. Ela serve apenas como referência do que constava no sistema naquele momento e <strong>pode ficar defasada a qualquer momento</strong>, por férias, afastamentos, convocações, substituições ou outras alterações. Para trabalhar em um processo, faça sempre uma nova consulta em <strong>Consulta → Composição</strong>.</div>
+<h3 id="9a-camara-criminal-composicao-31-08-2026">9ª Câmara Criminal — código <code>17902</code></h3>
+<p>Na consulta de 31/08/2026 às 17:29, o relatório exibiu a seguinte <strong>estrutura geral</strong>, sem reproduzir nomes de magistrados nesta versão pública:</p>
+<table>
+<thead><tr><th>Informação</th><th>Resultado da consulta</th></tr></thead>
+<tbody>
+<tr><td>Órgão</td><td>9ª Câmara Criminal (<code>17902</code>)</td></tr>
+<tr><td>Total exibido</td><td>5 magistrados</td></tr>
+<tr><td>Afastamentos</td><td>Havia registros de férias/afastamento</td></tr>
+<tr><td>Convocados/substitutos</td><td>Podem aparecer quando constam do mapa</td></tr>
+</tbody>
+</table>
+<div class="critical"><strong>PRIVACIDADE:</strong> os nomes dos magistrados não são publicados neste manual. A composição também pode mudar a qualquer momento. Para trabalhar em um processo, consulte diretamente <strong>Consulta → Composição</strong> no eJUD.</div>
+<blockquote><p>O relatório consultado estava com a opção <strong>“Incluir magistrados que constam do mapa”</strong> marcada, por isso também podia exibir magistrados convocados.</p></blockquote>
+<blockquote>
+<p><strong>CONFIRMAR:</strong> a estrutura administrativa e os códigos podem mudar.</p>
+</blockquote>
+<p>Antes de movimentar documentos destinados a Câmara/Grupo:</p>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> verificar se o documento é da unidade;</li>
+<li class="task"><input type="checkbox" class="persist-check"> conferir código da Câmara/Grupo;</li>
+<li class="task"><input type="checkbox" class="persist-check"> conferir se deve ser juntado ou encaminhado;</li>
+<li class="task"><input type="checkbox" class="persist-check"> conferir a pasta/destino.</li>
+</ul>
+<hr />
+<h1 id="24-tabela-rapida-de-codigos">24. Tabela rápida de códigos</h1>
+<blockquote>
+<p><strong>Todos os códigos abaixo vieram das anotações. Use F2 para validar.</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Código</th>
+<th>Uso anotado</th>
+<th>Confiança</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><code>8</code></td>
+<td>Fase de intimação</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>51</code></td>
+<td>Fase de conclusão</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>60</code></td>
+<td>Fase usada em expedientes/comprovantes</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>123</code></td>
+<td>Fase usada em recursos</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>498</code></td>
+<td>Local em rotinas de publicação/remessa</td>
+<td>baixa/média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>625</code></td>
+<td>Petição comum</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>657</code></td>
+<td>Memorando/comunicação</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50002</code></td>
+<td>Fase de certidão</td>
+<td>média/alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50006</code></td>
+<td>Magistrado/relator</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50007</code></td>
+<td>Tipo/rotina de expediente/remessa</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50009</code></td>
+<td>1º passo da atribuição ao revisor</td>
+<td>baixa — confirmar</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50010</code></td>
+<td>Revisor</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50011</code></td>
+<td>Embargos de Declaração</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50018</code></td>
+<td>Recurso Especial</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50040</code></td>
+<td>Recurso Ordinário</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50042</code></td>
+<td>Despacho/Decisão</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50055</code></td>
+<td>Contrarrazões</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50056</code></td>
+<td>Ciência</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50083</code></td>
+<td>Parecer</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50126</code></td>
+<td>Para apreciação</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50127</code></td>
+<td>Razões</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50666</code></td>
+<td>Destinatário ligado à 2ª Vice-Presidência</td>
+<td>baixa/média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50671</code></td>
+<td>Defensoria Pública</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>50675</code></td>
+<td>Ministério Público</td>
+<td>alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>59998</code></td>
+<td>Cumprimento 01 em certidões</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>66721</code></td>
+<td>Comprovante de Malote</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>70230</code></td>
+<td>Comprovante de e-mail</td>
+<td>média</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>17902</code></td>
+<td>9ª Câmara Criminal</td>
+<td>média/alta</td>
+</tr>
+<tr>
+<td style="text-align:right"><code>23429</code></td>
+<td>5º Grupo de Câmaras Criminais</td>
+<td>média/alta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="25-fluxos-rapidos">25. Fluxos rápidos</h1>
+<h2 id="25-1-mp-para-parecer">25.1. MP para parecer</h2>
+<pre><code class="language-text">Pegar
+→ Movimentar
+→ Novo
+→ Fase 8
+→ Destinatário 50675
+→ Motivo 50083
+→ Salvar
+→ Encaminhar
+→ Aguardando Parecer do MP
+</code></pre>
+<h2 id="25-2-defensoria-para-contrarrazoes">25.2. Defensoria para contrarrazões</h2>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 8
+→ Destinatário 50671
+→ Motivo 50055
+→ Salvar
+→ Encaminhar
+</code></pre>
+<h2 id="25-3-conclusao-ao-relator">25.3. Conclusão ao relator</h2>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 51
+→ Magistrado 50006
+→ Motivo 50042
+→ Salvar
+→ Carimbo/assinatura, quando necessário
+→ Encaminhar
+</code></pre>
+<h2 id="25-4-conclusao-ao-revisor">25.4. Conclusão ao revisor</h2>
+<pre><code class="language-text">Atribuir revisor
+→ Novo
+→ Fase 51
+→ Magistrado 50010
+→ Motivo 50126
+→ Salvar
+→ Carimbo
+→ Assinar
+</code></pre>
+<h2 id="25-5-juntar-peticao">25.5. Juntar petição</h2>
+<pre><code class="language-text">Abrir processo
+→ identificar petição pendente
+→ Juntar
+→ F2 no subtipo, se necessário
+→ confirmar
+→ visualizar a peça
+</code></pre>
+<h2 id="25-6-comprovante-de-malote">25.6. Comprovante de Malote</h2>
+<pre><code class="language-text">Novo
+→ Fase 60
+→ Tipo 66721
+→ inserir comprovante
+→ Salvar
+→ duplo clique
+→ Assinar
+</code></pre>
+<h2 id="25-7-comprovante-de-e-mail">25.7. Comprovante de e-mail</h2>
+<pre><code class="language-text">Novo
+→ Fase 60
+→ Tipo 70230
+→ inserir comprovante
+→ Salvar
+→ duplo clique
+→ Assinar
+</code></pre>
+<h2 id="25-8-consultar-composicao-da-camara-grupo">25.8. Consultar composição da Câmara/Grupo</h2>
+<pre><code class="language-text">eJUD
+→ Consulta
+→ Composição
+→ Órgão Julgador: 17902 (9ª Câmara) ou 23429 (5º Grupo)
+→ marcar “Incluir magistrados que constam do mapa”
+→ consultar
+→ conferir magistrados, convocações e afastamentos atuais
+</code></pre>
+<hr />
+<h1 id="26-checklist-de-encerramento-de-qualquer-tarefa">26. Checklist de encerramento de qualquer tarefa</h1>
+<p>Antes de tirar o processo da sua mesa:</p>
+<ul>
+<li class="task"><input type="checkbox" class="persist-check"> A movimentação foi lançada no processo certo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O código foi confirmado pela descrição.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O destinatário está correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O magistrado está correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O motivo/tipo está correto.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O documento foi salvo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O documento foi assinado, quando necessário.</li>
+<li class="task"><input type="checkbox" class="persist-check"> A peça foi juntada, quando necessário.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Não há petição vermelha/pendente.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Não há nome de vítima exposto indevidamente.</li>
+<li class="task"><input type="checkbox" class="persist-check"> O processo foi encaminhado para a pasta correta.</li>
+<li class="task"><input type="checkbox" class="persist-check"> A movimentação pode ser visualizada dentro do processo.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Não foi criada movimentação duplicada.</li>
+</ul>
+<hr />
+<h1 id="27-regras-praticas-extraidas-das-anotacoes">27. Regras práticas extraídas das anotações</h1>
+<ol>
+<li><strong>Não decorar código sem conferir a descrição.</strong> Use F2.</li>
+<li><strong>Sempre olhar o processo antes de movimentar.</strong></li>
+<li><strong>Verificar réu preso logo no início.</strong></li>
+<li><strong>Prevenção/impedimento/suspeição devem ser conferidos antes da atribuição.</strong></li>
+<li><strong>Petição pendente deve ser tratada antes de mandar processo adiante.</strong></li>
+<li><strong>Após salvar, abra e confira a movimentação.</strong></li>
+<li><strong>Documento que exige carimbo/assinatura não termina no primeiro “Salvar”.</strong></li>
+<li><strong>Encaminhar é parte do fluxo; salvar sozinho não necessariamente coloca o processo na pasta correta.</strong></li>
+<li><strong>Publicação exige revisão de segredo de justiça e dados da vítima.</strong></li>
+<li><strong>Em dúvida entre código e descrição, prevalece a descrição pesquisada no sistema.</strong></li>
+<li><strong>Não se basear em lista antiga de desembargadores.</strong> Para confirmar a composição atual da Câmara/Grupo, use <strong>Consulta → Composição</strong> e marque <strong>“Incluir magistrados que constam do mapa”</strong>.</li>
+</ol>
+<hr />
+<h1 id="28-pontos-pendentes-de-validacao">28. Pontos pendentes de validação</h1>
+<p>As seguintes partes das anotações não estão legíveis ou consistentes o bastante para serem tratadas como regra:</p>
+<ul>
+<li>código exato do primeiro passo de atribuição ao revisor (<code>50009</code> é provável, mas deve ser confirmado);</li>
+<li>lista de magistrados/revisores e seus códigos;</li>
+<li>contagem exata de prazos de visualização/manifestações do MP;</li>
+<li>sequência integral de publicação via macro/D.O.;</li>
+<li>código/modelo de retirada de pauta;</li>
+<li>detalhes da rotina de baixa em diligência;</li>
+<li>alguns códigos de recursos especial, ordinário e extraordinário;</li>
+<li>confirmação da opção “NÃO” no recebimento de autos externos;</li>
+<li>alguns carimbos/modelos específicos.</li>
+</ul>
+<p>Esses pontos foram mantidos no manual apenas quando havia informação suficiente para orientar a localização da rotina.</p>
+<hr />
+<h1 id="29-adicionando-imagens-ao-manual-no-github">29. Adicionando imagens ao manual no GitHub</h1>
+<p>A forma mais simples e organizada é manter as imagens em uma pasta do próprio repositório:</p>
+<pre><code class="language-text">Manual_EJUD_Interativo.html
+Manual_EJUD.md
+imagens/
+  pegar.png
+  atribuir.png
+  composicao.png
+</code></pre>
+<p>No GitHub, crie a pasta <code>imagens</code> usando <strong>Add file → Upload files</strong> e envie os prints/ícones para ela. Depois use caminhos relativos.</p>
+<h2 id="29-1-no-markdown">29.1. No Markdown</h2>
+<pre><code class="language-md">![Tela do botão Pegar](imagens/pegar.png)
+</code></pre>
+<h2 id="29-2-no-html">29.2. No HTML</h2>
+<pre><code class="language-html">&lt;img src="imagens/pegar.png" alt="Tela do botão Pegar" class="manual-img"&gt;
+</code></pre>
+<p>Para uma imagem menor:</p>
+<pre><code class="language-html">&lt;img src="imagens/pegar.png" alt="Botão Pegar" class="manual-img pequena"&gt;
+</code></pre>
+<blockquote><p><strong>Recomendação:</strong> não coloque imagens em Base64 dentro do HTML. Isso aumenta muito o arquivo e piora o histórico de versões. A pasta <code>imagens/</code> é mais simples para substituir, organizar e versionar no GitHub.</p></blockquote>
+<div class="critical"><strong>ANTES DE PUBLICAR PRINTS:</strong> recorte ou oculte nomes de pessoas, números de processos, logins, dados de partes e qualquer informação que não deva ficar pública.</div>
+<hr />
+<h1 id="30-fontes-utilizadas">30. Fontes utilizadas</h1>
+<ul>
+<li><strong>Anotações Carla.pdf</strong> — 6 páginas.</li>
+<li><strong>Anotações Lais.pdf</strong> — 9 páginas.</li>
+<li><strong>Anotações Mônica.pdf</strong> — 3 páginas.</li>
+<li><strong>Atribuição ao Rensor (1º PASSO).pdf</strong> — 14 páginas.</li>
+</ul>
+<p>Versão consolidada: <strong>1.5 — 01-09-26 às 12:58</strong>.</p>
+<p><strong>Alteração da versão 1.5:</strong> corrigido o nome da pasta para <strong>“Aguardando Parecer do MP”</strong>; removidos nomes de magistrados da versão pública; o checklist inicial passou a iniciar recolhido; a navegação lateral foi reorganizada em seções principais expansíveis; foram destacados os códigos <strong>Defensoria Pública 50671</strong> e <strong>Motivo Ciência 50056</strong>; e foi incluído um guia para inserir imagens pelo repositório GitHub usando a pasta <code>imagens/</code>.</p>
+<p><strong>Alteração da versão 1.4:</strong> detalhada a diferença entre <strong>Pegar</strong> e <strong>Atribuir</strong>: o Pegar leva automaticamente um ou vários processos para a própria mesa, sem necessidade de selecionar o usuário; o Atribuir permite escolher o destinatário, inclusive terceiros ou o próprio usuário, e registrar um <strong>Motivo</strong>. Incluídas também as formas de seleção múltipla com <strong>Shift</strong> e <strong>Ctrl</strong>.</p>
+<p><strong>Alteração da versão 1.3:</strong> adicionada, apenas como referência histórica de consulta, a composição exibida pelo eJUD para a <strong>9ª Câmara Criminal</strong> em <strong>31/08/2026 às 17:29</strong>, com alerta expresso de que essa composição pode ficar defasada a qualquer momento e deve ser sempre reconferida no sistema.</p>
+<p><strong>Alteração da versão 1.2:</strong> adicionada a rotina de <strong>Consulta → Composição</strong> para verificar a composição atual da Câmara/Grupo, com destaque para <strong>“Incluir magistrados que constam do mapa”</strong>; incorporadas também as novas anotações sobre juntada em vermelho, seleção de subtipo via F2, juntada seguida de conclusão e conferência de providência prévia à publicação.</p>
+<p><strong>Alteração da versão 1.1:</strong> incluída a regra operacional de que conclusões da 9ª Câmara Criminal e do 5º Grupo de Câmaras Criminais somente podem ser abertas até as 17h.</p>
+
+  </main>
+
+  <aside class="rightbox">
+    <h3>Progresso dos checklists</h3>
+    <div class="progress"><div id="progressBar"></div></div>
+    <div id="progressText" class="small">0% concluído</div>
+    <hr style="border:0;border-top:1px solid var(--border);margin:16px 0">
+    <h3>Consulta rápida de códigos</h3>
+    <input id="codeSearch" placeholder="Ex.: 50675 ou MP">
+    <div id="codeList"></div>
+    <p class="small">Os códigos vêm de anotações manuscritas. Confirme no F2.</p>
+  </aside>
+</div>
+
+<script>
+const codeData = [
+["8","Fase de intimação"],["51","Fase de conclusão"],["60","Expedientes/comprovantes"],
+["123","Fase usada em recursos"],["498","Local em publicação/remessa — confirmar"],
+["625","Petição comum"],["657","Memorando/comunicação"],["50002","Fase de certidão"],
+["50006","Relator"],["50007","Expediente/remessa — confirmar"],["50009","1º passo de atribuição ao revisor — confirmar"],
+["50010","Revisor"],["50011","Embargos de Declaração"],["50018","Recurso Especial"],
+["50040","Recurso Ordinário"],["50042","Despacho/Decisão"],["50055","Contrarrazões"],
+["50056","Ciência"],["50083","Parecer"],["50126","Para apreciação"],["50127","Razões"],
+["50666","Destinatário ligado à 2ª Vice-Presidência — confirmar"],["50671","Defensoria Pública"],
+["50675","Ministério Público"],["59998","Cumprimento em certidões"],["66721","Comprovante de Malote"],
+["70230","Comprovante de e-mail"],["17902","9ª Câmara Criminal — Consulta > Composição"],["23429","5º Grupo de Câmaras Criminais — Consulta > Composição"]
+];
+
+function buildToc() {
+  const toc = document.getElementById('toc');
+  const hs = [...document.querySelectorAll('#content h1,#content h2')];
+  const groups = [];
+  let current = null;
+
+  hs.forEach(h => {
+    const text = h.textContent.trim();
+    const isMain = /^\d+\.\s/.test(text);
+    const isChild = /^\d+\.\d+\./.test(text);
+
+    if (isMain) {
+      current = { heading: h, children: [] };
+      groups.push(current);
+    } else if (isChild && current) {
+      current.children.push(h);
+    }
+  });
+
+  toc.innerHTML = groups.map((g, i) => {
+    const children = g.children.map(h =>
+      `<a href="#${h.id}">${h.textContent}</a>`
+    ).join('');
+    const toggle = g.children.length
+      ? `<button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-children-${i}" title="Abrir subseções">+</button>`
+      : '';
+    return `<div class="toc-group">
+      <div class="toc-main"><a href="#${g.heading.id}">${g.heading.textContent}</a>${toggle}</div>
+      ${g.children.length ? `<div class="toc-children" id="toc-children-${i}">${children}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  toc.querySelectorAll('.toc-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const group = btn.closest('.toc-group');
+      const open = group.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      btn.textContent = open ? '−' : '+';
+    });
+  });
+}
+buildToc();
+
+function renderCodes(q='') {
+  q=q.trim().toLowerCase();
+  const rows=codeData.filter(([c,d]) => !q || c.includes(q) || d.toLowerCase().includes(q));
+  document.getElementById('codeList').innerHTML = rows.map(([c,d]) =>
+    `<div class="code-item"><b>${c}</b><br>${d}</div>`).join('');
+}
+renderCodes();
+document.getElementById('codeSearch').addEventListener('input', e=>renderCodes(e.target.value));
+
+const search = document.getElementById('search');
+function clearMarks() {
+  document.querySelectorAll('mark').forEach(m => m.replaceWith(document.createTextNode(m.textContent)));
+  document.querySelectorAll('.hidden-search').forEach(el=>el.classList.remove('hidden-search'));
+}
+function doSearch() {
+  clearMarks();
+  const q=search.value.trim();
+  if(!q) return;
+  const lower=q.toLowerCase();
+  const nodes=[...document.querySelectorAll('#content h1,#content h2,#content h3,#content p,#content li,#content td,#content th,#content pre')];
+  nodes.forEach(el=> {
+    if(!el.textContent.toLowerCase().includes(lower)) return;
+    const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+    const texts=[]; while(walker.nextNode()) texts.push(walker.currentNode);
+    texts.forEach(t=> {
+      const idx=t.nodeValue.toLowerCase().indexOf(lower);
+      if(idx>=0) {
+        const before=t.nodeValue.slice(0,idx), hit=t.nodeValue.slice(idx,idx+q.length), after=t.nodeValue.slice(idx+q.length);
+        const frag=document.createDocumentFragment();
+        frag.append(before); const m=document.createElement('mark');m.textContent=hit;frag.append(m);frag.append(after);
+        t.parentNode.replaceChild(frag,t);
+      }
+    });
+  });
+  const first=document.querySelector('mark'); if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+}
+search.addEventListener('input', ()=>{clearTimeout(window._s);window._s=setTimeout(doSearch,180)});
+document.getElementById('clearSearch').onclick=()=>{search.value='';clearMarks();search.focus()};
+
+document.getElementById('theme').onclick=()=>{
+  document.body.classList.toggle('dark');
+  localStorage.setItem('ejud-theme',document.body.classList.contains('dark')?'dark':'light');
+};
+if(localStorage.getItem('ejud-theme')==='dark') document.body.classList.add('dark');
+
+const checks=[...document.querySelectorAll('.persist-check')];
+checks.forEach((cb,i)=>{
+  cb.dataset.key='ejud-check-'+i;
+  cb.checked=localStorage.getItem(cb.dataset.key)==='1';
+  cb.addEventListener('change',()=>{localStorage.setItem(cb.dataset.key,cb.checked?'1':'0');updateProgress()});
+});
+function updateProgress(){
+  const total=checks.length, done=checks.filter(c=>c.checked).length;
+  const pct=total?Math.round(done*100/total):0;
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('progressText').textContent=`${done} de ${total} itens · ${pct}%`;
+}
+updateProgress();
+
+const links=[...document.querySelectorAll('#toc a')];
+const headings=[...document.querySelectorAll('#content h1,#content h2')];
+const observer=new IntersectionObserver(entries=>{
+  entries.filter(e=>e.isIntersecting).forEach(e=>{
+    links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
+    const active = document.querySelector(`#toc a[href="#${e.target.id}"]`);
+    if (active) {
+      const group = active.closest('.toc-group');
+      if (group && active.closest('.toc-children')) {
+        group.classList.add('open');
+        const btn = group.querySelector('.toc-toggle');
+        if (btn) { btn.setAttribute('aria-expanded','true'); btn.textContent='−'; }
+      }
+    }
+  });
+},{rootMargin:'-80px 0px -70% 0px'});
+headings.forEach(h=>observer.observe(h));
+</script>
+</body>
+</html>
