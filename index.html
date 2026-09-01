@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.8</div>
+    <div class="brand">eJUD · Manual interativo · v1.9</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.8 · 01-09-26 · 14:13</div>
+<div class="version-tag">Versão 1.9 · 01-09-26 · 15:01</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -366,6 +366,7 @@ A geração das cartas irá impossibilitar alterações no texto ou na lista de 
 
 Sim   Não
 </code></pre>
+<div class="critical"><strong>ATENÇÃO — ADIANTAMENTO DA INTIMAÇÃO AO MP:</strong> se a intimação para parecer for feita adiantadamente, mas ainda existir alguma publicação pendente no processo (por exemplo, uma decisão ainda não publicada), faça normalmente a intimação <strong>Fase 8 → Ministério Público → Parecer</strong>, salve e confirme. <strong>NÃO encaminhe o processo para a pasta “Aguardando Parecer do MP” nesse momento.</strong> Deixe o processo onde está, pois ainda existe a publicação pendente.</div>
 <h3 id="resumo">Resumo</h3>
 <table>
 <thead>
@@ -402,7 +403,7 @@ Sim   Não
 <li class="task"><input type="checkbox" class="persist-check"> Salvou pelo <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> e confirmou a mensagem clicando em <strong>Sim</strong>.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Não assinou nem carimbou, pois esta rotina não exige essas etapas.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferiu dentro do processo.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Encaminhou para “Aguardando Parecer do MP”.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Se não houver publicação pendente, encaminhou para “Aguardando Parecer do MP”. Se a intimação foi adiantada e ainda houver publicação pendente, deixou o processo onde estava, sem encaminhar para essa pasta.</li>
 </ul>
 <h3 id="prazo-visualizacao">Prazo/visualização</h3>
 <p>Há anotações sobre período de visualização pelo MP e posterior início do prazo.</p>
@@ -860,24 +861,48 @@ Sim   Não
 <p><strong>CONFIRMAR:</strong> o uso do modelo depende da hipótese. As notas citam ainda violência doméstica, alteração de acórdão/HC, recurso em sentido estrito e conflito de jurisdição como situações com comunicações específicas.</p>
 </blockquote>
 <hr />
-<h1 id="18-pedido-de-informacao">18. Pedido de informação</h1>
-<p>Fluxo anotado:</p>
-<pre><code class="language-text">Movimentar
-→ Novo
-→ Fase 60
-→ Tipo 50007
-→ Salvar
-→ duplo clique
-→ Carimbo
-→ escolher modelo “Pedido de Informação”
-→ salvar
-→ assinar
-</code></pre>
-<p>Após assinar, o sistema pode solicitar um valor/número, registrado nas anotações como o <strong>número do ofício</strong>.</p>
-<p>Também aparece a orientação:</p>
-<blockquote>
-<p>Ao trocar o juiz/modelo, conferir o texto inteiro e apagar eventual linha final que tenha permanecido do modelo anterior.</p>
-</blockquote>
+<h1 id="18-pedido-de-informacao">18. Solicitação de Informações — ofício + Malote Digital</h1>
+<p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
+<h2 id="18-1-primeira-movimentacao-expedir-oficio">18.1. Primeira movimentação — expedir o ofício</h2>
+<ol>
+<li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma nova movimentação.</li>
+<li>Fase: <code>60</code> — <strong>Expedição de Documento</strong>.</li>
+<li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
+<li>Carimbo: <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve a movimentação.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Assine/finalize o ofício pela canetinha de assinatura/carimbo.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → Carimbo <code>7582</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> salvar → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar.</div>
+<h2 id="18-2-enviar-pelo-malote-digital">18.2. Antes da segunda movimentação — enviar pelo Malote Digital</h2>
+<ol>
+<li>Abra o <strong>Malote Digital</strong>.</li>
+<li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
+<li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
+<li>Clique em <strong>Avançar</strong>.</li>
+<li>Prioridade: <strong>Normal</strong>.</li>
+<li>Motivo do envio: <strong>Para manifestação</strong>.</li>
+<li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
+<li>Na pasta <code>Ofícios 2026 (CAP-09CCR-S02)</code>, localizada na Área de Trabalho do PC, selecione e anexe:
+<ul>
+<li>o arquivo do <strong>ofício</strong>;</li>
+<li>a <strong>decisão que solicita as informações</strong>.</li>
+</ul></li>
+<li>Clique em <strong>Adicionar documentos</strong>.</li>
+<li>Depois, clique em <strong>Enviar documentos</strong>.</li>
+<li>Ao final, tire um <strong>print do comprovante de envio</strong>.</li>
+</ol>
+<h2 id="18-3-segunda-movimentacao-comprovante-de-malote">18.3. Segunda movimentação — comprovante de Malote</h2>
+<ol>
+<li>Volte ao processo e abra uma nova movimentação com <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir">.</li>
+<li>Fase: <code>60</code>.</li>
+<li>Tipo: <code>66721</code> — <strong>Comprovante de Malote</strong>.</li>
+<li>Vá em <strong>TEXTO</strong> e cole o print do comprovante de envio.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Vá à canetinha do canto esquerdo e assine/finalize a movimentação.</li>
+<li>Por fim, encaminhe o processo para a pasta <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</li>
+</ol>
+<div class="critical"><strong>FLUXO COMPLETO:</strong> primeiro expedir e assinar o ofício → enviar ofício + decisão pelo Malote Digital → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1119,8 +1144,8 @@ Sim   Não
 </tr>
 <tr>
 <td style="text-align:right"><code>50007</code></td>
-<td>Tipo/rotina de expediente/remessa</td>
-<td>média</td>
+<td>Ofício — Solicitação de Informações</td>
+<td>alta</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>50009</code></td>
@@ -1198,9 +1223,14 @@ Sim   Não
 <td>média</td>
 </tr>
 <tr>
+<td style="text-align:right"><code>7582</code></td>
+<td>Carimbo “Solicita informações - Indeferimento Liminar”</td>
+<td>alta</td>
+</tr>
+<tr>
 <td style="text-align:right"><code>66721</code></td>
 <td>Comprovante de Malote</td>
-<td>média</td>
+<td>alta</td>
 </tr>
 <tr>
 <td style="text-align:right"><code>70230</code></td>
@@ -1374,7 +1404,8 @@ imagens/
 <li><strong>Anotações Mônica.pdf</strong> — 3 páginas.</li>
 <li><strong>Atribuição ao Rensor (1º PASSO).pdf</strong> — 14 páginas.</li>
 </ul>
-<p>Versão consolidada: <strong>1.8 — 01-09-26 às 14:13</strong>.</p>
+<p>Versão consolidada: <strong>1.9 — 01-09-26 às 15:01</strong>.</p>
+<p><strong>Alteração da versão 1.9:</strong> detalhado o fluxo completo de <strong>Solicitação de Informações</strong>, com expedição do ofício em <code>Fase 60 / Tipo 50007</code>, Carimbo <code>7582</code>, envio do ofício e da decisão pelo Malote Digital, juntada do comprovante em <code>Fase 60 / Tipo 66721</code>, assinatura pelo novo ícone <strong>assinar/carimbo</strong> e encaminhamento para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Também incluído alerta na intimação do MP: quando a intimação for adiantada e ainda houver publicação pendente, a intimação é realizada, mas o processo <strong>não deve ser encaminhado</strong> para “Aguardando Parecer do MP” naquele momento.</p>
 <p><strong>Alteração da versão 1.8:</strong> adicionadas referências visuais aos ícones <strong>Inserir</strong>, <strong>Salvar</strong> e <strong>Fechar</strong>; atualizada a rotina da <strong>Certidão de tempestividade</strong> com Certidão <code>50002</code>, Complemento 1 <code>9999</code> e Carimbo <code>7585</code> (“Certidão Embargos Tempestivos”); e detalhada a confirmação exibida ao salvar a intimação do MP, na qual deve ser clicado <strong>Sim</strong>, sem necessidade de assinatura ou carimbo.</p>
 <p><strong>Alteração da versão 1.7:</strong> o disclaimer existente foi convertido em modal exibido automaticamente ao abrir a página, sobrepondo o conteúdo até o usuário clicar em <strong>“Entendi”</strong>; o texto foi encurtado e o visual foi integrado ao tema claro/escuro do manual.</p>
 <p><strong>Alteração da versão 1.6:</strong> incluído aviso discreto no início da página esclarecendo que o manual é independente, não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro e tem caráter exclusivamente informativo, sem responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</p>
@@ -1410,12 +1441,12 @@ const codeData = [
 ["8","Fase de intimação"],["51","Fase de conclusão"],["60","Expedientes/comprovantes"],
 ["123","Fase usada em recursos"],["498","Local em publicação/remessa — confirmar"],
 ["625","Petição comum"],["657","Memorando/comunicação"],["50002","Fase de certidão"],
-["50006","Relator"],["50007","Expediente/remessa — confirmar"],["50009","1º passo de atribuição ao revisor — confirmar"],
+["50006","Relator"],["50007","Ofício — Solicitação de Informações"],["50009","1º passo de atribuição ao revisor — confirmar"],
 ["50010","Revisor"],["50011","Embargos de Declaração"],["50018","Recurso Especial"],
 ["50040","Recurso Ordinário"],["50042","Despacho/Decisão"],["50055","Contrarrazões"],
 ["50056","Ciência"],["50083","Parecer"],["50126","Para apreciação"],["50127","Razões"],
 ["50666","Destinatário ligado à 2ª Vice-Presidência — confirmar"],["50671","Defensoria Pública"],
-["50675","Ministério Público"],["59998","Cumprimento em certidões"],["66721","Comprovante de Malote"],
+["50675","Ministério Público"],["59998","Cumprimento em certidões"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["66721","Comprovante de Malote"],
 ["70230","Comprovante de e-mail"],["17902","9ª Câmara Criminal — Consulta > Composição"],["23429","5º Grupo de Câmaras Criminais — Consulta > Composição"]
 ];
 
