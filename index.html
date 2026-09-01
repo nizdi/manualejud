@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.9</div>
+    <div class="brand">eJUD · Manual interativo · v1.10</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.9 · 01-09-26 · 15:01</div>
+<div class="version-tag">Versão 1.10 · 01-09-26 · 15:27</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -704,26 +704,18 @@ Sim   Não
 </blockquote>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
-<p>As anotações mostram uma rotina de publicação vinculada ao símbolo do Diário Oficial/DO e a macro.</p>
-<h2 id="fluxo-operacional-anotado">Fluxo operacional anotado</h2>
-<pre><code class="language-text">1. Conferir se o documento realmente está pronto para publicar.
-2. Copiar/usar a macro, quando aplicável.
-3. Abrir o símbolo do D.O.
-4. Conferir o local indicado.
-5. Inserir o tipo de ato (ex.: despacho).
-6. Confirmar.
-7. Informar o nº do processo quando a nova tela solicitar.
-8. Aguardar o sistema salvar/processar.
-9. Retornar à tela anterior.
-10. Conferir se o processo aparece como destinado à publicação.
+<div class="critical"><strong>ATENÇÃO:</strong> a publicação de decisão deve ser feita somente com <strong>autorização expressa da Secretaria</strong>.</div>
+<h2 id="13-1-como-iniciar-a-publicacao-de-uma-decisao">13.1. Como iniciar a publicação de uma decisão</h2>
+<p>Até o momento, foi ensinado o seguinte início do procedimento:</p>
+<pre><code class="language-text">Abrir o eJUD
+→ Publicação
+→ Central de Publicações
+→ Expedientes
+→ Local: 23429 (5º Grupo) ou 17902 (9ª Câmara)
+→ Tipo de publicação: 1 - Despacho
+   ou selecionar outro tipo, quando necessário
 </code></pre>
-<h3 id="codigo-local-anotado">Código/local anotado</h3>
-<ul>
-<li><code>498</code> aparece nas anotações associado a <strong>local</strong> em algumas rotinas.</li>
-</ul>
-<blockquote>
-<p><strong>CONFIRMAR:</strong> a sequência exata da tela de publicação e o uso do código <code>498</code>, pois essa parte do manuscrito é abreviada.</p>
-</blockquote>
+<div class="icon-note"><strong>Procedimento ainda incompleto:</strong> o treinamento foi somente até a seleção do <strong>Local</strong> e do <strong>Tipo de publicação</strong>. As etapas seguintes deverão ser acrescentadas ao manual quando forem ensinadas.</div>
 <h3 id="antes-de-publicar">Antes de publicar</h3>
 <ul>
 <li class="task"><input type="checkbox" class="persist-check"> Conferir segredo de justiça.</li>
@@ -736,6 +728,7 @@ Sim   Não
 </ul>
 <hr />
 <h1 id="14-malote-digital">14. Malote Digital</h1>
+<div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote.</div>
 <p>Fluxo anotado por Laís:</p>
 <pre><code class="language-text">Servidores
 → Malote
@@ -751,7 +744,7 @@ Sim   Não
 <h2 id="checklist-do-malote">Checklist do Malote</h2>
 <ul>
 <li class="task"><input type="checkbox" class="persist-check"> Órgão destinatário correto.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Prioridade correta.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Prioridade correta: <strong>Normal</strong> sem prazo; <strong>Alta</strong> quando houver prazo.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Motivo correto.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Assunto objetivo.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Todos os documentos anexados.</li>
@@ -880,7 +873,7 @@ Sim   Não
 <li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
 <li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
 <li>Clique em <strong>Avançar</strong>.</li>
-<li>Prioridade: <strong>Normal</strong>.</li>
+<li>Prioridade: <strong>Normal</strong> se não houver prazo. Se houver prazo (por exemplo, 48 horas ou outro prazo indicado), selecione <strong>Alta</strong>.</li>
 <li>Motivo do envio: <strong>Para manifestação</strong>.</li>
 <li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
 <li>Na pasta <code>Ofícios 2026 (CAP-09CCR-S02)</code>, localizada na Área de Trabalho do PC, selecione e anexe:
@@ -1360,51 +1353,9 @@ Sim   Não
 <li><strong>Não se basear em lista antiga de desembargadores.</strong> Para confirmar a composição atual da Câmara/Grupo, use <strong>Consulta → Composição</strong> e marque <strong>“Incluir magistrados que constam do mapa”</strong>.</li>
 </ol>
 <hr />
-<h1 id="28-pontos-pendentes-de-validacao">28. Pontos pendentes de validação</h1>
-<p>As seguintes partes das anotações não estão legíveis ou consistentes o bastante para serem tratadas como regra:</p>
-<ul>
-<li>código exato do primeiro passo de atribuição ao revisor (<code>50009</code> é provável, mas deve ser confirmado);</li>
-<li>lista de magistrados/revisores e seus códigos;</li>
-<li>contagem exata de prazos de visualização/manifestações do MP;</li>
-<li>sequência integral de publicação via macro/D.O.;</li>
-<li>código/modelo de retirada de pauta;</li>
-<li>detalhes da rotina de baixa em diligência;</li>
-<li>alguns códigos de recursos especial, ordinário e extraordinário;</li>
-<li>confirmação da opção “NÃO” no recebimento de autos externos;</li>
-<li>alguns carimbos/modelos específicos.</li>
-</ul>
-<p>Esses pontos foram mantidos no manual apenas quando havia informação suficiente para orientar a localização da rotina.</p>
-<hr />
-<h1 id="29-adicionando-imagens-ao-manual-no-github">29. Adicionando imagens ao manual no GitHub</h1>
-<p>A forma mais simples e organizada é manter as imagens em uma pasta do próprio repositório:</p>
-<pre><code class="language-text">Manual_EJUD_Interativo.html
-Manual_EJUD.md
-imagens/
-  pegar.png
-  atribuir.png
-  composicao.png
-</code></pre>
-<p>As imagens do site ficam na pasta <code>Imagens</code>. No computador, a pasta usada é <code>D:\MesaDeTrabalho\Imagens</code>; no site publicado, os arquivos podem ser referenciados por caminhos como <code>/manualejud/Imagens/inserir.png</code>.</p>
-<h2 id="29-1-no-markdown">29.1. No Markdown</h2>
-<pre><code class="language-md">![Ícone Inserir](/manualejud/Imagens/inserir.png)
-</code></pre>
-<h2 id="29-2-no-html">29.2. No HTML</h2>
-<pre><code class="language-html">&lt;img src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir" class="manual-img pequena"&gt;
-</code></pre>
-<p>Para ícones pequenos no meio do texto, o próprio HTML já possui a classe <code>ejud-icon</code>:</p>
-<pre><code class="language-html">&lt;img src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar" class="ejud-icon"&gt;
-</code></pre>
-<blockquote><p><strong>Recomendação:</strong> continue salvando as imagens como arquivos separados na pasta <code>Imagens/</code>. Isso mantém o HTML leve e facilita o versionamento no GitHub.</p></blockquote>
-<div class="critical"><strong>ANTES DE PUBLICAR PRINTS:</strong> recorte ou oculte nomes de pessoas, números de processos, logins, dados de partes e qualquer informação que não deva ficar pública.</div>
-<hr />
-<h1 id="30-fontes-utilizadas">30. Fontes utilizadas</h1>
-<ul>
-<li><strong>Anotações Carla.pdf</strong> — 6 páginas.</li>
-<li><strong>Anotações Lais.pdf</strong> — 9 páginas.</li>
-<li><strong>Anotações Mônica.pdf</strong> — 3 páginas.</li>
-<li><strong>Atribuição ao Rensor (1º PASSO).pdf</strong> — 14 páginas.</li>
-</ul>
-<p>Versão consolidada: <strong>1.9 — 01-09-26 às 15:01</strong>.</p>
+<h1 id="30-atualizacoes-versoes">30. Atualizações / Versões</h1>
+<p>Versão consolidada: <strong>1.10 — 01-09-26 às 15:27</strong>.</p>
+<p><strong>Alteração da versão 1.10:</strong> definida a regra de prioridade do Malote Digital — <strong>Normal</strong> quando não houver prazo e <strong>Alta</strong> quando houver prazo; removidas da versão pública as seções de pontos pendentes, instruções de imagens/GitHub e a identificação dos PDFs de origem; e incluído o início do procedimento de <strong>publicação de decisão</strong>, que exige autorização expressa da Secretaria e, até o ponto ensinado, segue por <strong>Publicação → Central de Publicações → Expedientes → Local 23429/17902 → Tipo 1 - Despacho</strong> (ou outro tipo necessário).</p>
 <p><strong>Alteração da versão 1.9:</strong> detalhado o fluxo completo de <strong>Solicitação de Informações</strong>, com expedição do ofício em <code>Fase 60 / Tipo 50007</code>, Carimbo <code>7582</code>, envio do ofício e da decisão pelo Malote Digital, juntada do comprovante em <code>Fase 60 / Tipo 66721</code>, assinatura pelo novo ícone <strong>assinar/carimbo</strong> e encaminhamento para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Também incluído alerta na intimação do MP: quando a intimação for adiantada e ainda houver publicação pendente, a intimação é realizada, mas o processo <strong>não deve ser encaminhado</strong> para “Aguardando Parecer do MP” naquele momento.</p>
 <p><strong>Alteração da versão 1.8:</strong> adicionadas referências visuais aos ícones <strong>Inserir</strong>, <strong>Salvar</strong> e <strong>Fechar</strong>; atualizada a rotina da <strong>Certidão de tempestividade</strong> com Certidão <code>50002</code>, Complemento 1 <code>9999</code> e Carimbo <code>7585</code> (“Certidão Embargos Tempestivos”); e detalhada a confirmação exibida ao salvar a intimação do MP, na qual deve ser clicado <strong>Sim</strong>, sem necessidade de assinatura ou carimbo.</p>
 <p><strong>Alteração da versão 1.7:</strong> o disclaimer existente foi convertido em modal exibido automaticamente ao abrir a página, sobrepondo o conteúdo até o usuário clicar em <strong>“Entendi”</strong>; o texto foi encurtado e o visual foi integrado ao tema claro/escuro do manual.</p>
