@@ -77,6 +77,8 @@ details.collapse-block[open]>summary::before{content:"−"}
 details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img{display:block;max-width:min(100%,900px);height:auto;margin:14px auto;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow)}
 .manual-img.pequena{max-width:320px}
+.ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
+.icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
 @media(max-width:1100px){.layout{grid-template-columns:240px 1fr}.rightbox{display:none}}
 @media(max-width:760px){.layout{display:block;padding:10px}aside{display:none}main{padding:20px 17px}input[type=search]{min-width:160px}}
 @media print{header,aside,.rightbox,.no-print,.disclaimer-overlay{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}main{border:0;box-shadow:none;padding:0}}
@@ -85,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.7</div>
+    <div class="brand">eJUD · Manual interativo · v1.8</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -111,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.7 · 01-09-26 · 14:00</div>
+<div class="version-tag">Versão 1.8 · 01-09-26 · 14:13</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -264,6 +266,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 </blockquote>
 <h2 id="3-6-folha-em-branco-novo">3.6. Folha em branco / Novo</h2>
 <p>Muitas movimentações começam assim:</p>
+<div class="icon-note"><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> <strong>Inserir / Nova fase:</strong> este ícone representa a criação de um novo movimento. Em várias telas, a mesma ação pode ser aberta pela tecla <strong>F5</strong>.</div>
 <pre><code class="language-text">Selecionar processo
 → Movimentar
 → Novo / folha em branco
@@ -272,11 +275,13 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 → preencher Motivo/Tipo
 → Salvar
 </code></pre>
-<h2 id="3-7-disquete-caneta-e-carimbo">3.7. Disquete, caneta e carimbo</h2>
-<p>Nas anotações:</p>
+<h2 id="3-7-disquete-caneta-e-carimbo">3.7. Ícones, disquete, caneta e carimbo</h2>
+<p>Referências visuais usadas no manual:</p>
 <ul>
-<li><strong>Disquete</strong> = salvar;</li>
-<li><strong>Caneta</strong> = assinar/finalizar documento;</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"><strong>Inserir / Nova fase</strong> = criar um novo movimento; em algumas telas, pode ser acionado por <strong>F5</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"><strong>Salvar / Disquete</strong> = salvar a movimentação ou documento.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/fechar.png" alt="Ícone Fechar"><strong>Fechar</strong> = fechar a janela ou tela atual, quando essa opção aparecer.</li>
+<li><strong>Caneta</strong> = assinar/finalizar documento.</li>
 <li><strong>Carimbo</strong> = selecionar modelo ou complemento de documento.</li>
 </ul>
 <p>Algumas rotinas exigem:</p>
@@ -350,8 +355,16 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 7. Motivo: Parecer do MP.
 8. Código anotado do motivo: 50083.
 9. Salvar.
-10. Conferir a movimentação.
-11. Encaminhar para “Aguardando Parecer do MP”.
+10. Na janela “Confirmação”, clicar em Sim.
+11. Conferir a movimentação.
+12. Encaminhar para “Aguardando Parecer do MP”.
+</code></pre>
+<div class="icon-note"><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Ao salvar:</strong> o eJUD exibe a confirmação abaixo. Basta clicar em <strong>Sim</strong>. Nesta rotina de intimação do MP, <strong>não é necessário assinar nem carimbar</strong>.</div>
+<pre><code class="language-text">Confirmação
+
+A geração das cartas irá impossibilitar alterações no texto ou na lista de destinatários. Deseja continuar?
+
+Sim   Não
 </code></pre>
 <h3 id="resumo">Resumo</h3>
 <table>
@@ -386,7 +399,8 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <li class="task"><input type="checkbox" class="persist-check"> Fase 8.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Destinatário 50675 conferido por F2.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Motivo 50083 conferido por F2.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Salvou.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Salvou pelo <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> e confirmou a mensagem clicando em <strong>Sim</strong>.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Não assinou nem carimbou, pois esta rotina não exige essas etapas.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferiu dentro do processo.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Encaminhou para “Aguardando Parecer do MP”.</li>
 </ul>
@@ -867,18 +881,19 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
-<p>Anotação:</p>
-<pre><code class="language-text">Movimentar
-→ Fase 50002
-→ Cumprimento 01: 59998
-→ Salvar
-→ duplo clique
-→ Carimbo 398
-→ salvar
-→ assinar
-</code></pre>
+<p>Para criar a certidão de tempestividade dos embargos:</p>
+<ol>
+<li>Localize o processo.</li>
+<li>Clique com o <strong>botão direito</strong> no processo e escolha <strong>MOVIMENTAR</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma <strong>Nova fase (F5)</strong>. O ícone de Inserir representa o novo movimento.</li>
+<li>Em <strong>Certidão</strong>, informe <code>50002</code>.</li>
+<li>Em <strong>Complemento 1</strong>, informe <code>9999</code>.</li>
+<li>Em <strong>Carimbo</strong>, selecione <code>7585</code> — <strong>“Certidão Embargos Tempestivos”</strong>.</li>
+<li>Selecione o carimbo/modelo acima e <strong>assine com a canetinha</strong>.</li>
+<li>Depois da certidão, <strong>abra a conclusão</strong> seguindo o procedimento de conclusão já explicado neste manual.</li>
+</ol>
 <blockquote>
-<p>O manuscrito relaciona esta certidão a embargos/recursos. Confirme o modelo adequado.</p>
+<p><strong>Resumo:</strong> MOVIMENTAR → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova fase/F5 → Certidão <code>50002</code> → Complemento 1 <code>9999</code> → Carimbo <code>7585</code> → assinar → abrir conclusão.</p>
 </blockquote>
 <h2 id="19-2-certidao-livre">19.2. Certidão livre</h2>
 <pre><code class="language-text">Novo
@@ -1339,17 +1354,17 @@ imagens/
   atribuir.png
   composicao.png
 </code></pre>
-<p>No GitHub, crie a pasta <code>imagens</code> usando <strong>Add file → Upload files</strong> e envie os prints/ícones para ela. Depois use caminhos relativos.</p>
+<p>As imagens do site ficam na pasta <code>Imagens</code>. No computador, a pasta usada é <code>D:\MesaDeTrabalho\Imagens</code>; no site publicado, os arquivos podem ser referenciados por caminhos como <code>/manualejud/Imagens/inserir.png</code>.</p>
 <h2 id="29-1-no-markdown">29.1. No Markdown</h2>
-<pre><code class="language-md">![Tela do botão Pegar](imagens/pegar.png)
+<pre><code class="language-md">![Ícone Inserir](/manualejud/Imagens/inserir.png)
 </code></pre>
 <h2 id="29-2-no-html">29.2. No HTML</h2>
-<pre><code class="language-html">&lt;img src="imagens/pegar.png" alt="Tela do botão Pegar" class="manual-img"&gt;
+<pre><code class="language-html">&lt;img src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir" class="manual-img pequena"&gt;
 </code></pre>
-<p>Para uma imagem menor:</p>
-<pre><code class="language-html">&lt;img src="imagens/pegar.png" alt="Botão Pegar" class="manual-img pequena"&gt;
+<p>Para ícones pequenos no meio do texto, o próprio HTML já possui a classe <code>ejud-icon</code>:</p>
+<pre><code class="language-html">&lt;img src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar" class="ejud-icon"&gt;
 </code></pre>
-<blockquote><p><strong>Recomendação:</strong> não coloque imagens em Base64 dentro do HTML. Isso aumenta muito o arquivo e piora o histórico de versões. A pasta <code>imagens/</code> é mais simples para substituir, organizar e versionar no GitHub.</p></blockquote>
+<blockquote><p><strong>Recomendação:</strong> continue salvando as imagens como arquivos separados na pasta <code>Imagens/</code>. Isso mantém o HTML leve e facilita o versionamento no GitHub.</p></blockquote>
 <div class="critical"><strong>ANTES DE PUBLICAR PRINTS:</strong> recorte ou oculte nomes de pessoas, números de processos, logins, dados de partes e qualquer informação que não deva ficar pública.</div>
 <hr />
 <h1 id="30-fontes-utilizadas">30. Fontes utilizadas</h1>
@@ -1359,7 +1374,8 @@ imagens/
 <li><strong>Anotações Mônica.pdf</strong> — 3 páginas.</li>
 <li><strong>Atribuição ao Rensor (1º PASSO).pdf</strong> — 14 páginas.</li>
 </ul>
-<p>Versão consolidada: <strong>1.7 — 01-09-26 às 14:00</strong>.</p>
+<p>Versão consolidada: <strong>1.8 — 01-09-26 às 14:13</strong>.</p>
+<p><strong>Alteração da versão 1.8:</strong> adicionadas referências visuais aos ícones <strong>Inserir</strong>, <strong>Salvar</strong> e <strong>Fechar</strong>; atualizada a rotina da <strong>Certidão de tempestividade</strong> com Certidão <code>50002</code>, Complemento 1 <code>9999</code> e Carimbo <code>7585</code> (“Certidão Embargos Tempestivos”); e detalhada a confirmação exibida ao salvar a intimação do MP, na qual deve ser clicado <strong>Sim</strong>, sem necessidade de assinatura ou carimbo.</p>
 <p><strong>Alteração da versão 1.7:</strong> o disclaimer existente foi convertido em modal exibido automaticamente ao abrir a página, sobrepondo o conteúdo até o usuário clicar em <strong>“Entendi”</strong>; o texto foi encurtado e o visual foi integrado ao tema claro/escuro do manual.</p>
 <p><strong>Alteração da versão 1.6:</strong> incluído aviso discreto no início da página esclarecendo que o manual é independente, não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro e tem caráter exclusivamente informativo, sem responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</p>
 <p><strong>Alteração da versão 1.5:</strong> corrigido o nome da pasta para <strong>“Aguardando Parecer do MP”</strong>; removidos nomes de magistrados da versão pública; o checklist inicial passou a iniciar recolhido; a navegação lateral foi reorganizada em seções principais expansíveis; foram destacados os códigos <strong>Defensoria Pública 50671</strong> e <strong>Motivo Ciência 50056</strong>; e foi incluído um guia para inserir imagens pelo repositório GitHub usando a pasta <code>imagens/</code>.</p>
