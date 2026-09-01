@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.10</div>
+    <div class="brand">eJUD · Manual interativo · v1.11</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.10 · 01-09-26 · 15:27</div>
+<div class="version-tag">Versão 1.11 · 01-09-26 · 18:43</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -856,30 +856,42 @@ Sim   Não
 <hr />
 <h1 id="18-pedido-de-informacao">18. Solicitação de Informações — ofício + Malote Digital</h1>
 <p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
-<h2 id="18-1-primeira-movimentacao-expedir-oficio">18.1. Primeira movimentação — expedir o ofício</h2>
+<h2 id="18-1-primeira-movimentacao-expedir-oficio">18.1. Primeira movimentação — expedir e preparar o ofício</h2>
 <ol>
 <li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma nova movimentação.</li>
 <li>Fase: <code>60</code> — <strong>Expedição de Documento</strong>.</li>
 <li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
-<li>Carimbo: <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve a movimentação.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Assine/finalize o ofício pela canetinha de assinatura/carimbo.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
+<li>Após salvar, clique em <strong>Carimbo</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
+<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.</li>
+<li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve novamente</strong> depois de selecionar o carimbo e fazer os ajustes no texto.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Clique em <strong>Assinar</strong>. Nesse momento, o eJUD solicitará o <strong>número do ofício</strong>.</li>
+<li>Para definir o número, vá ao <strong>Desktop</strong>, abra a pasta compartilhada pela <strong>Secretária Fernanda</strong> e confira o número do último ofício. Use o número seguinte para o novo ofício.</li>
+<li>Informe esse número no eJUD e conclua a assinatura.</li>
+<li>Depois, salve/exporte o <strong>ofício gerado no eJUD</strong> e salve também a <strong>decisão que solicita as informações</strong>.</li>
+<li>Nomeie os dois PDFs usando o número do ofício. Exemplo, se o ofício for nº 11:
+<ul>
+<li><code>11.pdf</code> — ofício;</li>
+<li><code>11.1.pdf</code> — decisão que solicita as informações.</li>
+</ul></li>
+<li>Salve os dois arquivos na pasta compartilhada do Desktop, usada para os ofícios, pois serão os anexos enviados pelo Malote Digital.</li>
 </ol>
-<div class="icon-note"><strong>Resumo:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → Carimbo <code>7582</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> salvar → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar.</div>
+<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → Carimbo <code>7582</code> → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar nº do ofício → salvar os PDFs do ofício e da decisão.</div>
 <h2 id="18-2-enviar-pelo-malote-digital">18.2. Antes da segunda movimentação — enviar pelo Malote Digital</h2>
 <ol>
 <li>Abra o <strong>Malote Digital</strong>.</li>
 <li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
 <li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
 <li>Clique em <strong>Avançar</strong>.</li>
-<li>Prioridade: <strong>Normal</strong> se não houver prazo. Se houver prazo (por exemplo, 48 horas ou outro prazo indicado), selecione <strong>Alta</strong>.</li>
+<li>Prioridade: <strong>Alta</strong>, pois a solicitação de informações possui prazo para resposta.</li>
 <li>Motivo do envio: <strong>Para manifestação</strong>.</li>
 <li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
-<li>Na pasta <code>Ofícios 2026 (CAP-09CCR-S02)</code>, localizada na Área de Trabalho do PC, selecione e anexe:
+<li>Na pasta compartilhada de ofícios do Desktop, selecione os dois arquivos preparados na etapa anterior:
 <ul>
-<li>o arquivo do <strong>ofício</strong>;</li>
-<li>a <strong>decisão que solicita as informações</strong>.</li>
+<li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>);</li>
+<li>a <strong>decisão</strong> (ex.: <code>11.1.pdf</code>).</li>
 </ul></li>
 <li>Clique em <strong>Adicionar documentos</strong>.</li>
 <li>Depois, clique em <strong>Enviar documentos</strong>.</li>
@@ -893,9 +905,14 @@ Sim   Não
 <li>Vá em <strong>TEXTO</strong> e cole o print do comprovante de envio.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Vá à canetinha do canto esquerdo e assine/finalize a movimentação.</li>
-<li>Por fim, encaminhe o processo para a pasta <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</li>
+<li>Encaminhe o processo para a pasta correspondente ao prazo:</li>
 </ol>
-<div class="critical"><strong>FLUXO COMPLETO:</strong> primeiro expedir e assinar o ofício → enviar ofício + decisão pelo Malote Digital → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</div>
+<ul>
+<li><strong>Fluxo comum:</strong> <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</li>
+<li><strong>Se for liminar:</strong> <strong>“Aguardando Decurso de Prazo - 5 Dias”</strong>.</li>
+</ul>
+<div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
+<div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1354,7 +1371,8 @@ Sim   Não
 </ol>
 <hr />
 <h1 id="30-atualizacoes-versoes">30. Atualizações / Versões</h1>
-<p>Versão consolidada: <strong>1.10 — 01-09-26 às 15:27</strong>.</p>
+<p>Versão consolidada: <strong>1.11 — 01-09-26 às 18:43</strong>.</p>
+<p><strong>Alteração da versão 1.11:</strong> corrigida a ordem da expedição do ofício de Solicitação de Informações: primeiro <code>Fase 60 / Tipo 50007</code> e salvar; somente depois aplicar o Carimbo <code>7582</code>, revisar/editar o texto, ajustar o prazo, salvar novamente e assinar. A assinatura passa a solicitar o número do ofício, que deve ser obtido conferindo o último número na pasta compartilhada da Secretaria no Desktop. Também foi incluída a rotina de salvar o ofício e a decisão em PDFs numerados (ex.: <code>11.pdf</code> e <code>11.1.pdf</code>) antes do Malote, e diferenciados os prazos finais: <strong>10 dias</strong> no fluxo comum e <strong>5 dias</strong> em caso de liminar, inclusive na pasta de encaminhamento. Como há prazo, o Malote dessa rotina utiliza prioridade <strong>Alta</strong>.</p>
 <p><strong>Alteração da versão 1.10:</strong> definida a regra de prioridade do Malote Digital — <strong>Normal</strong> quando não houver prazo e <strong>Alta</strong> quando houver prazo; removidas da versão pública as seções de pontos pendentes, instruções de imagens/GitHub e a identificação dos PDFs de origem; e incluído o início do procedimento de <strong>publicação de decisão</strong>, que exige autorização expressa da Secretaria e, até o ponto ensinado, segue por <strong>Publicação → Central de Publicações → Expedientes → Local 23429/17902 → Tipo 1 - Despacho</strong> (ou outro tipo necessário).</p>
 <p><strong>Alteração da versão 1.9:</strong> detalhado o fluxo completo de <strong>Solicitação de Informações</strong>, com expedição do ofício em <code>Fase 60 / Tipo 50007</code>, Carimbo <code>7582</code>, envio do ofício e da decisão pelo Malote Digital, juntada do comprovante em <code>Fase 60 / Tipo 66721</code>, assinatura pelo novo ícone <strong>assinar/carimbo</strong> e encaminhamento para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Também incluído alerta na intimação do MP: quando a intimação for adiantada e ainda houver publicação pendente, a intimação é realizada, mas o processo <strong>não deve ser encaminhado</strong> para “Aguardando Parecer do MP” naquele momento.</p>
 <p><strong>Alteração da versão 1.8:</strong> adicionadas referências visuais aos ícones <strong>Inserir</strong>, <strong>Salvar</strong> e <strong>Fechar</strong>; atualizada a rotina da <strong>Certidão de tempestividade</strong> com Certidão <code>50002</code>, Complemento 1 <code>9999</code> e Carimbo <code>7585</code> (“Certidão Embargos Tempestivos”); e detalhada a confirmação exibida ao salvar a intimação do MP, na qual deve ser clicado <strong>Sim</strong>, sem necessidade de assinatura ou carimbo.</p>
