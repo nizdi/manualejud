@@ -55,7 +55,13 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
-.disclaimer{margin:0 0 18px;padding:10px 12px;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:8px;background:color-mix(in srgb,var(--accent2) 45%,var(--panel));color:var(--muted);font-size:13px}
+.disclaimer-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.58);backdrop-filter:blur(4px)}
+.disclaimer-overlay.closed{display:none}
+.disclaimer-modal{width:min(560px,100%);background:var(--panel);color:var(--text);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:0 24px 70px rgba(15,23,42,.28)}
+.disclaimer-modal h2{margin:0 0 10px;font-size:1.15rem}
+.disclaimer-modal p{margin:0;color:var(--muted)}
+.disclaimer-modal-actions{display:flex;justify-content:flex-end;margin-top:18px}
+.disclaimer-modal-actions button{min-width:92px;background:var(--accent);color:var(--panel);border-color:var(--accent);font-weight:800}
 .rightbox h3{margin-top:0}
 #codeSearch{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
 .code-item{padding:8px 4px;border-bottom:1px solid var(--border);font-size:13px}
@@ -73,19 +79,29 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img.pequena{max-width:320px}
 @media(max-width:1100px){.layout{grid-template-columns:240px 1fr}.rightbox{display:none}}
 @media(max-width:760px){.layout{display:block;padding:10px}aside{display:none}main{padding:20px 17px}input[type=search]{min-width:160px}}
-@media print{header,aside,.rightbox,.no-print{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}main{border:0;box-shadow:none;padding:0}}
+@media print{header,aside,.rightbox,.no-print,.disclaimer-overlay{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}main{border:0;box-shadow:none;padding:0}}
 </style>
 </head>
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.6</div>
+    <div class="brand">eJUD · Manual interativo · v1.7</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
     <button onclick="window.print()">Imprimir</button>
   </div>
 </header>
+
+<div class="disclaimer-overlay" id="disclaimerModal" role="dialog" aria-modal="true" aria-labelledby="disclaimerTitle">
+  <div class="disclaimer-modal">
+    <h2 id="disclaimerTitle">Aviso importante</h2>
+    <p>Este manual é independente e não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro. O conteúdo é apenas informativo e não há responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</p>
+    <div class="disclaimer-modal-actions">
+      <button id="closeDisclaimer" type="button">Entendi</button>
+    </div>
+  </div>
+</div>
 
 <div class="layout">
   <aside>
@@ -95,8 +111,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.6 · 01-09-26 · 13:46</div>
-<div class="disclaimer"><strong>Aviso:</strong> Este manual é independente e não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro. O conteúdo tem caráter exclusivamente informativo, não havendo responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</div>
+<div class="version-tag">Versão 1.7 · 01-09-26 · 14:00</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -1344,7 +1359,8 @@ imagens/
 <li><strong>Anotações Mônica.pdf</strong> — 3 páginas.</li>
 <li><strong>Atribuição ao Rensor (1º PASSO).pdf</strong> — 14 páginas.</li>
 </ul>
-<p>Versão consolidada: <strong>1.6 — 01-09-26 às 13:46</strong>.</p>
+<p>Versão consolidada: <strong>1.7 — 01-09-26 às 14:00</strong>.</p>
+<p><strong>Alteração da versão 1.7:</strong> o disclaimer existente foi convertido em modal exibido automaticamente ao abrir a página, sobrepondo o conteúdo até o usuário clicar em <strong>“Entendi”</strong>; o texto foi encurtado e o visual foi integrado ao tema claro/escuro do manual.</p>
 <p><strong>Alteração da versão 1.6:</strong> incluído aviso discreto no início da página esclarecendo que o manual é independente, não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro e tem caráter exclusivamente informativo, sem responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</p>
 <p><strong>Alteração da versão 1.5:</strong> corrigido o nome da pasta para <strong>“Aguardando Parecer do MP”</strong>; removidos nomes de magistrados da versão pública; o checklist inicial passou a iniciar recolhido; a navegação lateral foi reorganizada em seções principais expansíveis; foram destacados os códigos <strong>Defensoria Pública 50671</strong> e <strong>Motivo Ciência 50056</strong>; e foi incluído um guia para inserir imagens pelo repositório GitHub usando a pasta <code>imagens/</code>.</p>
 <p><strong>Alteração da versão 1.4:</strong> detalhada a diferença entre <strong>Pegar</strong> e <strong>Atribuir</strong>: o Pegar leva automaticamente um ou vários processos para a própria mesa, sem necessidade de selecionar o usuário; o Atribuir permite escolher o destinatário, inclusive terceiros ou o próprio usuário, e registrar um <strong>Motivo</strong>. Incluídas também as formas de seleção múltipla com <strong>Shift</strong> e <strong>Ctrl</strong>.</p>
@@ -1367,6 +1383,13 @@ imagens/
 </div>
 
 <script>
+const disclaimerModal = document.getElementById('disclaimerModal');
+const closeDisclaimer = document.getElementById('closeDisclaimer');
+closeDisclaimer.addEventListener('click',()=>{
+  disclaimerModal.classList.add('closed');
+});
+closeDisclaimer.focus();
+
 const codeData = [
 ["8","Fase de intimação"],["51","Fase de conclusão"],["60","Expedientes/comprovantes"],
 ["123","Fase usada em recursos"],["498","Local em publicação/remessa — confirmar"],
