@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.15</div>
+    <div class="brand">eJUD · Manual interativo · v1.16</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.15 · 02-09-26 · 17:43</div>
+<div class="version-tag">Versão 1.16 · 02-09-26 · 17:43</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -920,6 +920,15 @@ Sim   Não
 </ul>
 <div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
 <div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
+<h2 id="18-4-registrar-oficio-no-controle">18.4. Registrar o ofício no controle</h2>
+<p>Após o envio do ofício, é necessário registrar o expediente na planilha de controle da Secretaria:</p>
+<ol>
+<li>Abra a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>.</li>
+<li>Abra o arquivo Excel <strong>Controle de Ofícios Expedidos.xlsx</strong>.</li>
+<li>Preencha os dados referentes ao <strong>ofício que acabou de ser enviado</strong>, de acordo com as colunas existentes na planilha.</li>
+<li>Salve a planilha após o preenchimento.</li>
+</ol>
+<div class="icon-note"><strong>Não esquecer:</strong> o envio do ofício não encerra a rotina. Depois do Malote, registre também o ofício em <code>Controle de Ofícios Expedidos.xlsx</code>.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1366,7 +1375,8 @@ Sim   Não
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.15 — 02-09-26 às 17:43</strong>.</p>
+<p>Versão consolidada: <strong>1.16 — 02-09-26 às 17:43</strong>.</p>
+<p><strong>Alteração da versão 1.16:</strong> adicionada a seção <strong>18.4. Registrar o ofício no controle</strong>: após o envio do ofício, deve-se abrir a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>, abrir a planilha <strong>Controle de Ofícios Expedidos.xlsx</strong>, preencher os dados do ofício enviado conforme as colunas existentes e salvar a planilha.</p>
 <p><strong>Alteração da versão 1.15:</strong> ajustada a rotina de expedição do ofício para deixar claro que, após o primeiro salvamento de <code>Fase 60 / Tipo 50007</code>, é necessário <strong>dar duplo clique no novo movimento criado</strong> antes de acessar o Carimbo <code>7582</code>. Também foi movida para o momento da assinatura a orientação de informar o ofício no formato <strong>número/ano</strong> (ex.: <code>11/2026</code>), pois é nessa etapa que o eJUD solicita esse dado.</p>
 <p><strong>Alteração da versão 1.14:</strong> adicionada, junto ao tópico de Malote Digital, a rotina para juntar ao processo um <strong>PDF externo com informações requisitadas</strong>: salvar o arquivo com a parte inicial do número do processo (ex.: <code>0055766-23.pdf</code>) em <code>C:\EJUD</code>, importar por <strong>Processo Eletrônico → Digitalização de documentos</strong> como <strong>ACERVO</strong>, preencher a descrição quando cabível, manter o tick de <strong>Data/Hora</strong>, salvar, assinar e carimbar. Também foram incluídos os ícones <strong>importar.png</strong> e <strong>assinar.png</strong> nesse fluxo.</p>
 <p><strong>Alteração da versão 1.13:</strong> removida a seção geral de regras práticas; o alerta sobre a pasta <strong>PUBLICADOS</strong> foi transferido para a seção <strong>13. Publicação</strong>, onde fica contextualizado com as rotinas de publicação e intimação; e o histórico de versões foi renumerado para <strong>27. Atualizações / Versões</strong> e passou a iniciar recolhido.</p>
