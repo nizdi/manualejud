@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.12</div>
+    <div class="brand">eJUD · Manual interativo · v1.13</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.12 · 02-09-26 · 14:46</div>
+<div class="version-tag">Versão 1.13 · 02-09-26 · 16:19</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -710,6 +710,7 @@ Sim   Não
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>ATENÇÃO:</strong> a publicação de decisão deve ser feita somente com <strong>autorização expressa da Secretaria</strong>.</div>
+<div class="critical"><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</div>
 <h2 id="13-1-como-iniciar-a-publicacao-de-uma-decisao">13.1. Como iniciar a publicação de uma decisão</h2>
 <p>Até o momento, foi ensinado o seguinte início do procedimento:</p>
 <pre><code class="language-text">Abrir o eJUD
@@ -1361,24 +1362,12 @@ Sim   Não
 <li class="task"><input type="checkbox" class="persist-check"> Não foi criada movimentação duplicada.</li>
 </ul>
 <hr />
-<h1 id="27-regras-praticas-extraidas-das-anotacoes">27. Regras práticas extraídas das anotações</h1>
-<ol>
-<li><strong>Não decorar código sem conferir a descrição.</strong> Use F2.</li>
-<li><strong>Sempre olhar o processo antes de movimentar.</strong></li>
-<li><strong>Verificar réu preso logo no início.</strong></li>
-<li><strong>Prevenção/impedimento/suspeição devem ser conferidos antes da atribuição.</strong></li>
-<li><strong>Petição pendente deve ser tratada antes de mandar processo adiante.</strong></li>
-<li><strong>Após salvar, abra e confira a movimentação.</strong></li>
-<li><strong>Documento que exige carimbo/assinatura não termina no primeiro “Salvar”.</strong></li>
-<li><strong>Encaminhar é parte do fluxo; salvar sozinho não necessariamente coloca o processo na pasta correta.</strong></li>
-<li><strong>Publicação exige revisão de segredo de justiça e dados da vítima.</strong></li>
-<li><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</li>
-<li><strong>Em dúvida entre código e descrição, prevalece a descrição pesquisada no sistema.</strong></li>
-<li><strong>Não se basear em lista antiga de desembargadores.</strong> Para confirmar a composição atual da Câmara/Grupo, use <strong>Consulta → Composição</strong> e marque <strong>“Incluir magistrados que constam do mapa”</strong>.</li>
-</ol>
-<hr />
-<h1 id="30-atualizacoes-versoes">30. Atualizações / Versões</h1>
-<p>Versão consolidada: <strong>1.12 — 02-09-26 às 14:46</strong>.</p>
+<h1 id="27-atualizacoes-versoes">27. Atualizações / Versões</h1>
+<details class="collapse-block" id="historico-versoes">
+<summary>Histórico de versões</summary>
+<div class="collapse-content">
+<p>Versão consolidada: <strong>1.13 — 02-09-26 às 16:19</strong>.</p>
+<p><strong>Alteração da versão 1.13:</strong> removida a seção geral de regras práticas; o alerta sobre a pasta <strong>PUBLICADOS</strong> foi transferido para a seção <strong>13. Publicação</strong>, onde fica contextualizado com as rotinas de publicação e intimação; e o histórico de versões foi renumerado para <strong>28. Atualizações / Versões</strong> e passou a iniciar recolhido.</p>
 <p><strong>Alteração da versão 1.12:</strong> detalhada a juntada de petições, esclarecendo que a confirmação do subtipo por duplo clique, Enter ou ✓ verde apenas seleciona o subtipo e que a juntada só é efetivada após clicar em <strong>JUNTAR</strong> na janela seguinte; adicionada a orientação de preferir subtipos específicos, como <strong>Parecer (50083)</strong> para parecer do MP; corrigida a conclusão ao relator para remover <strong>Encaminhar</strong>, pois a conclusão sobe automaticamente ao gabinete após salvar/assinar; incluído alerta para <strong>não mover processos da pasta PUBLICADOS antes das intimações da Secretaria</strong>; e ajustada a nomenclatura dos ofícios: o ano deve aparecer no próprio documento (ex.: <strong>Ofício nº 11-2026</strong>), mas os PDFs continuam como <code>11.pdf</code> e <code>11.1.pdf</code>, pois já ficam na pasta do ano.</p>
 <p><strong>Alteração da versão 1.11:</strong> corrigida a ordem da expedição do ofício de Solicitação de Informações: primeiro <code>Fase 60 / Tipo 50007</code> e salvar; somente depois aplicar o Carimbo <code>7582</code>, revisar/editar o texto, ajustar o prazo, salvar novamente e assinar. A assinatura passa a solicitar o número do ofício, que deve ser obtido conferindo o último número na pasta compartilhada da Secretaria no Desktop. Também foi incluída a rotina de salvar o ofício e a decisão em PDFs numerados (ex.: <code>11.pdf</code> e <code>11.1.pdf</code>) antes do Malote, e diferenciados os prazos finais: <strong>10 dias</strong> no fluxo comum e <strong>5 dias</strong> em caso de liminar, inclusive na pasta de encaminhamento. Como há prazo, o Malote dessa rotina utiliza prioridade <strong>Alta</strong>.</p>
 <p><strong>Alteração da versão 1.10:</strong> definida a regra de prioridade do Malote Digital — <strong>Normal</strong> quando não houver prazo e <strong>Alta</strong> quando houver prazo; removidas da versão pública as seções de pontos pendentes, instruções de imagens/GitHub e a identificação dos PDFs de origem; e incluído o início do procedimento de <strong>publicação de decisão</strong>, que exige autorização expressa da Secretaria e, até o ponto ensinado, segue por <strong>Publicação → Central de Publicações → Expedientes → Local 23429/17902 → Tipo 1 - Despacho</strong> (ou outro tipo necessário).</p>
@@ -1391,6 +1380,8 @@ Sim   Não
 <p><strong>Alteração da versão 1.3:</strong> adicionada, apenas como referência histórica de consulta, a composição exibida pelo eJUD para a <strong>9ª Câmara Criminal</strong> em <strong>31/08/2026 às 17:29</strong>, com alerta expresso de que essa composição pode ficar defasada a qualquer momento e deve ser sempre reconferida no sistema.</p>
 <p><strong>Alteração da versão 1.2:</strong> adicionada a rotina de <strong>Consulta → Composição</strong> para verificar a composição atual da Câmara/Grupo, com destaque para <strong>“Incluir magistrados que constam do mapa”</strong>; incorporadas também as novas anotações sobre juntada em vermelho, seleção de subtipo via F2, juntada seguida de conclusão e conferência de providência prévia à publicação.</p>
 <p><strong>Alteração da versão 1.1:</strong> incluída a regra operacional de que conclusões da 9ª Câmara Criminal e do 5º Grupo de Câmaras Criminais somente podem ser abertas até as 17h.</p>
+</div>
+</details>
 
   </main>
 
