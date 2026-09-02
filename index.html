@@ -87,7 +87,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.11</div>
+    <div class="brand">eJUD · Manual interativo · v1.12</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.11 · 01-09-26 · 18:43</div>
+<div class="version-tag">Versão 1.12 · 02-09-26 · 14:46</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -469,11 +469,16 @@ Sim   Não
 → Juntar
 → selecionar subtipo, se solicitado
 → F2 para pesquisar
-→ confirmar
+→ confirmar o subtipo (duplo clique, Enter ou ✓ verde)
+→ na nova janela, clicar efetivamente em JUNTAR
 → visualizar a peça juntada
 </code></pre>
 <p>Nas novas anotações, o comando <strong>Juntar</strong> aparece destacado <strong>em vermelho</strong> quando há peça pendente. Ao abrir a juntada, pode ser necessário selecionar o <strong>subtipo</strong>; nesse caso, use <strong>F2</strong> e pesquise pela descrição, em vez de decorar o código.</p>
-<h2 id="8-2-juntada-usando-numero-do-processo-de-origem">8.2. Juntada usando número do processo de origem</h2>
+<div class="icon-note"><strong>Importante:</strong> confirmar o subtipo <strong>não realiza a juntada</strong>. A confirmação do subtipo pode ser feita com <strong>duplo clique</strong>, <strong>Enter</strong> ou pelo <strong>✓ verde</strong>. Depois disso, o eJUD abre uma nova janela e nela é necessário clicar no botão <strong>JUNTAR</strong> para efetivar a juntada.</div>
+<h2 id="8-2-escolha-do-subtipo">8.2. Escolha do subtipo da petição</h2>
+<p>Quando o eJUD permitir identificar o tipo da peça, <strong>prefira selecionar o subtipo correspondente</strong>, em vez de deixar uma classificação genérica. Isso ajuda a se acostumar com os códigos e deixa a juntada mais organizada.</p>
+<p>Exemplo: se a peça juntada for um <strong>Parecer do Ministério Público</strong>, selecione o subtipo <strong>Parecer</strong> — código <code>50083</code>.</p>
+<h2 id="8-3-juntada-usando-numero-do-processo-de-origem">8.3. Juntada usando número do processo de origem</h2>
 <p>Fluxo anotado em HC:</p>
 <pre><code class="language-text">Abrir o processo
 → localizar o nº de origem
@@ -484,7 +489,7 @@ Sim   Não
 → sistema localiza a petição pendente
 → Juntar
 </code></pre>
-<h2 id="8-3-codigos-de-pecas-anotados">8.3. Códigos de peças anotados</h2>
+<h2 id="8-4-codigos-de-pecas-anotados">8.4. Códigos de peças anotados</h2>
 <blockquote>
 <p>Use como atalho, mas <strong>confirme por F2</strong>.</p>
 </blockquote>
@@ -530,7 +535,7 @@ Sim   Não
 </tr>
 </tbody>
 </table>
-<h2 id="8-4-juntada-seguida-de-conclusao">8.4. Juntada seguida de conclusão</h2>
+<h2 id="8-5-juntada-seguida-de-conclusao">8.5. Juntada seguida de conclusão</h2>
 <p>As novas anotações confirmam um fluxo recorrente: quando a petição já foi juntada e o processo deve seguir imediatamente para conclusão, faça a conclusão <strong>somente depois de conferir que a juntada aparece corretamente no processo</strong>.</p>
 <pre><code class="language-text">Juntar a petição
 → visualizar/conferir a peça juntada
@@ -561,8 +566,8 @@ Sim   Não
 → abrir com duplo clique, se necessário
 → Carimbo
 → salvar/assinar
-→ Encaminhar
 </code></pre>
+<div class="icon-note"><strong>Não é necessário encaminhar:</strong> ao salvar/assinar a movimentação de conclusão, o processo <strong>já sobe automaticamente para o gabinete</strong>. Não use <strong>Encaminhar</strong> depois da conclusão.</div>
 <table>
 <thead>
 <tr>
@@ -601,7 +606,7 @@ Sim   Não
 <li class="task"><input type="checkbox" class="persist-check"> Motivo 50042 conferido.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Salvou.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Assinou/finalizou quando necessário.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Encaminhou para a pasta correta.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Confirmou que a conclusão subiu automaticamente para o gabinete, sem usar Encaminhar.</li>
 </ul>
 <hr />
 <h1 id="10-atribuicao-ao-revisor">10. Atribuição ao revisor</h1>
@@ -871,7 +876,8 @@ Sim   Não
 <li>Para definir o número, vá ao <strong>Desktop</strong>, abra a pasta compartilhada pela <strong>Secretária Fernanda</strong> e confira o número do último ofício. Use o número seguinte para o novo ofício.</li>
 <li>Informe esse número no eJUD e conclua a assinatura.</li>
 <li>Depois, salve/exporte o <strong>ofício gerado no eJUD</strong> e salve também a <strong>decisão que solicita as informações</strong>.</li>
-<li>Nomeie os dois PDFs usando o número do ofício. Exemplo, se o ofício for nº 11:
+<li>No <strong>texto do próprio ofício</strong>, mencione o ano junto ao número, por exemplo: <strong>Ofício nº 11-2026</strong>.</li>
+<li>Para os <strong>nomes dos arquivos PDF</strong>, não precisa acrescentar <code>-2026</code>, porque eles já ficam dentro da pasta do ano de 2026. Exemplo, se o ofício for nº 11:
 <ul>
 <li><code>11.pdf</code> — ofício;</li>
 <li><code>11.1.pdf</code> — decisão que solicita as informações.</li>
@@ -890,7 +896,7 @@ Sim   Não
 <li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
 <li>Na pasta compartilhada de ofícios do Desktop, selecione os dois arquivos preparados na etapa anterior:
 <ul>
-<li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>);</li>
+<li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>; dentro do documento, <strong>Ofício nº 11-2026</strong>);</li>
 <li>a <strong>decisão</strong> (ex.: <code>11.1.pdf</code>).</li>
 </ul></li>
 <li>Clique em <strong>Adicionar documentos</strong>.</li>
@@ -1366,12 +1372,14 @@ Sim   Não
 <li><strong>Documento que exige carimbo/assinatura não termina no primeiro “Salvar”.</strong></li>
 <li><strong>Encaminhar é parte do fluxo; salvar sozinho não necessariamente coloca o processo na pasta correta.</strong></li>
 <li><strong>Publicação exige revisão de segredo de justiça e dados da vítima.</strong></li>
+<li><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</li>
 <li><strong>Em dúvida entre código e descrição, prevalece a descrição pesquisada no sistema.</strong></li>
 <li><strong>Não se basear em lista antiga de desembargadores.</strong> Para confirmar a composição atual da Câmara/Grupo, use <strong>Consulta → Composição</strong> e marque <strong>“Incluir magistrados que constam do mapa”</strong>.</li>
 </ol>
 <hr />
 <h1 id="30-atualizacoes-versoes">30. Atualizações / Versões</h1>
-<p>Versão consolidada: <strong>1.11 — 01-09-26 às 18:43</strong>.</p>
+<p>Versão consolidada: <strong>1.12 — 02-09-26 às 14:46</strong>.</p>
+<p><strong>Alteração da versão 1.12:</strong> detalhada a juntada de petições, esclarecendo que a confirmação do subtipo por duplo clique, Enter ou ✓ verde apenas seleciona o subtipo e que a juntada só é efetivada após clicar em <strong>JUNTAR</strong> na janela seguinte; adicionada a orientação de preferir subtipos específicos, como <strong>Parecer (50083)</strong> para parecer do MP; corrigida a conclusão ao relator para remover <strong>Encaminhar</strong>, pois a conclusão sobe automaticamente ao gabinete após salvar/assinar; incluído alerta para <strong>não mover processos da pasta PUBLICADOS antes das intimações da Secretaria</strong>; e ajustada a nomenclatura dos ofícios: o ano deve aparecer no próprio documento (ex.: <strong>Ofício nº 11-2026</strong>), mas os PDFs continuam como <code>11.pdf</code> e <code>11.1.pdf</code>, pois já ficam na pasta do ano.</p>
 <p><strong>Alteração da versão 1.11:</strong> corrigida a ordem da expedição do ofício de Solicitação de Informações: primeiro <code>Fase 60 / Tipo 50007</code> e salvar; somente depois aplicar o Carimbo <code>7582</code>, revisar/editar o texto, ajustar o prazo, salvar novamente e assinar. A assinatura passa a solicitar o número do ofício, que deve ser obtido conferindo o último número na pasta compartilhada da Secretaria no Desktop. Também foi incluída a rotina de salvar o ofício e a decisão em PDFs numerados (ex.: <code>11.pdf</code> e <code>11.1.pdf</code>) antes do Malote, e diferenciados os prazos finais: <strong>10 dias</strong> no fluxo comum e <strong>5 dias</strong> em caso de liminar, inclusive na pasta de encaminhamento. Como há prazo, o Malote dessa rotina utiliza prioridade <strong>Alta</strong>.</p>
 <p><strong>Alteração da versão 1.10:</strong> definida a regra de prioridade do Malote Digital — <strong>Normal</strong> quando não houver prazo e <strong>Alta</strong> quando houver prazo; removidas da versão pública as seções de pontos pendentes, instruções de imagens/GitHub e a identificação dos PDFs de origem; e incluído o início do procedimento de <strong>publicação de decisão</strong>, que exige autorização expressa da Secretaria e, até o ponto ensinado, segue por <strong>Publicação → Central de Publicações → Expedientes → Local 23429/17902 → Tipo 1 - Despacho</strong> (ou outro tipo necessário).</p>
 <p><strong>Alteração da versão 1.9:</strong> detalhado o fluxo completo de <strong>Solicitação de Informações</strong>, com expedição do ofício em <code>Fase 60 / Tipo 50007</code>, Carimbo <code>7582</code>, envio do ofício e da decisão pelo Malote Digital, juntada do comprovante em <code>Fase 60 / Tipo 66721</code>, assinatura pelo novo ícone <strong>assinar/carimbo</strong> e encaminhamento para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Também incluído alerta na intimação do MP: quando a intimação for adiantada e ainda houver publicação pendente, a intimação é realizada, mas o processo <strong>não deve ser encaminhado</strong> para “Aguardando Parecer do MP” naquele momento.</p>
