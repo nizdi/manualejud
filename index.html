@@ -79,6 +79,10 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img.pequena{max-width:320px}
 .ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
 .icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
+.video-note{padding:12px 14px;border:2px solid var(--accent);border-radius:10px;background:var(--accent2);margin:14px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.video-note strong{font-weight:900}
+.video-link{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff!important;text-decoration:none!important;font-weight:800}
+.video-link:hover{text-decoration:none!important;filter:brightness(1.05)}
 @media(max-width:1100px){.layout{grid-template-columns:240px 1fr}.rightbox{display:none}}
 @media(max-width:760px){.layout{display:block;padding:10px}aside{display:none}main{padding:20px 17px}input[type=search]{min-width:160px}}
 @media print{header,aside,.rightbox,.no-print,.disclaimer-overlay{display:none!important}body{background:#fff;color:#000}.layout{display:block;padding:0}main{border:0;box-shadow:none;padding:0}}
@@ -87,7 +91,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.16</div>
+    <div class="brand">eJUD · Manual interativo · v1.17</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -113,7 +117,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.16 · 02-09-26 · 17:43</div>
+<div class="version-tag">Versão 1.17 · 03-09-26 · 14:39</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -344,6 +348,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 </blockquote>
 <hr />
 <h1 id="6-intimacao-do-ministerio-publico-para-parecer">6. Intimação do Ministério Público para parecer</h1>
+<div class="video-note"><strong>🎥 VÍDEO — Intimação do MP para parecer</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Intima%C3%A7%C3%A3o%20do%20MP%20para%20parecer%20.mp4?d=wb197644a162f4d91805ee92a16b13853&amp;csf=1&amp;web=1&amp;e=nkBcLF&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <p>Este é o fluxo mais consistente entre as anotações.</p>
 <h2 id="passo-a-passo">Passo a passo</h2>
 <pre><code class="language-text">1. Pegar/selecionar o processo.
@@ -458,6 +463,7 @@ Sim   Não
 </blockquote>
 <hr />
 <h1 id="8-juntada-de-peticao">8. Juntada de petição</h1>
+<div class="video-note"><strong>🎥 VÍDEO — Juntada de petição ou parecer e envio à conclusão</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Juntada%20de%20peti%C3%A7%C3%A3o%20ou%20parecer%20e%20envio%20%C3%A0%20conclus%C3%A3o.mp4?d=w0ecfc8a75f264b4eb26b02a6152e1baf&amp;csf=1&amp;web=1&amp;e=d6Hf9J&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <p>As anotações mostram duas formas de perceber uma petição pendente:</p>
 <ol>
 <li>aviso/peça pendente no processo;</li>
@@ -736,6 +742,7 @@ Sim   Não
 <h1 id="14-malote-digital">14. Malote Digital</h1>
 <div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote.</div>
 <h2 id="14-1-juntar-informacoes-requisitadas-pdf-externo">14.1. Como juntar informações requisitadas no processo (PDF externo)</h2>
+<div class="video-note"><strong>🎥 VÍDEO — Juntar informações nos autos</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Juntar%20informa%C3%A7%C3%B5es%20nos%20autos%20.mp4?d=wad90db692dd74c27a7a8b43188f1cedb&amp;csf=1&amp;web=1&amp;e=jMq4Hb&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <p>Quando as informações requisitadas chegarem pelo Malote e precisarem ser juntadas ao processo no eJUD:</p>
 <ol>
 <li>Acesse o <strong>Malote Digital</strong> e abra o PDF recebido.</li>
@@ -869,7 +876,7 @@ Sim   Não
 <li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
 <li>Após salvar, <strong>clique duas vezes no novo movimento criado</strong> para reabri-lo. Só depois disso será possível acessar o <strong>Carimbo</strong>.</li>
-<li>Clique em <strong>Carimbo</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
+<li>Clique em <strong>Carimbo Livre</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
 <li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.</li>
 <li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve novamente</strong> depois de selecionar o carimbo e fazer os ajustes no texto.</li>
@@ -1375,7 +1382,8 @@ Sim   Não
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.16 — 02-09-26 às 17:43</strong>.</p>
+<p>Versão consolidada: <strong>1.17 — 03-09-26 às 14:39</strong>.</p>
+<p><strong>Alteração da versão 1.17:</strong> adicionados links visíveis para três vídeos de apoio do processamento: <strong>Intimação do MP para parecer</strong>, <strong>Juntada de petição ou parecer e envio à conclusão</strong> e <strong>Juntar informações nos autos</strong>. Os links foram inseridos diretamente nas seções correspondentes e destacados com botão <strong>“Abrir vídeo”</strong> para facilitar a localização.</p>
 <p><strong>Alteração da versão 1.16:</strong> adicionada a seção <strong>18.4. Registrar o ofício no controle</strong>: após o envio do ofício, deve-se abrir a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>, abrir a planilha <strong>Controle de Ofícios Expedidos.xlsx</strong>, preencher os dados do ofício enviado conforme as colunas existentes e salvar a planilha.</p>
 <p><strong>Alteração da versão 1.15:</strong> ajustada a rotina de expedição do ofício para deixar claro que, após o primeiro salvamento de <code>Fase 60 / Tipo 50007</code>, é necessário <strong>dar duplo clique no novo movimento criado</strong> antes de acessar o Carimbo <code>7582</code>. Também foi movida para o momento da assinatura a orientação de informar o ofício no formato <strong>número/ano</strong> (ex.: <code>11/2026</code>), pois é nessa etapa que o eJUD solicita esse dado.</p>
 <p><strong>Alteração da versão 1.14:</strong> adicionada, junto ao tópico de Malote Digital, a rotina para juntar ao processo um <strong>PDF externo com informações requisitadas</strong>: salvar o arquivo com a parte inicial do número do processo (ex.: <code>0055766-23.pdf</code>) em <code>C:\EJUD</code>, importar por <strong>Processo Eletrônico → Digitalização de documentos</strong> como <strong>ACERVO</strong>, preencher a descrição quando cabível, manter o tick de <strong>Data/Hora</strong>, salvar, assinar e carimbar. Também foram incluídos os ícones <strong>importar.png</strong> e <strong>assinar.png</strong> nesse fluxo.</p>
