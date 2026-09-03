@@ -91,7 +91,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.17</div>
+    <div class="brand">eJUD · Manual interativo · v1.18</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -117,7 +117,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.17 · 03-09-26 · 14:39</div>
+<div class="version-tag">Versão 1.18 · 03-09-26 · 15:17</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -716,6 +716,7 @@ Sim   Não
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>ATENÇÃO:</strong> a publicação de decisão deve ser feita somente com <strong>autorização expressa da Secretaria</strong>.</div>
+<div class="critical"><strong>DESPACHOS QUE EXIGEM PUBLICAÇÃO:</strong> quando houver despacho que dependa de publicação/intimação às partes — por exemplo, despacho determinando <strong>manifestação do réu</strong> — a publicação é feita pelo <strong>próprio servidor</strong>, e não pela Secretaria. <strong>Não aguarde a Secretaria para realizar essa publicação.</strong> A intimação do Ministério Público para parecer não entra nessa regra e segue o fluxo próprio do tópico 6.</div>
 <div class="critical"><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</div>
 <h2 id="13-1-como-iniciar-a-publicacao-de-uma-decisao">13.1. Como iniciar a publicação de uma decisão</h2>
 <p>Até o momento, foi ensinado o seguinte início do procedimento:</p>
@@ -734,35 +735,83 @@ Sim   Não
 <li class="task"><input type="checkbox" class="persist-check"> Conferir nome da vítima/ofendido.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferir relator/revisor.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferir texto do despacho/decisão.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Se o despacho exigir publicação/intimação às partes, realizar a publicação pelo próprio servidor; não aguardar a Secretaria.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Verificar se há determinação de expedir ofício ou cumprir outra providência antes da publicação; uma das novas anotações registra um caso com ofício prévio.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferir se o processo ainda está em pauta, quando aplicável.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Conferir se não existe diligência pendente.</li>
 </ul>
 <hr />
-<h1 id="14-malote-digital">14. Malote Digital</h1>
-<div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote.</div>
-<h2 id="14-1-juntar-informacoes-requisitadas-pdf-externo">14.1. Como juntar informações requisitadas no processo (PDF externo)</h2>
-<div class="video-note"><strong>🎥 VÍDEO — Juntar informações nos autos</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Juntar%20informa%C3%A7%C3%B5es%20nos%20autos%20.mp4?d=wad90db692dd74c27a7a8b43188f1cedb&amp;csf=1&amp;web=1&amp;e=jMq4Hb&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
-<p>Quando as informações requisitadas chegarem pelo Malote e precisarem ser juntadas ao processo no eJUD:</p>
+<h1 id="14-pedido-de-informacao">14. Solicitação de Informações — expedição de ofício e envio pelo Malote Digital</h1>
+<p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
+<div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote. Nesta rotina de solicitação de informações, como há prazo para resposta, a prioridade é <strong>Alta</strong>.</div>
+<h2 id="14-1-primeira-movimentacao-expedir-oficio">14.1. Primeira movimentação — expedir e preparar o ofício</h2>
 <ol>
-<li>Acesse o <strong>Malote Digital</strong> e abra o PDF recebido.</li>
-<li>Use <strong>Salvar como PDF</strong> ou <strong>Imprimir como PDF</strong>.</li>
-<li>Salve o arquivo usando apenas o número inicial do processo até o dígito, sem o ano nem o restante da numeração. Exemplo: <code>0055766-23.pdf</code>.</li>
-<li>Salve o PDF no diretório <code>C:\EJUD</code>. <strong>É nesse diretório que o eJUD reconhece os arquivos que serão importados para juntada.</strong></li>
-<li>Abra o processo pela <strong>Movimentação Unitária</strong> do eJUD.</li>
-<li>No menu superior, acesse <strong>Processo Eletrônico → Digitalização de documentos</strong>.</li>
-<li>Em <strong>Tipo de documento</strong>, selecione <strong>ACERVO</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Clique em <strong>Importar</strong>. O eJUD deverá localizar o arquivo salvo em <code>C:\EJUD</code>.</li>
-<li>Na <strong>Descrição</strong>, quando for adequado ao documento, informe <strong>“Informações”</strong>.</li>
-<li>Mantenha marcado o <strong>tick ao lado de Data/Hora</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Clique em <strong>Salvar</strong>.</li>
-<li>Confira novamente o <strong>tick de Data/Hora</strong>; se o eJUD tiver desmarcado, marque outra vez.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Clique em <strong>Assinar</strong>. Após a assinatura, o indicador fica <strong>verde</strong>.</li>
-<li>Confira mais uma vez o <strong>tick de Data/Hora</strong>; se tiver sido desmarcado, marque novamente.</li>
-<li>Por fim, <strong>carimbe</strong> o documento. Concluída essa etapa, o PDF já fica juntado ao processo.</li>
+<li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma nova movimentação.</li>
+<li>Fase: <code>60</code> — <strong>Expedição de Documento</strong>.</li>
+<li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
+<li>Após salvar, <strong>clique duas vezes no novo movimento criado</strong> para reabri-lo. Só depois disso será possível acessar o <strong>Carimbo</strong>.</li>
+<li>Clique em <strong>Carimbo Livre</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
+<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.</li>
+<li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve novamente</strong> depois de selecionar o carimbo e fazer os ajustes no texto.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Clique em <strong>Assinar</strong>. Nesse momento, o eJUD solicitará o <strong>número do ofício</strong>.</li>
+<li>Para definir o número, vá ao <strong>Desktop</strong>, abra a pasta compartilhada pela <strong>Secretária Fernanda</strong> e confira o número do último ofício. Use o número seguinte para o novo ofício.</li>
+<li>Quando o eJUD pedir o número do ofício, informe <strong>número/ano</strong>, por exemplo: <code>11/2026</code>. O ano entra <strong>neste momento</strong>, no próprio ofício.</li>
+<li>Conclua a assinatura.</li>
+<li>Depois, salve/exporte o <strong>ofício gerado no eJUD</strong> e salve também a <strong>decisão que solicita as informações</strong>.</li>
+<li>Para os <strong>nomes dos arquivos PDF</strong>, não precisa acrescentar <code>-2026</code>, porque eles já ficam dentro da pasta do ano de 2026. Exemplo, se o ofício for nº 11:
+<ul>
+<li><code>11.pdf</code> — ofício;</li>
+<li><code>11.1.pdf</code> — decisão que solicita as informações.</li>
+</ul></li>
+<li>Salve os dois arquivos na pasta compartilhada do Desktop, usada para os ofícios, pois serão os anexos enviados pelo Malote Digital.</li>
 </ol>
-<div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
-<div class="icon-note"><strong>Resumo:</strong> Malote → abrir PDF → salvar como <code>0055766-23.pdf</code> em <code>C:\EJUD</code> → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> (ex.: <code>11/2026</code>) → salvar os PDFs do ofício e da decisão.</div>
+<h2 id="14-2-enviar-pelo-malote-digital">14.2. Enviar o ofício pelo Malote Digital</h2>
+<ol>
+<li>Abra o <strong>Malote Digital</strong>.</li>
+<li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
+<li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
+<li>Clique em <strong>Avançar</strong>.</li>
+<li>Prioridade: <strong>Alta</strong>, pois a solicitação de informações possui prazo para resposta.</li>
+<li>Motivo do envio: <strong>Para manifestação</strong>.</li>
+<li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
+<li>Na pasta compartilhada de ofícios do Desktop, selecione os dois arquivos preparados na etapa anterior:
+<ul>
+<li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>; dentro do documento, <strong>Ofício nº 11-2026</strong>);</li>
+<li>a <strong>decisão</strong> (ex.: <code>11.1.pdf</code>).</li>
+</ul></li>
+<li>Clique em <strong>Adicionar documentos</strong>.</li>
+<li>Depois, clique em <strong>Enviar documentos</strong>.</li>
+<li>Ao final, tire um <strong>print do comprovante de envio</strong>.</li>
+</ol>
+<h2 id="14-3-segunda-movimentacao-comprovante-de-malote">14.3. Segunda movimentação — comprovante de Malote</h2>
+<ol>
+<li>Volte ao processo e abra uma nova movimentação com <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir">.</li>
+<li>Fase: <code>60</code>.</li>
+<li>Tipo: <code>66721</code> — <strong>Comprovante de Malote</strong>.</li>
+<li>Vá em <strong>TEXTO</strong> e cole o print do comprovante de envio.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Vá à canetinha do canto esquerdo e assine/finalize a movimentação.</li>
+<li>Encaminhe o processo para a pasta correspondente ao prazo:</li>
+</ol>
+<ul>
+<li><strong>Fluxo comum:</strong> <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</li>
+<li><strong>Se for liminar:</strong> <strong>“Aguardando Decurso de Prazo - 5 Dias”</strong>.</li>
+</ul>
+<div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
+<div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
+<h2 id="14-4-registrar-oficio-no-controle">14.4. Registrar o ofício no controle</h2>
+<p>Após o envio do ofício, é necessário registrar o expediente na planilha de controle da Secretaria:</p>
+<ol>
+<li>Abra a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>.</li>
+<li>Abra o arquivo Excel <strong>Controle de Ofícios Expedidos.xlsx</strong>.</li>
+<li>Preencha os dados referentes ao <strong>ofício que acabou de ser enviado</strong>, de acordo com as colunas existentes na planilha.</li>
+<li>Salve a planilha após o preenchimento.</li>
+</ol>
+<div class="icon-note"><strong>Não esquecer:</strong> o envio do ofício não encerra a rotina. Depois do Malote, registre também o ofício em <code>Controle de Ofícios Expedidos.xlsx</code>.</div>
 <hr />
 <h1 id="15-juntar-comprovante-de-malote">15. Juntar comprovante de Malote</h1>
 <p>Anotação específica:</p>
@@ -866,76 +915,30 @@ Sim   Não
 <p><strong>CONFIRMAR:</strong> o uso do modelo depende da hipótese. As notas citam ainda violência doméstica, alteração de acórdão/HC, recurso em sentido estrito e conflito de jurisdição como situações com comunicações específicas.</p>
 </blockquote>
 <hr />
-<h1 id="18-pedido-de-informacao">18. Solicitação de Informações — ofício + Malote Digital</h1>
-<p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
-<h2 id="18-1-primeira-movimentacao-expedir-oficio">18.1. Primeira movimentação — expedir e preparar o ofício</h2>
+<h1 id="18-recebimento-malote-informacoes">18. Recebimento de informações pelo Malote Digital</h1>
+<p>Este tópico trata do <strong>resultado do Malote já enviado</strong>: quando o órgão destinatário responde e envia as informações requisitadas, o PDF recebido deve ser juntado ao processo no eJUD.</p>
+<h2 id="18-1-juntar-informacoes-recebidas-pdf-externo">18.1. Juntar no processo as informações recebidas (PDF externo)</h2>
+<div class="video-note"><strong>🎥 VÍDEO — Juntar informações nos autos</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Juntar%20informa%C3%A7%C3%B5es%20nos%20autos%20.mp4?d=wad90db692dd74c27a7a8b43188f1cedb&amp;csf=1&amp;web=1&amp;e=jMq4Hb&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
+<p>Quando as informações requisitadas chegarem pelo Malote e precisarem ser juntadas ao processo no eJUD:</p>
 <ol>
-<li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma nova movimentação.</li>
-<li>Fase: <code>60</code> — <strong>Expedição de Documento</strong>.</li>
-<li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
-<li>Após salvar, <strong>clique duas vezes no novo movimento criado</strong> para reabri-lo. Só depois disso será possível acessar o <strong>Carimbo</strong>.</li>
-<li>Clique em <strong>Carimbo Livre</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
-<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.</li>
-<li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve novamente</strong> depois de selecionar o carimbo e fazer os ajustes no texto.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Clique em <strong>Assinar</strong>. Nesse momento, o eJUD solicitará o <strong>número do ofício</strong>.</li>
-<li>Para definir o número, vá ao <strong>Desktop</strong>, abra a pasta compartilhada pela <strong>Secretária Fernanda</strong> e confira o número do último ofício. Use o número seguinte para o novo ofício.</li>
-<li>Quando o eJUD pedir o número do ofício, informe <strong>número/ano</strong>, por exemplo: <code>11/2026</code>. O ano entra <strong>neste momento</strong>, no próprio ofício.</li>
-<li>Conclua a assinatura.</li>
-<li>Depois, salve/exporte o <strong>ofício gerado no eJUD</strong> e salve também a <strong>decisão que solicita as informações</strong>.</li>
-<li>Para os <strong>nomes dos arquivos PDF</strong>, não precisa acrescentar <code>-2026</code>, porque eles já ficam dentro da pasta do ano de 2026. Exemplo, se o ofício for nº 11:
-<ul>
-<li><code>11.pdf</code> — ofício;</li>
-<li><code>11.1.pdf</code> — decisão que solicita as informações.</li>
-</ul></li>
-<li>Salve os dois arquivos na pasta compartilhada do Desktop, usada para os ofícios, pois serão os anexos enviados pelo Malote Digital.</li>
+<li>Acesse o <strong>Malote Digital</strong> e abra o PDF recebido.</li>
+<li>Use <strong>Salvar como PDF</strong> ou <strong>Imprimir como PDF</strong>.</li>
+<li>Salve o arquivo usando apenas o número inicial do processo até o dígito, sem o ano nem o restante da numeração. Exemplo: <code>0055766-23.pdf</code>.</li>
+<li>Salve o PDF no diretório <code>C:\EJUD</code>. <strong>É nesse diretório que o eJUD reconhece os arquivos que serão importados para juntada.</strong></li>
+<li>Abra o processo pela <strong>Movimentação Unitária</strong> do eJUD.</li>
+<li>No menu superior, acesse <strong>Processo Eletrônico → Digitalização de documentos</strong>.</li>
+<li>Em <strong>Tipo de documento</strong>, selecione <strong>ACERVO</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Clique em <strong>Importar</strong>. O eJUD deverá localizar o arquivo salvo em <code>C:\EJUD</code>.</li>
+<li>Na <strong>Descrição</strong>, quando for adequado ao documento, informe <strong>“Informações”</strong>.</li>
+<li>Mantenha marcado o <strong>tick ao lado de Data/Hora</strong>.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Clique em <strong>Salvar</strong>.</li>
+<li>Confira novamente o <strong>tick de Data/Hora</strong>; se o eJUD tiver desmarcado, marque outra vez.</li>
+<li><img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Clique em <strong>Assinar</strong>. Após a assinatura, o indicador fica <strong>verde</strong>.</li>
+<li>Confira mais uma vez o <strong>tick de Data/Hora</strong>; se tiver sido desmarcado, marque novamente.</li>
+<li>Por fim, <strong>carimbe</strong> o documento. Concluída essa etapa, o PDF já fica juntado ao processo.</li>
 </ol>
-<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> (ex.: <code>11/2026</code>) → salvar os PDFs do ofício e da decisão.</div>
-<h2 id="18-2-enviar-pelo-malote-digital">18.2. Antes da segunda movimentação — enviar pelo Malote Digital</h2>
-<ol>
-<li>Abra o <strong>Malote Digital</strong>.</li>
-<li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
-<li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
-<li>Clique em <strong>Avançar</strong>.</li>
-<li>Prioridade: <strong>Alta</strong>, pois a solicitação de informações possui prazo para resposta.</li>
-<li>Motivo do envio: <strong>Para manifestação</strong>.</li>
-<li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
-<li>Na pasta compartilhada de ofícios do Desktop, selecione os dois arquivos preparados na etapa anterior:
-<ul>
-<li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>; dentro do documento, <strong>Ofício nº 11-2026</strong>);</li>
-<li>a <strong>decisão</strong> (ex.: <code>11.1.pdf</code>).</li>
-</ul></li>
-<li>Clique em <strong>Adicionar documentos</strong>.</li>
-<li>Depois, clique em <strong>Enviar documentos</strong>.</li>
-<li>Ao final, tire um <strong>print do comprovante de envio</strong>.</li>
-</ol>
-<h2 id="18-3-segunda-movimentacao-comprovante-de-malote">18.3. Segunda movimentação — comprovante de Malote</h2>
-<ol>
-<li>Volte ao processo e abra uma nova movimentação com <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir">.</li>
-<li>Fase: <code>60</code>.</li>
-<li>Tipo: <code>66721</code> — <strong>Comprovante de Malote</strong>.</li>
-<li>Vá em <strong>TEXTO</strong> e cole o print do comprovante de envio.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Vá à canetinha do canto esquerdo e assine/finalize a movimentação.</li>
-<li>Encaminhe o processo para a pasta correspondente ao prazo:</li>
-</ol>
-<ul>
-<li><strong>Fluxo comum:</strong> <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>.</li>
-<li><strong>Se for liminar:</strong> <strong>“Aguardando Decurso de Prazo - 5 Dias”</strong>.</li>
-</ul>
-<div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
-<div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → assinar → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
-<h2 id="18-4-registrar-oficio-no-controle">18.4. Registrar o ofício no controle</h2>
-<p>Após o envio do ofício, é necessário registrar o expediente na planilha de controle da Secretaria:</p>
-<ol>
-<li>Abra a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>.</li>
-<li>Abra o arquivo Excel <strong>Controle de Ofícios Expedidos.xlsx</strong>.</li>
-<li>Preencha os dados referentes ao <strong>ofício que acabou de ser enviado</strong>, de acordo com as colunas existentes na planilha.</li>
-<li>Salve a planilha após o preenchimento.</li>
-</ol>
-<div class="icon-note"><strong>Não esquecer:</strong> o envio do ofício não encerra a rotina. Depois do Malote, registre também o ofício em <code>Controle de Ofícios Expedidos.xlsx</code>.</div>
+<div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
+<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → salvar como <code>0055766-23.pdf</code> em <code>C:\EJUD</code> → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1382,7 +1385,8 @@ Sim   Não
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.17 — 03-09-26 às 14:39</strong>.</p>
+<p>Versão consolidada: <strong>1.18 — 03-09-26 às 15:17</strong>.</p>
+<p><strong>Alteração da versão 1.18:</strong> esclarecido no tópico de publicação que <strong>despachos que exigem publicação/intimação às partes</strong>, como despacho determinando manifestação do réu, devem ser publicados pelo <strong>próprio servidor</strong>, e não pela Secretaria; a intimação do MP para parecer continua seguindo fluxo próprio. Também reorganizados os tópicos de Malote: <strong>Solicitação de Informações / envio pelo Malote</strong> passa a ser o tópico 14, enquanto o recebimento da resposta e juntada das informações recebidas pelo Malote passa a ser o tópico 18.</p>
 <p><strong>Alteração da versão 1.17:</strong> adicionados links visíveis para três vídeos de apoio do processamento: <strong>Intimação do MP para parecer</strong>, <strong>Juntada de petição ou parecer e envio à conclusão</strong> e <strong>Juntar informações nos autos</strong>. Os links foram inseridos diretamente nas seções correspondentes e destacados com botão <strong>“Abrir vídeo”</strong> para facilitar a localização.</p>
 <p><strong>Alteração da versão 1.16:</strong> adicionada a seção <strong>18.4. Registrar o ofício no controle</strong>: após o envio do ofício, deve-se abrir a pasta compartilhada <code>\\CAP-09CCR-S02\Ofícios 2026</code>, abrir a planilha <strong>Controle de Ofícios Expedidos.xlsx</strong>, preencher os dados do ofício enviado conforme as colunas existentes e salvar a planilha.</p>
 <p><strong>Alteração da versão 1.15:</strong> ajustada a rotina de expedição do ofício para deixar claro que, após o primeiro salvamento de <code>Fase 60 / Tipo 50007</code>, é necessário <strong>dar duplo clique no novo movimento criado</strong> antes de acessar o Carimbo <code>7582</code>. Também foi movida para o momento da assinatura a orientação de informar o ofício no formato <strong>número/ano</strong> (ex.: <code>11/2026</code>), pois é nessa etapa que o eJUD solicita esse dado.</p>
