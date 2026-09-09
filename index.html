@@ -77,6 +77,7 @@ details.collapse-block[open]>summary::before{content:"−"}
 details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img{display:block;max-width:min(100%,900px);height:auto;margin:14px auto;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow)}
 .manual-img.pequena{max-width:320px}
+.manual-img.grande{width:1100px;max-width:100%}
 .ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
 .icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
 .revisor-order{max-width:720px;margin:14px auto;padding:14px 18px;border:1px solid var(--border);border-radius:10px;background:var(--code);text-align:center}
@@ -100,7 +101,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.26</div>
+    <div class="brand">eJUD · Manual interativo · v1.27</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -126,7 +127,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.26 · 09-09-26 · 14:50</div>
+<div class="version-tag">Versão 1.27 · 09-09-26 · 17:07</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -1417,12 +1418,69 @@ Sim   Não
 </code></pre>
 <p>O eJUD carregará os documentos do processo. Nessa tela, é possível <strong>alterar apenas a descrição</strong> da peça que foi cadastrada com erro.</p>
 <div class="icon-note"><strong>Quando isso resolve:</strong> como os anexos admitem nome livre, essa função permite corrigir erros de digitação na descrição sem precisar refazer a digitalização ou criar outro movimento.</div>
+<h2 id="d-2-como-criar-carimbos">D.2. Como criar carimbos</h2>
+<p>A criação de um carimbo e a disponibilização dele dentro de uma movimentação são feitas em <strong>duas etapas diferentes</strong>:</p>
+<ul>
+<li><strong>Retângulo azul:</strong> abre a área em que o carimbo é criado e editado.</li>
+<li><strong>Retângulo verde:</strong> abre a área em que um carimbo já existente é <strong>associado a determinada Fase e Complemento</strong>.</li>
+</ul>
+<img class="manual-img" src="/manualejud/Imagens/Carimbo1.png" alt="Tela de acesso à criação e associação de carimbos">
+<img class="manual-img" src="/manualejud/Imagens/Carimbo2.png" alt="Opções de criação e associação de carimbos">
+<div class="icon-note"><strong>Exemplo — Certidões:</strong> um carimbo de certidão pode ser associado à <strong>Fase <code>50002</code></strong> e ao <strong>Complemento 1 <code>9999</code></strong>. A Fase <code>50002</code> é a utilizada para Certidões, e o Complemento <code>9999</code> é o complemento em branco em que estão sendo concentrados os principais carimbos da Câmara.</div>
+<h3 id="d-2-1-criar-o-carimbo">D.2.1. Criar o carimbo</h3>
+<p>Entre na área de criação de carimbos pelo <strong>retângulo azul</strong>. Na página de edição, informe primeiro o <strong>Local</strong> em que você trabalha.</p>
+<img class="manual-img grande" src="/manualejud/Imagens/Carimbo3.png" alt="Página de edição de carimbos">
+<ol>
+<li>Informe o <strong>Local</strong> em que trabalha.</li>
+<li>Clique no ícone de <strong>documento branco</strong> para criar um novo carimbo.</li>
+<li>Dê um nome ao carimbo. Por orientação da Secretaria da <strong>9ª Câmara Criminal</strong>, <strong>todos os carimbos novos devem ser nomeados em CAIXA ALTA</strong>.</li>
+<li>Clique em <strong>Editar Texto</strong>.</li>
+<li>No editor, monte o texto do carimbo utilizando, quando necessário, os <strong>parâmetros disponíveis à direita</strong>.</li>
+</ol>
+<div class="critical"><strong>NÃO ALTERE OS PARÂMETROS PADRÃO:</strong> campos dinâmicos como <strong>Processo</strong>, <strong>Vara</strong> e outros parâmetros do sistema devem permanecer como parâmetros. Altere apenas os textos fixos que precisam ser adaptados ao seu órgão, como local de trabalho, nome do secretário e demais informações específicas.</div>
+<h3 id="d-2-2-usar-carimbo-existente-como-modelo">D.2.2. Usar um carimbo existente como modelo</h3>
+<p>Na prática, a forma mais segura de criar um novo carimbo é partir de um modelo que já funciona:</p>
+<ol>
+<li>Localize um carimbo semelhante já existente, mesmo que seja de outra Vara ou órgão.</li>
+<li>Selecione a opção <strong>Exportar</strong> <img class="ejud-icon" src="/manualejud/Imagens/exportarimportar.png" alt="Ícone Exportar/Importar">.</li>
+<li>Abra e edite o arquivo <code>.docx</code> exportado.</li>
+<li>Altere apenas as informações fixas que precisam ser adaptadas, como <strong>local de trabalho</strong>, <strong>nome do secretário</strong> e outros textos próprios da unidade.</li>
+<li>Não modifique os campos/parâmetros padrão do sistema, como <strong>Processo</strong>, <strong>Vara</strong> e equivalentes.</li>
+<li>Salve o modelo editado e utilize-o no novo carimbo.</li>
+</ol>
+<p>Depois que o texto estiver pronto, clique no <strong>disquete verde</strong> para salvar o carimbo.</p>
+<div class="critical"><strong>ANOTE O NÚMERO DO CARIMBO:</strong> depois de salvar, registre o número atribuído ao novo carimbo. Esse número será necessário na etapa seguinte para associá-lo à movimentação em que ele deverá aparecer.</div>
+<h3 id="d-2-3-associar-carimbo-fase-complemento">D.2.3. Associar o carimbo à Fase e ao Complemento</h3>
+<p>Neste ponto, o carimbo <strong>já existe</strong>, mas ainda precisa ser disponibilizado para a movimentação desejada. Volte à tela inicial e entre na área de <strong>associação de carimbos</strong> pelo <strong>retângulo verde</strong>.</p>
+<p>Informe:</p>
+<ul>
+<li><strong>Local:</strong> o local em que você trabalha;</li>
+<li><strong>Fase:</strong> a fase em que o carimbo deverá ser utilizado;</li>
+<li><strong>Complemento 1:</strong> o complemento correspondente.</li>
+</ul>
+<p>Para associar um carimbo de Certidão usado na 9ª Câmara Criminal, por exemplo:</p>
+<pre><code class="language-text">Local: 17902
+Fase: 50002
+Complemento 1: 9999
+→ Pesquisar
+</code></pre>
+<p>A pesquisa mostrará todos os carimbos que já estão associados àquela combinação de <strong>Local + Fase + Complemento</strong>.</p>
+<img class="manual-img" src="/manualejud/Imagens/Carimbo4.png" alt="Tela de associação dos carimbos à fase e ao complemento">
+<ol>
+<li>Clique no ícone de <strong>documento branco</strong> para abrir uma nova linha.</li>
+<li>Na linha criada, informe o <strong>número do novo carimbo</strong> que foi anotado na etapa anterior.</li>
+<li>Pressione <strong>Enter</strong>.</li>
+<li>Clique no <strong>disquete verde</strong> para salvar a associação.</li>
+</ol>
+<div class="icon-note"><strong>Resultado:</strong> a partir desse momento, sempre que for utilizada aquela mesma combinação de <strong>Local, Fase e Complemento</strong>, o novo carimbo passará a aparecer entre as opções disponíveis para carimbar.</div>
+<div class="icon-note"><strong>Resumo — exemplo de Certidão:</strong> criar o carimbo → salvar e anotar seu número → Associação de carimbos → Local <code>17902</code> → Fase <code>50002</code> → Complemento 1 <code>9999</code> → Pesquisar → documento branco → informar nº do carimbo → Enter → disquete verde.</div>
 <hr />
 <h1 id="e-atualizacoes-versoes">E. Atualizações / Versões</h1>
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.26 — 09-09-26 às 14:50</strong>.</p>
+<p>Versão consolidada: <strong>1.27 — 09-09-26 às 17:07</strong>.</p>
+<p><strong>Alteração da versão 1.27:</strong> criada a subseção <strong>D.2. Como criar carimbos</strong>, separando o fluxo em criação do carimbo e posterior associação à Fase/Complemento; incluídas as imagens <strong>Carimbo1.png</strong>, <strong>Carimbo2.png</strong>, <strong>Carimbo3.png</strong> e <strong>Carimbo4.png</strong>, além do ícone <strong>exportarimportar.png</strong>; documentada a orientação da 9ª Câmara Criminal para nomear novos carimbos em <strong>CAIXA ALTA</strong>; incluída a recomendação de exportar um carimbo existente como modelo, preservando os parâmetros dinâmicos; e registrado o exemplo de associação de Certidão no Local <code>17902</code>, Fase <code>50002</code> e Complemento 1 <code>9999</code>.</p>
 <p><strong>Alteração da versão 1.26:</strong> substituída, no tópico <strong>10. Atribuição ao revisor</strong>, a representação linear da ordem atual por uma disposição visual em triângulo: <strong>Dr. DES. Pedro (480)</strong> no topo, <strong>Dr. JDS. Marcelo (654)</strong> embaixo à esquerda e <strong>Dra. JDS. Erica (699)</strong> embaixo à direita, com setas diagonais indicando a disposição. Mantida a orientação de observar a ordem de antiguidade caso a composição do órgão seja alterada.</p>
 <p><strong>Alteração da versão 1.25:</strong> revisado o tópico <strong>10. Atribuição ao revisor</strong>: removidas as observações antigas sobre “Rensor” e sobre lista manuscrita; incluída a explicação de que a rotina é utilizada quando o Relator determina <strong>“Ao Revisor”</strong>, encaminhando o processo a outro magistrado para apreciação; registrada a ordem atual <strong>Dr. DES. Pedro (480) ▶ Dr. JDS. Erica (699) ▶ Dr. JDS. Marcelo (654)</strong>; e esclarecido que, em caso de alteração da composição, deve ser observada a ordem de antiguidade, do magistrado com maior tempo de atuação para o mais recente.</p>
 <p><strong>Alteração da versão 1.24:</strong> criada a subseção <strong>12.3. “Em Mesa” — quando o processo não entra em pauta</strong>, esclarecendo que determinados processos não precisam ser incluídos em pauta e que, quando houver determinação expressa no despacho para ficar <strong>“Em Mesa”</strong>, basta encaminhá-los para o local virtual <strong>“Em Mesa”</strong>. Também foi destacado que esse fluxo é diferente da pauta.</p>
