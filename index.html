@@ -79,6 +79,13 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img.pequena{max-width:320px}
 .ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
 .icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
+.revisor-order{max-width:720px;margin:14px auto;padding:14px 18px;border:1px solid var(--border);border-radius:10px;background:var(--code);text-align:center}
+.revisor-order-title{font-weight:800;margin-bottom:10px}
+.revisor-order-top{font-weight:800}
+.revisor-order-arrows{display:flex;justify-content:center;gap:min(24vw,180px);font-size:1.45rem;line-height:1;margin:8px 0 5px;color:var(--accent)}
+.revisor-order-bottom{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;font-weight:800}
+.revisor-order-bottom-arrow{font-size:1.45rem;line-height:1;color:var(--accent)}
+@media(max-width:560px){.revisor-order{padding:12px 10px}.revisor-order-arrows{gap:28vw}.revisor-order-bottom{gap:7px;font-size:13px}.revisor-order-bottom-arrow{font-size:1.2rem}}
 .video-note{padding:12px 14px;border:2px solid var(--accent);border-radius:10px;background:var(--accent2);margin:14px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .video-note strong{font-weight:900}
 .video-link{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff!important;text-decoration:none!important;font-weight:800}
@@ -93,7 +100,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.24</div>
+    <div class="brand">eJUD · Manual interativo · v1.26</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -119,7 +126,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.24 · 08-09-26 · 18:11</div>
+<div class="version-tag">Versão 1.26 · 09-09-26 · 14:50</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -618,8 +625,8 @@ Sim   Não
 </ul>
 <hr />
 <h1 id="10-atribuicao-ao-revisor">10. Atribuição ao revisor</h1>
-<p>O material chama esta rotina de <strong>“Atribuição ao Rensor”</strong>, mas o contexto indica que se trata do <strong>revisor</strong>.</p>
-<p>A anotação separa a rotina em dois passos.</p>
+<p>A atribuição ao revisor é utilizada quando o <strong>Relator profere despacho determinando “Ao Revisor”</strong>. Nessa hipótese, o processo deve ser encaminhado a <strong>outro magistrado para apreciação</strong>, seguindo a ordem aplicável ao órgão julgador.</p>
+<p>A rotina é feita em dois passos.</p>
 <h2 id="10-1-primeiro-passo-atribuir-escolher-o-revisor">10.1. Primeiro passo — atribuir/escolher o revisor</h2>
 <p>Fluxo anotado:</p>
 <pre><code class="language-text">Movimentar
@@ -631,7 +638,13 @@ Sim   Não
 <blockquote>
 <p><strong>CONFIRMAR:</strong> o número <code>50009</code> está pouco legível no manuscrito. Pesquise a opção pelo nome no F2.</p>
 </blockquote>
-<p>O material contém uma lista manuscrita de magistrados/códigos, mas ela não foi reproduzida aqui porque pode mudar e alguns nomes/números não estão legíveis com segurança.</p>
+<div class="revisor-order">
+<div class="revisor-order-title">Ordem atual para atribuição:</div>
+<div class="revisor-order-top">Dr. DES. Pedro (480)</div>
+<div class="revisor-order-arrows" aria-hidden="true"><span>↗</span><span>↘</span></div>
+<div class="revisor-order-bottom"><span>Dr. JDS. Marcelo (654)</span><span class="revisor-order-bottom-arrow" aria-hidden="true">←</span><span>Dra. JDS. Erica (699)</span></div>
+</div>
+<p>Se a composição do órgão mudar, a lógica deve ser mantida observando a <strong>ordem de antiguidade entre os magistrados</strong>: inicia-se pelo magistrado com maior tempo de atuação e segue-se, sucessivamente, até o mais recente.</p>
 <h2 id="10-2-segundo-passo-conclusao-ao-revisor">10.2. Segundo passo — conclusão ao revisor</h2>
 <div class="critical"><strong>HORÁRIO:</strong> para processos da <strong>9ª Câmara Criminal</strong> e do <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão ao revisor também <strong>só pode ser aberta até as 17h</strong>.</div>
 <pre><code class="language-text">Novo / folha em branco
@@ -1409,7 +1422,9 @@ Sim   Não
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.24 — 08-09-26 às 18:11</strong>.</p>
+<p>Versão consolidada: <strong>1.26 — 09-09-26 às 14:50</strong>.</p>
+<p><strong>Alteração da versão 1.26:</strong> substituída, no tópico <strong>10. Atribuição ao revisor</strong>, a representação linear da ordem atual por uma disposição visual em triângulo: <strong>Dr. DES. Pedro (480)</strong> no topo, <strong>Dr. JDS. Marcelo (654)</strong> embaixo à esquerda e <strong>Dra. JDS. Erica (699)</strong> embaixo à direita, com setas diagonais indicando a disposição. Mantida a orientação de observar a ordem de antiguidade caso a composição do órgão seja alterada.</p>
+<p><strong>Alteração da versão 1.25:</strong> revisado o tópico <strong>10. Atribuição ao revisor</strong>: removidas as observações antigas sobre “Rensor” e sobre lista manuscrita; incluída a explicação de que a rotina é utilizada quando o Relator determina <strong>“Ao Revisor”</strong>, encaminhando o processo a outro magistrado para apreciação; registrada a ordem atual <strong>Dr. DES. Pedro (480) ▶ Dr. JDS. Erica (699) ▶ Dr. JDS. Marcelo (654)</strong>; e esclarecido que, em caso de alteração da composição, deve ser observada a ordem de antiguidade, do magistrado com maior tempo de atuação para o mais recente.</p>
 <p><strong>Alteração da versão 1.24:</strong> criada a subseção <strong>12.3. “Em Mesa” — quando o processo não entra em pauta</strong>, esclarecendo que determinados processos não precisam ser incluídos em pauta e que, quando houver determinação expressa no despacho para ficar <strong>“Em Mesa”</strong>, basta encaminhá-los para o local virtual <strong>“Em Mesa”</strong>. Também foi destacado que esse fluxo é diferente da pauta.</p>
 <p><strong>Alteração da versão 1.23:</strong> substituído o antigo <strong>D. Checklist de encerramento de qualquer tarefa</strong> pela seção <strong>D. Utilitários e correções</strong>. Criado o tópico <strong>D.1</strong> explicando como corrigir erro de digitação na descrição de uma peça por <strong>Processo Eletrônico → Descrição de Peças - 2ª Instância</strong>, localizando o processo e alterando apenas a descrição do documento.</p>
 <p><strong>Alteração da versão 1.22:</strong> adicionada a subseção <strong>24.3. Juntada de Certidão OJ e Termo de Compromisso BNMP</strong>, ainda pendente de texto, com aviso de que a etapa depende da chegada da certidão; incluído o vídeo correspondente e um botão verde, em estilo de planilha, para abrir o <strong>Controle de Alvarás</strong>.</p>
