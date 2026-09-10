@@ -101,7 +101,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.30</div>
+    <div class="brand">eJUD · Manual interativo · v1.31</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -127,7 +127,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.30 · 10-09-26 · 12:13</div>
+<div class="version-tag">Versão 1.31 · 10-09-26 · 12:59</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -974,6 +974,11 @@ Sim   Não
 <li>No menu superior, acesse <strong>Processo Eletrônico → Digitalização de documentos</strong>.</li>
 <li>Em <strong>Tipo de documento</strong>, selecione <strong>ACERVO</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Clique em <strong>Importar</strong>. O eJUD deverá localizar o arquivo salvo em <code>C:\EJUD</code>.</li>
+<li>Confira o campo do <strong>número do processo</strong>. Quando o arquivo vier do Malote, o eJUD provavelmente reconhecerá esse número automaticamente. Caso não reconheça, preencha manualmente o campo com o <strong>número completo do processo</strong>. <strong>É esse campo que determina em qual processo o ACERVO será adicionado.</strong>
+<div class="critical"><strong>NÃO MARQUE COMO ANEXO:</strong> deixe a opção <strong>Anexo</strong> desmarcada. Se ela for marcada, o documento será inserido em outro local da árvore do processo.</div>
+<img class="manual-img grande" src="/manualejud/Imagens/digitalizardocumentos.png" alt="Tela de digitalização de documentos com destaques nos campos">
+<div class="icon-note"><strong>Indicadores da imagem:</strong> 🟥 <strong>vermelho</strong> — opção <strong>Anexo</strong>, que <strong>não deve ser marcada</strong>; 🟦 <strong>azul</strong> — <strong>Tipo de documento: ACERVO</strong>; 🟩 <strong>verde</strong> — campo do <strong>número do processo</strong>, que deve ser preenchido caso não seja reconhecido automaticamente; 🟨 <strong>amarelo</strong> — campo <strong>Descrição</strong>, no qual pode ser informado <strong>“Informações”</strong>.</div>
+</li>
 <li>Na <strong>Descrição</strong>, quando for adequado ao documento, informe <strong>“Informações”</strong>.</li>
 <li>Mantenha marcado o <strong>tick ao lado de Data/Hora</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Clique em <strong>Salvar</strong>.</li>
@@ -983,7 +988,7 @@ Sim   Não
 <li>Por fim, <strong>carimbe</strong> <img class="ejud-icon" src="/manualejud/Imagens/carimbodigitalizar.png" alt="Ícone Carimbar"> o documento. Concluída essa etapa, o PDF já fica juntado ao processo.</li>
 </ol>
 <div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
-<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → conferir/preencher o número do processo → <strong>não marcar Anexo</strong> → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1499,7 +1504,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.30 — 10-09-26 às 12:13</strong>.</p>
+<p>Versão consolidada: <strong>1.31 — 10-09-26 às 12:59</strong>.</p>
+<p><strong>Alteração da versão 1.31:</strong> ampliada a subseção <strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong>: após importar o arquivo, deve-se conferir o campo do <strong>número do processo</strong>, que pode ser reconhecido automaticamente pelo eJUD quando o documento vier do Malote e deve ser preenchido manualmente caso isso não ocorra; destacado que esse campo determina em qual processo o <strong>ACERVO</strong> será incluído; acrescentado alerta para <strong>não marcar a opção Anexo</strong>, pois isso insere o documento em outro local da árvore do processo; e incluída a referência à imagem <strong>digitalizardocumentos.png</strong>, com legenda para os destaques vermelho, azul, verde e amarelo.</p>
 <p><strong>Alteração da versão 1.30:</strong> adicionada, no item 8 da subseção <strong>14.1. Primeira movimentação — expedir e preparar o ofício</strong>, uma observação específica para solicitações de informações em <strong>Habeas Corpus (HC)</strong>: quando for necessário indicar a <strong>Autoridade Coatora</strong>, ela pode ser identificada no <strong>Termo de Recebimento</strong> e também no <strong>processo originário</strong>.</p>
 <p><strong>Alteração da versão 1.29:</strong> atualizada a subseção <strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong>: os arquivos recebidos pelo Malote passam a ser salvos com o <strong>número completo do processo</strong> (ex.: <code>0055766-23.2026.8.19.0000.pdf</code>); quando houver mais de um documento, cada arquivo deve ser salvo separadamente com uma descrição após o número do processo, como <code>0055766-23.2026.8.19.0000 - Ofício.pdf</code> e <code>0055766-23.2026.8.19.0000 - Informações Complementares.pdf</code>. O resumo do fluxo foi atualizado para refletir a nova regra.</p>
 <p><strong>Alteração da versão 1.28:</strong> detalhado o tópico <strong>10. Atribuição ao revisor</strong>: no primeiro passo, registrada a <strong>Fase 50009</strong>, o <strong>Complemento 1 59998</strong> como opção em branco — e não Sorteio — e o preenchimento do campo <strong>REVISOR</strong> com o código do magistrado conforme a ordem indicada; esclarecido que a atribuição é apenas uma fase interna e <strong>não cria documento no processo</strong>; destacado que o fluxo não termina após a atribuição e deve seguir obrigatoriamente para <strong>conclusão ao REVISOR</strong>; e, no segundo passo, reforçado que não se deve confundir Revisor com Relator e ajustada a instrução para <strong>duplo clique na movimentação criada</strong>.</p>
