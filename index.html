@@ -66,6 +66,8 @@ body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 #codeSearch{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
 .code-item{padding:8px 4px;border-bottom:1px solid var(--border);font-size:13px}
 .code-item b{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent)}
+.copy-code-btn{margin-left:7px;padding:3px 7px;border-radius:6px;font-size:11px;font-weight:800;vertical-align:1px}
+.copy-code-btn:disabled{cursor:default;opacity:.75}
 .small{font-size:12px;color:var(--muted)}
 .progress{height:8px;background:var(--code);border-radius:10px;overflow:hidden;margin:8px 0}
 .progress>div{height:100%;width:0;background:var(--accent);transition:width .2s}
@@ -101,7 +103,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.32</div>
+    <div class="brand">eJUD · Manual interativo · v1.33</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -127,7 +129,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.32 · 10-09-26 · 13:41</div>
+<div class="version-tag">Versão 1.33 · 10-09-26 · 17:32</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -801,8 +803,13 @@ Sim   Não
 <li>Tipo: <code>50007</code> — <strong>Ofício</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
 <li>Após salvar, <strong>clique duas vezes no novo movimento criado</strong> para reabri-lo. Só depois disso será possível acessar o <strong>Carimbo</strong>.</li>
-<li>Clique em <strong>Carimbo Livre</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
-<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.
+<li>Clique em <strong>Carimbo Livre</strong> e escolha o carimbo conforme o caso:
+<ul>
+<li><code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>: utilize quando houver <strong>indeferimento de liminar</strong>.</li>
+<li><code>7623</code> — <strong>“SOLICITA INFORMAÇÕES - SIMPLES”</strong>: utilize quando <strong>não houver indeferimento de liminar</strong>. É um modelo mais livre, para editar o texto e acrescentar o <strong>prazo</strong> ou outras informações necessárias ao caso.</li>
+</ul>
+</li>
+<li>Depois de carregar o carimbo escolhido, <strong>revise e edite o texto conforme necessário</strong>.
 <div class="icon-note"><strong>Somente quando houver Autoridade Coatora:</strong> quando se tratar de informações solicitadas em sede de <strong>Habeas Corpus (HC)</strong>, a <strong>Autoridade Coatora</strong> pode ser identificada no <strong>Termo de Recebimento</strong> e também no <strong>processo originário</strong>.</div>
 </li>
 <li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
@@ -819,7 +826,7 @@ Sim   Não
 </ul></li>
 <li>Salve os dois arquivos na pasta compartilhada do Desktop, usada para os ofícios, pois serão os anexos enviados pelo Malote Digital.</li>
 </ol>
-<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> (ex.: <code>11/2026</code>) → salvar os PDFs do ofício e da decisão.</div>
+<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> (ex.: <code>11/2026</code>) → salvar os PDFs do ofício e da decisão.</div>
 <h2 id="14-2-enviar-pelo-malote-digital">14.2. Enviar o ofício pelo Malote Digital</h2>
 <ol>
 <li>Abra o <strong>Malote Digital</strong>.</li>
@@ -828,7 +835,9 @@ Sim   Não
 <li>Clique em <strong>Avançar</strong>.</li>
 <li>Prioridade: <strong>Alta</strong>, pois a solicitação de informações possui prazo para resposta.</li>
 <li>Motivo do envio: <strong>Para manifestação</strong>.</li>
-<li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong></li>
+<li>Assunto: informe o <strong>número do processo</strong> e acrescente a frase <strong>“Solicitação de informações.”</strong>. <strong>Sempre que possível, informe tanto o processo em que estamos requisitando as informações quanto o processo originário.</strong> Isso facilita a identificação por quem recebe o ofício e auxilia na resposta. Se ambos forem o mesmo processo, não é necessário repetir o número.
+<div class="icon-note"><strong>Bizu:</strong> no ofício gerado pelo eJUD, basta copiar o cabeçalho em que aparecem <strong>“Processo:”</strong> e <strong>“Processo originário:”</strong> e usar essas informações no assunto do Malote.</div>
+</li>
 <li>Na pasta compartilhada de ofícios do Desktop, selecione os dois arquivos preparados na etapa anterior:
 <ul>
 <li>o <strong>ofício</strong> (ex.: <code>11.pdf</code>; dentro do documento, <strong>Ofício nº 11-2026</strong>);</li>
@@ -836,16 +845,19 @@ Sim   Não
 </ul></li>
 <li>Clique em <strong>Adicionar documentos</strong>.</li>
 <li>Depois, clique em <strong>Enviar documentos</strong>.</li>
-<li>Ao final, tire um <strong>print do comprovante de envio</strong>.</li>
+<li>Ao final, tire um <strong>print do comprovante de envio</strong>.
+<div class="icon-note"><strong>Bizu para o print:</strong> antes de capturar, abra o recibo do Malote, mantenha <strong>Ctrl</strong> pressionado e use a <strong>rodinha do meio do mouse</strong> para aumentar o zoom da página. Isso aumenta o tamanho da letra sem perder o estilo do recibo. Um zoom em torno de <strong>250%</strong> costuma ficar bom para a captura.</div>
+</li>
 </ol>
+<div class="critical"><strong>DESTINO ESPECIAL NO MALOTE — VARAS DE ORCRIM:</strong> quando o ofício for direcionado a uma <strong>Vara Criminal Especializada</strong> — denominação que aparece dessa forma no processo, mas se refere às Varas de Organização Criminosa — encaminhe o Malote para <strong>“CENTRAL DAS 1,2 E 3 VARAS ORGANIZAÇÃO CRIMINOSA”</strong>.</div>
 <h2 id="14-3-segunda-movimentacao-comprovante-de-malote">14.3. Segunda movimentação — comprovante de Malote</h2>
 <ol>
 <li>Volte ao processo e abra uma nova movimentação com <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir">.</li>
 <li>Fase: <code>60</code>.</li>
 <li>Tipo: <code>66721</code> — <strong>Comprovante de Malote</strong>.</li>
 <li>Vá em <strong>TEXTO</strong> e cole o print do comprovante de envio.</li>
-<li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salve o conteúdo no editor de texto. Você pode clicar no <strong>Salvar do Word</strong> ou simplesmente <strong>fechar a janela</strong>; se aparecer a pergunta para salvar as alterações, confirme o salvamento.</li>
-<li>Ao salvar, essa janela/procedimento é fechado. Por isso, <strong>abra novamente com duplo clique o movimento que acabou de ser criado</strong>.</li>
+<li>Salve o conteúdo no editor de texto. Você pode clicar no <strong>Salvar do Word</strong> ou simplesmente <strong>fechar a janela</strong>; se aparecer a pergunta para salvar as alterações, confirme o salvamento.</li>
+<li>Ao salvar <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar">, essa janela/procedimento é fechado. Por isso, <strong>abra novamente com duplo clique o movimento que acabou de ser criado</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Com o movimento reaberto, vá à canetinha do canto esquerdo e assine/finalize a movimentação.</li>
 <li>Encaminhe o processo para a pasta correspondente ao prazo:</li>
 </ol>
@@ -854,7 +866,7 @@ Sim   Não
 <li><strong>Se for liminar:</strong> <strong>“Aguardando Decurso de Prazo - 5 Dias”</strong>.</li>
 </ul>
 <div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
-<div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → salvar pelo Word ou fechar e confirmar o salvamento → <strong>reabrir com duplo clique o movimento criado</strong> → assinar pela canetinha → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
+<div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar texto/prazo → salvar novamente → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → salvar pelo Word ou fechar e confirmar o salvamento → <strong>reabrir com duplo clique o movimento criado</strong> → assinar pela canetinha → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
 <h2 id="14-4-registrar-oficio-no-controle">14.4. Registrar o ofício no controle</h2>
 <p>Após o envio do ofício, é necessário registrar o expediente na planilha de controle da Secretaria:</p>
 <ol>
@@ -1139,11 +1151,11 @@ Sim   Não
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right"><code>17902</code></td>
+<td style="text-align:right"><code>17902</code> <button class="copy-code-btn" type="button" data-copy="17902" aria-label="Copiar código 17902">Copiar</button></td>
 <td>9ª Câmara Criminal</td>
 </tr>
 <tr>
-<td style="text-align:right"><code>23429</code></td>
+<td style="text-align:right"><code>23429</code> <button class="copy-code-btn" type="button" data-copy="23429" aria-label="Copiar código 23429">Copiar</button></td>
 <td>5º Grupo de Câmaras Criminais</td>
 </tr>
 </tbody>
@@ -1344,6 +1356,11 @@ Sim   Não
 <td>alta</td>
 </tr>
 <tr>
+<td style="text-align:right"><code>7623</code></td>
+<td>Carimbo “SOLICITA INFORMAÇÕES - SIMPLES”</td>
+<td>alta</td>
+</tr>
+<tr>
 <td style="text-align:right"><code>66721</code></td>
 <td>Comprovante de Malote</td>
 <td>alta</td>
@@ -1517,7 +1534,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.32 — 10-09-26 às 13:41</strong>.</p>
+<p>Versão consolidada: <strong>1.33 — 10-09-26 às 17:32</strong>.</p>
+<p><strong>Alteração da versão 1.33:</strong> ampliado o fluxo de <strong>Solicitação de Informações</strong>: no item <strong>14.1</strong>, incluído o Carimbo <code>7623</code> — <strong>“SOLICITA INFORMAÇÕES - SIMPLES”</strong> — como alternativa ao <code>7582</code> quando não houver indeferimento de liminar; no item <strong>14.2</strong>, orientado a informar, sempre que possível, o número do processo e do processo originário no assunto do Malote, incluído o bizu de ampliar o recibo para cerca de <strong>250%</strong> antes do print e registrado o destino <strong>“CENTRAL DAS 1,2 E 3 VARAS ORGANIZAÇÃO CRIMINOSA”</strong> para ofícios dirigidos às Varas Criminais Especializadas/ORCRIM; no item <strong>14.3</strong>, reposicionado o ícone de Salvar para evitar confusão com o botão Salvar do Word. Na seção <strong>A. Câmaras e grupos anotados</strong>, adicionados botões para copiar os códigos <code>17902</code> e <code>23429</code>. O novo carimbo <code>7623</code> também foi incluído na tabela e na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 1.32:</strong> completado o tópico <strong>13. Publicação</strong> com o fluxo de <strong>publicação de despacho</strong>: acesso pelo ícone do Jornal ou por <strong>Publicação → Central de Publicações → Expedientes</strong>, Local <code>17902</code>, Tipo <code>1</code> — Despachos, criação e salvamento do expediente, seleção do processo pela <strong>Fila</strong>, envio ao <strong>DJEN</strong> e encaminhamento obrigatório, pela Movimentação Unitária, para a pasta <strong>“Para publicar”</strong>. Também foi incluído o vídeo de apoio e reforçada a divisão de responsabilidade: <strong>despachos são publicados pelos servidores</strong> e <strong>decisões ficam a cargo da Secretária</strong>.</p>
 <p><strong>Alteração da versão 1.31:</strong> ampliada a subseção <strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong>: após importar o arquivo, deve-se conferir o campo do <strong>número do processo</strong>, que pode ser reconhecido automaticamente pelo eJUD quando o documento vier do Malote e deve ser preenchido manualmente caso isso não ocorra; destacado que esse campo determina em qual processo o <strong>ACERVO</strong> será incluído; acrescentado alerta para <strong>não marcar a opção Anexo</strong>, pois isso insere o documento em outro local da árvore do processo; e incluída a referência à imagem <strong>digitalizardocumentos.png</strong>, com legenda para os destaques vermelho, azul, verde e amarelo.</p>
 <p><strong>Alteração da versão 1.30:</strong> adicionada, no item 8 da subseção <strong>14.1. Primeira movimentação — expedir e preparar o ofício</strong>, uma observação específica para solicitações de informações em <strong>Habeas Corpus (HC)</strong>: quando for necessário indicar a <strong>Autoridade Coatora</strong>, ela pode ser identificada no <strong>Termo de Recebimento</strong> e também no <strong>processo originário</strong>.</p>
@@ -1584,7 +1602,7 @@ const codeData = [
 ["50040","Recurso Ordinário"],["50042","Despacho/Decisão"],["50055","Contrarrazões"],
 ["50056","Ciência"],["50083","Parecer"],["50126","Para apreciação"],["50127","Razões"],
 ["50666","Destinatário ligado à 2ª Vice-Presidência — confirmar"],["50671","Defensoria Pública"],
-["50675","Ministério Público"],["59998","Cumprimento em certidões"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["66721","Comprovante de Malote"],
+["50675","Ministério Público"],["59998","Cumprimento em certidões"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["7623","Carimbo SOLICITA INFORMAÇÕES - SIMPLES"],["66721","Comprovante de Malote"],
 ["70230","Comprovante de e-mail"],["17902","9ª Câmara Criminal — Consulta > Composição"],["23429","5º Grupo de Câmaras Criminais — Consulta > Composição"]
 ];
 
@@ -1639,6 +1657,41 @@ function renderCodes(q='') {
 }
 renderCodes();
 document.getElementById('codeSearch').addEventListener('input', e=>renderCodes(e.target.value));
+
+function fallbackCopy(text) {
+  const temp = document.createElement('textarea');
+  temp.value = text;
+  temp.setAttribute('readonly','');
+  temp.style.position = 'fixed';
+  temp.style.opacity = '0';
+  document.body.appendChild(temp);
+  temp.select();
+  const ok = document.execCommand('copy');
+  temp.remove();
+  return ok;
+}
+
+document.querySelectorAll('.copy-code-btn').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const text = btn.dataset.copy;
+    let copied = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+        copied = true;
+      }
+    } catch (_) {}
+    if (!copied) copied = fallbackCopy(text);
+    if (!copied) return;
+    const original = btn.textContent;
+    btn.textContent = 'Copiado!';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.disabled = false;
+    }, 1200);
+  });
+});
 
 const search = document.getElementById('search');
 function clearMarks() {
