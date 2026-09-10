@@ -101,7 +101,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.27</div>
+    <div class="brand">eJUD · Manual interativo · v1.30</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -127,7 +127,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.27 · 09-09-26 · 17:07</div>
+<div class="version-tag">Versão 1.30 · 10-09-26 · 12:13</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -632,13 +632,22 @@ Sim   Não
 <p>Fluxo anotado:</p>
 <pre><code class="language-text">Movimentar
 → Novo / folha em branco
-→ fase/código anotado no material como 50009
-→ selecionar o revisor
-→ Salvar
+→ Fase: 50009
+→ Complemento 1: 59998 — em branco (não é Sorteio)
+→ campo REVISOR
+→ no quadrado em branco, informar o código do magistrado conforme a ordem abaixo
+→ Salvar o movimento
+→ depois da atribuição, abrir conclusão ao REVISOR
 </code></pre>
-<blockquote>
-<p><strong>CONFIRMAR:</strong> o número <code>50009</code> está pouco legível no manuscrito. Pesquise a opção pelo nome no F2.</p>
-</blockquote>
+<table>
+<thead><tr><th>Campo</th><th style="text-align:right">Código</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td>Fase</td><td style="text-align:right"><code>50009</code></td><td>Atribuição ao revisor</td></tr>
+<tr><td>Complemento 1</td><td style="text-align:right"><code>59998</code></td><td>Em branco — <strong>não selecionar Sorteio</strong></td></tr>
+<tr><td>Revisor</td><td style="text-align:right">conforme a ordem abaixo</td><td>Informar o código do magistrado no quadrado em branco do campo <strong>REVISOR</strong></td></tr>
+</tbody>
+</table>
+<div class="icon-note"><strong>IMPORTANTE:</strong> a <strong>atribuição ao revisor não cria documento no processo</strong>. Trata-se apenas de uma fase interna do eJUD para registrar a atribuição.</div>
 <div class="revisor-order">
 <div class="revisor-order-title">Ordem atual para atribuição:</div>
 <div class="revisor-order-top">Dr. DES. Pedro (480)</div>
@@ -646,7 +655,9 @@ Sim   Não
 <div class="revisor-order-bottom"><span>Dr. JDS. Marcelo (654)</span><span class="revisor-order-bottom-arrow" aria-hidden="true">←</span><span>Dra. JDS. Erica (699)</span></div>
 </div>
 <p>Se a composição do órgão mudar, a lógica deve ser mantida observando a <strong>ordem de antiguidade entre os magistrados</strong>: inicia-se pelo magistrado com maior tempo de atuação e segue-se, sucessivamente, até o mais recente.</p>
+<div class="critical"><strong>NÃO TERMINA NA ATRIBUIÇÃO:</strong> depois de salvar a atribuição ao revisor, é obrigatório seguir para o segundo passo e <strong>abrir a conclusão ao REVISOR</strong>.</div>
 <h2 id="10-2-segundo-passo-conclusao-ao-revisor">10.2. Segundo passo — conclusão ao revisor</h2>
+<div class="critical"><strong>ATENÇÃO — CONCLUSÃO AO REVISOR:</strong> nesta etapa, a conclusão deve ser aberta para o <strong>REVISOR</strong>. <strong>Não confundir com conclusão ao Relator.</strong></div>
 <div class="critical"><strong>HORÁRIO:</strong> para processos da <strong>9ª Câmara Criminal</strong> e do <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão ao revisor também <strong>só pode ser aberta até as 17h</strong>.</div>
 <pre><code class="language-text">Novo / folha em branco
 → Fase 51
@@ -655,7 +666,7 @@ Sim   Não
 → Motivo: Para apreciação
 → código anotado: 50126
 → Salvar
-→ duplo clique
+→ duplo clique na movimentação criada
 → Carimbo
 → assinar
 </code></pre>
@@ -778,7 +789,9 @@ Sim   Não
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve a movimentação.</strong> O carimbo só pode ser utilizado depois que esse primeiro salvamento for feito.</li>
 <li>Após salvar, <strong>clique duas vezes no novo movimento criado</strong> para reabri-lo. Só depois disso será possível acessar o <strong>Carimbo</strong>.</li>
 <li>Clique em <strong>Carimbo Livre</strong> e selecione <code>7582</code> — <strong>“Solicita informações - Indeferimento Liminar”</strong>.</li>
-<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.</li>
+<li>Depois de carregar o carimbo, <strong>revise e edite o texto se necessário</strong>. O modelo atual é voltado ao indeferimento de liminar, mas serve como base para a solicitação de informações.
+<div class="icon-note"><strong>Somente quando houver Autoridade Coatora:</strong> quando se tratar de informações solicitadas em sede de <strong>Habeas Corpus (HC)</strong>, a <strong>Autoridade Coatora</strong> pode ser identificada no <strong>Termo de Recebimento</strong> e também no <strong>processo originário</strong>.</div>
+</li>
 <li><strong>Confira o prazo no texto do ofício:</strong> no fluxo comum, <strong>10 dias</strong>; se for <strong>liminar</strong>, use <strong>5 dias</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>Salve novamente</strong> depois de selecionar o carimbo e fazer os ajustes no texto.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> Clique em <strong>Assinar</strong>. Nesse momento, o eJUD solicitará o <strong>número do ofício</strong>.</li>
@@ -949,7 +962,13 @@ Sim   Não
 <ol>
 <li>Acesse o <strong>Malote Digital</strong> e abra o PDF recebido.</li>
 <li>Use <s>Salvar como PDF</s> ou <strong>Imprimir como PDF</strong>. <strong>Atualmente, utilize Imprimir como PDF</strong>, pois a opção “Salvar como PDF” não está funcionando para este fluxo.</li>
-<li>Salve o arquivo usando apenas o número inicial do processo até o dígito, sem o ano nem o restante da numeração. Exemplo: <code>0055766-23.pdf</code>.</li>
+<li>Salve o arquivo utilizando o <strong>número completo do processo</strong>. Exemplo: <code>0055766-23.2026.8.19.0000.pdf</code>.</li>
+<li>Se o Malote trouxer <strong>mais de um documento</strong> — por exemplo, um ofício de resposta e uma decisão ou informação complementar em anexo — salve cada arquivo separadamente, mantendo o número completo do processo e acrescentando uma descrição após um hífen. Exemplo:
+<ul>
+<li><code>0055766-23.2026.8.19.0000 - Ofício.pdf</code></li>
+<li><code>0055766-23.2026.8.19.0000 - Informações Complementares.pdf</code></li>
+</ul>
+</li>
 <li>Salve o PDF no diretório <code>C:\EJUD</code>. <strong>É nesse diretório que o eJUD reconhece os arquivos que serão importados para juntada.</strong></li>
 <li>Abra o processo pela <strong>Movimentação Unitária</strong> do eJUD.</li>
 <li>No menu superior, acesse <strong>Processo Eletrônico → Digitalização de documentos</strong>.</li>
@@ -964,7 +983,7 @@ Sim   Não
 <li>Por fim, <strong>carimbe</strong> <img class="ejud-icon" src="/manualejud/Imagens/carimbodigitalizar.png" alt="Ícone Carimbar"> o documento. Concluída essa etapa, o PDF já fica juntado ao processo.</li>
 </ol>
 <div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
-<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar como <code>0055766-23.pdf</code> em <code>C:\EJUD</code> → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1480,7 +1499,10 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.27 — 09-09-26 às 17:07</strong>.</p>
+<p>Versão consolidada: <strong>1.30 — 10-09-26 às 12:13</strong>.</p>
+<p><strong>Alteração da versão 1.30:</strong> adicionada, no item 8 da subseção <strong>14.1. Primeira movimentação — expedir e preparar o ofício</strong>, uma observação específica para solicitações de informações em <strong>Habeas Corpus (HC)</strong>: quando for necessário indicar a <strong>Autoridade Coatora</strong>, ela pode ser identificada no <strong>Termo de Recebimento</strong> e também no <strong>processo originário</strong>.</p>
+<p><strong>Alteração da versão 1.29:</strong> atualizada a subseção <strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong>: os arquivos recebidos pelo Malote passam a ser salvos com o <strong>número completo do processo</strong> (ex.: <code>0055766-23.2026.8.19.0000.pdf</code>); quando houver mais de um documento, cada arquivo deve ser salvo separadamente com uma descrição após o número do processo, como <code>0055766-23.2026.8.19.0000 - Ofício.pdf</code> e <code>0055766-23.2026.8.19.0000 - Informações Complementares.pdf</code>. O resumo do fluxo foi atualizado para refletir a nova regra.</p>
+<p><strong>Alteração da versão 1.28:</strong> detalhado o tópico <strong>10. Atribuição ao revisor</strong>: no primeiro passo, registrada a <strong>Fase 50009</strong>, o <strong>Complemento 1 59998</strong> como opção em branco — e não Sorteio — e o preenchimento do campo <strong>REVISOR</strong> com o código do magistrado conforme a ordem indicada; esclarecido que a atribuição é apenas uma fase interna e <strong>não cria documento no processo</strong>; destacado que o fluxo não termina após a atribuição e deve seguir obrigatoriamente para <strong>conclusão ao REVISOR</strong>; e, no segundo passo, reforçado que não se deve confundir Revisor com Relator e ajustada a instrução para <strong>duplo clique na movimentação criada</strong>.</p>
 <p><strong>Alteração da versão 1.27:</strong> criada a subseção <strong>D.2. Como criar carimbos</strong>, separando o fluxo em criação do carimbo e posterior associação à Fase/Complemento; incluídas as imagens <strong>Carimbo1.png</strong>, <strong>Carimbo2.png</strong>, <strong>Carimbo3.png</strong> e <strong>Carimbo4.png</strong>, além do ícone <strong>exportarimportar.png</strong>; documentada a orientação da 9ª Câmara Criminal para nomear novos carimbos em <strong>CAIXA ALTA</strong>; incluída a recomendação de exportar um carimbo existente como modelo, preservando os parâmetros dinâmicos; e registrado o exemplo de associação de Certidão no Local <code>17902</code>, Fase <code>50002</code> e Complemento 1 <code>9999</code>.</p>
 <p><strong>Alteração da versão 1.26:</strong> substituída, no tópico <strong>10. Atribuição ao revisor</strong>, a representação linear da ordem atual por uma disposição visual em triângulo: <strong>Dr. DES. Pedro (480)</strong> no topo, <strong>Dr. JDS. Marcelo (654)</strong> embaixo à esquerda e <strong>Dra. JDS. Erica (699)</strong> embaixo à direita, com setas diagonais indicando a disposição. Mantida a orientação de observar a ordem de antiguidade caso a composição do órgão seja alterada.</p>
 <p><strong>Alteração da versão 1.25:</strong> revisado o tópico <strong>10. Atribuição ao revisor</strong>: removidas as observações antigas sobre “Rensor” e sobre lista manuscrita; incluída a explicação de que a rotina é utilizada quando o Relator determina <strong>“Ao Revisor”</strong>, encaminhando o processo a outro magistrado para apreciação; registrada a ordem atual <strong>Dr. DES. Pedro (480) ▶ Dr. JDS. Erica (699) ▶ Dr. JDS. Marcelo (654)</strong>; e esclarecido que, em caso de alteração da composição, deve ser observada a ordem de antiguidade, do magistrado com maior tempo de atuação para o mais recente.</p>
