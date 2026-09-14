@@ -103,7 +103,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.33</div>
+    <div class="brand">eJUD · Manual interativo · v1.34</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -129,7 +129,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.33 · 10-09-26 · 17:32</div>
+<div class="version-tag">Versão 1.34 · 14-09-26 · 14:04</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -876,6 +876,32 @@ Sim   Não
 <li>Salve a planilha após o preenchimento.</li>
 </ol>
 <div class="icon-note"><strong>Não esquecer:</strong> o envio do ofício não encerra a rotina. Depois do Malote, registre também o ofício em <code>Controle de Ofícios Expedidos.xlsx</code>.</div>
+<h2 id="14-5-oficio-seap-email">14.5. Ofício à SEAP — envio por e-mail</h2>
+<div class="critical"><strong>FLUXO ESPECÍFICO DA SEAP:</strong> quando o ofício for destinado à <strong>Secretaria de Administração Penitenciária (SEAP)</strong>, faça o encaminhamento por <strong>e-mail</strong> aos destinatários indicados abaixo e depois junte ao processo o comprovante desse envio.</div>
+<h3 id="14-5-destinatarios-seap">Destinatários</h3>
+<p>O destinatário principal é:</p>
+<div class="icon-note"><strong>CHEFE DE GABINETE DA SEAP</strong><br>E-mail: <code>chefiadegabinete@ppenal.rj.gov.br</code><br>Tel.: <code>21 96643-1631</code></div>
+<p>Se o <strong>preso estiver sob tratamento</strong>, envie o e-mail <strong>também</strong> para:</p>
+<div class="icon-note"><strong>SUBSECRETÁRIO DE REINTEGRAÇÃO E SAÚDE PRISIONAL</strong><br>E-mail: <code>subgesp@ppenal.rj.gov.br</code></div>
+<h3 id="14-5-texto-email-seap">Texto padrão do e-mail</h3>
+<p>Adapte o número do ofício e o número do HC ao caso concreto. Um texto padrão é:</p>
+<pre><code class="language-text">Prezados(as), segue em anexo o ofício nº xx/2026 referente ao HC .........., para ciência e cumprimento urgente.
+At.te,</code></pre>
+<h3 id="14-5-anexos-seap">Anexos</h3>
+<p>Anexe ao e-mail o <strong>ofício</strong> e os <strong>complementos/documentos que devam acompanhá-lo</strong>. Confira os anexos antes do envio.</p>
+<h3 id="14-5-comprovante-seap">Comprovante do envio e juntada no processo</h3>
+<p>Depois de enviar, utilize um <strong>print da tela ou da impressão do e-mail enviado</strong> como comprovante. Em seguida, junte esse comprovante ao processo seguindo a rotina de comprovante de e-mail do tópico 16:</p>
+<pre><code class="language-text">Movimentação Unitária
+→ Novo movimento
+→ Fase 60
+→ Tipo 70230 — Comprovante de e-mail
+→ TEXTO
+→ colar o print do e-mail enviado
+→ Salvar
+→ reabrir o movimento com duplo clique
+→ finalizar/assinar</code></pre>
+<div class="critical"><strong>NÃO ENCERRA NO ENVIO DO E-MAIL:</strong> após encaminhar o ofício à SEAP, é necessário <strong>juntar ao processo o comprovante do envio</strong>. O print do e-mail enviado deve ficar registrado no movimento de <strong>Comprovante de e-mail</strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> preparar o ofício → enviar para <code>chefiadegabinete@ppenal.rj.gov.br</code> → se o preso estiver sob tratamento, enviar também para <code>subgesp@ppenal.rj.gov.br</code> → anexar ofício e complementos → enviar → tirar print do e-mail enviado → Movimentação Unitária → Fase <code>60</code> → Tipo <code>70230</code> → TEXTO → colar o comprovante → salvar → reabrir → finalizar/assinar.</div>
 <hr />
 <h1 id="15-juntar-comprovante-de-malote">15. Juntar comprovante de Malote</h1>
 <p>Anotação específica:</p>
@@ -1537,7 +1563,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.33 — 10-09-26 às 17:32</strong>.</p>
+<p>Versão consolidada: <strong>1.34 — 14-09-26 às 14:04</strong>.</p>
+<p><strong>Alteração da versão 1.34:</strong> criada a subseção <strong>14.5. Ofício à SEAP — envio por e-mail</strong>, com os contatos do <strong>Chefe de Gabinete da SEAP</strong> e do <strong>Subsecretário de Reintegração e Saúde Prisional</strong> para os casos em que o preso estiver sob tratamento; incluído texto padrão de encaminhamento, orientação para anexar o ofício e seus complementos e procedimento para juntar ao processo o print do e-mail enviado como <strong>Comprovante de e-mail</strong>, em <code>Fase 60 / Tipo 70230</code>.</p>
 <p><strong>Alteração da versão 1.33:</strong> ampliado o fluxo de <strong>Solicitação de Informações</strong>: no item <strong>14.1</strong>, incluído o Carimbo <code>7623</code> — <strong>“SOLICITA INFORMAÇÕES - SIMPLES”</strong> — como alternativa ao <code>7582</code> quando não houver indeferimento de liminar; no item <strong>14.2</strong>, orientado a informar, sempre que possível, o número do processo e do processo originário no assunto do Malote, incluído o bizu de ampliar o recibo para cerca de <strong>250%</strong> antes do print e registrado o destino <strong>“CENTRAL DAS 1,2 E 3 VARAS ORGANIZAÇÃO CRIMINOSA”</strong> para ofícios dirigidos às Varas Criminais Especializadas/ORCRIM; no item <strong>14.3</strong>, reposicionado o ícone de Salvar para evitar confusão com o botão Salvar do Word. Na seção <strong>A. Câmaras e grupos anotados</strong>, adicionados botões para copiar os códigos <code>17902</code> e <code>23429</code>. O novo carimbo <code>7623</code> também foi incluído na tabela e na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 1.32:</strong> completado o tópico <strong>13. Publicação</strong> com o fluxo de <strong>publicação de despacho</strong>: acesso pelo ícone do Jornal ou por <strong>Publicação → Central de Publicações → Expedientes</strong>, Local <code>17902</code>, Tipo <code>1</code> — Despachos, criação e salvamento do expediente, seleção do processo pela <strong>Fila</strong>, envio ao <strong>DJEN</strong> e encaminhamento obrigatório, pela Movimentação Unitária, para a pasta <strong>“Para publicar”</strong>. Também foi incluído o vídeo de apoio e reforçada a divisão de responsabilidade: <strong>despachos são publicados pelos servidores</strong> e <strong>decisões ficam a cargo da Secretária</strong>.</p>
 <p><strong>Alteração da versão 1.31:</strong> ampliada a subseção <strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong>: após importar o arquivo, deve-se conferir o campo do <strong>número do processo</strong>, que pode ser reconhecido automaticamente pelo eJUD quando o documento vier do Malote e deve ser preenchido manualmente caso isso não ocorra; destacado que esse campo determina em qual processo o <strong>ACERVO</strong> será incluído; acrescentado alerta para <strong>não marcar a opção Anexo</strong>, pois isso insere o documento em outro local da árvore do processo; e incluída a referência à imagem <strong>digitalizardocumentos.png</strong>, com legenda para os destaques vermelho, azul, verde e amarelo.</p>
