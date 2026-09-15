@@ -103,7 +103,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.36</div>
+    <div class="brand">eJUD · Manual interativo · v1.37</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -129,7 +129,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.36 · 15-09-26</div>
+<div class="version-tag">Versão 1.37 · 15-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — LIMITE DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta até as 17h</strong>. Antes de iniciar uma conclusão nessas unidades, confira o horário.</div>
 <blockquote>
@@ -352,9 +352,11 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <p>Fluxo operacional anotado:</p>
 <pre><code class="language-text">Apelação
 → verificar se as razões foram apresentadas
-→ se necessário, intimar para razões
-→ depois, intimar a parte contrária para contrarrazões
+→ se o advogado apenas informou a intenção de apelar, mas ainda não apresentou as razões, intimar para apresentação das razões
+→ enquanto se aguarda essa apresentação, encaminhar o processo para a pasta “Aguardando prazo Art. 600 CPP - parag 4º”
+→ depois de apresentadas as razões, intimar a parte contrária para contrarrazões
 </code></pre>
+<div class="critical"><strong>PASTA CORRETA PARA AGUARDAR AS RAZÕES:</strong> quando o advogado tiver apenas manifestado a vontade de apelar, sem apresentar as razões naquele momento, após a abertura do prazo o processo deve ficar na pasta <strong>“Aguardando prazo Art. 600 CPP - parag 4º”</strong> até a apresentação das razões.</div>
 <blockquote>
 <p><strong>CONFIRMAR:</strong> prazo e forma de intimação no caso concreto. Não use este manual como fonte jurídica de prazo.</p>
 </blockquote>
@@ -822,7 +824,7 @@ Sim   Não
 <li>Em seguida, informe também o <strong>número do processo</strong> correspondente na planilha.</li>
 </ol>
 </li>
-<li>Com o número já reservado, volte ao eJUD e clique em <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> <strong>Assinar</strong>. Quando o sistema pedir o <strong>número do ofício</strong>, informe o número escolhido, por exemplo <code>11</code>. O <strong>ano é opcional</strong> — também pode ser informado como <code>11/2026</code> — porque o próprio ofício já é datado.</li>
+<li>Com o número já reservado, volte ao eJUD e clique em <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> <strong>Assinar</strong>. Quando o sistema pedir o <strong>número do ofício</strong>, informe <strong>número/ano</strong>, por exemplo: <code>11/2026</code>.</li>
 <li>Conclua a assinatura.</li>
 <li>Depois, salve/exporte o <strong>ofício gerado no eJUD</strong> e salve também a <strong>decisão que solicita as informações</strong>.</li>
 <li>Para os <strong>nomes dos arquivos PDF</strong>, mantenha a numeração do ofício. Exemplo, se o ofício for nº 11:
@@ -832,7 +834,7 @@ Sim   Não
 </ul></li>
 <li>Salve os arquivos na <strong>pasta compartilhada de ofícios</strong>. Esse salvamento continua necessário, pois os PDFs serão utilizados depois como anexos no envio pelo <strong>Malote Digital</strong>.</li>
 </ol>
-<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <strong>reservar o próximo número na planilha, colocando primeiro seu nome e depois o número do processo</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar o <strong>número do ofício</strong> no eJUD (ano opcional) → salvar os PDFs na pasta compartilhada para uso posterior no Malote.</div>
+<div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <strong>reservar o próximo número na planilha, colocando primeiro seu nome e depois o número do processo</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> no eJUD (ex.: <code>11/2026</code>) → salvar os PDFs na pasta compartilhada para uso posterior no Malote.</div>
 <h2 id="14-2-enviar-pelo-malote-digital">14.2. Enviar o ofício pelo Malote Digital</h2>
 <ol>
 <li>Abra o <strong>Malote Digital</strong>.</li>
@@ -1586,7 +1588,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.36 — 15-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.37 — 15-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.37:</strong> ampliada a subseção <strong>5.3. Razões e contrarrazões</strong>: quando o advogado apenas manifesta a intenção de apelar, mas ainda não apresenta as razões, após a abertura do prazo o processo deve ser encaminhado para a pasta <strong>“Aguardando prazo Art. 600 CPP - parag 4º”</strong> até a apresentação das razões, seguindo depois para a intimação da parte contrária para contrarrazões.</p>
 <p><strong>Alteração da versão 1.36:</strong> atualizado o fluxo de numeração de ofícios na subseção <strong>14.1</strong>: antes de informar o número no eJUD, o servidor deve abrir a planilha <strong>Controle de Ofícios Expedidos</strong>, identificar o próximo número disponível, registrar <strong>primeiro o próprio nome</strong> para reservá-lo e depois preencher o número do processo, evitando duplicidade. Esclarecido também que o <strong>ano é opcional</strong> no número informado ao eJUD, pois o ofício já é datado, e mantida a orientação de salvar os PDFs na pasta compartilhada para uso posterior no Malote. A subseção <strong>14.4</strong> foi ajustada para refletir a mesma regra de reserva prévia.</p>
 <p><strong>Alteração da versão 1.35:</strong> criada a subseção <strong>D.3. Como localizar telefone/ramal das serventias</strong>, com acesso à página oficial de <strong>Órgãos Julgadores do TJRJ</strong>, orientação para selecionar instância, Comarca, Tipo de serventia e Atribuição, priorizar o telefone da própria serventia e utilizar o ramal em ligações internas para órgãos localizados no Centro. Incluída também a imagem <strong>telefonesserventias.png</strong> em tamanho grande.</p>
 <p><strong>Alteração da versão 1.34:</strong> criada a subseção <strong>14.5. Ofício à SEAP — envio por e-mail</strong>, com os contatos do <strong>Chefe de Gabinete da SEAP</strong> e do <strong>Subsecretário de Reintegração e Saúde Prisional</strong> para os casos em que o preso estiver sob tratamento; incluído texto padrão de encaminhamento, orientação para anexar o ofício e seus complementos e procedimento para juntar ao processo o print do e-mail enviado como <strong>Comprovante de e-mail</strong>, em <code>Fase 60 / Tipo 70230</code>.</p>
