@@ -80,6 +80,7 @@ details.collapse-block[open]>summary::before{content:"−"}
 details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img{display:block;max-width:min(100%,900px);height:auto;margin:14px auto;border:1px solid var(--border);border-radius:10px;box-shadow:var(--shadow)}
 .manual-img.pequena{max-width:320px}
+.manual-img.media{max-width:560px}
 .manual-img.grande{width:1100px;max-width:100%}
 .ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
 .icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
@@ -104,7 +105,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.43</div>
+    <div class="brand">eJUD · Manual interativo · v1.44</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -130,7 +131,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.43 · 21-09-26</div>
+<div class="version-tag">Versão 1.44 · 21-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -209,6 +210,17 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 → para nova movimentação, abrir a folha em branco
 </code></pre>
 <p>Depois de salvar uma movimentação, use a visualização/menu do processo para confirmar que ela realmente ficou registrada antes de encaminhar.</p>
+<h3 id="3-1-1-ver-todos-processos-filtros">3.1.1. Ver todos os processos da Câmara e usar filtros</h3>
+<p>Para visualizar todos os processos da Câmara na Mesa de Trabalho, selecione o Local Virtual <strong>“Todos os Locais, exceto saída de acervo”</strong>. Esse local reúne os processos da Câmara que ainda estão no acervo.</p>
+<p>Depois, utilize os filtros da própria tela para localizar rapidamente o que precisa:</p>
+<ul>
+<li>em <strong>“Últ. Usuários”</strong>, filtre pelo seu usuário para ver os processos movimentados recentemente por você;</li>
+<li>use a visualização geral para localizar processos <strong>em vermelho</strong>, indicando prazo vencido;</li>
+<li>marque <strong>“Doctos. c/ petição p/ juntar”</strong> para localizar processos com petição pendente de juntada;</li>
+<li>para identificar os processos que chegaram mais recentemente à Secretaria, ordene pela coluna <strong>DATA ENTRADA</strong>.</li>
+</ul>
+<img class="manual-img media" src="/manualejud/Imagens/filtroejud.png" alt="Filtros da Mesa de Trabalho do eJUD para consultar todos os processos da Câmara">
+<div class="icon-note"><strong>Resumo:</strong> Local Virtual <strong>“Todos os Locais, exceto saída de acervo”</strong> → aplicar filtros conforme a necessidade → usar <strong>Últ. Usuários</strong> para seus movimentos recentes → conferir processos vermelhos e petições pendentes → ordenar por <strong>DATA ENTRADA</strong> para ver os processos novos.</div>
 <h2 id="3-2-pegar">3.2. Pegar</h2>
 <p>Use <strong>Pegar</strong> quando a intenção for trazer um ou vários processos diretamente para <strong>a sua própria mesa de trabalho</strong>.</p>
 <h3 id="selecao-de-varios-processos">Seleção de vários processos</h3>
@@ -902,7 +914,11 @@ Sim   Não
 <ol>
 <li>Abra o <strong>Malote Digital</strong>.</li>
 <li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
-<li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.</li>
+<li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.
+<div class="icon-note"><strong>Bizu para localizar a Vara:</strong> copie no eJUD o <strong>nome da Vara</strong> responsável pelo processo e cole esse nome no campo de busca do Malote. Isso facilita encontrar rapidamente a unidade correta.</div>
+<img class="manual-img media" src="/manualejud/Imagens/varamalote.png" alt="Nome da Vara no eJUD para copiar e pesquisar no Malote Digital">
+<img class="manual-img media" src="/manualejud/Imagens/varaencontradamalote.png" alt="Vara localizada no campo de busca do Malote Digital">
+</li>
 <li>Clique em <strong>Avançar</strong>.</li>
 <li><strong>Prioridade:</strong> siga a determinação do magistrado. Use <strong>Alta</strong> quando houver indicação de urgência, prazo curto — por exemplo, <strong>48 horas</strong> — ou outra determinação que exija resposta célere. Se o magistrado <strong>não tiver definido prazo nem indicado urgência</strong>, selecione <strong>Normal</strong>.</li>
 <li>Motivo do envio: <strong>Para manifestação</strong>.</li>
@@ -1651,7 +1667,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.43 — 21-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.44 — 21-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.44:</strong> adicionada, em <strong>3.1. Mesa de Trabalho</strong>, a orientação para visualizar todos os processos da Câmara pelo Local Virtual <strong>“Todos os Locais, exceto saída de acervo”</strong>, com uso dos filtros <strong>Últ. Usuários</strong>, processos em vermelho, <strong>Doctos. c/ petição p/ juntar</strong> e ordenação por <strong>DATA ENTRADA</strong>, acompanhada da imagem <strong>filtroejud.png</strong>. No tópico <strong>14.2</strong>, incluído o atalho de copiar o nome da Vara no eJUD e colá-lo na busca do Malote Digital, com as imagens <strong>varamalote.png</strong> e <strong>varaencontradamalote.png</strong>.</p>
 <p><strong>Alteração da versão 1.43:</strong> ajustado o tópico <strong>12.1.1</strong> para registrar que os despachos <strong>“Em Pauta”</strong> e <strong>“Peço dia”</strong> seguem o mesmo fluxo quando não houver pedido de sustentação oral, com encaminhamento para <strong>“Pedindo Dia - Sessão Virtual”</strong>. As expressões dos despachos foram destacadas com fonte maior para facilitar a identificação visual.</p>
 <p><strong>Alteração da versão 1.42:</strong> criada a subseção <strong>3.8.2. Adicionar Defensoria Pública ao processo</strong>, com link para o vídeo <strong>Inclusão da Defensoria Pública</strong>. O passo a passo textual permanece para inclusão futura.</p>
 <p><strong>Alteração da versão 1.41:</strong> corrigida em todo o manual a regra de horário para abertura de conclusão na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>: a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>, não sendo permitida a abertura <strong>antes das 11h nem após as 17h</strong>. A correção foi aplicada aos avisos gerais, conclusão ao relator, conclusão ao revisor, checklist e referências de códigos/órgãos.</p>
