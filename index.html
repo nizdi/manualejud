@@ -53,6 +53,7 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .badge{display:inline-block;padding:2px 7px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:700}
 .warn{background:var(--warn);border:1px solid #d7b24d55;padding:10px;border-radius:8px}
 .critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
+.despacho-texto{font-size:1.22em;font-weight:900}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
 .disclaimer-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.58);backdrop-filter:blur(4px)}
@@ -103,7 +104,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.42</div>
+    <div class="brand">eJUD · Manual interativo · v1.43</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -129,7 +130,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.42 · 21-09-26</div>
+<div class="version-tag">Versão 1.43 · 21-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -751,16 +752,16 @@ Sim   Não
 <li>retirada de pauta;</li>
 <li>publicação.</li>
 </ul>
-<h2 id="12-1-processo-em-pauta">12.1. Despacho “Em Pauta” — Pedindo Dia e sustentação oral</h2>
-<p>Quando o processo chegar em <strong>“Para Processar”</strong> com despacho determinando <strong>“Em Pauta”</strong>, confira se existe pedido de sustentação oral e siga um dos caminhos abaixo.</p>
+<h2 id="12-1-processo-em-pauta">12.1. Despachos “Em Pauta” / “Peço dia” — Pedindo Dia e sustentação oral</h2>
+<p>Quando o processo chegar em <strong>“Para Processar”</strong> com despacho determinando <span class="despacho-texto">“Em Pauta”</span> ou <span class="despacho-texto">“Peço dia”</span>, confira se existe pedido de sustentação oral e siga um dos caminhos abaixo.</p>
 <h3 id="12-1-1-sem-pedido-sustentacao">12.1.1. Sem pedido de sustentação oral — fluxo padrão</h3>
-<p>Se o despacho apenas determinar <strong>“Em Pauta”</strong> e não houver pedido de sustentação oral, pegue o processo e encaminhe para <strong>“Pedindo Dia - Sessão Virtual”</strong>.</p>
+<p>Se o despacho determinar <span class="despacho-texto">“Em Pauta”</span> ou <span class="despacho-texto">“Peço dia”</span> e não houver pedido de sustentação oral, o procedimento é o mesmo: pegue o processo e encaminhe para <strong>“Pedindo Dia - Sessão Virtual”</strong>.</p>
 <ul>
 <li><strong>Motivo:</strong> <strong>“Edital Pauta”</strong>.</li>
 <li>A <strong>Sessão Virtual</strong>, neste fluxo, é utilizada quando não haverá sustentação oral.</li>
 </ul>
 <pre><code class="language-text">Para Processar
-→ despacho “Em Pauta”
+→ despacho “Em Pauta” ou “Peço dia”
 → não há pedido de sustentação oral
 → Pegar
 → “Pedindo Dia - Sessão Virtual”
@@ -779,7 +780,7 @@ Sim   Não
 <li><strong>Pedido não deferido:</strong> encaminhe para <strong>“Pedindo Dia - Sessão Virtual”</strong>.</li>
 <li><strong>Pedido deferido pelo Desembargador:</strong> encaminhe para <strong>“Pedindo Dia Puro”</strong>.</li>
 </ul>
-<div class="critical"><strong>REGRA PRÁTICA AO RECEBER EM “PARA PROCESSAR”:</strong> se o despacho disser apenas <strong>“Em Pauta”</strong> e não houver pedido de sustentação, o caminho padrão é <strong>“Pedindo Dia - Sessão Virtual”</strong>, com motivo <strong>“Edital Pauta”</strong>. Se houver pedido de sustentação, primeiro junte a petição e abra conclusão; somente depois da decisão do Desembargador será definido se o processo volta para <strong>“Pedindo Dia - Sessão Virtual”</strong> ou segue para <strong>“Pedindo Dia Puro”</strong>.</div>
+<div class="critical"><strong>REGRA PRÁTICA AO RECEBER EM “PARA PROCESSAR”:</strong> se o despacho disser <span class="despacho-texto">“Em Pauta”</span> ou <span class="despacho-texto">“Peço dia”</span> e não houver pedido de sustentação, o caminho padrão é <strong>“Pedindo Dia - Sessão Virtual”</strong>, com motivo <strong>“Edital Pauta”</strong>. Se houver pedido de sustentação, primeiro junte a petição e abra conclusão; somente depois da decisão do Desembargador será definido se o processo volta para <strong>“Pedindo Dia - Sessão Virtual”</strong> ou segue para <strong>“Pedindo Dia Puro”</strong>.</div>
 <h2 id="12-2-pedido-de-retirada-de-pauta">12.2. Pedido de retirada de pauta</h2>
 <p>Há anotação de peça/pedido de retirada de pauta.</p>
 <p>Fluxo genérico:</p>
@@ -1650,7 +1651,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.42 — 21-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.43 — 21-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.43:</strong> ajustado o tópico <strong>12.1.1</strong> para registrar que os despachos <strong>“Em Pauta”</strong> e <strong>“Peço dia”</strong> seguem o mesmo fluxo quando não houver pedido de sustentação oral, com encaminhamento para <strong>“Pedindo Dia - Sessão Virtual”</strong>. As expressões dos despachos foram destacadas com fonte maior para facilitar a identificação visual.</p>
 <p><strong>Alteração da versão 1.42:</strong> criada a subseção <strong>3.8.2. Adicionar Defensoria Pública ao processo</strong>, com link para o vídeo <strong>Inclusão da Defensoria Pública</strong>. O passo a passo textual permanece para inclusão futura.</p>
 <p><strong>Alteração da versão 1.41:</strong> corrigida em todo o manual a regra de horário para abertura de conclusão na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>: a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>, não sendo permitida a abertura <strong>antes das 11h nem após as 17h</strong>. A correção foi aplicada aos avisos gerais, conclusão ao relator, conclusão ao revisor, checklist e referências de códigos/órgãos.</p>
 <p><strong>Alteração da versão 1.40:</strong> criada a subseção <strong>12.4. Habeas Corpus — sessão presencial e julgamento em mesa</strong>, esclarecendo que as sessões do Colegiado são, como padrão, presenciais e que o HC, em razão de sua urgência, normalmente é levado <strong>em mesa</strong>, sem inclusão formal em pauta; registrado também que essa colocação independe de prévia intimação da parte, que a Secretaria certifica a informação nos autos e que o acompanhamento deve ser feito pela consulta eletrônica do processo.</p>
