@@ -54,6 +54,7 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .warn{background:var(--warn);border:1px solid #d7b24d55;padding:10px;border-radius:8px}
 .critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
 .despacho-texto{font-size:1.22em;font-weight:900}
+.tag-estagiarios{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#725400;color:#fff4c7;border:1px solid #9a7410;font-size:.72em;font-weight:900;vertical-align:2px;letter-spacing:.02em}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
 .disclaimer-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.58);backdrop-filter:blur(4px)}
@@ -105,7 +106,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.44</div>
+    <div class="brand">eJUD · Manual interativo · v1.45</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -131,7 +132,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.44 · 21-09-26</div>
+<div class="version-tag">Versão 1.45 · 23-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -916,8 +917,7 @@ Sim   Não
 <li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
 <li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.
 <div class="icon-note"><strong>Bizu para localizar a Vara:</strong> copie no eJUD o <strong>nome da Vara</strong> responsável pelo processo e cole esse nome no campo de busca do Malote. Isso facilita encontrar rapidamente a unidade correta.</div>
-<img class="manual-img media" src="/manualejud/Imagens/varamalote.png" alt="Nome da Vara no eJUD para copiar e pesquisar no Malote Digital">
-<img class="manual-img media" src="/manualejud/Imagens/varaencontradamalote.png" alt="Vara localizada no campo de busca do Malote Digital">
+<img class="manual-img media" src="/manualejud/Imagens/varamalote.png" alt="Nome da Vara no eJUD para copiar e pesquisar no Malote Digital"><img class="manual-img media" src="/manualejud/Imagens/varaencontradamalote.png" alt="Vara localizada no campo de busca do Malote Digital">
 </li>
 <li>Clique em <strong>Avançar</strong>.</li>
 <li><strong>Prioridade:</strong> siga a determinação do magistrado. Use <strong>Alta</strong> quando houver indicação de urgência, prazo curto — por exemplo, <strong>48 horas</strong> — ou outra determinação que exija resposta célere. Se o magistrado <strong>não tiver definido prazo nem indicado urgência</strong>, selecione <strong>Normal</strong>.</li>
@@ -1107,6 +1107,7 @@ At.te,</code></pre>
 <li><code>0055766-23.2026.8.19.0000 - Ofício.pdf</code></li>
 <li><code>0055766-23.2026.8.19.0000 - Informações Complementares.pdf</code></li>
 </ul>
+<div class="icon-note"><strong>Quando houver vários PDFs:</strong> você pode usar o utilitário do <strong>PJe para unir os arquivos em um único PDF</strong> antes da juntada. <strong>A ordem dos documentos importa:</strong> o <strong>primeiro arquivo deve ser sempre o ofício da serventia judicial</strong>; depois dele, coloque as informações e os demais anexos, para que a leitura siga a sequência lógica de ofício → anexos. O passo a passo está em <a href="#d-4-unir-pdfs-pje"><strong>D.4. Unir PDFs pelo PJe</strong></a>.</div>
 </li>
 <li>Salve o PDF no diretório <code>C:\EJUD</code>. <strong>É nesse diretório que o eJUD reconhece os arquivos que serão importados para juntada.</strong></li>
 <li>Abra o processo pela <strong>Movimentação Unitária</strong> do eJUD.</li>
@@ -1127,7 +1128,17 @@ At.te,</code></pre>
 <li>Por fim, <strong>carimbe</strong> <img class="ejud-icon" src="/manualejud/Imagens/carimbodigitalizar.png" alt="Ícone Carimbar"> o documento. Concluída essa etapa, o PDF já fica juntado ao processo.</li>
 </ol>
 <div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
-<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → conferir/preencher o número do processo → <strong>não marcar Anexo</strong> → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo ou <strong>uni-los pelo PJe, mantendo o ofício da serventia judicial como primeiro documento</strong> → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → conferir/preencher o número do processo → <strong>não marcar Anexo</strong> → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<h2 id="18-4-atribuir-processante-informacoes">18.4. Atribuir ao processante após a juntada <span class="tag-estagiarios">[ESTAGIÁRIOS]</span></h2>
+<p>Depois de concluir a <strong>juntada das Informações no processo</strong>, atribua o processo ao processante responsável conforme o <strong>número final do processo</strong>.</p>
+<ol>
+<li>Na <strong>Movimentação Processual</strong>, clique no botão <strong>Atribuir</strong>, localizado na parte inferior direita.</li>
+<li>No campo <strong>Usuário</strong>, informe o usuário do processante responsável. Se não souber o usuário de cabeça, pressione <strong>F2</strong> e pesquise pelo nome do processante.</li>
+<li>No campo <strong>Motivo</strong>, informe <strong>“Informações”</strong>.</li>
+<li>Clique em <strong>OK</strong> para concluir a atribuição.</li>
+<li>Depois, envie uma mensagem no <strong>Teams da 9ª Câmara Criminal</strong>, marque o processante com <strong>@</strong> e informe que o processo foi atribuído a ele, para que saiba que há um novo processo em sua mesa.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> concluir a juntada das Informações → Movimentação Processual → <strong>Atribuir</strong> → escolher o processante conforme o final do processo → Usuário ou F2 → Motivo <strong>“Informações”</strong> → OK → avisar o processante no Teams da 9ª Câmara Criminal, marcando-o com @.</div>
 <hr />
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
@@ -1662,12 +1673,29 @@ Complemento 1: 9999
 <img class="manual-img grande" src="/manualejud/Imagens/telefonesserventias.png" alt="Consulta de órgãos julgadores e telefones das serventias no site do TJRJ">
 <div class="icon-note"><strong>Bizu para ligações internas:</strong> quando o órgão julgador estiver localizado no <strong>Centro</strong>, normalmente basta utilizar o <strong>ramal</strong> exibido na consulta para ligar diretamente pelo telefone interno.</div>
 <div class="icon-note"><strong>Resumo:</strong> Órgãos Julgadores do TJRJ → escolher 1ª ou 2ª instância → selecionar Comarca → Tipo de serventia: normalmente Judicial → Atribuição: normalmente Criminal → localizar a serventia → conferir telefone/ramal.</div>
+<h2 id="d-4-unir-pdfs-pje">D.4. Unir PDFs pelo PJe</h2>
+<p>O utilitário do PJe pode ser usado para juntar vários arquivos PDF em um único documento, inclusive antes da juntada de informações recebidas pelo Malote.</p>
+<ol>
+<li>Na barra de tarefas do Windows, clique na <strong>seta para mostrar os ícones ocultos</strong> e depois clique com o <strong>botão direito no ícone do PJe</strong>.</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/setataskbar.png" alt="Ícone do PJe na área de ícones ocultos da barra de tarefas">
+<ol start="2">
+<li>Clique em <strong>“Selecionar PDFs para”</strong> e depois em <strong>“Unir”</strong>.</li>
+<li>Na janela que abrir, vá até a pasta em que estão os PDFs que deseja juntar.</li>
+<li>Mantenha a tecla <strong>Ctrl</strong> pressionada e clique em todos os arquivos PDF que deseja incluir.</li>
+<li>Na janela <strong>“Ordem dos arquivos”</strong>, selecione cada arquivo e use os botões de <strong>seta para cima</strong> e <strong>seta para baixo</strong> para definir qual será o primeiro, o segundo, o terceiro e assim por diante.</li>
+<li>Depois de conferir a ordem, clique em <strong>“Salvar...”</strong>.</li>
+<li>O PDF unificado será salvo na própria pasta em que estavam os arquivos selecionados. Depois disso, ele pode ser utilizado para a juntada no eJUD ou para qualquer outra necessidade.</li>
+</ol>
+<div class="critical"><strong>QUANDO FOR RESPOSTA DO MALOTE:</strong> se estiver unindo vários documentos recebidos da serventia, mantenha como <strong>primeiro arquivo o ofício da serventia judicial</strong>. Os demais documentos e anexos devem vir depois, para preservar a ordem lógica da leitura.</div>
+<div class="icon-note"><strong>Resumo:</strong> seta da barra de tarefas → botão direito no PJe → <strong>Selecionar PDFs para → Unir</strong> → selecionar os PDFs com Ctrl → organizar a ordem → <strong>Salvar...</strong> → usar o PDF unificado.</div>
 <hr />
 <h1 id="e-atualizacoes-versoes">E. Atualizações / Versões</h1>
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.44 — 21-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.45 — 23-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.45:</strong> ampliado o tópico <strong>18. Recebimento de informações pelo Malote Digital</strong>: no item <strong>18.1</strong>, incluída a possibilidade de unir vários PDFs pelo PJe antes da juntada, com destaque para manter sempre o <strong>ofício da serventia judicial como primeiro documento</strong>; criada a subseção <strong>18.4. Atribuir ao processante após a juntada</strong>, identificada com a tag <strong>[ESTAGIÁRIOS]</strong>, orientando a atribuição pelo número final do processo, Motivo <strong>“Informações”</strong> e aviso ao processante no Teams da 9ª Câmara Criminal. Criado também o utilitário <strong>D.4. Unir PDFs pelo PJe</strong>, com seleção dos PDFs, ordenação dos arquivos, salvamento do documento unificado e imagem <strong>setataskbar.png</strong>.</p>
 <p><strong>Alteração da versão 1.44:</strong> adicionada, em <strong>3.1. Mesa de Trabalho</strong>, a orientação para visualizar todos os processos da Câmara pelo Local Virtual <strong>“Todos os Locais, exceto saída de acervo”</strong>, com uso dos filtros <strong>Últ. Usuários</strong>, processos em vermelho, <strong>Doctos. c/ petição p/ juntar</strong> e ordenação por <strong>DATA ENTRADA</strong>, acompanhada da imagem <strong>filtroejud.png</strong>. No tópico <strong>14.2</strong>, incluído o atalho de copiar o nome da Vara no eJUD e colá-lo na busca do Malote Digital, com as imagens <strong>varamalote.png</strong> e <strong>varaencontradamalote.png</strong>.</p>
 <p><strong>Alteração da versão 1.43:</strong> ajustado o tópico <strong>12.1.1</strong> para registrar que os despachos <strong>“Em Pauta”</strong> e <strong>“Peço dia”</strong> seguem o mesmo fluxo quando não houver pedido de sustentação oral, com encaminhamento para <strong>“Pedindo Dia - Sessão Virtual”</strong>. As expressões dos despachos foram destacadas com fonte maior para facilitar a identificação visual.</p>
 <p><strong>Alteração da versão 1.42:</strong> criada a subseção <strong>3.8.2. Adicionar Defensoria Pública ao processo</strong>, com link para o vídeo <strong>Inclusão da Defensoria Pública</strong>. O passo a passo textual permanece para inclusão futura.</p>
