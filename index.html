@@ -70,6 +70,9 @@ body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .code-item b{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent)}
 .copy-code-btn{margin-left:7px;padding:3px 7px;border-radius:6px;font-size:11px;font-weight:800;vertical-align:1px}
 .copy-code-btn:disabled{cursor:default;opacity:.75}
+.email-lista{max-height:520px;overflow:auto;border:1px solid var(--border);border-radius:9px}
+.email-lista table{margin:0;border:0}
+.email-lista thead th{position:sticky;top:0;z-index:1;background:var(--panel)}
 .small{font-size:12px;color:var(--muted)}
 .progress{height:8px;background:var(--code);border-radius:10px;overflow:hidden;margin:8px 0}
 .progress>div{height:100%;width:0;background:var(--accent);transition:width .2s}
@@ -106,7 +109,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.46</div>
+    <div class="brand">eJUD · Manual interativo · v1.47</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -132,7 +135,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.46 · 23-09-26</div>
+<div class="version-tag">Versão 1.47 · 23-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1323,6 +1326,126 @@ At.te,</code></pre>
 <li>No corpo do e-mail, utilize texto equivalente a: <em>“Prezado, de ordem do Exmo. Des. Relator, encaminho Alvará de Soltura e, se houver, mandado de cautelares, para cumprimento.”</em></li>
 <li>Além dos anexos, cole no <strong>corpo do e-mail um print completo do Alvará de Soltura</strong>, de modo que todos os números e dados relevantes fiquem visíveis.</li>
 </ol>
+<div class="critical"><strong>CONFIRA O DESTINATÁRIO NO OUTLOOK:</strong> os endereços abaixo servem como referência operacional. Antes do envio, digite o nome da SARQ no campo <strong>Para</strong> ou <strong>Cc</strong> do <strong>Outlook institucional do Tribunal</strong> e confira se o destinatário sugerido corresponde ao endereço listado. Em caso de divergência, confirme o endereço institucional antes de enviar. O endereço da <strong>SARQ - Polinter</strong> não consta na lista abaixo; localize-o e confirme-o pelas sugestões do Outlook institucional.</div>
+<details class="collapse-block" id="24-2-3-emails-sarq">
+<summary>Lista de e-mails das SARQs — abrir para consultar/copiar</summary>
+<div class="collapse-content">
+<p>Use o botão <strong>Copiar</strong> ao lado do endereço desejado e, antes de enviar, confirme o destinatário pelas sugestões do Outlook do Tribunal.</p>
+<div class="email-lista">
+<table>
+<thead><tr><th>Serventia</th><th>Endereço do e-mail</th></tr></thead>
+<tbody>
+<tr><td>SARQ - Plantão</td><td><code>sarq.plantao@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.plantao@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Alcântara</td><td><code>sarq.alcantara@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.alcantara@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Angra dos Reis</td><td><code>sarq.angrareis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.angrareis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Araruama</td><td><code>sarq.araruama@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.araruama@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Arraial do Cabo</td><td><code>sarq.arraialcabo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.arraialcabo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Bangu</td><td><code>sarq.bangu@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.bangu@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Barra da Tijuca</td><td><code>sarq.barradatijuca@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.barradatijuca@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Barra do Piraí</td><td><code>sarq.barrapirai@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.barrapirai@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Barra Mansa</td><td><code>sarq.barramansa@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.barramansa@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Belford Roxo</td><td><code>sarq.belfordroxo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.belfordroxo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Bom Jardim</td><td><code>sarq.bomjardim@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.bomjardim@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Bom Jesus do Itabapoana</td><td><code>sarq.bomjesusitabapoana@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.bomjesusitabapoana@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cabo Frio</td><td><code>sarq.cabofrio@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cabofrio@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cachoeira de Macabu</td><td><code>sarq.cachoeiramacabu@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cachoeiramacabu@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cambuci</td><td><code>sarq.cambuci@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cambuci@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Campo Grande</td><td><code>sarq.campogrande@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.campogrande@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Campos dos Goytacazes</td><td><code>sarq.camposgoytacazes@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.camposgoytacazes@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cantagalo</td><td><code>sarq.cantagalo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cantagalo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Dívida Ativa do Município</td><td><code>sarq.divativamunicipio@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.divativamunicipio@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Dívida Ativa Estadual</td><td><code>sarq.divativaestadual@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.divativaestadual@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Juizados Cíveis</td><td><code>sarq.juizadosciveis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.juizadosciveis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Varas Cíveis</td><td><code>sarq.varasciveis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.varasciveis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Varas Criminais</td><td><code>sarq.varascriminais@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.varascriminais@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Varas de Família</td><td><code>sarq.varasfamilia@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.varasfamilia@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - Varas de Fazenda</td><td><code>sarq.varasfazenda@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.varasfazenda@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Capital - VEP</td><td><code>sarq.vep@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.vep@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Carapebus/Quissamã</td><td><code>sarq.carapebus@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.carapebus@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cardoso Moreira</td><td><code>sarq.cardosomoreira@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cardosomoreira@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Carmo</td><td><code>sarq.carmo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.carmo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Casimiro de Abreu</td><td><code>sarq.casimiroabreu@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.casimiroabreu@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Conceição de Macabu</td><td><code>sarq.conceicaomacabu@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.conceicaomacabu@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Cordeiro</td><td><code>sarq.cordeiro@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cordeiro@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Duas Barras</td><td><code>sarq.duasbarras@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.duasbarras@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Duque de Caxias</td><td><code>sarq.duquecaxias@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.duquecaxias@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Engº. Paulo de Frontin</td><td><code>sarq.engpaulofrontin@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.engpaulofrontin@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Guapimirim</td><td><code>sarq.guapimirim@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.guapimirim@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Iguaba Grande</td><td><code>sarq.iguabagrande@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.iguabagrande@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Ilha do Governador</td><td><code>sarq.ilhagovernador@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.ilhagovernador@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Inhomirim</td><td><code>sarq.inhomirim@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.inhomirim@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itaboraí</td><td><code>sarq.itaborai@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itaborai@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itaguaí</td><td><code>sarq.itaguai@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itaguai@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itaipava</td><td><code>sarq.itaipava@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itaipava@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Italva</td><td><code>sarq.italva@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.italva@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itaocara</td><td><code>sarq.itaocara@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itaocara@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itaperuna</td><td><code>sarq.itaperuna@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itaperuna@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Itatiaia</td><td><code>sarq.itatiaia@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.itatiaia@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Jacarepaguá</td><td><code>sarq.jacarepagua@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.jacarepagua@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Japeri</td><td><code>sarq.japeri@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.japeri@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Lage de Muriaé</td><td><code>sarq.lagemuriae@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.lagemuriae@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Leopoldina</td><td><code>sarq.leopoldina@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.leopoldina@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Macaé</td><td><code>sarq.macae@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.macae@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Madureira</td><td><code>sarq.madureira@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.madureira@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Magé</td><td><code>sarq.mage@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.mage@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Mangaratiba</td><td><code>sarq.mangaratiba@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.mangaratiba@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Maricá</td><td><code>sarq.marica@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.marica@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Méier</td><td><code>sarq.meier@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.meier@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Mendes</td><td><code>sarq.mendes@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.mendes@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Miguel Pereira</td><td><code>sarq.miguelpereira@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.miguelpereira@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Miracema</td><td><code>sarq.miracema@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.miracema@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Natividade</td><td><code>sarq.natividade@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.natividade@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Nilópolis</td><td><code>sarq.nilopolis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.nilopolis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Niterói - Varas Cíveis, Criminais e JECRI</td><td><code>sarq.niteroi.vciv@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.niteroi.vciv@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Niterói - Varas de Família e JECIV</td><td><code>sarq.niteroi.vfam@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.niteroi.vfam@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Nova Friburgo</td><td><code>sarq.novafriburgo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.novafriburgo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Nova Iguaçu</td><td><code>sarq.novaiguacu@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.novaiguacu@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Paracambi</td><td><code>sarq.paracambi@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.paracambi@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Paraíba do Sul</td><td><code>sarq.paraibasul@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.paraibasul@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Paraty</td><td><code>sarq.paraty@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.paraty@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Paty de Alfares</td><td><code>sarq.patyalfares@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.patyalfares@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Pavuna</td><td><code>sarq.pavuna@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.pavuna@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Petrópolis</td><td><code>sarq.petropolis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.petropolis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Pinheiral</td><td><code>sarq.pinheiral@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.pinheiral@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Piraí</td><td><code>sarq.pirai@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.pirai@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Porciúncula</td><td><code>sarq.porciuncula@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.porciuncula@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Porto Real/Quatis</td><td><code>sarq.portoreal@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.portoreal@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Queimados</td><td><code>sarq.queimados@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.queimados@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Região Oceânica</td><td><code>sarq.regiaooceanica@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.regiaooceanica@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Resende</td><td><code>sarq.resende@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.resende@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Rio Bonito</td><td><code>sarq.riobonito@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.riobonito@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Rio Claro</td><td><code>sarq.rioclaro@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.rioclaro@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Rio das Flores</td><td><code>sarq.rioflores@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.rioflores@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Rio das Ostras</td><td><code>sarq.riodasostras@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.riodasostras@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Santa Cruz</td><td><code>sarq.santacruz@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.santacruz@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Santa Maria Madalena</td><td><code>sarq.smmadalena@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.smmadalena@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Santo Antônio de Pádua</td><td><code>sarq.santoniopadua@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.santoniopadua@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São Fidélis</td><td><code>sarq.saofidelis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.saofidelis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São Francisco de Itabapoana</td><td><code>sarq.sfitabapoana@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sfitabapoana@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São Gonçalo</td><td><code>sarq.saogoncalo@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.saogoncalo@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São João da Barra</td><td><code>sarq.sjbarra@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sjbarra@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São João de Meriti</td><td><code>sarq.sjmeriti@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sjmeriti@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São José do V. do Rio Preto</td><td><code>sarq.sjvaleriopreto@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sjvaleriopreto@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São Pedro da Aldeia</td><td><code>sarq.spedroaldeia@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.spedroaldeia@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - São Sebastião do Alto</td><td><code>sarq.ssebastiaodoalto@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.ssebastiaodoalto@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Sapucaia</td><td><code>sarq.sapucaia@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sapucaia@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Saquarema</td><td><code>sarq.saquarema@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.saquarema@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Seropédica</td><td><code>sarq.seropedica@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.seropedica@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Silva Jardim</td><td><code>sarq.silvajardim@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.silvajardim@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Sumidouro</td><td><code>sarq.sumidouro@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.sumidouro@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Teresópolis</td><td><code>sarq.teresopolis@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.teresopolis@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Trajano de Moraes</td><td><code>sarq.trajanomoraes@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.trajanomoraes@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Três Rios</td><td><code>sarq.tresrios@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.tresrios@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Valença</td><td><code>sarq.valenca@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.valenca@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Varre e Sai</td><td><code>sarq.varresai@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.varresai@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Vassouras</td><td><code>sarq.vassouras@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.vassouras@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - Volta Redonda</td><td><code>sarq.voltaredonda@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.voltaredonda@tjrj.jus.br">Copiar</button></td></tr>
+<tr><td>SARQ - CAC</td><td><code>sarq.cac@tjrj.jus.br</code> <button class="copy-code-btn" type="button" data-copy="sarq.cac@tjrj.jus.br">Copiar</button></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</details>
 <div class="critical"><strong>IMPORTANTE — PRINT DO ALVARÁ NO CORPO DO E-MAIL:</strong> há situações em que a SARQ não recebe corretamente os anexos. Por isso, mantenha também no corpo do e-mail um <strong>print completo do Alvará de Soltura</strong>, com todos os números visíveis.</div>
 <h3 id="24-2-4-comprovante-email">24.2.4. Juntar o comprovante do e-mail</h3>
 <p>Depois do envio, tire um <strong>print do e-mail enviado</strong> e junte-o ao processo como comprovante:</p>
@@ -1786,7 +1909,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.46 — 23-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.47 — 23-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.47:</strong> adicionada ao tópico <strong>24.2.3. Enviar à SARQ responsável</strong> uma lista recolhida por padrão com os endereços de e-mail das SARQs, organizada por serventia e com botão <strong>Copiar</strong> em cada endereço. Incluído alerta para conferir o destinatário pelas sugestões do <strong>Outlook institucional do Tribunal</strong> antes do envio; registrado também que o endereço da <strong>SARQ - Polinter</strong> não consta na lista fornecida e deve ser localizado e confirmado no Outlook.</p>
 <p><strong>Alteração da versão 1.46:</strong> reestruturado o tópico <strong>24. Alvará de Soltura</strong>. O item <strong>24.1</strong> passou a conter o fluxo completo de expedição no BNMP: localização da pessoa, inclusão da peça, preenchimento do Alvará, consulta da unidade prisional no SIPEN, conferência/finalização e hipótese de medidas cautelares diversas da prisão. Adicionado o vídeo <strong>Expedição Alvará de Soltura</strong>, preservando os vídeos já existentes. O item <strong>24.2</strong> passou a detalhar Certidão/Nada Consta, salvamento dos documentos assinados, envio à SARQ com cópia à Polinter e print do Alvará no corpo do e-mail, juntada do comprovante em <code>Fase 60 / Tipo 70230</code>, juntada do Alvará no eJUD e eventual ofício ao juízo de origem com o Carimbo <code>10401</code> — <strong>“BNMP 3.0 Decisão c/ cautelares”</strong>. O tópico <strong>24.3</strong> foi mantido separado e pendente de detalhamento.</p>
 <p><strong>Alteração da versão 1.45:</strong> ampliado o tópico <strong>18. Recebimento de informações pelo Malote Digital</strong>: no item <strong>18.1</strong>, incluída a possibilidade de unir vários PDFs pelo PJe antes da juntada, com destaque para manter sempre o <strong>ofício da serventia judicial como primeiro documento</strong>; criada a subseção <strong>18.4. Atribuir ao processante após a juntada</strong>, identificada com a tag <strong>[ESTAGIÁRIOS]</strong>, orientando a atribuição pelo número final do processo, Motivo <strong>“Informações”</strong> e aviso ao processante no Teams da 9ª Câmara Criminal. Criado também o utilitário <strong>D.4. Unir PDFs pelo PJe</strong>, com seleção dos PDFs, ordenação dos arquivos, salvamento do documento unificado e imagem <strong>setataskbar.png</strong>.</p>
 <p><strong>Alteração da versão 1.44:</strong> adicionada, em <strong>3.1. Mesa de Trabalho</strong>, a orientação para visualizar todos os processos da Câmara pelo Local Virtual <strong>“Todos os Locais, exceto saída de acervo”</strong>, com uso dos filtros <strong>Últ. Usuários</strong>, processos em vermelho, <strong>Doctos. c/ petição p/ juntar</strong> e ordenação por <strong>DATA ENTRADA</strong>, acompanhada da imagem <strong>filtroejud.png</strong>. No tópico <strong>14.2</strong>, incluído o atalho de copiar o nome da Vara no eJUD e colá-lo na busca do Malote Digital, com as imagens <strong>varamalote.png</strong> e <strong>varaencontradamalote.png</strong>.</p>
