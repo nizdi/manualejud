@@ -27,6 +27,7 @@ button:hover{border-color:var(--accent)}
 .layout{max-width:1500px;margin:auto;display:grid;grid-template-columns:290px minmax(0,1fr) 270px;gap:20px;padding:20px}
 aside{position:sticky;top:76px;align-self:start;max-height:calc(100vh - 96px);overflow:auto;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
 main{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:28px 34px;box-shadow:var(--shadow);min-width:0}
+main p{text-align:justify}
 #toc a{display:block;color:var(--muted);text-decoration:none;padding:5px 7px;border-radius:7px;font-size:13px}
 #toc a:hover,#toc a.active{background:var(--accent2);color:var(--accent)}
 #toc .toc-main{display:flex;align-items:center;gap:4px;margin-top:5px}
@@ -109,7 +110,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.48</div>
+    <div class="brand">eJUD · Manual interativo · v1.49</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -135,7 +136,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.48 · 24-09-26</div>
+<div class="version-tag">Versão 1.49 · 24-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1911,7 +1912,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.48 — 24-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.49 — 24-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.49:</strong> os parágrafos do conteúdo principal do manual passaram a utilizar <strong>alinhamento justificado</strong> como padrão, preservando elementos que possuem alinhamento próprio, como tabelas, blocos visuais e demais componentes específicos.</p>
 <p><strong>Alteração da versão 1.48:</strong> incluída no início do tópico <strong>24.1. Expedição do Alvará de Soltura no BNMP</strong> a regra de que o Alvará somente pode ser emitido após a juntada do documento que fundamenta a soltura: <strong>Certidão de Julgamento</strong>, quando decorrer de sessão de julgamento, ou <strong>decisão monocrática</strong>, quando for esse o fundamento. Registrado que o rascunho da peça pode ser preparado e salvo antecipadamente, mas não deve ser finalizado/emitido antes da respectiva juntada.</p>
 <p><strong>Alteração da versão 1.47:</strong> adicionada ao tópico <strong>24.2.3. Enviar à SARQ responsável</strong> uma lista recolhida por padrão com os endereços de e-mail das SARQs, organizada por serventia e com botão <strong>Copiar</strong> em cada endereço. Incluído alerta para conferir o destinatário pelas sugestões do <strong>Outlook institucional do Tribunal</strong> antes do envio; registrado também que o endereço da <strong>SARQ - Polinter</strong> não consta na lista fornecida e deve ser localizado e confirmado no Outlook.</p>
 <p><strong>Alteração da versão 1.46:</strong> reestruturado o tópico <strong>24. Alvará de Soltura</strong>. O item <strong>24.1</strong> passou a conter o fluxo completo de expedição no BNMP: localização da pessoa, inclusão da peça, preenchimento do Alvará, consulta da unidade prisional no SIPEN, conferência/finalização e hipótese de medidas cautelares diversas da prisão. Adicionado o vídeo <strong>Expedição Alvará de Soltura</strong>, preservando os vídeos já existentes. O item <strong>24.2</strong> passou a detalhar Certidão/Nada Consta, salvamento dos documentos assinados, envio à SARQ com cópia à Polinter e print do Alvará no corpo do e-mail, juntada do comprovante em <code>Fase 60 / Tipo 70230</code>, juntada do Alvará no eJUD e eventual ofício ao juízo de origem com o Carimbo <code>10401</code> — <strong>“BNMP 3.0 Decisão c/ cautelares”</strong>. O tópico <strong>24.3</strong> foi mantido separado e pendente de detalhamento.</p>
