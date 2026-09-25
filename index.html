@@ -95,6 +95,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 .revisor-order-arrows{display:flex;justify-content:center;gap:min(24vw,180px);font-size:1.45rem;line-height:1;margin:8px 0 5px;color:var(--accent)}
 .revisor-order-bottom{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:14px;font-weight:800}
 .revisor-order-bottom-arrow{font-size:1.45rem;line-height:1;color:var(--accent)}
+.revisor-temporario{color:#c62828}
 @media(max-width:560px){.revisor-order{padding:12px 10px}.revisor-order-arrows{gap:28vw}.revisor-order-bottom{gap:7px;font-size:13px}.revisor-order-bottom-arrow{font-size:1.2rem}}
 .video-note{padding:12px 14px;border:2px solid var(--accent);border-radius:10px;background:var(--accent2);margin:14px 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .video-note strong{font-weight:900}
@@ -110,7 +111,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.53</div>
+    <div class="brand">eJUD · Manual interativo · v1.54</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -136,7 +137,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.53 · 24-09-26</div>
+<div class="version-tag">Versão 1.54 · 25-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -703,7 +704,7 @@ Sim   Não
 <div class="revisor-order-title">Ordem atual para atribuição:</div>
 <div class="revisor-order-top">Dr. DES. Pedro (480)</div>
 <div class="revisor-order-arrows" aria-hidden="true"><span>↗</span><span>↘</span></div>
-<div class="revisor-order-bottom"><span>Dr. JDS. Marcelo (654)</span><span class="revisor-order-bottom-arrow" aria-hidden="true">←</span><span>Dra. JDS. Erica (699)</span></div>
+<div class="revisor-order-bottom"><span class="revisor-temporario"><s>Dr. JDS. Marcelo (654)</s> <strong>05/10/2026</strong></span><span class="revisor-order-bottom-arrow" aria-hidden="true">←</span><span>Dra. JDS. Erica (699)</span></div>
 </div>
 <p>Se a composição do órgão mudar, a lógica deve ser mantida observando a <strong>ordem de antiguidade entre os magistrados</strong>: inicia-se pelo magistrado com maior tempo de atuação e segue-se, sucessivamente, até o mais recente.</p>
 <div class="critical"><strong>NÃO TERMINA NA ATRIBUIÇÃO:</strong> depois de salvar a atribuição ao revisor, é obrigatório seguir para o segundo passo e <strong>abrir a conclusão ao REVISOR</strong>.</div>
@@ -839,6 +840,28 @@ Sim   Não
 <p>Para preparar o ofício, utilize o <strong>Carimbo <code>7626</code> — “Comunica decisão”</strong>, adaptando o texto ao conteúdo efetivo da decisão e ao processo de origem.</p>
 <p>Depois de confeccionar e finalizar o ofício, encaminhe-o ao <strong>juízo de origem pelo Malote Digital</strong>, selecionando a serventia correspondente ao processo de 1ª instância.</p>
 <div class="icon-note"><strong>Resumo:</strong> conferir o resultado/decisão → HC concedido <strong>ou</strong> determinação expressa de comunicação → preparar ofício com Carimbo <code>7626</code> — Comunica decisão → revisar o texto → enviar ao juízo de origem pelo Malote Digital.</div>
+<div class="critical"><strong>ATENÇÃO AO PARÂMETRO DO CARIMBO:</strong> quando o parâmetro automático puxar o nome como <strong>“JOÃO e Outros”</strong>, apague o parâmetro no documento e digite manualmente os nomes específicos, por exemplo <strong>“JOÃO e MARIA”</strong>. Esse comportamento também pode ser corrigido no próprio carimbo, substituindo o parâmetro <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong>.</div>
+<h2 id="12-6-pos-sessao-acordaos-publicados">12.6. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
+<p>Após a sessão de julgamento, os processos chegam no local virtual <strong>“Para Publicar”</strong>. <strong>Não retire o processo dessa pasta antes da publicação do Acórdão.</strong> Enquanto aguarda, porém, adiante tudo o que já puder ser cumprido, como ofícios, comunicações e outras providências decorrentes do julgamento.</p>
+<div class="icon-note"><strong>Se o Acórdão ainda não estiver juntado:</strong> as comunicações e demais providências que já estiverem suficientemente definidas podem ser feitas com base na <strong>Certidão de Julgamento</strong>. Não é necessário deixar de adiantar a comunicação apenas porque o Acórdão ainda não foi disponibilizado.</div>
+<table>
+<thead><tr><th>Classe / resultado</th><th>Providência pós-sessão</th></tr></thead>
+<tbody>
+<tr><td><strong>Habeas Corpus — DENEGADO</strong></td><td>Não precisa comunicar nem oficiar ninguém, <strong>salvo se a decisão determinar expressamente</strong> alguma comunicação ou providência.</td></tr>
+<tr><td><strong>Habeas Corpus — CONCEDIDO</strong></td><td>Comunicar a <strong>Vara de origem</strong> utilizando o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>.</td></tr>
+<tr><td><strong>Agravo em Execução Penal</strong></td><td>Deve haver comunicação à <strong>VEP</strong>, <strong>seja o recurso provido ou não</strong>. Se houver pedido de <strong>contrarrazões</strong>, expedir também <strong>ofício à VEP</strong>.</td></tr>
+<tr><td><strong>Apelação — somente se houver réu preso</strong></td><td>Toda alteração da sentença deve ser comunicada à <strong>VEP</strong>. Se houver <strong>alteração do regime</strong>, comunicar também a <strong>SEAP</strong>. Exemplo: mudança do regime fechado para o semiaberto → oficiar a SEAP <strong>por e-mail</strong>. <strong>Esta regra é aplicada quando houver réu preso.</strong><br><span class="small"><strong>PENDENTE:</strong> acrescentar posteriormente a anotação específica referente a violência doméstica.</span></td></tr>
+<tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
+</tbody>
+</table>
+<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão</h3>
+<div class="critical"><strong>NÃO RETIRE ANTES DA PUBLICAÇÃO:</strong> enquanto o Acórdão ainda não tiver sido publicado, o processo permanece em <strong>“Para Publicar”</strong>, mesmo que as comunicações e os ofícios possíveis já tenham sido adiantados.</div>
+<ol>
+<li>Depois que o <strong>Acórdão for efetivamente publicado</strong>, encaminhe o processo para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Esse é o período utilizado para as intimações do <strong>Ministério Público</strong> e da <strong>Defensoria Pública</strong>.</li>
+<li>Passados os <strong>10 dias</strong> — quando o processo ficar vermelho pelo vencimento do prazo — encaminhe-o para a pasta <strong>“Aguardando 30”</strong>, referente ao prazo para o <strong>trânsito em julgado</strong>.</li>
+</ol>
+<div class="icon-note"><strong>Lembrete no processo:</strong> registre esse trâmite no campo de lembrete/observação do processo para facilitar o controle: <strong>publicação do Acórdão → Aguardando 10 dias → quando vencer/ficar vermelho, Aguardando 30 dias</strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> processo chega em <strong>Para Publicar</strong> → não retirar antes da publicação → adiantar ofícios/comunicações possíveis, inclusive pela Certidão de Julgamento quando suficiente → publicar Acórdão → <strong>Aguardando 10</strong> → prazo vencido/vermelho → <strong>Aguardando 30</strong>.</div>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
@@ -1327,6 +1350,7 @@ At.te,</code></pre>
 <li><code>Nada Consta - NOME.pdf</code></li>
 </ul>
 <div class="icon-note"><strong>Regra prática:</strong> salve tudo o que foi assinado + o Nada Consta, identificando os arquivos pelo nome do preso.</div>
+<div class="critical"><strong>INCLUSÃO DO ALVARÁ NO PROCESSO <span class="tag-estagiarios">[ESTAGIÁRIOS]</span>:</strong> depois de assinado, o <strong>Alvará de Soltura deve obrigatoriamente ser incluído no processo como peça</strong>, utilizando <strong>Processo Eletrônico → Digitalização de documentos</strong>. Em regra, essa inclusão dos Alvarás no eJUD será feita pelos <strong>estagiários</strong>. Se não houver estagiário responsável pelo caso, a inclusão deve ser feita pelo servidor antes de considerar o procedimento concluído. O passo detalhado de juntada permanece no tópico <a href="#24-2-4-juntar-alvara-ejud"><strong>24.2.4</strong></a>.</div>
 <h3 id="24-2-2-email-sarq-polinter">24.2.2. Identificar a SARQ e preparar o e-mail</h3>
 <p>Com os arquivos salvos, descubra primeiro <strong>qual SARQ é responsável pelo presídio</strong> em que o preso se encontra.</p>
 <p><a class="excel-link" href="https://tjrj.sharepoint.com/:b:/r/sites/teams.09ccri/Documentos%20Compartilhados/General/presidios%20de%20alvara.pdf?d=wefbe2625101941879ace2405f53eb2ab&amp;csf=1&amp;web=1&amp;e=LVovdO" target="_blank" rel="noopener noreferrer">📄 Abrir relação de presídios e SARQs responsáveis</a></p>
@@ -1969,7 +1993,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.53 — 24-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.54 — 25-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.54:</strong> criado o tópico <strong>12.6. Pós-sessão — comunicações e publicação dos Acórdãos</strong>, com orientação para manter os processos em <strong>Para Publicar</strong> até a publicação, adiantar comunicações/ofícios quando possível e utilizar a Certidão de Julgamento quando o Acórdão ainda não estiver disponível; incluída tabela de providências para HC denegado/concedido, Agravo em Execução Penal, Apelação com réu preso e Revisão Criminal, além do fluxo <strong>Aguardando 10 → Aguardando 30</strong> e uso de lembrete no processo. No tópico <strong>24.2.1</strong>, incluída a obrigatoriedade de inserir o Alvará assinado no processo por <strong>Processo Eletrônico → Digitalização de documentos</strong>, com indicação <strong>[ESTAGIÁRIOS]</strong>. No tópico <strong>12.5</strong>, acrescentada a correção para parâmetros que exibem <strong>“e Outros”</strong>, inclusive a alternativa de trocar <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong> no carimbo. Na ordem do tópico <strong>10.1</strong>, <strong>Dr. JDS. Marcelo (654)</strong> foi marcado temporariamente em vermelho e tachado, com a data <strong>05/10/2026</strong>.</p>
 <p><strong>Alteração da versão 1.53:</strong> reestruturado o tópico <strong>24.2. Pós-expedição</strong>: os documentos passam a ser salvos como <code>Alvará de Soltura - NOME.pdf</code>, <code>Medidas Cautelares - NOME.pdf</code> (quando houver) e <code>Nada Consta - NOME.pdf</code>; adicionados o vídeo <strong>Alvará de Soltura: salvamento e envio à SARQ</strong> e o link para a relação de presídios/SARQs; documentada a busca da SARQ pelo Outlook institucional, com cópia para <strong>SARQ - Polinter</strong>; acrescentados o texto padrão do e-mail, o print completo do Alvará no corpo da mensagem e as imagens <strong>emailsarq.png</strong>, <strong>altaprioridade.png</strong> e <strong>confirmaleitura.png</strong>; determinado o uso de <strong>Alta Prioridade</strong> e <strong>Confirmação de Leitura</strong>. A antiga lista de endereços das SARQs foi retirada da exibição até correção. O item <strong>24.2.4</strong> foi mantido.</p>
 <p><strong>Alteração da versão 1.52:</strong> corrigida a ordem do tópico <strong>24. Alvará de Soltura</strong>: a <strong>Certidão / Nada Consta</strong>, confeccionada pela Secretaria, passou a aparecer como <strong>primeiro passo, antes da expedição do Alvará no BNMP</strong>. Removida sua posição incorreta no pós-expedição e renumerados os itens de <strong>24.2</strong>, fazendo <strong>Salvar os documentos assinados</strong> passar a ser o item <strong>24.2.1</strong>. Também corrigido o texto padrão do e-mail à SARQ: a expressão <strong>“se houver”</strong> não faz parte da mensagem; quando existir Mandado de Cautelares, ele deve ser efetivamente acrescentado ao texto.</p>
 <p><strong>Alteração da versão 1.51:</strong> criado o tópico <strong>12.5. Comunicar decisão ao juízo de origem</strong>. Registrado que, quando o <strong>Habeas Corpus for concedido</strong> ou quando houver <strong>determinação expressa na decisão</strong>, o juízo de 1ª instância de origem deve ser comunicado por ofício enviado pelo Malote Digital, utilizando o Carimbo <code>7626</code> — <strong>“Comunica decisão”</strong>. Esclarecido também que, se o HC não for concedido e não houver determinação de comunicação, essa providência não é necessária. O código <code>7626</code> foi acrescentado à tabela e à consulta rápida de códigos.</p>
