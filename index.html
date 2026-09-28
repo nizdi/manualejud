@@ -111,7 +111,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.54</div>
+    <div class="brand">eJUD · Manual interativo · v1.55</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -137,11 +137,10 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.54 · 25-09-26</div>
+<div class="version-tag">Versão 1.55 · 28-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
-<p><strong>Base:</strong> consolidação das anotações de Carla, Laís, Mônica e do material “Atribuição ao Rensor (1º PASSO)”.</p>
 <p><strong>Importante:</strong> as fontes são anotações manuscritas de treinamento. Por isso, os passos foram organizados e padronizados, mas códigos, nomes de pastas, modelos e prazos marcados como <strong>CONFIRMAR</strong> devem ser conferidos no próprio eJUD, preferencialmente pela pesquisa com <strong>F2</strong>, antes da prática.</p>
 </blockquote>
 <hr />
@@ -1510,7 +1509,7 @@ At.te,</code></pre>
 -->
 <div class="critical"><strong>IMPORTANTE — PRINT DO ALVARÁ NO CORPO DO E-MAIL:</strong> há situações em que a SARQ não recebe corretamente os anexos. Por isso, mantenha também no corpo do e-mail um <strong>print completo do Alvará de Soltura</strong>, com todos os números visíveis.</div>
 <h3 id="24-2-3-comprovante-email">24.2.3. Juntar o comprovante do e-mail</h3>
-<p>Depois do envio, tire um <strong>print do e-mail enviado</strong> e junte-o ao processo como comprovante:</p>
+<p><strong>Opção 1 — Servidor:</strong> depois do envio, tire um <strong>print do e-mail enviado</strong> e junte-o ao processo como comprovante, utilizando o editor de texto da movimentação:</p>
 <pre><code class="language-text">Movimentação Unitária
 → Novo movimento
 → Fase 60
@@ -1522,6 +1521,14 @@ At.te,</code></pre>
 → finalizar/assinar
 </code></pre>
 <p>Esse é o mesmo procedimento descrito no tópico <a href="#16-juntar-comprovante-de-e-mail"><strong>16. Juntar comprovante de e-mail</strong></a>.</p>
+<div class="icon-note"><strong>Opção 2 — Estagiário <span class="tag-estagiarios">[ESTAGIÁRIOS]</span>:</strong> como o estagiário não tem acesso ao Word para inserir o print no documento, deve <strong>imprimir o e-mail enviado como PDF</strong> e <strong>juntar esse PDF diretamente ao processo</strong>, pelo mesmo procedimento de importação/digitalização explicado no tópico <a href="#18-1-juntar-informacoes-recebidas-pdf-externo"><strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong></a>.</div>
+<ol>
+<li>No Outlook institucional, abra o <strong>e-mail enviado à SARQ</strong> e utilize <strong>Imprimir → Imprimir como PDF</strong>.</li>
+<li>Salve o PDF no diretório <code>C:\EJUD</code>, preferencialmente com o <strong>número completo do processo</strong> e a identificação <strong>“Comprovante de e-mail”</strong> no nome do arquivo.</li>
+<li>No eJUD, abra a <strong>Movimentação Unitária</strong> e acesse <strong>Processo Eletrônico → Digitalização de documentos</strong>.</li>
+<li>Selecione <strong>ACERVO</strong>, importe o PDF, confira o <strong>número do processo</strong> e <strong>não marque a opção “Anexo”</strong>. Na descrição, identifique o documento como <strong>“Comprovante de e-mail”</strong>.</li>
+<li>Salve e conclua a juntada seguindo as orientações de <strong>Data/Hora, assinatura e carimbo</strong> do tópico <a href="#18-1-juntar-informacoes-recebidas-pdf-externo"><strong>18.1</strong></a>.</li>
+</ol>
 <h3 id="24-2-4-juntar-alvara-ejud">24.2.4. Juntar o Alvará de Soltura no processo</h3>
 <p>Em etapa própria do fluxo, o <strong>Alvará de Soltura</strong> também deve ser juntado ao processo no eJUD como documento digitalizado. Para a mecânica de importação/digitalização, utilize como referência o tópico <a href="#18-1-juntar-informacoes-recebidas-pdf-externo"><strong>18.1. Juntar no processo documento PDF externo</strong></a>.</p>
 <div class="critical"><strong>CLASSIFICAÇÃO:</strong> nesta rotina, a juntada do Alvará está associada à <strong>Expedição de Documento</strong>. O momento exato dessa juntada dentro do fluxo ainda deve ser confirmado; não confundir com a juntada posterior da Certidão OJ/Termo BNMP do tópico 24.3.</div>
@@ -1996,7 +2003,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.54 — 25-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.55 — 28-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.55:</strong> acrescentada uma segunda opção no tópico <strong>24.2.3. Juntar o comprovante do e-mail</strong>, identificada pela tag dourada <strong>[ESTAGIÁRIOS]</strong>: quando o comprovante for juntado por estagiário sem acesso ao Word, o e-mail enviado deverá ser impresso como PDF e importado no eJUD por <strong>Processo Eletrônico → Digitalização de documentos</strong>, seguindo o procedimento do tópico <strong>18.1</strong>. Mantida a primeira opção de juntada pelo servidor com print no documento.</p>
 <p><strong>Alteração da versão 1.54:</strong> criado o tópico <strong>12.6. Pós-sessão — comunicações e publicação dos Acórdãos</strong>, com orientação para manter os processos em <strong>Para Publicar</strong> até a publicação, adiantar comunicações/ofícios quando possível e utilizar a Certidão de Julgamento quando o Acórdão ainda não estiver disponível; incluída tabela de providências para HC denegado/concedido, Agravo em Execução Penal, Apelação com réu preso e Revisão Criminal, além do fluxo <strong>Aguardando 10 → Aguardando 30</strong> e uso de lembrete no processo. No tópico <strong>24.2.1</strong>, incluída a obrigatoriedade de inserir o Alvará assinado no processo por <strong>Processo Eletrônico → Digitalização de documentos</strong>, com indicação <strong>[ESTAGIÁRIOS]</strong>. No tópico <strong>12.5</strong>, acrescentada a correção para parâmetros que exibem <strong>“e Outros”</strong>, inclusive a alternativa de trocar <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong> no carimbo. Na ordem do tópico <strong>10.1</strong>, <strong>Dr. JDS. Marcelo (654)</strong> foi marcado temporariamente em vermelho e tachado, com a data <strong>05/10/2026</strong>.</p>
 <p><strong>Alteração da versão 1.53:</strong> reestruturado o tópico <strong>24.2. Pós-expedição</strong>: os documentos passam a ser salvos como <code>Alvará de Soltura - NOME.pdf</code>, <code>Medidas Cautelares - NOME.pdf</code> (quando houver) e <code>Nada Consta - NOME.pdf</code>; adicionados o vídeo <strong>Alvará de Soltura: salvamento e envio à SARQ</strong> e o link para a relação de presídios/SARQs; documentada a busca da SARQ pelo Outlook institucional, com cópia para <strong>SARQ - Polinter</strong>; acrescentados o texto padrão do e-mail, o print completo do Alvará no corpo da mensagem e as imagens <strong>emailsarq.png</strong>, <strong>altaprioridade.png</strong> e <strong>confirmaleitura.png</strong>; determinado o uso de <strong>Alta Prioridade</strong> e <strong>Confirmação de Leitura</strong>. A antiga lista de endereços das SARQs foi retirada da exibição até correção. O item <strong>24.2.4</strong> foi mantido.</p>
 <p><strong>Alteração da versão 1.52:</strong> corrigida a ordem do tópico <strong>24. Alvará de Soltura</strong>: a <strong>Certidão / Nada Consta</strong>, confeccionada pela Secretaria, passou a aparecer como <strong>primeiro passo, antes da expedição do Alvará no BNMP</strong>. Removida sua posição incorreta no pós-expedição e renumerados os itens de <strong>24.2</strong>, fazendo <strong>Salvar os documentos assinados</strong> passar a ser o item <strong>24.2.1</strong>. Também corrigido o texto padrão do e-mail à SARQ: a expressão <strong>“se houver”</strong> não faz parte da mensagem; quando existir Mandado de Cautelares, ele deve ser efetivamente acrescentado ao texto.</p>
