@@ -55,6 +55,7 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .warn{background:var(--warn);border:1px solid #d7b24d55;padding:10px;border-radius:8px}
 .critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
 .despacho-texto{font-size:1.22em;font-weight:900}
+.exemplo-publicacao{font-size:1.22em;font-weight:850;line-height:1.5}
 .tag-estagiarios{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#725400;color:#fff4c7;border:1px solid #9a7410;font-size:.72em;font-weight:900;vertical-align:2px;letter-spacing:.02em}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
@@ -111,7 +112,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.55</div>
+    <div class="brand">eJUD · Manual interativo · v1.56</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -137,7 +138,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.55 · 28-09-26</div>
+<div class="version-tag">Versão 1.56 · 29-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -866,11 +867,13 @@ Sim   Não
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
-<div class="critical"><strong>DESPACHOS QUE EXIGEM PUBLICAÇÃO:</strong> quando houver despacho que dependa de publicação/intimação às partes — por exemplo, despacho determinando <strong>manifestação do réu</strong> — a publicação é feita pelo <strong>próprio servidor</strong>. <strong>Não aguarde a Secretaria para realizar essa publicação.</strong> A intimação do Ministério Público para parecer não entra nessa regra e segue o fluxo próprio do tópico 6.</div>
+<div class="critical"><strong>QUANDO PUBLICAR UM DESPACHO:</strong> o servidor deve realizar a publicação quando o despacho exigir <strong>intimação de uma parte para praticar algum ato ou cumprir uma determinação</strong>, desde que a intimação deva ocorrer por publicação. <strong>Não aguarde a Secretaria nesses casos.</strong> O <strong>Ministério Público</strong> e a <strong>Defensoria Pública</strong> seguem os procedimentos de <strong>intimação pessoal</strong>, que não são substituídos por esta publicação; para a intimação do MP destinada a parecer, consulte o <a href="#6-intimacao-do-ministerio-publico-para-parecer"><strong>tópico 6</strong></a>.</div>
 <div class="critical"><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</div>
 <h2 id="13-1-publicar-despacho">13.1. Publicar despacho</h2>
 <div class="video-note"><strong>🎥 VÍDEO — Publicação de despacho</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FPUBLICA%C3%87%C3%83O%20DESPACHO%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2E986ff7e1%2D0a40%2D4d50%2Db704%2Dab673b736c9d" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
-<p>Para colocar um <strong>despacho</strong> na fila de publicação do DJEN:</p>
+<p>Utilize este procedimento para despachos que determinem a prática de ato pela parte e que exijam <strong>publicação para sua intimação</strong>. Exemplos:</p>
+<div class="icon-note exemplo-publicacao"><div>• <strong>Apresentar razões recursais</strong>;</div><div>• <strong>Recolher ou comprovar o pagamento de custas</strong>;</div><div>• <strong>Manifestar-se ou apresentar documentos</strong> em cumprimento ao despacho.</div></div>
+<p>As partes que devam receber <strong>intimação pessoal</strong>, como Ministério Público e Defensoria Pública, seguem o respectivo fluxo; não utilize a publicação como substituta dessa intimação. Para colocar o <strong>despacho</strong> na fila de publicação do DJEN:</p>
 <ol>
 <li>Abra a Central de Publicações de uma destas formas:
 <ul>
@@ -892,17 +895,6 @@ Sim   Não
 </ol>
 <div class="critical"><strong>ETAPA FINAL OBRIGATÓRIA — NÃO ENCERRA NO “ENVIAR AO DJEN”:</strong> depois de colocar o despacho na fila, volte ao processo pela <strong>Movimentação Unitária</strong>, clique em <strong>Encaminhar</strong> e envie obrigatoriamente o processo para a pasta <strong>“Para publicar”</strong>. Não deixe o processo na mesa após concluir o envio ao DJEN.</div>
 <div class="icon-note"><strong>Resumo:</strong> <img class="ejud-icon" src="/manualejud/Imagens/jornal.png" alt="Ícone Jornal - Publicação"> Publicação → Central de Publicações → Expedientes → Local <code>17902</code> → Tipo <code>1</code> (Despachos) → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Novo/F5 → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → Fila... → maximizar → colar nº do processo → Enter → conferir tick em Publicar → fechar a Fila → Enviar ao DJEN → Movimentação Unitária → Encaminhar → <strong>Para publicar</strong>.</div>
-<h3 id="antes-de-publicar">Antes de publicar</h3>
-<ul>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir segredo de justiça.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir nome da vítima/ofendido.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir relator/revisor.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir texto do despacho/decisão.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Se o despacho exigir publicação/intimação às partes, realizar a publicação pelo próprio servidor; não aguardar a Secretaria.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Verificar se há determinação de expedir ofício ou cumprir outra providência antes da publicação; uma das novas anotações registra um caso com ofício prévio.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir se o processo ainda está em pauta, quando aplicável.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Conferir se não existe diligência pendente.</li>
-</ul>
 <hr />
 <h1 id="14-pedido-de-informacao">14. Solicitação de Informações — expedição de ofício e envio pelo Malote Digital</h1>
 <p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
@@ -1192,6 +1184,7 @@ At.te,</code></pre>
 <blockquote>
 <p><strong>Resumo:</strong> MOVIMENTAR → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova fase/F5 → Certidão <code>50002</code> → Complemento 1 <code>9999</code> → Carimbo <code>7585</code> → assinar → abrir conclusão.</p>
 </blockquote>
+<div class="icon-note"><strong>OUTRO CARIMBO — <code>7635</code> — “CERTIDÃO - DECURSO DE PRAZO”:</strong> utilize-o, de forma geral, quando o prazo concedido em <strong>despacho ou decisão do Desembargador</strong> tiver transcorrido <strong>sem que a determinação tenha sido cumprida</strong>. Confira o prazo, registre o decurso na certidão e adapte o texto ao processo. <strong>Em regra, depois de certificar o decurso de prazo, abra conclusão ao Desembargador</strong> para que ele delibere sobre a providência seguinte.</div>
 <h2 id="19-2-certidao-livre">19.2. Certidão livre</h2>
 <pre><code class="language-text">Novo
 → Fase 50002
@@ -1785,6 +1778,11 @@ At.te,</code></pre>
 <td>alta</td>
 </tr>
 <tr>
+<td style="text-align:right"><code>7635</code></td>
+<td>Carimbo “CERTIDÃO - DECURSO DE PRAZO”</td>
+<td>alta</td>
+</tr>
+<tr>
 <td style="text-align:right"><code>7647</code></td>
 <td>Carimbo “Termo de Compromisso”</td>
 <td>alta</td>
@@ -2003,7 +2001,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.55 — 28-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.56 — 29-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.56:</strong> removido do tópico <strong>13.1</strong> o checklist “Antes de publicar”; esclarecido que a publicação pelo servidor é feita nos despachos que exijam intimação da parte para cumprir determinação ou praticar ato, com exemplos visuais ampliados de apresentação de razões recursais, recolhimento/comprovação de custas e manifestação/apresentação de documentos, ressalvadas as hipóteses de intimação pessoal do Ministério Público e da Defensoria Pública. Acrescentado ao tópico <strong>19.1</strong> o carimbo <code>7635</code> — <strong>“CERTIDÃO - DECURSO DE PRAZO”</strong> — para certificar, em geral, o não cumprimento de determinação após o prazo, com posterior conclusão ao Desembargador, além de incluí-lo na tabela e na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 1.55:</strong> acrescentada uma segunda opção no tópico <strong>24.2.3. Juntar o comprovante do e-mail</strong>, identificada pela tag dourada <strong>[ESTAGIÁRIOS]</strong>: quando o comprovante for juntado por estagiário sem acesso ao Word, o e-mail enviado deverá ser impresso como PDF e importado no eJUD por <strong>Processo Eletrônico → Digitalização de documentos</strong>, seguindo o procedimento do tópico <strong>18.1</strong>. Mantida a primeira opção de juntada pelo servidor com print no documento.</p>
 <p><strong>Alteração da versão 1.54:</strong> criado o tópico <strong>12.6. Pós-sessão — comunicações e publicação dos Acórdãos</strong>, com orientação para manter os processos em <strong>Para Publicar</strong> até a publicação, adiantar comunicações/ofícios quando possível e utilizar a Certidão de Julgamento quando o Acórdão ainda não estiver disponível; incluída tabela de providências para HC denegado/concedido, Agravo em Execução Penal, Apelação com réu preso e Revisão Criminal, além do fluxo <strong>Aguardando 10 → Aguardando 30</strong> e uso de lembrete no processo. No tópico <strong>24.2.1</strong>, incluída a obrigatoriedade de inserir o Alvará assinado no processo por <strong>Processo Eletrônico → Digitalização de documentos</strong>, com indicação <strong>[ESTAGIÁRIOS]</strong>. No tópico <strong>12.5</strong>, acrescentada a correção para parâmetros que exibem <strong>“e Outros”</strong>, inclusive a alternativa de trocar <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong> no carimbo. Na ordem do tópico <strong>10.1</strong>, <strong>Dr. JDS. Marcelo (654)</strong> foi marcado temporariamente em vermelho e tachado, com a data <strong>05/10/2026</strong>.</p>
 <p><strong>Alteração da versão 1.53:</strong> reestruturado o tópico <strong>24.2. Pós-expedição</strong>: os documentos passam a ser salvos como <code>Alvará de Soltura - NOME.pdf</code>, <code>Medidas Cautelares - NOME.pdf</code> (quando houver) e <code>Nada Consta - NOME.pdf</code>; adicionados o vídeo <strong>Alvará de Soltura: salvamento e envio à SARQ</strong> e o link para a relação de presídios/SARQs; documentada a busca da SARQ pelo Outlook institucional, com cópia para <strong>SARQ - Polinter</strong>; acrescentados o texto padrão do e-mail, o print completo do Alvará no corpo da mensagem e as imagens <strong>emailsarq.png</strong>, <strong>altaprioridade.png</strong> e <strong>confirmaleitura.png</strong>; determinado o uso de <strong>Alta Prioridade</strong> e <strong>Confirmação de Leitura</strong>. A antiga lista de endereços das SARQs foi retirada da exibição até correção. O item <strong>24.2.4</strong> foi mantido.</p>
@@ -2093,7 +2092,7 @@ const codeData = [
 ["50040","Recurso Ordinário"],["50042","Despacho/Decisão"],["50055","Contrarrazões"],
 ["50056","Ciência"],["50083","Parecer"],["50126","Para apreciação"],["50127","Razões"],
 ["50666","Destinatário ligado à 2ª Vice-Presidência — confirmar"],["50671","Defensoria Pública"],
-["50675","Ministério Público"],["59998","Cumprimento em certidões"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["7623","Carimbo SOLICITA INFORMAÇÕES - SIMPLES"],["7626","Carimbo Comunica decisão"],["7647","Carimbo Termo de Compromisso"],["10401","Carimbo BNMP 3.0 Decisão c/ cautelares"],["66721","Comprovante de Malote"],
+["50675","Ministério Público"],["59998","Cumprimento em certidões"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["7623","Carimbo SOLICITA INFORMAÇÕES - SIMPLES"],["7626","Carimbo Comunica decisão"],["7635","Carimbo CERTIDÃO - DECURSO DE PRAZO"],["7647","Carimbo Termo de Compromisso"],["10401","Carimbo BNMP 3.0 Decisão c/ cautelares"],["66721","Comprovante de Malote"],
 ["70230","Comprovante de e-mail"],["17902","9ª Câmara Criminal — Consulta > Composição"],["23429","5º Grupo de Câmaras Criminais — Consulta > Composição"]
 ];
 
