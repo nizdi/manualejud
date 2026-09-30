@@ -90,6 +90,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 .manual-img.grande{width:1100px;max-width:100%}
 .ejud-icon{width:24px;height:24px;object-fit:contain;vertical-align:-6px;margin:0 5px 0 2px}
 .icon-note{padding:10px 12px;border:1px solid var(--border);border-radius:9px;background:var(--code);margin:10px 0}
+.flow-branch{text-align:center;margin:18px 0 2px}.flow-branch-label{display:inline-block;padding:7px 12px;border-radius:999px;background:var(--accent2);color:var(--accent);font-weight:900}.flow-branch-arrows{display:flex;justify-content:center;gap:min(34vw,320px);font-size:2rem;line-height:1;color:var(--accent);margin:6px 0 0}.flow-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;margin:4px 0 18px}.flow-card{border:1px solid var(--border);border-radius:10px;background:var(--bg);padding:14px 16px}.flow-card h4{margin:0 0 10px;font-size:1.05rem}@media(max-width:760px){.flow-branch-arrows{display:none}.flow-split{grid-template-columns:1fr}}
 .revisor-order{max-width:720px;margin:14px auto;padding:14px 18px;border:1px solid var(--border);border-radius:10px;background:var(--code);text-align:center}
 .revisor-order-title{font-weight:800;margin-bottom:10px}
 .revisor-order-top{font-weight:800}
@@ -112,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.57</div>
+    <div class="brand">eJUD · Manual interativo · v1.58</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -138,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.57 · 29-09-26</div>
+<div class="version-tag">Versão 1.58 · 30-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -895,16 +896,42 @@ Sim   Não
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
-<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão</h3>
+<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão — ciência e prazos recursais</h3>
 <div class="critical"><strong>NÃO RETIRE ANTES DA PUBLICAÇÃO:</strong> enquanto o Acórdão ainda não tiver sido publicado, o processo permanece em <strong>“Para Publicar”</strong>, mesmo que as comunicações e os ofícios possíveis já tenham sido adiantados.</div>
+<div class="critical"><strong>REGRA DA DEFENSORIA:</strong> a <strong>Defensoria Pública tem prazo em dobro para recorrer e para as demais manifestações processuais</strong>. Esse prazo em dobro <strong>não se aplica à ciência</strong>. A fase de ciência segue o mesmo controle do processo, inclusive quanto à ciência tácita.</div>
+<div class="icon-note"><strong>TERMO INICIAL:</strong> o prazo recursal de cada parte é contado <strong>individualmente</strong>. Se uma parte tomar ciência antes da outra, o prazo daquela parte já começa a correr, mesmo que a outra ainda esteja aguardando ciência. <strong>O prazo começa no dia seguinte à ciência</strong>, seja ela expressa/peticionada ou tácita.</div>
 <ol>
-
-<li>Depois que o <strong>Acórdão for efetivamente publicado</strong>, confirme que foi feita a intimação pessoal ao <strong>Ministério Público</strong> e a <strong>Defensoria Pública</strong> pela Secretária.</li>
-<li>Encaminhe o processo para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Esse é o período em que se confirma se houve intimação tácita ou da ciência das partes para o cálculo do tempo que falta para o trânsito em julgado.
-<li>Passados os <strong>10 dias</strong> — quando o processo ficar vermelho pelo vencimento do prazo — encaminhe-o para a pasta <strong>“Aguardando 30”</strong>, referente ao prazo para o <strong>trânsito em julgado</strong>.</li>
+<li>Depois que o <strong>Acórdão for efetivamente publicado</strong>, confirme as intimações pessoais cabíveis ao <strong>Ministério Público</strong> e à <strong>Defensoria Pública</strong> pela Secretaria.</li>
+<li>Encaminhe o processo para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Essa pasta é usada para acompanhar a <strong>ciência das partes</strong>, inclusive a ciência tácita.</li>
 </ol>
-<div class="icon-note"><strong>Lembrete no processo:</strong> registre esse trâmite no campo de lembrete/observação do processo para facilitar o controle: <strong>publicação do Acórdão → Aguardando 10 dias → quando vencer/ficar vermelho, Aguardando 30 dias</strong>.</div>
-<div class="icon-note"><strong>Resumo:</strong> processo chega em <strong>Para Publicar</strong> → não retirar antes da publicação → adiantar ofícios/comunicações possíveis, inclusive pela Certidão de Julgamento quando suficiente → publicar Acórdão → <strong>Aguardando 10</strong> → prazo vencido/vermelho → <strong>Aguardando 30</strong>.</div>
+<div class="critical"><strong>NÃO SAIA DO “AGUARDANDO 10” ENQUANTO AINDA FALTAR CIÊNCIA DE ALGUMA PARTE:</strong> se uma parte tomar ciência antes, o prazo dela já começa a correr individualmente, mas o processo permanece no <strong>Aguardando 10</strong> enquanto a outra parte ainda não tiver ciência. Quando todas as partes tiverem ciência — expressa ou tácita — siga para a pasta correspondente ao maior prazo recursal ainda relevante.</div>
+<h4>Dois caminhos após a ciência de todas as partes</h4>
+<div class="flow-branch"><div class="flow-branch-label">CIÊNCIA DE TODAS AS PARTES</div><div class="flow-branch-arrows" aria-hidden="true"><span>↙</span><span>↘</span></div></div>
+<div class="flow-split">
+<div class="flow-card">
+<h4>Caminho 1 — SEM Defensoria Pública<br><span class="small">MP × advogado particular</span></h4>
+<p><strong>Apelação:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. O prazo considerado é de <strong>15 dias</strong> para eventual REsp/REx.</p>
+<p><strong>Habeas Corpus:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. Para o advogado, o <strong>ROC</strong> tem prazo de <strong>5 dias</strong>; para o MP, o recurso a considerar neste fluxo é o <strong>REsp, em 15 dias</strong>. <strong>O MP não interpõe ROC</strong> neste fluxo, pois o ROC é utilizado contra a denegação do HC.</p>
+</div>
+<div class="flow-card">
+<h4>Caminho 2 — COM Defensoria Pública<br><span class="small">DP × MP</span></h4>
+<p><strong>Apelação:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 30</strong>. A DP possui <strong>30 dias</strong> para REsp/REx, em razão do prazo em dobro. O MP permanece com <strong>15 dias</strong>.</p>
+<p><strong>Habeas Corpus denegado:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 15</strong>. A DP possui <strong>10 dias</strong> para ROC; o MP permanece com <strong>15 dias</strong> para eventual REsp.</p>
+</div>
+</div>
+<h4>Exemplo — Apelação com MP e DP</h4>
+<div class="icon-note"><strong>Exemplo:</strong> o MP toma ciência no 5º dia. A partir do dia seguinte, começa a correr para ele o prazo de <strong>15 dias</strong>. Mesmo assim, <strong>não retire o processo do Aguardando 10</strong> se a DP ainda não tiver ciência. Se a ciência da DP for tácita apenas no 10º dia, o prazo dela começa no dia seguinte e, como na Apelação a DP possui <strong>30 dias</strong> para REsp/REx, o processo deve então seguir para <strong>Aguardando 30</strong>. O prazo do MP terminará antes, mas o processo continua aguardando o prazo da DP.</div>
+<table>
+<thead><tr><th>Situação</th><th>Após Aguardando 10 / ciência de todos</th><th>Prazo relevante</th></tr></thead>
+<tbody>
+<tr><td><strong>Apelação — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>MP/advogado: 15 dias para REsp/REx.</td></tr>
+<tr><td><strong>Apelação — com DP</strong></td><td><strong>Aguardando 30</strong></td><td>DP: 30 dias para REsp/REx; MP: 15 dias.</td></tr>
+<tr><td><strong>HC — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>Advogado: 5 dias para ROC; MP: 15 dias para REsp.</td></tr>
+<tr><td><strong>HC — com DP</strong></td><td><strong>Aguardando 15</strong></td><td>DP: 10 dias para ROC; MP: 15 dias para REsp.</td></tr>
+</tbody>
+</table>
+<div class="critical"><strong>ATENÇÃO A CIÊNCIAS EM DATAS DIFERENTES:</strong> não presuma que os prazos de todas as partes começaram juntos. Confira a data de ciência de <strong>cada parte</strong> e registre no lembrete do processo, se necessário. A pasta indica o controle operacional do processo, mas não substitui a conferência individual do termo inicial e do término do prazo de cada intimado.</div>
+<div class="icon-note"><strong>Resumo:</strong> publicação do Acórdão → <strong>Aguardando 10</strong> para ciência → cada parte começa seu prazo no dia seguinte à própria ciência → não sair do Aguardando 10 enquanto faltar ciência de alguém → depois da ciência de todos: <strong>Apelação sem DP = Aguardando 15</strong>; <strong>Apelação com DP = Aguardando 30</strong>; <strong>HC sem DP = Aguardando 15</strong>; <strong>HC com DP = Aguardando 15</strong>.</div>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
@@ -2057,7 +2084,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.57 — 29-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.58 — 30-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.58:</strong> reestruturado o tópico <strong>12.6.1</strong> para separar o controle pós-publicação entre processos <strong>sem Defensoria Pública</strong> e <strong>com Defensoria Pública</strong>, distinguindo Apelação e Habeas Corpus. Registrado que a DP possui prazo em dobro para recursos e demais manifestações, mas <strong>não para ciência</strong>; cada parte inicia seu prazo individualmente no dia seguinte à própria ciência, expressa ou tácita; o processo permanece em <strong>Aguardando 10</strong> enquanto faltar ciência de alguma parte. Após a ciência de todos, o fluxo passa a ser: <strong>Apelação sem DP → Aguardando 15</strong>; <strong>Apelação com DP → Aguardando 30</strong>; <strong>HC sem DP → Aguardando 15</strong>; <strong>HC com DP → Aguardando 15</strong>. Incluídos quadro visual em dois caminhos, tabela-resumo e exemplo de ciência do MP anterior à ciência da DP.</p>
 <p><strong>Alteração da versão 1.57:</strong> reorganizados os tópicos <strong>6 e 7</strong>: o novo <strong>6. Intimações MP (pessoal/parecer) e DP</strong> reúne o fluxo do MP para parecer (6.1) e o envio à Defensoria (6.2), preservando as orientações anteriores. O novo <strong>7. Intimações Pessoais</strong> detalha a consulta prévia ao SIPEN pelo nome e nome da mãe, a coleta de nome, CPF/RG, endereço ou presídio e eventual celular, a consulta à planilha da Nona Câmara Criminal (abas <strong>Unidades prisionais</strong> e <strong>Intimações</strong>) para localizar a Central de Mandados competente e o fluxo de <strong>Fase 60 / Tipo 66235</strong>, com os carimbos <code>7632</code> e <code>7652</code>. Incluídos esses códigos na consulta rápida.</p>
 <p><strong>Alteração da versão 1.56:</strong> removido do tópico <strong>13.1</strong> o checklist “Antes de publicar”; esclarecido que a publicação pelo servidor é feita nos despachos que exijam intimação da parte para cumprir determinação ou praticar ato, com exemplos visuais ampliados de apresentação de razões recursais, recolhimento/comprovação de custas e manifestação/apresentação de documentos, ressalvadas as hipóteses de intimação pessoal do Ministério Público e da Defensoria Pública. Acrescentado ao tópico <strong>19.1</strong> o carimbo <code>7635</code> — <strong>“CERTIDÃO - DECURSO DE PRAZO”</strong> — para certificar, em geral, o não cumprimento de determinação após o prazo, com posterior conclusão ao Desembargador, além de incluí-lo na tabela e na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 1.55:</strong> acrescentada uma segunda opção no tópico <strong>24.2.3. Juntar o comprovante do e-mail</strong>, identificada pela tag dourada <strong>[ESTAGIÁRIOS]</strong>: quando o comprovante for juntado por estagiário sem acesso ao Word, o e-mail enviado deverá ser impresso como PDF e importado no eJUD por <strong>Processo Eletrônico → Digitalização de documentos</strong>, seguindo o procedimento do tópico <strong>18.1</strong>. Mantida a primeira opção de juntada pelo servidor com print no documento.</p>
