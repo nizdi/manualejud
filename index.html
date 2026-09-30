@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.58</div>
+    <div class="brand">eJUD · Manual interativo · v1.59</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.58 · 30-09-26</div>
+<div class="version-tag">Versão 1.59 · 30-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -563,6 +563,21 @@ Sim   Não
 <li>Depois de revisar o texto, <strong>assine o mandado</strong>.</li>
 <li>Para o cumprimento, encaminhe o <strong>mandado assinado</strong> à <strong>Central de Mandados responsável</strong>, conforme o local de intimação apurado na planilha. Se o intimando estiver preso, use o <strong>e-mail institucional da Central indicada na aba “Unidades prisionais”</strong>.</li>
 </ol>
+<h3 id="7-juntar-comprovante-email-mandado">Juntar o comprovante do envio por e-mail</h3>
+<p>Depois de enviar o mandado à Central de Mandados, <strong>junte no processo o comprovante do e-mail enviado</strong>.</p>
+<pre><code class="language-text">Movimentação Unitária
+→ Novo movimento
+→ Fase 60
+→ Tipo 70230 — Comprovante de e-mail
+→ TEXTO
+→ colar o print do e-mail enviado
+→ Salvar
+→ reabrir o movimento com duplo clique
+→ finalizar/assinar
+</code></pre>
+<p>O print deve mostrar o <strong>e-mail efetivamente enviado à Central de Mandados</strong>, com o destinatário e as informações do envio visíveis, conforme o exemplo abaixo.</p>
+<img class="manual-img grande" src="/manualejud/Imagens/mandadointimacaoemail.png" alt="Exemplo de comprovante do e-mail de envio de Mandado de Intimação à Central de Mandados">
+<div class="icon-note"><strong>Resumo:</strong> enviar o Mandado de Intimação por e-mail à Central competente → tirar print do e-mail enviado → Fase <code>60</code> → Tipo <code>70230</code> — Comprovante de e-mail → TEXTO → colar o print → Salvar → reabrir com duplo clique → finalizar/assinar.</div>
 <div class="critical"><strong>ANTES DO ENVIO:</strong> confira a identificação do intimando, os documentos pessoais disponíveis, o destino de cumprimento (presídio ou residência), o telefone celular quando aplicável, o carimbo escolhido e a <strong>Central de Mandados competente</strong>. Não presuma a Central pelo nome do bairro ou do presídio: consulte a aba correspondente na planilha.</div>
 <div class="icon-note"><strong>Resumo:</strong> SIPEN (nome + nome da mãe) → confirmar se está preso → anotar nome, CPF/RG, endereço ou presídio e telefone quando aplicável → planilha <strong>Unidades prisionais</strong> ou <strong>Intimações</strong> → <strong>Fase 60</strong> → <strong>Tipo 66235</strong> → Salvar → reabrir → Carimbo Livre <code>7632</code> ou <code>7652</code> → preencher/revisar → Assinar → encaminhar à Central competente.</div>
 <hr />
@@ -2084,7 +2099,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.58 — 30-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.59 — 30-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.59:</strong> acrescentada ao tópico <strong>7. Intimações Pessoais</strong> a etapa posterior ao envio do Mandado de Intimação à Central de Mandados: juntada do <strong>comprovante do e-mail</strong> no processo por <strong>Fase 60 / Tipo 70230</strong>, com criação de TEXTO, colagem do print do e-mail enviado, salvamento, reabertura do movimento e finalização/assinatura. Incluída a imagem <strong>mandadointimacaoemail.png</strong> como exemplo visual.</p>
 <p><strong>Alteração da versão 1.58:</strong> reestruturado o tópico <strong>12.6.1</strong> para separar o controle pós-publicação entre processos <strong>sem Defensoria Pública</strong> e <strong>com Defensoria Pública</strong>, distinguindo Apelação e Habeas Corpus. Registrado que a DP possui prazo em dobro para recursos e demais manifestações, mas <strong>não para ciência</strong>; cada parte inicia seu prazo individualmente no dia seguinte à própria ciência, expressa ou tácita; o processo permanece em <strong>Aguardando 10</strong> enquanto faltar ciência de alguma parte. Após a ciência de todos, o fluxo passa a ser: <strong>Apelação sem DP → Aguardando 15</strong>; <strong>Apelação com DP → Aguardando 30</strong>; <strong>HC sem DP → Aguardando 15</strong>; <strong>HC com DP → Aguardando 15</strong>. Incluídos quadro visual em dois caminhos, tabela-resumo e exemplo de ciência do MP anterior à ciência da DP.</p>
 <p><strong>Alteração da versão 1.57:</strong> reorganizados os tópicos <strong>6 e 7</strong>: o novo <strong>6. Intimações MP (pessoal/parecer) e DP</strong> reúne o fluxo do MP para parecer (6.1) e o envio à Defensoria (6.2), preservando as orientações anteriores. O novo <strong>7. Intimações Pessoais</strong> detalha a consulta prévia ao SIPEN pelo nome e nome da mãe, a coleta de nome, CPF/RG, endereço ou presídio e eventual celular, a consulta à planilha da Nona Câmara Criminal (abas <strong>Unidades prisionais</strong> e <strong>Intimações</strong>) para localizar a Central de Mandados competente e o fluxo de <strong>Fase 60 / Tipo 66235</strong>, com os carimbos <code>7632</code> e <code>7652</code>. Incluídos esses códigos na consulta rápida.</p>
 <p><strong>Alteração da versão 1.56:</strong> removido do tópico <strong>13.1</strong> o checklist “Antes de publicar”; esclarecido que a publicação pelo servidor é feita nos despachos que exijam intimação da parte para cumprir determinação ou praticar ato, com exemplos visuais ampliados de apresentação de razões recursais, recolhimento/comprovação de custas e manifestação/apresentação de documentos, ressalvadas as hipóteses de intimação pessoal do Ministério Público e da Defensoria Pública. Acrescentado ao tópico <strong>19.1</strong> o carimbo <code>7635</code> — <strong>“CERTIDÃO - DECURSO DE PRAZO”</strong> — para certificar, em geral, o não cumprimento de determinação após o prazo, com posterior conclusão ao Desembargador, além de incluí-lo na tabela e na consulta rápida de códigos.</p>
