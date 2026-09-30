@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.59</div>
+    <div class="brand">eJUD · Manual interativo · v1.61</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.59 · 30-09-26</div>
+<div class="version-tag">Versão 1.61 · 30-09-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -526,6 +526,34 @@ Sim   Não
 <blockquote>
 <p><strong>CONFIRMAR:</strong> escolha o motivo de acordo com a providência do processo e valide destinatário e motivo com F2.</p>
 </blockquote>
+
+<h2 id="6-3-intimacao-mp-primeira-instancia">6.3. Intimação do MP de 1ª Instância</h2>
+<p>Quando for necessário intimar o <strong>Ministério Público que atua no processo de 1ª instância</strong>, inicie a intimação normalmente pela <strong>Fase 8</strong>.</p>
+<pre><code class="language-text">Movimentar
+→ Novo
+→ Fase 8
+→ Destinatário: Ministério Público (50675)
+→ Motivo: selecionar conforme a finalidade da intimação
+   Ex.: contrarrazões, razões etc.
+</code></pre>
+<div class="critical"><strong>ATENÇÃO — O DESTINATÁRIO PRECISA SER ALTERADO:</strong> selecionar inicialmente o Ministério Público pelo código <code>50675</code> não basta. Para a intimação chegar ao <strong>MP de 1ª instância correto</strong>, é necessário alterar a entidade de destino conforme a Promotoria responsável pelo processo originário.</div>
+
+<h3 id="6-3-alterar-destinatario-mp">Como alterar o destinatário</h3>
+<ol>
+<li>Na própria movimentação, localize a área <strong>Entidades</strong>.</li>
+<li>Clique no <strong>número exibido no campo DESTINO</strong>, indicado pelo quadrado vermelho na imagem abaixo.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/intimacaomp1instancia1.png" alt="Campo DESTINO na área Entidades para alteração do destinatário da intimação do Ministério Público de 1ª instância">
+<ol start="3">
+<li>Com o campo de destino selecionado, pressione <strong>F2</strong>.</li>
+<li>Na caixa de pesquisa que abrir, procure a <strong>Promotoria correspondente ao processo de origem</strong>. Por exemplo, pesquisando por <strong>Petrópolis</strong>, o sistema lista os órgãos do Ministério Público com competência naquela localidade.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/intimacaomp1instancia2.png" alt="Pesquisa por F2 das Promotorias do Ministério Público de 1ª instância em Petrópolis">
+<ol start="5">
+<li>Consulte o <strong>processo originário</strong> para identificar qual Promotoria/órgão do Ministério Público atua naquele feito.</li>
+<li>Selecione no eJUD exatamente o <strong>destino correspondente</strong> e confira antes de concluir a intimação.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> Fase <code>8</code> → Ministério Público <code>50675</code> → escolher o motivo da intimação → <strong>Entidades</strong> → clicar no número em <strong>DESTINO</strong> → <strong>F2</strong> → pesquisar a Promotoria → conferir no processo originário qual MP atua no feito → selecionar o destino correto.</div>
 <hr />
 <h1 id="7-intimacoes-pessoais">7. Intimações Pessoais</h1>
 <p>Esta rotina trata da <strong>expedição de Mandado de Intimação pessoal de uma pessoa física</strong>, a ser cumprido na unidade prisional ou no endereço residencial, conforme a situação do intimando. <strong>Antes de criar a movimentação</strong>, reúna os dados necessários e identifique a Central de Mandados responsável.</p>
@@ -561,7 +589,10 @@ Sim   Não
 </table>
 <ol start="7">
 <li>Depois de revisar o texto, <strong>assine o mandado</strong>.</li>
-<li>Para o cumprimento, encaminhe o <strong>mandado assinado</strong> à <strong>Central de Mandados responsável</strong>, conforme o local de intimação apurado na planilha. Se o intimando estiver preso, use o <strong>e-mail institucional da Central indicada na aba “Unidades prisionais”</strong>.</li>
+<li>Para o cumprimento, encaminhe o <strong>mandado assinado</strong> à <strong>Central de Mandados responsável</strong>, conforme o local de intimação apurado na planilha. Se o intimando estiver preso, use o <strong>e-mail institucional da Central indicada na aba “Unidades prisionais”</strong>.
+<div class="critical"><strong>PRIORIDADE DO E-MAIL:</strong> <strong>NÃO utilize Alta Prioridade como padrão</strong> nos e-mails de intimação. A Alta Prioridade deve ser usada <strong>somente quando houver orientação expressa da Secretária</strong> para aquele envio, evitando banalizar o recurso em todas as mensagens.</div>
+<div class="icon-note"><strong>CONFIRMAÇÃO DE ENTREGA:</strong> antes de enviar o e-mail à Central de Mandados, abra as opções da mensagem e marque <strong>“Confirmação de entrega”</strong>.</div>
+</li>
 </ol>
 <h3 id="7-juntar-comprovante-email-mandado">Juntar o comprovante do envio por e-mail</h3>
 <p>Depois de enviar o mandado à Central de Mandados, <strong>junte no processo o comprovante do e-mail enviado</strong>.</p>
@@ -2099,7 +2130,9 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.59 — 30-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.61 — 30-09-26</strong>.</p>
+<p><strong>Alteração da versão 1.61:</strong> criado o tópico <strong>6.3. Intimação do MP de 1ª Instância</strong>, com o fluxo pela <strong>Fase 8</strong>, seleção inicial do Ministério Público pelo código <code>50675</code> e escolha do motivo conforme a finalidade da intimação. Documentado o procedimento para alterar o destinatário na área <strong>Entidades</strong>: clicar no número em <strong>DESTINO</strong>, pressionar <strong>F2</strong>, pesquisar a Promotoria competente e conferir no processo originário qual órgão do MP atua no feito antes de selecionar o destino correto. Incluídas as imagens <strong>intimacaomp1instancia1.png</strong> e <strong>intimacaomp1instancia2.png</strong>.</p>
+<p><strong>Alteração da versão 1.60:</strong> ajustado o tópico <strong>7. Intimações Pessoais</strong> no envio do Mandado de Intimação por e-mail à Central de Mandados: determinado que <strong>não seja utilizada Alta Prioridade como padrão</strong>, salvo orientação expressa da Secretária, para evitar a banalização desse recurso; acrescentada também a obrigação de marcar a opção <strong>“Confirmação de entrega”</strong> antes do envio.</p>
 <p><strong>Alteração da versão 1.59:</strong> acrescentada ao tópico <strong>7. Intimações Pessoais</strong> a etapa posterior ao envio do Mandado de Intimação à Central de Mandados: juntada do <strong>comprovante do e-mail</strong> no processo por <strong>Fase 60 / Tipo 70230</strong>, com criação de TEXTO, colagem do print do e-mail enviado, salvamento, reabertura do movimento e finalização/assinatura. Incluída a imagem <strong>mandadointimacaoemail.png</strong> como exemplo visual.</p>
 <p><strong>Alteração da versão 1.58:</strong> reestruturado o tópico <strong>12.6.1</strong> para separar o controle pós-publicação entre processos <strong>sem Defensoria Pública</strong> e <strong>com Defensoria Pública</strong>, distinguindo Apelação e Habeas Corpus. Registrado que a DP possui prazo em dobro para recursos e demais manifestações, mas <strong>não para ciência</strong>; cada parte inicia seu prazo individualmente no dia seguinte à própria ciência, expressa ou tácita; o processo permanece em <strong>Aguardando 10</strong> enquanto faltar ciência de alguma parte. Após a ciência de todos, o fluxo passa a ser: <strong>Apelação sem DP → Aguardando 15</strong>; <strong>Apelação com DP → Aguardando 30</strong>; <strong>HC sem DP → Aguardando 15</strong>; <strong>HC com DP → Aguardando 15</strong>. Incluídos quadro visual em dois caminhos, tabela-resumo e exemplo de ciência do MP anterior à ciência da DP.</p>
 <p><strong>Alteração da versão 1.57:</strong> reorganizados os tópicos <strong>6 e 7</strong>: o novo <strong>6. Intimações MP (pessoal/parecer) e DP</strong> reúne o fluxo do MP para parecer (6.1) e o envio à Defensoria (6.2), preservando as orientações anteriores. O novo <strong>7. Intimações Pessoais</strong> detalha a consulta prévia ao SIPEN pelo nome e nome da mãe, a coleta de nome, CPF/RG, endereço ou presídio e eventual celular, a consulta à planilha da Nona Câmara Criminal (abas <strong>Unidades prisionais</strong> e <strong>Intimações</strong>) para localizar a Central de Mandados competente e o fluxo de <strong>Fase 60 / Tipo 66235</strong>, com os carimbos <code>7632</code> e <code>7652</code>. Incluídos esses códigos na consulta rápida.</p>
