@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.62</div>
+    <div class="brand">eJUD · Manual interativo · v1.63</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.62 · 30-09-26</div>
+<div class="version-tag">Versão 1.63 · 02-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -769,8 +769,20 @@ Sim   Não
 <hr />
 <h1 id="10-atribuicao-ao-revisor">10. Atribuição ao revisor</h1>
 <p>A atribuição ao revisor é utilizada quando o <strong>Relator profere despacho determinando “Ao Revisor”</strong>. Nessa hipótese, o processo deve ser encaminhado a <strong>outro magistrado para apreciação</strong>, seguindo a ordem aplicável ao órgão julgador.</p>
+
+<div class="critical" style="font-size:1.18rem;line-height:1.6;padding:20px 22px;border-width:3px;">
+<strong style="display:block;font-size:1.45rem;margin-bottom:8px;">⚠ RISCO DE ANULAÇÃO — CONFIRA O IMPEDIMENTO ANTES DE ATRIBUIR O REVISOR</strong>
+Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrigatoriamente que o magistrado escolhido <strong>NÃO ESTÁ IMPEDIDO</strong> naquele processo. Para isso, abra e confira a folha <strong>“Certidão de Prevenção”</strong>. A atribuição a magistrado impedido pode comprometer a regularidade do julgamento e gerar <strong>risco de anulação</strong>.
+</div>
+<img class="manual-img grande" src="/manualejud/Imagens/prevencao.png" alt="Certidão de Prevenção utilizada para conferir impedimento antes da atribuição ao revisor">
+
+<div class="icon-note"><strong>SE HOUVER IMPEDIMENTO:</strong> não atribua o processo ao magistrado impedido. Passe para o <strong>próximo Desembargador conforme a ordem de atribuição</strong> indicada neste tópico, sempre repetindo a conferência da Certidão de Prevenção.</div>
+
+<div class="critical"><strong>SE O PROCESSO JÁ TIVER SIDO ATRIBUÍDO E VOLTAR COM DESPACHO “DETERMINO REMESSA POR ESTAR PREVENTO”:</strong> <strong>não faça imediatamente uma nova atribuição</strong>. Primeiro, envie o processo à <strong>2ª Vice-Presidência</strong>, utilizando o <strong>código/fase <code>123</code></strong>, para que seja feita a correção e inserida a informação correta no processo. <strong>Somente depois dessa regularização</strong> faça a nova atribuição ao magistrado competente.</div>
+
 <p>A rotina é feita em dois passos.</p>
 <h2 id="10-1-primeiro-passo-atribuir-escolher-o-revisor">10.1. Primeiro passo — atribuir/escolher o revisor</h2>
+<p>Antes de preencher a movimentação, confirme novamente que o revisor escolhido <strong>não consta como impedido na Certidão de Prevenção</strong>.</p>
 <p>Fluxo anotado:</p>
 <pre><code class="language-text">Movimentar
 → Novo / folha em branco
@@ -2169,7 +2181,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.62 — 30-09-26</strong>.</p>
+<p>Versão consolidada: <strong>1.63 — 02-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.63:</strong> reforçado o tópico <strong>10. Atribuição ao revisor</strong> com alerta destacado de <strong>risco de anulação</strong>: antes de qualquer atribuição, tornou-se obrigatória a conferência da folha <strong>“Certidão de Prevenção”</strong> para verificar se o revisor está impedido. Incluída a imagem <strong>prevencao.png</strong> e registrada a regra de, havendo impedimento, seguir para o próximo Desembargador conforme a ordem de atribuição. Acrescentado ainda que, se o processo já tiver sido atribuído e retornar com despacho <strong>“Determino remessa por estar prevento”</strong>, não deve haver nova atribuição imediata: o processo deve ser previamente enviado à <strong>2ª Vice-Presidência</strong>, pelo código/fase <code>123</code>, para correção e inserção da informação no processo, realizando-se nova atribuição somente após essa regularização.</p>
 <p><strong>Alteração da versão 1.62:</strong> criado o tópico <strong>D.5. Como localizar o e-mail para SARQ ou Intimação Pessoal</strong>, com o fluxo pela planilha da Nona Câmara Criminal e pela aba <strong>“SARQ &amp; Intimações”</strong>. Documentado o procedimento para Alvará de Soltura — identificar primeiro a unidade prisional e a localidade correspondente, depois localizar o e-mail da SARQ — e para Intimação Pessoal — localizar o bairro ou a localidade da unidade prisional e utilizar o e-mail da Central de Mandados. Incluídos os exemplos <strong>Presídio Dr. Serrano Neves → Bangu → esarq.bangu@tjrj.jus.br</strong> e <strong>Cordovil → Leopoldina → leocentmand@tjrj.jus.br</strong>, além das imagens <strong>d5sarqintim.png</strong>, <strong>d5sarqintim2.png</strong> e <strong>d5sarqintim3.png</strong>. Acrescentados atalhos para o D.5 nos tópicos <strong>7. Intimações Pessoais</strong> e <strong>24.2.2. Identificar a SARQ e preparar o e-mail</strong>.</p>
 <p><strong>Alteração da versão 1.61:</strong> criado o tópico <strong>6.3. Intimação do MP de 1ª Instância</strong>, com o fluxo pela <strong>Fase 8</strong>, seleção inicial do Ministério Público pelo código <code>50675</code> e escolha do motivo conforme a finalidade da intimação. Documentado o procedimento para alterar o destinatário na área <strong>Entidades</strong>: clicar no número em <strong>DESTINO</strong>, pressionar <strong>F2</strong>, pesquisar a Promotoria competente e conferir no processo originário qual órgão do MP atua no feito antes de selecionar o destino correto. Incluídas as imagens <strong>intimacaomp1instancia1.png</strong> e <strong>intimacaomp1instancia2.png</strong>.</p>
 <p><strong>Alteração da versão 1.60:</strong> ajustado o tópico <strong>7. Intimações Pessoais</strong> no envio do Mandado de Intimação por e-mail à Central de Mandados: determinado que <strong>não seja utilizada Alta Prioridade como padrão</strong>, salvo orientação expressa da Secretária, para evitar a banalização desse recurso; acrescentada também a obrigação de marcar a opção <strong>“Confirmação de entrega”</strong> antes do envio.</p>
