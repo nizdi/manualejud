@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.65</div>
+    <div class="brand">eJUD · Manual interativo · v1.67</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.65 · 07-10-26</div>
+<div class="version-tag">Versão 1.67 · 07-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -414,8 +414,35 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <p>Este tópico reúne os procedimentos de intimação do <strong>Ministério Público (MP)</strong> e da <strong>Defensoria Pública (DP)</strong>, que possuem fluxos próprios de intimação pessoal. Para a intimação de uma <strong>pessoa física por mandado</strong>, consulte o tópico <a href="#7-intimacoes-pessoais"><strong>7. Intimações Pessoais</strong></a>.</p>
 <h2 id="6-1-ministerio-publico-parecer">6.1. Ministério Público — intimação para parecer</h2>
 <div class="video-note"><strong>🎥 VÍDEO — Intimação do MP para parecer</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/V%C3%ADdeos%20do%20processamento/Intima%C3%A7%C3%A3o%20do%20MP%20para%20parecer%20.mp4?d=wb197644a162f4d91805ee92a16b13853&amp;csf=1&amp;web=1&amp;e=nkBcLF&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
-<p>Este é o fluxo mais consistente entre as anotações.</p>
-<h3 id="passo-a-passo">Passo a passo</h3>
+<p>Este é o fluxo padrão utilizado na <strong>9ª Câmara Criminal</strong>.</p>
+
+<div class="icon-note"><strong>SE FOR INTIMAR O MP DO 5º GRUPO:</strong> antes de seguir o passo a passo abaixo, <strong>abra e confira a regra específica do 5º Grupo</strong>, pois o destinatário do parecer pode ser diferente.</div>
+
+<details class="collapse-block" id="6-1-mp-parecer-quinto-grupo">
+<summary>5º Grupo — conferir antes de intimar o MP para parecer</summary>
+<div class="collapse-content">
+<div class="critical"><strong>ATENÇÃO — REGRA ESPECÍFICA DO 5º GRUPO:</strong> nos processos do <strong>5º Grupo de Câmaras Criminais</strong>, não aplique automaticamente o destinatário padrão <code>50675</code>. Primeiro verifique se o processo é <strong>Revisão Criminal</strong> ou outro tipo de feito.</div>
+<div class="flow-branch">
+<span class="flow-branch-label">Processo do 5º Grupo</span>
+<div class="flow-branch-arrows" aria-hidden="true"><span>↙</span><span>↘</span></div>
+</div>
+<div class="flow-split">
+<div class="flow-card">
+<h4>É Revisão Criminal</h4>
+<p>Mantenha o <strong>próprio Ministério Público que aparecer no sistema ao preencher a intimação para parecer</strong>. Não substitua o destinatário pela AAOCRIM.</p>
+</div>
+<div class="flow-card">
+<h4>Não é Revisão Criminal</h4>
+<p>Altere o destinatário para <strong><code>8438</code> — AAOCRIM/MPRJ — Assessoria Atrib Origina Criminal</strong>.</p>
+<p>Além disso, preencha o <strong>Complemento 3</strong> com <strong><code>66583</code> — Prerrogativa de Função</strong>.</p>
+</div>
+</div>
+<img class="manual-img grande" src="/manualejud/Imagens/atriboriginaria.png" alt="AAOCRIM MPRJ - Assessoria Atrib Origina Criminal para parecer em processos do 5º Grupo">
+<div class="icon-note"><strong>Resumo do 5º Grupo:</strong> <strong>Revisão Criminal</strong> → manter o MP que o próprio eJUD apresentar para o parecer. <strong>Demais processos</strong> → destinatário <code>8438</code> — AAOCRIM/MPRJ + <strong>Complemento 3 <code>66583</code> — Prerrogativa de Função</strong>.</div>
+</div>
+</details>
+
+<h3 id="passo-a-passo">Passo a passo — 9ª Câmara / fluxo padrão</h3>
 <pre><code class="language-text">1. Pegar/selecionar o processo.
 2. Movimentar.
 3. Abrir Novo / folha em branco.
@@ -468,7 +495,7 @@ Sim   Não
 <ul>
 <li class="task"><input type="checkbox" class="persist-check"> Processo correto.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Fase 8.</li>
-<li class="task"><input type="checkbox" class="persist-check"> Destinatário 50675 conferido por F2.</li>
+<li class="task"><input type="checkbox" class="persist-check"> Destinatário <code>50675</code> conferido por F2.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Motivo 50083 conferido por F2.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Salvou pelo <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> e confirmou a mensagem clicando em <strong>Sim</strong>.</li>
 <li class="task"><input type="checkbox" class="persist-check"> Não assinou nem carimbou, pois esta rotina não exige essas etapas.</li>
@@ -2226,7 +2253,9 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.65 — 07-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.67 — 07-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.67:</strong> reorganizado o tópico <strong>6.1. Ministério Público — intimação para parecer</strong> para manter o fluxo padrão da <strong>9ª Câmara Criminal</strong> visualmente limpo. A regra específica do <strong>5º Grupo</strong> passou a ficar em bloco recolhível, fechado por padrão, precedido do aviso <strong>“Se for intimar o MP do 5º Grupo, confira abaixo primeiro”</strong>. Os códigos <code>8438</code> e <code>66583</code> e a exceção da Revisão Criminal permanecem integralmente dentro desse bloco, sem poluir o passo a passo, a tabela-resumo e o checklist do fluxo padrão.</p>
+<p><strong>Alteração da versão 1.66:</strong> ajustado o tópico <strong>6.1. Ministério Público — intimação para parecer</strong> para registrar a regra específica do <strong>5º Grupo de Câmaras Criminais</strong>. Em <strong>Revisão Criminal</strong>, deve ser mantido o próprio Ministério Público apresentado pelo eJUD ao preencher o parecer. Nos <strong>demais processos do 5º Grupo</strong>, o destinatário deve ser alterado para <code>8438</code> — <strong>AAOCRIM/MPRJ — Assessoria Atrib Origina Criminal</strong>, com preenchimento do <strong>Complemento 3 <code>66583</code> — Prerrogativa de Função</strong>. Incluída a imagem <strong>atriboriginaria.png</strong> e ajustados o passo a passo, a tabela-resumo e o checklist para impedir o uso automático do destinatário <code>50675</code> nesses casos.</p>
 <p><strong>Alteração da versão 1.65:</strong> acrescentada ao tópico <strong>10.1. Primeiro passo — atribuir/escolher o revisor</strong> a <strong>ordem de revisão do 5º Grupo de Câmaras Criminais</strong>, em bloco recolhível fechado por padrão. Registrada a sequência <strong>Pedro (480) → João Ziraldo (580) → Roselli Nalin (740) → Erica (699) → Nearis (714) → Marcello de Sá Baptista (726) → Marcelo Oliveira (654)</strong>, com retorno ao primeiro magistrado após o último. O quadro já existente foi identificado expressamente como a ordem da <strong>9ª Câmara Criminal</strong>.</p>
 <p><strong>Alteração da versão 1.64:</strong> criado o tópico <strong>24.5. Alvará prejudicado</strong>. Registrado que o Alvará fica prejudicado quando há decisão concedendo a liberdade, mas a pessoa deve permanecer presa em razão de <strong>outro mandado de prisão vigente</strong>, situação normalmente identificada na <strong>Certidão / Nada Consta</strong>. Acrescentada a providência obrigatória de <strong>intimar o advogado para ciência do prejuízo</strong>; como não há despacho específico nessa hipótese, a <strong>Secretaria deve confeccionar Ato Ordinatório</strong> comunicando o prejuízo e promovendo a intimação da defesa.</p>
 <p><strong>Alteração da versão 1.63:</strong> reforçado o tópico <strong>10. Atribuição ao revisor</strong> com alerta destacado de <strong>risco de anulação</strong>: antes de qualquer atribuição, tornou-se obrigatória a conferência da folha <strong>“Certidão de Prevenção”</strong> para verificar se o revisor está impedido. Incluída a imagem <strong>prevencao.png</strong> e registrada a regra de, havendo impedimento, seguir para o próximo Desembargador conforme a ordem de atribuição. Acrescentado ainda que, se o processo já tiver sido atribuído e retornar com despacho <strong>“Determino remessa por estar prevento”</strong>, não deve haver nova atribuição imediata: o processo deve ser previamente enviado à <strong>2ª Vice-Presidência</strong>, pelo código/fase <code>123</code>, para correção e inserção da informação no processo, realizando-se nova atribuição somente após essa regularização.</p>
