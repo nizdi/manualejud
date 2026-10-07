@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.64</div>
+    <div class="brand">eJUD · Manual interativo · v1.65</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.64 · 05-10-26</div>
+<div class="version-tag">Versão 1.65 · 07-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -803,12 +803,38 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </table>
 <div class="icon-note"><strong>IMPORTANTE:</strong> a <strong>atribuição ao revisor não cria documento no processo</strong>. Trata-se apenas de uma fase interna do eJUD para registrar a atribuição.</div>
 <div class="revisor-order">
-<div class="revisor-order-title">Ordem atual para atribuição:</div>
+<div class="revisor-order-title">9ª Câmara Criminal — ordem atual para atribuição:</div>
 <div class="revisor-order-top">Dr. DES. Pedro (480)</div>
 <div class="revisor-order-arrows" aria-hidden="true"><span>↗</span><span>↘</span></div>
 <div class="revisor-order-bottom">Dr. JDS. Marcelo (654) <span class="revisor-order-bottom-arrow" aria-hidden="true">←</span><span>Dra. JDS. Erica (699)</span></div>
 </div>
-<p>Se a composição do órgão mudar, a lógica deve ser mantida observando a <strong>ordem de antiguidade entre os magistrados</strong>: inicia-se pelo magistrado com maior tempo de atuação e segue-se, sucessivamente, até o mais recente.</p>
+
+<details class="collapse-block" id="10-1-ordem-revisao-quinto-grupo">
+<summary>5º Grupo de Câmaras Criminais — ordem de revisão</summary>
+<div class="collapse-content">
+<p>No <strong>5º Grupo</strong>, a revisão segue sucessivamente de um magistrado para o próximo. Ao chegar ao último nome da sequência, <strong>retorna ao primeiro</strong>.</p>
+<div class="revisor-order">
+<div class="revisor-order-title">5º Grupo — ordem de revisão:</div>
+<div class="revisor-order-top">DES. PEDRO FREIRE RAGUENET <code>480</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">DES. JOAO ZIRALDO MAIA <code>580</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">DES. ROSELLI NALIN <code>740</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">JDS. DES. ERICA DE PAULA RODRIGUES DA CUNHA <code>699</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">JDS. DES. NEARIS DOS SANTOS CARVALHO ARCE DOS SANTOS <code>714</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">JDS. DES. MARCELLO DE SA BAPTISTA <code>726</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↓</div>
+<div class="revisor-order-top">JDS. DES. MARCELO OLIVEIRA DA SILVA <code>654</code></div>
+<div class="revisor-order-bottom-arrow" aria-hidden="true">↑</div>
+<div class="icon-note"><strong>Ao chegar ao último:</strong> a sequência volta ao primeiro magistrado, <strong>DES. PEDRO FREIRE RAGUENET (<code>480</code>)</strong>.</div>
+</div>
+</div>
+</details>
+
+<p>Se a composição do órgão mudar, a lógica deve ser mantida observando a <strong>ordem aplicável ao órgão julgador</strong> e conferindo a composição atual antes da atribuição.</p>
 <div class="critical"><strong>NÃO TERMINA NA ATRIBUIÇÃO:</strong> depois de salvar a atribuição ao revisor, é obrigatório seguir para o segundo passo e <strong>abrir a conclusão ao REVISOR</strong>.</div>
 <h2 id="10-2-segundo-passo-conclusao-ao-revisor">10.2. Segundo passo — conclusão ao revisor</h2>
 <div class="critical"><strong>ATENÇÃO — CONCLUSÃO AO REVISOR:</strong> nesta etapa, a conclusão deve ser aberta para o <strong>REVISOR</strong>. <strong>Não confundir com conclusão ao Relator.</strong></div>
@@ -2200,7 +2226,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.64 — 05-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.65 — 07-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.65:</strong> acrescentada ao tópico <strong>10.1. Primeiro passo — atribuir/escolher o revisor</strong> a <strong>ordem de revisão do 5º Grupo de Câmaras Criminais</strong>, em bloco recolhível fechado por padrão. Registrada a sequência <strong>Pedro (480) → João Ziraldo (580) → Roselli Nalin (740) → Erica (699) → Nearis (714) → Marcello de Sá Baptista (726) → Marcelo Oliveira (654)</strong>, com retorno ao primeiro magistrado após o último. O quadro já existente foi identificado expressamente como a ordem da <strong>9ª Câmara Criminal</strong>.</p>
 <p><strong>Alteração da versão 1.64:</strong> criado o tópico <strong>24.5. Alvará prejudicado</strong>. Registrado que o Alvará fica prejudicado quando há decisão concedendo a liberdade, mas a pessoa deve permanecer presa em razão de <strong>outro mandado de prisão vigente</strong>, situação normalmente identificada na <strong>Certidão / Nada Consta</strong>. Acrescentada a providência obrigatória de <strong>intimar o advogado para ciência do prejuízo</strong>; como não há despacho específico nessa hipótese, a <strong>Secretaria deve confeccionar Ato Ordinatório</strong> comunicando o prejuízo e promovendo a intimação da defesa.</p>
 <p><strong>Alteração da versão 1.63:</strong> reforçado o tópico <strong>10. Atribuição ao revisor</strong> com alerta destacado de <strong>risco de anulação</strong>: antes de qualquer atribuição, tornou-se obrigatória a conferência da folha <strong>“Certidão de Prevenção”</strong> para verificar se o revisor está impedido. Incluída a imagem <strong>prevencao.png</strong> e registrada a regra de, havendo impedimento, seguir para o próximo Desembargador conforme a ordem de atribuição. Acrescentado ainda que, se o processo já tiver sido atribuído e retornar com despacho <strong>“Determino remessa por estar prevento”</strong>, não deve haver nova atribuição imediata: o processo deve ser previamente enviado à <strong>2ª Vice-Presidência</strong>, pelo código/fase <code>123</code>, para correção e inserção da informação no processo, realizando-se nova atribuição somente após essa regularização.</p>
 <p><strong>Alteração da versão 1.62:</strong> criado o tópico <strong>D.5. Como localizar o e-mail para SARQ ou Intimação Pessoal</strong>, com o fluxo pela planilha da Nona Câmara Criminal e pela aba <strong>“SARQ &amp; Intimações”</strong>. Documentado o procedimento para Alvará de Soltura — identificar primeiro a unidade prisional e a localidade correspondente, depois localizar o e-mail da SARQ — e para Intimação Pessoal — localizar o bairro ou a localidade da unidade prisional e utilizar o e-mail da Central de Mandados. Incluídos os exemplos <strong>Presídio Dr. Serrano Neves → Bangu → esarq.bangu@tjrj.jus.br</strong> e <strong>Cordovil → Leopoldina → leocentmand@tjrj.jus.br</strong>, além das imagens <strong>d5sarqintim.png</strong>, <strong>d5sarqintim2.png</strong> e <strong>d5sarqintim3.png</strong>. Acrescentados atalhos para o D.5 nos tópicos <strong>7. Intimações Pessoais</strong> e <strong>24.2.2. Identificar a SARQ e preparar o e-mail</strong>.</p>
