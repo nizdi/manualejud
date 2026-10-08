@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.70</div>
+    <div class="brand">eJUD · Manual interativo · v1.71</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.70 · 08-10-26</div>
+<div class="version-tag">Versão 1.71 · 08-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -999,26 +999,42 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 
 <h2 id="12-5-b-voto-vencido">12.5.B. Voto vencido — abrir conclusão ao Vogal</h2>
 <div class="critical"><strong>ATENÇÃO AO PROCESSAR A CERTIDÃO DE JULGAMENTO:</strong> quando a <strong>Certidão de Julgamento</strong> chegar no local virtual <strong>“Para Processar”</strong>, confira se houve <strong>voto vencido</strong>. Se houver, o processo exige uma providência adicional antes de seguir normalmente.</div>
-<p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. Nesse caso, é necessário <strong>abrir conclusão ao Vogal que proferiu o voto divergente</strong>.</p>
+<p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. Antes de abrir a conclusão, porém, é necessário <strong>atribuir o processo ao Vogal</strong>.</p>
+
+<div class="icon-note"><strong>PRIMEIRO, FAÇA A ATRIBUIÇÃO AO VOGAL:</strong> o procedimento é semelhante à atribuição feita antes da conclusão ao Revisor. Consulte o <a href="#10-1-primeiro-passo-atribuir-escolher-o-revisor"><strong>tópico 10.1 — Primeiro passo: atribuir/escolher o revisor</strong></a>. Repita a mesma lógica da atribuição, mas, em vez de preencher o campo <strong>REVISOR</strong>, utilize o campo <strong>VOGAL</strong> e selecione o Desembargador que proferiu o voto vencido.</div>
+
 <pre><code class="language-text">Certidão de Julgamento em “Para Processar”
 → conferir se houve voto vencido
 → identificar qual magistrado proferiu o voto vencido
 → pegar o Acórdão
+
+1º PASSO — ATRIBUIR AO VOGAL
 → Movimentar
+→ Novo / folha em branco
+→ Fase 50009
+→ Complemento 1: 59998 — em branco
+→ campo VOGAL
+→ selecionar o Desembargador que proferiu o voto vencido
+→ Salvar a atribuição
+
+2º PASSO — ABRIR CONCLUSÃO AO VOGAL
 → Novo / folha em branco
 → Fase 51 — Conclusão
 → Magistrado: Vogal
 → código: 50023
-→ selecionar o Desembargador que proferiu o voto vencido
+→ selecionar o mesmo Desembargador que proferiu o voto vencido
 → Salvar
 → a conclusão sobe para o gabinete do Vogal
 → o Vogal lavra o voto vencido
 </code></pre>
-<div class="icon-note"><strong>Código do campo Magistrado:</strong> <code>50023</code> — <strong>Vogal</strong>. Depois de selecionar <strong>Vogal</strong>, escolha o <strong>Desembargador específico que divergiu</strong> no julgamento.</div>
+
+<div class="critical"><strong>EXCEÇÃO DE HORÁRIO — DIA DE SESSÃO:</strong> a conclusão ao <strong>Vogal para lavratura de voto vencido</strong> pode ser aberta <strong>mesmo após as 17h quando for dia de sessão</strong>. Essa é uma exceção específica para esse processamento pós-sessão e não altera a regra geral de horário das demais conclusões.</div>
+
+<div class="icon-note"><strong>Código do campo Magistrado na conclusão:</strong> <code>50023</code> — <strong>Vogal</strong>. Depois de selecionar <strong>Vogal</strong>, escolha o <strong>Desembargador específico que divergiu</strong> no julgamento.</div>
 <div class="icon-note"><strong>Quando houver mais de um Vogal:</strong> alguns processos possuem <strong>dois Vogais</strong>; em outros, a composição exibirá o <strong>Relator e apenas um Vogal</strong>. Se houver dois Vogais, não basta selecionar genericamente “Vogal”: depois de informar o código <code>50023</code>, escolha exatamente o <strong>Desembargador que proferiu o voto vencido</strong>, conforme a Certidão de Julgamento.</div>
 <div class="critical"><strong>NÃO DEIXAR PASSAR:</strong> se a Certidão de Julgamento indicar voto vencido, abra a <strong>conclusão ao Vogal correto</strong>. É esse magistrado que irá <strong>lavrar o voto vencido</strong>. Não encaminhe ao Relator apenas por ser o gabinete principal do processo.</div>
 <div class="icon-note"><strong>Não usar Encaminhar:</strong> como se trata de <strong>conclusão</strong>, depois de salvar/finalizar a movimentação o processo sobe para o gabinete correspondente. Não use o comando <strong>Encaminhar</strong> como substituto da conclusão.</div>
-<div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>)</strong> → escolher o Desembargador que proferiu o voto vencido → salvar → Vogal lavra o voto vencido.</div>
+<div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → <strong>atribuir ao Vogal</strong> seguindo a lógica do <a href="#10-1-primeiro-passo-atribuir-escolher-o-revisor"><strong>tópico 10.1</strong></a>, usando o campo VOGAL → depois abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>)</strong> → escolher o mesmo Desembargador → salvar → Vogal lavra o voto vencido. <strong>Em dia de sessão, essa conclusão pode ser aberta mesmo após as 17h.</strong></div>
 
 <h2 id="12-6-pos-sessao-acordaos-publicados">12.6. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
 <p>Após a sessão de julgamento, os processos chegam no local virtual <strong>“Para Publicar”</strong>. <strong>Não retire o processo dessa pasta antes da publicação do Acórdão.</strong> Enquanto aguarda, porém, adiante tudo o que já puder ser cumprido, como ofícios, comunicações e outras providências decorrentes do julgamento.</p>
@@ -2283,7 +2299,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.70 — 08-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.71 — 08-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.71:</strong> complementado o tópico <strong>12.5.B. Voto vencido</strong> para esclarecer que, antes de abrir a conclusão, é necessário <strong>atribuir o processo ao Vogal</strong>, seguindo a mesma lógica do tópico <strong>10.1</strong>: Fase <code>50009</code>, Complemento 1 <code>59998</code> e preenchimento do campo <strong>VOGAL</strong> com o Desembargador que proferiu o voto vencido. Somente depois deve ser aberta a conclusão em Fase <code>51</code>, Magistrado <code>50023</code> — Vogal — para o mesmo Desembargador. Também foi registrada a <strong>exceção de horário</strong>: em <strong>dia de sessão</strong>, a conclusão ao Vogal para lavratura de voto vencido pode ser aberta <strong>mesmo após as 17h</strong>.</p>
 <p><strong>Alteração da versão 1.70:</strong> ampliado o tópico <strong>12.5.B. Voto vencido</strong> para registrar o procedimento completo de <strong>abertura de conclusão ao Vogal</strong>: Fase <code>51</code>, campo Magistrado <code>50023</code> — Vogal — e seleção do <strong>Desembargador específico que proferiu o voto vencido</strong>, inclusive quando houver dois Vogais na composição. Reforçado que a conclusão sobe ao gabinete sem uso de Encaminhar e incluído o código <code>50023</code> nas referências rápidas. No tópico <strong>12.6</strong>, a linha de Apelação passou a indicar já na coluna Classe/resultado que a comunicação somente é necessária quando houver <strong>réu preso + sentença modificada</strong>, ressalvada determinação expressa no voto. Também foi registrado que a existência de <strong>voto vencido ainda pendente de redação não impede adiantar ofícios e comunicações</strong> já definidos pelo resultado do julgamento.</p>
 <p><strong>Alteração da versão 1.69:</strong> ajustado o tópico <strong>12.6. Pós-sessão — comunicações e publicação dos Acórdãos</strong> para esclarecer a regra da <strong>Apelação com réu preso</strong>: a comunicação à VEP somente é necessária quando o julgamento <strong>alterar a sentença</strong>; se houver alteração de regime, deve-se comunicar também a SEAP. Se a sentença for integralmente mantida, <strong>não há comunicação a realizar</strong>, salvo quando houver <strong>determinação expressa no voto</strong> para comunicar ou oficiar o juízo ou outro órgão.</p>
 <p><strong>Alteração da versão 1.68:</strong> renomeado o antigo tópico <strong>12.5</strong> para <strong>12.5.A. Comunicar decisão ao juízo de origem</strong> e criado o tópico <strong>12.5.B. Voto vencido — encaminhar ao Vogal</strong>. Registrado que, quando a <strong>Certidão de Julgamento</strong> chegar em <strong>“Para Processar”</strong>, deve-se conferir se houve voto vencido; em caso positivo, identificar o magistrado que divergiu, pegar o <strong>Acórdão</strong> e encaminhá-lo ao <strong>Vogal</strong>, código <code>50023</code>, que ficará responsável por <strong>lavrar o voto vencido</strong>.</p>
