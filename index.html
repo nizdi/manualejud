@@ -57,6 +57,11 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .despacho-texto{font-size:1.22em;font-weight:900}
 .exemplo-publicacao{font-size:1.22em;font-weight:850;line-height:1.5}
 .tag-estagiarios{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#725400;color:#fff4c7;border:1px solid #9a7410;font-size:.72em;font-weight:900;vertical-align:2px;letter-spacing:.02em}
+.party-tag{display:inline-block;padding:1px 6px;border-radius:5px;color:#111!important;border:1px solid transparent;font:900 .82em/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;vertical-align:1px;letter-spacing:.02em}
+.party-adv{background:#8faed8;border-color:#557caf}
+.party-dp{background:#8fbd98;border-color:#4f8759}
+.party-mp{background:#d99191;border-color:#aa5454}
+.resource-tag{display:inline-block;padding:2px 7px;border-radius:5px;background:#c9a84b;border:1px solid #8e7426;color:#111;font-weight:900;letter-spacing:.035em;line-height:1.3}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
 .disclaimer-overlay{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(15,23,42,.58);backdrop-filter:blur(4px)}
@@ -113,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.73</div>
+    <div class="brand">eJUD · Manual interativo · v1.79</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.73 · 09-10-26</div>
+<div class="version-tag">Versão 1.79 · 09-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1053,43 +1058,63 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
-<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão — ciência e prazos recursais</h3>
+<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão — ciência, interesse recursal e escolha da pasta</h3>
 <div class="critical"><strong>NÃO RETIRE ANTES DA PUBLICAÇÃO:</strong> enquanto o Acórdão ainda não tiver sido publicado, o processo permanece em <strong>“Para Publicar”</strong>, mesmo que as comunicações e os ofícios possíveis já tenham sido adiantados.</div>
-<div class="critical"><strong>REGRA DA DEFENSORIA:</strong> a <strong>Defensoria Pública tem prazo em dobro para recorrer e para as demais manifestações processuais</strong>. Esse prazo em dobro <strong>não se aplica à ciência</strong>. A fase de ciência segue o mesmo controle do processo, inclusive quanto à ciência tácita.</div>
-<div class="icon-note"><strong>TERMO INICIAL:</strong> o prazo recursal de cada parte é contado <strong>individualmente</strong>. Se uma parte tomar ciência antes da outra, o prazo daquela parte já começa a correr, mesmo que a outra ainda esteja aguardando ciência. <strong>O prazo começa no dia seguinte à ciência</strong>, seja ela expressa/peticionada ou tácita.</div>
+
+<h4>1. Primeiro, identifique quando começa o prazo de cada parte</h4>
+<div class="icon-note"><strong>ADVOGADO PARTICULAR:</strong> não espere uma ciência pessoal de 10 dias. Na publicação eletrônica, considere a data de publicação certificada e o prazo recursal começa no <strong>primeiro dia útil seguinte</strong>. Portanto, quando o MP ou a DP tomarem ciência alguns dias depois, parte do prazo do advogado <strong>já pode ter transcorrido</strong>.</div>
+<div class="icon-note"><strong>MP E DEFENSORIA PÚBLICA:</strong> possuem <strong>intimação pessoal</strong>. Na intimação eletrônica, a consulta pode ocorrer antes; se não houver consulta, a intimação é considerada automaticamente realizada ao término do prazo legal de consulta. Use sempre a <strong>data de ciência certificada no sistema</strong> para calcular o prazo recursal da instituição. A <strong>DP possui prazo em dobro</strong> para recorrer.</div>
+<div class="critical"><strong>CONTAGEM NO PROCESSO PENAL:</strong> depois de definido o termo inicial, os prazos são <strong>contínuos</strong>: exclui-se o dia do começo e inclui-se o do vencimento. Se o vencimento cair em domingo ou feriado, prorroga-se para o primeiro dia útil seguinte. A pasta do eJUD é apenas um <strong>controle aproximado</strong>; ela não altera a data real do vencimento.</div>
+
 <ol>
-<li>Depois que o <strong>Acórdão for efetivamente publicado</strong>, confirme as intimações pessoais cabíveis ao <strong>Ministério Público</strong> e à <strong>Defensoria Pública</strong> pela Secretaria.</li>
-<li>Encaminhe o processo para <strong>“Aguardando Decurso de Prazo - 10 Dias”</strong>. Essa pasta é usada para acompanhar a <strong>ciência das partes</strong>, inclusive a ciência tácita.</li>
+<li>Depois que o <strong>Acórdão for efetivamente publicado</strong>, confira as intimações pessoais do <strong>MP</strong> e, quando houver, da <strong>DP</strong>.</li>
+<li>Enquanto ainda faltar a ciência pessoal necessária, o processo pode permanecer em <strong>Aguardando 10</strong> para esse controle.</li>
+<li>Assim que houver ciência do <strong>MP</strong> e da <strong>DP</strong> — ou apenas do MP, se não houver DP — <strong>não escolha automaticamente Aguardando 15 ou 30</strong>. Recalcule quanto falta para o recurso de cada parte relevante.</li>
 </ol>
-<div class="critical"><strong>NÃO SAIA DO “AGUARDANDO 10” ENQUANTO AINDA FALTAR CIÊNCIA DE ALGUMA PARTE:</strong> se uma parte tomar ciência antes, o prazo dela já começa a correr individualmente, mas o processo permanece no <strong>Aguardando 10</strong> enquanto a outra parte ainda não tiver ciência. Quando todas as partes tiverem ciência — expressa ou tácita — siga para a pasta correspondente ao maior prazo recursal ainda relevante.</div>
-<h4>Dois caminhos após a ciência de todas as partes</h4>
-<div class="flow-branch"><div class="flow-branch-label">CIÊNCIA DE TODAS AS PARTES</div><div class="flow-branch-arrows" aria-hidden="true"><span>↙</span><span>↘</span></div></div>
-<div class="flow-split">
-<div class="flow-card">
-<h4>Caminho 1 — SEM Defensoria Pública<br><span class="small">MP × advogado particular</span></h4>
-<p><strong>Apelação / RESE:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. O prazo considerado é de <strong>15 dias</strong> para eventual REsp/RE.</p>
-<p><strong>Habeas Corpus:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. Para o advogado, o <strong>ROC</strong> tem prazo de <strong>5 dias</strong>; para o MP, o recurso a considerar neste fluxo é o <strong>REsp, em 15 dias</strong>. <strong>O MP não interpõe ROC</strong> neste fluxo, pois o ROC é utilizado contra a denegação do HC.</p>
-</div>
-<div class="flow-card">
-<h4>Caminho 2 — COM Defensoria Pública<br><span class="small">DP × MP</span></h4>
-<p><strong>Apelação / RESE:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 30</strong>. A DP possui <strong>30 dias</strong> para REsp/RE, em razão do prazo em dobro. O MP permanece com <strong>15 dias</strong>.</p>
-<p><strong>Habeas Corpus denegado:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 15</strong>. A DP possui <strong>10 dias</strong> para ROC; o MP permanece com <strong>15 dias</strong> para eventual REsp.</p>
-</div>
-</div>
-<h4>Exemplo — Apelação com MP e DP</h4>
-<div class="icon-note"><strong>Exemplo:</strong> o MP toma ciência no 5º dia. A partir do dia seguinte, começa a correr para ele o prazo de <strong>15 dias</strong>. Mesmo assim, <strong>não retire o processo do Aguardando 10</strong> se a DP ainda não tiver ciência. Se a ciência da DP for tácita apenas no 10º dia, o prazo dela começa no dia seguinte e, como na Apelação a DP possui <strong>30 dias</strong> para REsp/REx, o processo deve então seguir para <strong>Aguardando 30</strong>. O prazo do MP terminará antes, mas o processo continua aguardando o prazo da DP.</div>
+
+<h4>2. Verifique quem realmente tem interesse recursal</h4>
+<div class="critical"><strong>NÃO CONTE PRAZO DE QUEM NÃO TEM INTERESSE EM RECORRER:</strong> antes de definir a pasta, veja <strong>quem foi prejudicado pelo resultado e ainda possui interesse recursal</strong>. Se o MP ficou satisfeito com o julgamento e não há interesse recursal do órgão acusador, o prazo teórico do MP <strong>não deve definir sozinho a pasta</strong>. O controle deve se concentrar em quem ainda pode efetivamente recorrer.</div>
+<ul>
+<li>Se <strong>somente o advogado particular</strong> tiver interesse, calcule quanto resta do prazo dele, que já começou a correr a partir da publicação.</li>
+<li>Se houver <strong>DP com interesse recursal</strong>, calcule o prazo dela a partir da própria ciência, aplicando o prazo em dobro.</li>
+<li>Se houver <strong>mais de uma parte com interesse recursal</strong>, acompanhe a pendência que terminar por último.</li>
+<li>Se uma parte já tiver manifestado conformidade, satisfação ou ausência de recurso e não houver outro interesse recursal daquela parte, <strong>retire esse prazo do cálculo operacional</strong>.</li>
+</ul>
+<div class="icon-note"><strong>Arquivamento:</strong> se apenas uma parte possui interesse recursal, não é necessário prolongar o processo apenas por um prazo teórico de outra parte que já está satisfeita com o resultado. Depois de esgotado o prazo de quem realmente possui interesse, e não havendo outra providência pendente, o processo pode seguir para o encerramento/arquivamento conforme a rotina aplicável.</div>
+
+<h4>3. Escolha a pasta pelo número de dias que ainda faltam</h4>
+<p>Depois de identificar <strong>quem ainda pode recorrer</strong>, calcule quantos dias faltam para o prazo relevante terminar e utilize a <strong>menor pasta que comporte aproximadamente esse período restante</strong>:</p>
 <table>
-<thead><tr><th>Situação</th><th>Após Aguardando 10 / ciência de todos</th><th>Prazo relevante</th></tr></thead>
+<thead><tr><th>Dias restantes</th><th>Pasta de controle</th></tr></thead>
 <tbody>
-<tr><td><strong>Apelação / RESE — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>MP/advogado: 15 dias para REsp/RE.</td></tr>
-<tr><td><strong>Apelação / RESE — com DP</strong></td><td><strong>Aguardando 30</strong></td><td>DP: 30 dias para REsp/RE; MP: 15 dias.</td></tr>
-<tr><td><strong>HC — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>Advogado: 5 dias para ROC; MP: 15 dias para REsp.</td></tr>
-<tr><td><strong>HC — com DP</strong></td><td><strong>Aguardando 15</strong></td><td>DP: 10 dias para ROC; MP: 15 dias para REsp.</td></tr>
+<tr><td><strong>1 a 2 dias</strong></td><td><strong>Aguardando 02</strong></td></tr>
+<tr><td><strong>3 a 5 dias</strong></td><td><strong>Aguardando 05</strong></td></tr>
+<tr><td><strong>6 a 10 dias</strong></td><td><strong>Aguardando 10</strong></td></tr>
+<tr><td><strong>11 a 15 dias</strong></td><td><strong>Aguardando 15</strong></td></tr>
+<tr><td><strong>16 a 20 dias</strong></td><td><strong>Aguardando 20</strong></td></tr>
+<tr><td><strong>21 a 30 dias</strong></td><td><strong>Aguardando 30</strong></td></tr>
+<tr><td><strong>31 a 60 dias</strong></td><td><strong>Aguardando 60</strong></td></tr>
 </tbody>
 </table>
-<div class="critical"><strong>ATENÇÃO — ACÓRDÃO NÃO UNÂNIME E DESFAVORÁVEL AO RÉU:</strong> antes de tratar o prazo de REsp/RE como a única pendência, confira se cabem <strong>embargos infringentes e de nulidade</strong>. Nos termos do art. 609, parágrafo único, do CPP, quando a decisão de segunda instância for <strong>não unânime e desfavorável ao réu</strong>, esses embargos podem ser opostos em <strong>10 dias</strong>; para a <strong>Defensoria Pública</strong>, observar o prazo em dobro, resultando em <strong>20 dias</strong>. Se a divergência for parcial, a análise fica restrita à matéria objeto da divergência.</div>
-<div class="critical"><strong>ATENÇÃO A CIÊNCIAS EM DATAS DIFERENTES:</strong> não presuma que os prazos de todas as partes começaram juntos. Confira a data de ciência de <strong>cada parte</strong> e registre no lembrete do processo, se necessário. A pasta indica o controle operacional do processo, mas não substitui a conferência individual do termo inicial e do término do prazo de cada intimado.</div>
-<div class="icon-note"><strong>Resumo:</strong> publicação do Acórdão → <strong>Aguardando 10</strong> para ciência → cada parte começa seu prazo no dia seguinte à própria ciência → não sair do Aguardando 10 enquanto faltar ciência de alguém → depois da ciência de todos: <strong>Apelação/RESE sem DP = Aguardando 15</strong>; <strong>Apelação/RESE com DP = Aguardando 30</strong>; <strong>HC sem DP = Aguardando 15</strong>; <strong>HC com DP = Aguardando 15</strong>. Se o Acórdão for <strong>não unânime e desfavorável ao réu</strong>, conferir antes a possibilidade de embargos infringentes e de nulidade.</div>
+<div class="critical"><strong>A PASTA NÃO É O PRAZO:</strong> como as pastas são faixas aproximadas, o processo pode ficar vermelho <strong>depois</strong> do vencimento real. Por isso, confira e registre a <strong>data exata do término do prazo</strong> no lembrete do processo e acompanhe o vencimento independentemente da cor da pasta.</div>
+
+<h4>Exemplo — Apelação sem DP, somente a defesa com interesse</h4>
+<div class="icon-note"><strong>Exemplo:</strong> em uma Apelação, o advogado particular possui <strong>15 dias</strong> para eventual REsp/RE. O prazo dele começa no primeiro dia útil seguinte à publicação. Quando o MP toma ciência, já transcorreram <strong>7 dias</strong> do prazo do advogado. Se o MP está satisfeito com o resultado e <strong>não possui interesse recursal</strong>, restam apenas <strong>8 dias</strong> a controlar para a defesa. Nesse caso, encaminhe para <strong>Aguardando 10</strong> e acompanhe a data real do vencimento do advogado. <strong>Não reinicie 15 dias a partir da ciência do MP.</strong></div>
+
+<h4>4. Prazos recursais usados como referência</h4>
+<table>
+<thead><tr><th>Situação</th><th>Prazo de referência</th></tr></thead>
+<tbody>
+<tr><td><span class="resource-tag">APELAÇÃO / RESE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong> para REsp/RE.</td></tr>
+<tr><td><span class="resource-tag">HABEAS CORPUS DENEGADO</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span>: <strong>5 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>10 dias</strong> para ROC.</td></tr>
+<tr><td><span class="resource-tag">HABEAS CORPUS CONCEDIDO</span> — <span class="party-tag party-mp">[MP]</span></td><td><span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> para REsp.</td></tr>
+<tr><td><span class="resource-tag">AGRAVO INTERNO</span> <span class="small">— decisão monocrática</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td></tr>
+<tr><td><span class="resource-tag">EMBARGOS INFRINGENTES / DE NULIDADE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-dp">[DP]</span> / <s><span class="party-tag party-mp">[MP]</span></s> <span class="small">— Acórdão não unânime e desfavorável ao réu</span></td><td><span class="party-tag party-adv">[ADV]</span>: <strong>10 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>20 dias</strong> · <s><span class="party-tag party-mp">[MP]</span></s>: não cabe.</td></tr>
+</tbody>
+</table>
+
+<div class="critical"><strong>ATENÇÃO A CIÊNCIAS EM DATAS DIFERENTES:</strong> nunca presuma que os prazos começaram juntos. Advogado particular, MP e DP podem ter <strong>termos iniciais diferentes</strong>. A cada nova ciência, recalcule o tempo restante de quem ainda possui interesse recursal e, se necessário, <strong>mude o processo para uma pasta mais adequada ao prazo que realmente falta</strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> publicar o Acórdão → prazo do advogado particular já começa conforme a publicação → aguardar/acompanhar ciência pessoal de MP e DP → identificar <strong>quem ainda tem interesse recursal</strong> → calcular quantos dias realmente faltam para cada recurso relevante → escolher entre <strong>Aguardando 02 / 05 / 10 / 15 / 20 / 30 / 60</strong> → registrar a data exata do vencimento → acompanhar até recurso, decurso ou encerramento.</div>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
@@ -2308,7 +2333,13 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.73 — 09-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.79 — 09-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.79:</strong> reorganizada a tabela do item <strong>12.6.1.4</strong>: <strong>APELAÇÃO / RESE</strong> passou a ocupar uma única linha, com os prazos de <code>[ADV]</code>/<code>[MP]</code> e <code>[DP]</code> lado a lado; corrigido o caso do Ministério Público em <strong>HABEAS CORPUS</strong> para <strong>HABEAS CORPUS CONCEDIDO</strong>, com prazo de <strong>15 dias para REsp</strong>. Os nomes dos recursos passaram a ser exibidos em <strong>CAIXA ALTA</strong>, dentro de etiquetas douradas próprias, e “HC” foi substituído por <strong>HABEAS CORPUS</strong> por extenso.</p>
+<p><strong>Alteração da versão 1.78:</strong> compactada a linha de <strong>HC denegado</strong> no item <strong>12.6.1.4</strong>, reunindo <strong>[ADV]</strong> e <strong>[DP]</strong> na mesma linha com seus respectivos prazos de ROC. Criadas etiquetas visuais reutilizáveis para as partes: <strong>[ADV]</strong> com fundo azul, <strong>[DP]</strong> com fundo verde e <strong>[MP]</strong> com fundo vermelho, todas com texto preto e tons mais fechados para facilitar a leitura rápida da tabela.</p>
+<p><strong>Alteração da versão 1.77:</strong> acrescentado ao item <strong>12.6.1.4</strong> o <strong>Agravo Interno</strong> para decisão monocrática, com prazo-base de <strong>15 dias</strong> para <code>[ADV]</code>/<code>[MP]</code> e <strong>30 dias</strong> para <code>[DP]</code>. Os embargos infringentes/de nulidade foram compactados em <strong>uma única linha</strong>, mantendo <code>[ADV]</code> = 10 dias e <code>[DP]</code> = 20 dias; <code>[MP]</code> passou a aparecer riscado na própria linha para indicar visualmente que não cabe como recurso próprio.</p>
+<p><strong>Alteração da versão 1.76:</strong> incorporados os <strong>embargos infringentes e de nulidade</strong> diretamente à tabela do item <strong>12.6.1.4 — Prazos recursais usados como referência</strong>, eliminando o antigo item 5 separado. O conteúdo foi reduzido ao essencial: <code>[ADV]</code> = 10 dias, <code>[DP]</code> = 20 dias e <code>[MP]</code> = não cabe como recurso próprio, nas hipóteses de Acórdão não unânime e desfavorável ao réu.</p>
+<p><strong>Alteração da versão 1.75:</strong> simplificada a tabela do item <strong>12.6.1.4 — Prazos recursais usados como referência</strong>, substituindo as denominações extensas das partes por etiquetas visuais em fonte monoespaçada e negrito: <code>[ADV]</code> para advogado particular, <code>[DP]</code> para Defensoria Pública e <code>[MP]</code> para Ministério Público.</p>
+<p><strong>Alteração da versão 1.74:</strong> reestruturado integralmente o tópico <strong>12.6.1. Depois da publicação do Acórdão</strong>. O controle deixou de usar pastas fixas apenas pela classe do processo e passou a considerar <strong>o termo inicial individual, quem efetivamente possui interesse recursal e quantos dias ainda faltam</strong>. Registrado que o advogado particular não aguarda ciência pessoal de 10 dias: na publicação eletrônica, o prazo começa no primeiro dia útil seguinte à data considerada de publicação; MP e DP permanecem sujeitos à intimação pessoal, com prazo em dobro para a DP. Incluída a lógica de seleção dinâmica entre as pastas <strong>Aguardando 02, 05, 10, 15, 20, 30 e 60</strong>, sempre com controle da data exata de vencimento. Acrescentado exemplo de Apelação em que, após a ciência do MP, restam 8 dias ao advogado, devendo o processo ir para <strong>Aguardando 10</strong>, sem reiniciar o prazo. Também foi reforçada a análise de <strong>quem possui interesse recursal</strong> e refeito o quadro dos <strong>embargos infringentes e de nulidade</strong>: 10 dias para advogado particular, 20 dias para DP e ausência de recurso próprio do MP, por se tratar de recurso de índole defensiva.</p>
 <p><strong>Alteração da versão 1.73:</strong> corrigido o tópico <strong>12.5.B. Voto vencido</strong>: <strong>não existe atribuição prévia ao Vogal</strong>. O procedimento correto é abrir diretamente a <strong>Conclusão — Fase <code>51</code></strong>, selecionar em Magistrado <code>50023</code> — <strong>Vogal</strong> — e escolher o Desembargador que proferiu o voto vencido; em Motivo, utilizar <code>13</code> — <strong>Lavratura de Voto Vencido</strong>. Após salvar, deve-se abrir a movimentação, utilizar <strong>Carimbo</strong> e finalizar/assinar. Removidas do fluxo de voto vencido as referências incorretas à Fase <code>50009</code>, ao Complemento <code>59998</code> e à atribuição separada ao Vogal. Mantida a exceção que permite essa conclusão após as 17h em dia de sessão.</p>
 <p><strong>Alteração da versão 1.72:</strong> acrescentado o <strong>Recurso em Sentido Estrito (RESE)</strong> ao quadro do tópico <strong>12.6</strong>: quando o julgamento modificar a decisão recorrida e exigir providência, deve ser comunicada a Vara de origem com o Carimbo <code>7626</code>, com atenção especial a determinações sobre prisão ou liberdade; se a decisão for integralmente mantida, em regra não há comunicação imediata, salvo determinação expressa no Acórdão. No tópico <strong>12.6.1</strong>, RESE e Apelação foram reunidos por possuírem o mesmo controle operacional de prazo para REsp/RE: <strong>Aguardando 15</strong> sem DP e <strong>Aguardando 30</strong> com DP. Incluída ainda a ressalva do art. 609, parágrafo único, do CPP para decisões de segunda instância <strong>não unânimes e desfavoráveis ao réu</strong>, com possibilidade de embargos infringentes e de nulidade em <strong>10 dias</strong>, observando-se o prazo em dobro da Defensoria Pública.</p>
 <p><strong>Alteração da versão 1.71:</strong> acrescentada a <strong>exceção de horário</strong> do voto vencido: em <strong>dia de sessão</strong>, a conclusão ao Vogal para lavratura do voto vencido pode ser aberta <strong>mesmo após as 17h</strong>. <span class="small">O fluxo operacional desta versão foi posteriormente corrigido na versão 1.73, que eliminou a atribuição prévia ao Vogal.</span></p>
