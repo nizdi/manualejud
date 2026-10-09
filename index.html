@@ -113,7 +113,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.71</div>
+    <div class="brand">eJUD · Manual interativo · v1.72</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -139,7 +139,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.71 · 08-10-26</div>
+<div class="version-tag">Versão 1.72 · 09-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1047,6 +1047,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <tr><td><strong>Habeas Corpus — CONCEDIDO</strong></td><td>Comunicar a <strong>Vara de origem</strong> utilizando o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>.</td></tr>
 <tr><td><strong>Agravo em Execução Penal</strong></td><td>Deve haver comunicação à <strong>VEP</strong>, <strong>seja o recurso provido ou não</strong>. Se houver pedido de <strong>contrarrazões</strong>, expedir também <strong>ofício à VEP</strong>.</td></tr>
 <tr><td><strong>Apelação — réu preso + sentença modificada</strong></td><td>Somente há comunicação neste fluxo quando estiverem presentes <strong>as duas condições</strong>: <strong>réu preso</strong> e <strong>modificação da sentença pelo julgamento</strong>. Nesse caso, comunique a <strong>VEP</strong>; se houver <strong>alteração do regime</strong>, comunique também a <strong>SEAP</strong>. Exemplo: mudança do regime fechado para o semiaberto → oficiar a SEAP <strong>por e-mail</strong>. Se o réu estiver preso, mas a sentença for <strong>integralmente mantida</strong>, não é necessário comunicar nada, salvo se houver <strong>determinação expressa no voto</strong> para comunicar ou oficiar o juízo ou outro órgão.<br><span class="small"><strong>PENDENTE:</strong> acrescentar posteriormente a anotação específica referente a violência doméstica.</span></td></tr>
+<tr><td><strong>Recurso em Sentido Estrito (RESE)</strong></td><td>Se o julgamento <strong>modificar a decisão recorrida</strong> e exigir providência do juízo de origem, comunique a <strong>Vara de origem</strong>, utilizando o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>. Se houver determinação relacionada à <strong>prisão ou liberdade</strong>, providencie a comunicação necessária e verifique eventual <strong>urgência</strong>. Se a decisão for <strong>integralmente mantida</strong>, em regra não há necessidade de comunicação imediata por ofício, salvo <strong>determinação expressa no Acórdão</strong>.</td></tr>
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
@@ -1064,12 +1065,12 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="flow-split">
 <div class="flow-card">
 <h4>Caminho 1 — SEM Defensoria Pública<br><span class="small">MP × advogado particular</span></h4>
-<p><strong>Apelação:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. O prazo considerado é de <strong>15 dias</strong> para eventual REsp/REx.</p>
+<p><strong>Apelação / RESE:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. O prazo considerado é de <strong>15 dias</strong> para eventual REsp/RE.</p>
 <p><strong>Habeas Corpus:</strong> após a ciência de todos, encaminhe para <strong>Aguardando 15</strong>. Para o advogado, o <strong>ROC</strong> tem prazo de <strong>5 dias</strong>; para o MP, o recurso a considerar neste fluxo é o <strong>REsp, em 15 dias</strong>. <strong>O MP não interpõe ROC</strong> neste fluxo, pois o ROC é utilizado contra a denegação do HC.</p>
 </div>
 <div class="flow-card">
 <h4>Caminho 2 — COM Defensoria Pública<br><span class="small">DP × MP</span></h4>
-<p><strong>Apelação:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 30</strong>. A DP possui <strong>30 dias</strong> para REsp/REx, em razão do prazo em dobro. O MP permanece com <strong>15 dias</strong>.</p>
+<p><strong>Apelação / RESE:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 30</strong>. A DP possui <strong>30 dias</strong> para REsp/RE, em razão do prazo em dobro. O MP permanece com <strong>15 dias</strong>.</p>
 <p><strong>Habeas Corpus denegado:</strong> depois da ciência de todos, encaminhe para <strong>Aguardando 15</strong>. A DP possui <strong>10 dias</strong> para ROC; o MP permanece com <strong>15 dias</strong> para eventual REsp.</p>
 </div>
 </div>
@@ -1078,14 +1079,15 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <table>
 <thead><tr><th>Situação</th><th>Após Aguardando 10 / ciência de todos</th><th>Prazo relevante</th></tr></thead>
 <tbody>
-<tr><td><strong>Apelação — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>MP/advogado: 15 dias para REsp/REx.</td></tr>
-<tr><td><strong>Apelação — com DP</strong></td><td><strong>Aguardando 30</strong></td><td>DP: 30 dias para REsp/REx; MP: 15 dias.</td></tr>
+<tr><td><strong>Apelação / RESE — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>MP/advogado: 15 dias para REsp/RE.</td></tr>
+<tr><td><strong>Apelação / RESE — com DP</strong></td><td><strong>Aguardando 30</strong></td><td>DP: 30 dias para REsp/RE; MP: 15 dias.</td></tr>
 <tr><td><strong>HC — sem DP</strong></td><td><strong>Aguardando 15</strong></td><td>Advogado: 5 dias para ROC; MP: 15 dias para REsp.</td></tr>
 <tr><td><strong>HC — com DP</strong></td><td><strong>Aguardando 15</strong></td><td>DP: 10 dias para ROC; MP: 15 dias para REsp.</td></tr>
 </tbody>
 </table>
+<div class="critical"><strong>ATENÇÃO — ACÓRDÃO NÃO UNÂNIME E DESFAVORÁVEL AO RÉU:</strong> antes de tratar o prazo de REsp/RE como a única pendência, confira se cabem <strong>embargos infringentes e de nulidade</strong>. Nos termos do art. 609, parágrafo único, do CPP, quando a decisão de segunda instância for <strong>não unânime e desfavorável ao réu</strong>, esses embargos podem ser opostos em <strong>10 dias</strong>; para a <strong>Defensoria Pública</strong>, observar o prazo em dobro, resultando em <strong>20 dias</strong>. Se a divergência for parcial, a análise fica restrita à matéria objeto da divergência.</div>
 <div class="critical"><strong>ATENÇÃO A CIÊNCIAS EM DATAS DIFERENTES:</strong> não presuma que os prazos de todas as partes começaram juntos. Confira a data de ciência de <strong>cada parte</strong> e registre no lembrete do processo, se necessário. A pasta indica o controle operacional do processo, mas não substitui a conferência individual do termo inicial e do término do prazo de cada intimado.</div>
-<div class="icon-note"><strong>Resumo:</strong> publicação do Acórdão → <strong>Aguardando 10</strong> para ciência → cada parte começa seu prazo no dia seguinte à própria ciência → não sair do Aguardando 10 enquanto faltar ciência de alguém → depois da ciência de todos: <strong>Apelação sem DP = Aguardando 15</strong>; <strong>Apelação com DP = Aguardando 30</strong>; <strong>HC sem DP = Aguardando 15</strong>; <strong>HC com DP = Aguardando 15</strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> publicação do Acórdão → <strong>Aguardando 10</strong> para ciência → cada parte começa seu prazo no dia seguinte à própria ciência → não sair do Aguardando 10 enquanto faltar ciência de alguém → depois da ciência de todos: <strong>Apelação/RESE sem DP = Aguardando 15</strong>; <strong>Apelação/RESE com DP = Aguardando 30</strong>; <strong>HC sem DP = Aguardando 15</strong>; <strong>HC com DP = Aguardando 15</strong>. Se o Acórdão for <strong>não unânime e desfavorável ao réu</strong>, conferir antes a possibilidade de embargos infringentes e de nulidade.</div>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
@@ -2299,7 +2301,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.71 — 08-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.72 — 09-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.72:</strong> acrescentado o <strong>Recurso em Sentido Estrito (RESE)</strong> ao quadro do tópico <strong>12.6</strong>: quando o julgamento modificar a decisão recorrida e exigir providência, deve ser comunicada a Vara de origem com o Carimbo <code>7626</code>, com atenção especial a determinações sobre prisão ou liberdade; se a decisão for integralmente mantida, em regra não há comunicação imediata, salvo determinação expressa no Acórdão. No tópico <strong>12.6.1</strong>, RESE e Apelação foram reunidos por possuírem o mesmo controle operacional de prazo para REsp/RE: <strong>Aguardando 15</strong> sem DP e <strong>Aguardando 30</strong> com DP. Incluída ainda a ressalva do art. 609, parágrafo único, do CPP para decisões de segunda instância <strong>não unânimes e desfavoráveis ao réu</strong>, com possibilidade de embargos infringentes e de nulidade em <strong>10 dias</strong>, observando-se o prazo em dobro da Defensoria Pública.</p>
 <p><strong>Alteração da versão 1.71:</strong> complementado o tópico <strong>12.5.B. Voto vencido</strong> para esclarecer que, antes de abrir a conclusão, é necessário <strong>atribuir o processo ao Vogal</strong>, seguindo a mesma lógica do tópico <strong>10.1</strong>: Fase <code>50009</code>, Complemento 1 <code>59998</code> e preenchimento do campo <strong>VOGAL</strong> com o Desembargador que proferiu o voto vencido. Somente depois deve ser aberta a conclusão em Fase <code>51</code>, Magistrado <code>50023</code> — Vogal — para o mesmo Desembargador. Também foi registrada a <strong>exceção de horário</strong>: em <strong>dia de sessão</strong>, a conclusão ao Vogal para lavratura de voto vencido pode ser aberta <strong>mesmo após as 17h</strong>.</p>
 <p><strong>Alteração da versão 1.70:</strong> ampliado o tópico <strong>12.5.B. Voto vencido</strong> para registrar o procedimento completo de <strong>abertura de conclusão ao Vogal</strong>: Fase <code>51</code>, campo Magistrado <code>50023</code> — Vogal — e seleção do <strong>Desembargador específico que proferiu o voto vencido</strong>, inclusive quando houver dois Vogais na composição. Reforçado que a conclusão sobe ao gabinete sem uso de Encaminhar e incluído o código <code>50023</code> nas referências rápidas. No tópico <strong>12.6</strong>, a linha de Apelação passou a indicar já na coluna Classe/resultado que a comunicação somente é necessária quando houver <strong>réu preso + sentença modificada</strong>, ressalvada determinação expressa no voto. Também foi registrado que a existência de <strong>voto vencido ainda pendente de redação não impede adiantar ofícios e comunicações</strong> já definidos pelo resultado do julgamento.</p>
 <p><strong>Alteração da versão 1.69:</strong> ajustado o tópico <strong>12.6. Pós-sessão — comunicações e publicação dos Acórdãos</strong> para esclarecer a regra da <strong>Apelação com réu preso</strong>: a comunicação à VEP somente é necessária quando o julgamento <strong>alterar a sentença</strong>; se houver alteração de regime, deve-se comunicar também a SEAP. Se a sentença for integralmente mantida, <strong>não há comunicação a realizar</strong>, salvo quando houver <strong>determinação expressa no voto</strong> para comunicar ou oficiar o juízo ou outro órgão.</p>
