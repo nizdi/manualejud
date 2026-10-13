@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.81</div>
+    <div class="brand">eJUD · Manual interativo · v1.82</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.81 · 13-10-26</div>
+<div class="version-tag">Versão 1.82 · 13-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -372,6 +372,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 → verificar réu preso
 → verificar prevenção/impedimento/suspeição
 </code></pre>
+<div class="critical"><strong>ERRO MATERIAL NO TERMO DE RECEBIMENTO APÓS A DISTRIBUIÇÃO:</strong> se o Desembargador determinar que a Secretaria corrija erro material ocorrido na distribuição e registrado no Termo de Recebimento, <strong>não faça a correção diretamente na Câmara</strong>. Conforme orientação interna repassada por Fernanda, a correção deve ser solicitada à <strong>2ª Vice-Presidência</strong>. Consulte também o <a href="#23-redistribuicao"><strong>tópico 23</strong></a> para o encaminhamento.</div>
 <h2 id="4-2-prevencao-impedimento-e-suspeicao">4.2. Prevenção, impedimento e suspeição</h2>
 <p>Antes da distribuição/atribuição definitiva:</p>
 <ul>
@@ -643,6 +644,7 @@ Sim   Não
 <p>O print deve mostrar o <strong>e-mail efetivamente enviado à Central de Mandados</strong>, com o destinatário e as informações do envio visíveis, conforme o exemplo abaixo.</p>
 <img class="manual-img grande" src="/manualejud/Imagens/mandadointimacaoemail.png" alt="Exemplo de comprovante do e-mail de envio de Mandado de Intimação à Central de Mandados">
 <div class="icon-note"><strong>Resumo:</strong> enviar o Mandado de Intimação por e-mail à Central competente → tirar print do e-mail enviado → Fase <code>60</code> → Tipo <code>70230</code> — Comprovante de e-mail → TEXTO → colar o print → Salvar → reabrir com duplo clique → finalizar/assinar.</div>
+<div class="critical"><strong>ACOMPANHAMENTO DO MANDADO — PRAZO PARA CUMPRIMENTO:</strong> sem determinação de urgência, utilize <strong>30 dias</strong> como referência para acompanhar o cumprimento pelo Oficial de Justiça. Havendo urgência determinada pelo magistrado, <strong>prevalece o prazo fixado na decisão</strong> (por exemplo, 48 horas). Confira a determinação e controle o retorno do mandado; não confunda o prazo do Oficial com prazo recursal ou prazo para a parte se manifestar.</div>
 <div class="critical"><strong>ANTES DO ENVIO:</strong> confira a identificação do intimando, os documentos pessoais disponíveis, o destino de cumprimento (presídio ou residência), o telefone celular quando aplicável, o carimbo escolhido e a <strong>Central de Mandados competente</strong>. Não presuma a Central pelo nome do bairro ou do presídio: consulte a aba correspondente na planilha.</div>
 <div class="icon-note"><strong>Resumo:</strong> SIPEN (nome + nome da mãe) → confirmar se está preso → anotar nome, CPF/RG, endereço ou presídio e telefone quando aplicável → planilha <strong>Unidades prisionais</strong> ou <strong>Intimações</strong> → <strong>Fase 60</strong> → <strong>Tipo 66235</strong> → Salvar → reabrir → Carimbo Livre <code>7632</code> ou <code>7652</code> → preencher/revisar → Assinar → encaminhar à Central competente.</div>
 <hr />
@@ -1101,25 +1103,29 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <h4>Exemplo — Apelação sem DP, somente a defesa com interesse</h4>
 <div class="icon-note"><strong>Exemplo:</strong> em uma Apelação, o advogado particular possui <strong>15 dias</strong> para eventual REsp/RE. O prazo dele começa no primeiro dia útil seguinte à publicação. Quando o MP toma ciência, já transcorreram <strong>7 dias</strong> do prazo do advogado. Se o MP está satisfeito com o resultado e <strong>não possui interesse recursal</strong>, restam apenas <strong>8 dias</strong> a controlar para a defesa. Nesse caso, encaminhe para <strong>Aguardando 10</strong> e acompanhe a data real do vencimento do advogado. <strong>Não reinicie 15 dias a partir da ciência do MP.</strong></div>
 
-<h4>4. Prazos recursais usados como referência</h4>
-<table>
-<thead><tr><th>Situação</th><th>Prazo de referência</th></tr></thead>
-<tbody>
-<tr><td><span class="resource-tag">APELAÇÃO / RESE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong> para REsp/RE.</td></tr>
-<tr><td><span class="resource-tag">❌ HABEAS CORPUS DENEGADO</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span>: <strong>5 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>10 dias</strong> para ROC.</td></tr>
-<tr><td><span class="resource-tag">✅ HABEAS CORPUS CONCEDIDO</span> — <span class="party-tag party-mp">[MP]</span></td><td><span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> para REsp.</td></tr>
-<tr><td><span class="resource-tag">REVISÃO CRIMINAL</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong> para REsp.</td></tr>
-<tr><td><span class="resource-tag">AGRAVO INTERNO</span> <span class="small">— decisão monocrática</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span> / <span class="party-tag party-dp">[DP]</span></td><td><span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td></tr>
-<tr><td><span class="resource-tag">EMBARGOS INFRINGENTES / DE NULIDADE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-dp">[DP]</span> / <s><span class="party-tag party-mp">[MP]</span></s> <span class="small">— Acórdão não unânime e desfavorável ao réu</span></td><td><span class="party-tag party-adv">[ADV]</span>: <strong>10 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>20 dias</strong> · <s><span class="party-tag party-mp">[MP]</span></s>: não cabe.</td></tr>
-</tbody>
-</table>
-
 <div class="critical"><strong>ATENÇÃO A CIÊNCIAS EM DATAS DIFERENTES:</strong> nunca presuma que os prazos começaram juntos. Advogado particular, MP e DP podem ter <strong>termos iniciais diferentes</strong>. A cada nova ciência, recalcule o tempo restante de quem ainda possui interesse recursal e, se necessário, <strong>mude o processo para uma pasta mais adequada ao prazo que realmente falta</strong>.</div>
 <div class="icon-note"><strong>Resumo:</strong> publicar o Acórdão → prazo do advogado particular já começa conforme a publicação → aguardar/acompanhar ciência pessoal de MP e DP → identificar <strong>quem ainda tem interesse recursal</strong> → calcular quantos dias realmente faltam para cada recurso relevante → escolher entre <strong>Aguardando 02 / 05 / 10 / 15 / 20 / 30 / 60</strong> → registrar a data exata do vencimento → acompanhar até recurso, decurso ou encerramento.</div>
+<hr />
+<h1 id="12-7-prazos-recursais">12.7. Prazos recursais</h1>
+<p>Consulte os prazos abaixo após identificar <strong>qual recurso é cabível</strong> e <strong>quem possui interesse recursal</strong>. Para controlar datas de ciência e pastas, siga o tópico 12.6.1.</p>
+<table>
+<thead><tr><th>Classe / resultado</th><th>Recurso e prazo de referência</th></tr></thead>
+<tbody>
+<tr><td><span class="resource-tag">APELAÇÃO</span></td><td><span class="resource-tag">REsp / RE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.<p><span class="resource-tag">EMBARGOS INFRINGENTES / DE NULIDADE</span> — Acórdão <strong>não unânime e desfavorável ao réu</strong>: <span class="party-tag party-adv">[ADV]</span>: <strong>10 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>20 dias</strong> · <s><span class="party-tag party-mp">[MP]</span></s>: não cabe como recurso próprio.</p></td></tr>
+<tr><td><span class="resource-tag">RESE</span></td><td><span class="resource-tag">REsp / RE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td></tr>
+<tr><td><span class="resource-tag">❌ HABEAS CORPUS DENEGADO</span></td><td><span class="resource-tag">ROC</span> — <span class="party-tag party-adv">[ADV]</span>: <strong>5 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>10 dias</strong>.</td></tr>
+<tr><td><span class="resource-tag">✅ HABEAS CORPUS CONCEDIDO</span></td><td><span class="resource-tag">REsp/ RE</span> — <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong>, quando cabível.</td></tr>
+<tr><td><span class="resource-tag">REVISÃO CRIMINAL</span></td><td><span class="resource-tag">REsp / RE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td></tr>
+<tr><td><span class="resource-tag">DECISÃO MONOCRÁTICA</span></td><td><span class="resource-tag">AGRAVO INTERNO</span> <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td></tr>
+<tr><td><span class="resource-tag">AGRAVO DE EXECUÇÃO</span></td><td><span class="small">Prazos: pendentes de preenchimento.</span></td></tr>
+</tbody>
+</table>
+<div class="critical"><strong>CONFERIR CABIMENTO:</strong> o prazo da tabela não significa que todos os recursos sejam cabíveis em qualquer decisão. Os embargos infringentes/de nulidade dependem dos requisitos do art. 609, parágrafo único, do CPP, e não são recurso próprio do Ministério Público. Em Habeas Corpus denegado, a existência de ROC e de eventual REsp/RE exige conferir a hipótese concreta.</div>
 <hr />
 <h1 id="13-publicacao">13. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
 <div class="critical"><strong>QUANDO PUBLICAR UM DESPACHO:</strong> o servidor deve realizar a publicação quando o despacho exigir <strong>intimação de uma parte para praticar algum ato ou cumprir uma determinação</strong>, desde que a intimação deva ocorrer por publicação. <strong>Não aguarde a Secretaria nesses casos.</strong> O <strong>Ministério Público</strong> e a <strong>Defensoria Pública</strong> seguem os procedimentos de <strong>intimação pessoal</strong>, que não são substituídos por esta publicação; para a intimação do MP destinada a parecer, consulte o <a href="#6-intimacao-do-ministerio-publico-para-parecer"><strong>tópico 6</strong></a>.</div>
+<div class="critical"><strong>DECISÃO “INDEFINIDO” COM ORDEM DE CIÊNCIA:</strong> quando constar <strong>“Dê-se ciência às partes e à d. Procuradoria de Justiça”</strong> e a árvore do processo mostrar <strong>“Decisão Indefinido”</strong>, confira se existe efetiva intimação de cada destinatário. <strong>Publicação para advogado particular não substitui intimação pessoal do MP e da DP</strong>. Mesmo após a publicação, se não houver peça/movimentação de intimação do MP, providencie a intimação eletrônica: <strong>Fase <code>8</code> → MP <code>50675</code> → Motivo Ciência <code>50056</code></strong>. Para a DP, observe também o fluxo próprio de intimação pessoal descrito no <a href="#6-2-envio-defensoria-publica"><strong>tópico 6</strong></a>. Antes de encaminhar o processo, verifique que cada parte cuja ciência foi determinada possua a respectiva forma de comunicação.</div>
 <div class="critical"><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</div>
 <h2 id="13-1-publicar-despacho">13.1. Publicar despacho</h2>
 <div class="video-note"><strong>🎥 VÍDEO — Publicação de despacho</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FPUBLICA%C3%87%C3%83O%20DESPACHO%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2E986ff7e1%2D0a40%2D4d50%2Db704%2Dab673b736c9d" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
@@ -1531,7 +1537,11 @@ At.te,</code></pre>
 <hr />
 <h1 id="23-redistribuicao">23. Redistribuição (impedimento/distribuição errônea)</h1>
 <div class="video-note"><strong>🎥 VÍDEO — Redistribuição para 2ª Vice-Presidência</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FBNMP%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2Eae595489%2Dedd5%2D430b%2D95e4%2D072972cef7b6" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
-<div class="icon-note"><strong>PENDENTE DE TEXTO:</strong> este tópico foi criado para a rotina de redistribuição à 2ª Vice-Presidência em hipóteses como impedimento e distribuição errônea. Por enquanto, consulte o vídeo; o passo a passo textual ainda será acrescentado.</div>
+<h2 id="23-1-erro-material-distribuicao">23.1. Erro material de distribuição no Termo de Recebimento</h2>
+<p>Se houver despacho do Desembargador determinando a correção de erro material da distribuição que conste no <strong>Termo de Recebimento</strong>, a regularização deverá ser encaminhada à <strong>2ª Vice-Presidência</strong>, conforme orientação interna.</p>
+<ol><li>Abra a remessa no eJUD e informe a <strong>Fase <code>123</code></strong>.</li><li>Em <strong>Destinatário</strong>, selecione <strong><code>50663</code> — 2ª Vice-Presidência</strong>.</li><li>Em <strong>Motivo</strong>, escolha a opção apropriada à determinação, por exemplo <strong>Cumprimento de despacho</strong>.</li><li>Confira os campos e conclua a remessa conforme a rotina do eJUD.</li></ol>
+<div class="critical"><strong>NÃO RETIFICAR NA CÂMARA:</strong> nessa hipótese, a 2ª Vice-Presidência é quem deverá providenciar a correção do erro material de distribuição.</div>
+<div class="icon-note"><strong>Outras hipóteses:</strong> para redistribuição por prevenção ou impedimento, consulte o vídeo acima; o procedimento completo desses casos ainda não está descrito neste tópico.</div>
 <hr />
 <h1 id="24-alvara-de-soltura">24. Alvará de Soltura</h1>
 <div class="critical"><strong>PRIMEIRO PASSO — CERTIDÃO / NADA CONSTA:</strong> antes de iniciar a expedição do Alvará de Soltura no BNMP, aguarde a <strong>Certidão / Nada Consta</strong>, confeccionada pela <strong>Secretaria</strong>. Essa verificação é anterior à expedição do Alvará e serve para confirmar se existe outro mandado de prisão que ainda impeça a liberação do preso. A certidão ficará juntada no processo; salve também uma cópia em <strong>PDF</strong>, pois ela será utilizada posteriormente no e-mail à SARQ.</div>
@@ -2361,7 +2371,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.81 — 13-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.82 — 13-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.82:</strong> acrescentado o acompanhamento dos prazos de cumprimento de mandados no tópico 7; registrada a remessa à 2ª Vice-Presidência por erro material no Termo de Recebimento (Fase <code>123</code>, Destinatário <code>50663</code>); incluído alerta de intimação pessoal do MP e da DP quando decisão “Indefinido” determina ciência; separados os prazos recursais no tópico <strong>12.7</strong>, com embargos infringentes na Apelação, hipóteses de REsp/RE em HC denegado e Agravo de Execução com prazos ainda pendentes.</p>
 <p><strong>Alteração da versão 1.81:</strong> criado o <strong>tópico 25 — Arquivamento</strong>, com conferência de prazos, distinção entre arquivamento definitivo de processos originários e baixa à primeira instância de recursos, Certidão de Não Interposição de Recurso (Fase <code>50002</code>, Complemento 1 <code>9999</code>, Carimbo <code>7604</code>) e fluxo de arquivamento definitivo (Fase <code>861</code>, Tipo <code>246</code>, Destino <code>17902</code>, Carimbo <code>7666</code>), incluindo imagem do campo Destino. A rotina específica de baixa permanece pendente de detalhamento.</p>
 <p><strong>Alteração da versão 1.80:</strong> acrescentada <strong>REVISÃO CRIMINAL</strong> à tabela do item <strong>12.6.1.4</strong>, com o mesmo prazo de REsp utilizado nos demais casos: <code>[ADV]</code>/<code>[MP]</code> = <strong>15 dias</strong> e <code>[DP]</code> = <strong>30 dias</strong>. Também foram acrescentados os marcadores visuais <strong>❌</strong> em <strong>HABEAS CORPUS DENEGADO</strong> e <strong>✅</strong> em <strong>HABEAS CORPUS CONCEDIDO</strong>.</p>
 <p><strong>Alteração da versão 1.79:</strong> reorganizada a tabela do item <strong>12.6.1.4</strong>: <strong>APELAÇÃO / RESE</strong> passou a ocupar uma única linha, com os prazos de <code>[ADV]</code>/<code>[MP]</code> e <code>[DP]</code> lado a lado; corrigido o caso do Ministério Público em <strong>HABEAS CORPUS</strong> para <strong>HABEAS CORPUS CONCEDIDO</strong>, com prazo de <strong>15 dias para REsp</strong>. Os nomes dos recursos passaram a ser exibidos em <strong>CAIXA ALTA</strong>, dentro de etiquetas douradas próprias, e “HC” foi substituído por <strong>HABEAS CORPUS</strong> por extenso.</p>
