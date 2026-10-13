@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.80</div>
+    <div class="brand">eJUD · Manual interativo · v1.81</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.80 · 09-10-26</div>
+<div class="version-tag">Versão 1.81 · 13-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1824,6 +1824,33 @@ At.te,</code></pre>
 <div class="critical"><strong>NÃO DEIXAR SEM CIÊNCIA:</strong> o fato de o Alvará não produzir a soltura por existir outro mandado <strong>não dispensa a intimação da defesa</strong>. Mesmo sem despacho específico, deve haver <strong>Ato Ordinatório da Secretaria</strong> para dar ciência ao advogado de que a soltura ficou prejudicada.</div>
 <div class="icon-note"><strong>Resumo:</strong> liberdade concedida + outro mandado de prisão vigente = <strong>Alvará prejudicado</strong> → Secretaria confecciona <strong>Ato Ordinatório</strong> → advogado é intimado para ciência do prejuízo.</div>
 <hr />
+<h1 id="25-arquivamento">25. Arquivamento — finalização sem interposição de recurso</h1>
+<div class="critical"><strong>ANTES DE FINALIZAR:</strong> confira os prazos recursais e certifique-se de que <strong>todos os prazos aplicáveis decorreram sem interposição de recurso</strong>. Não arquive nem baixe o processo enquanto houver prazo pendente.</div>
+<div class="icon-note"><strong>Qual é o destino?</strong> Processos <strong>originários da Câmara</strong>, como Habeas Corpus, são <strong>arquivados definitivamente</strong>. Processos que chegaram à Câmara <strong>por recurso</strong> são <strong>baixados à primeira instância</strong>.</div>
+<h2 id="25-1-certidao-sem-recurso">25.1. Certidão de Não Interposição de Recurso</h2>
+<p>Antes do arquivamento ou da baixa, registre a certidão de que não houve interposição de recurso:</p>
+<ol>
+<li>Crie um movimento com <strong>Fase <code>50002</code> — Certidão</strong> e <strong>Complemento 1 <code>9999</code></strong>.</li>
+<li><strong>Salve</strong> o movimento.</li>
+<li>Abra o movimento salvo e aplique o <strong>Carimbo <code>7604</code> — Certidão de Não Interposição de Recurso 2026 Para Baixa</strong>.</li>
+<li>Informe a <strong>matrícula do servidor</strong> e <strong>confirme o carimbo</strong>.</li>
+</ol>
+<h2 id="25-2-arquivamento-definitivo">25.2. Arquivamento definitivo — processos originários da Câmara</h2>
+<p>Após a certidão, quando for caso de <strong>arquivamento definitivo</strong>:</p>
+<ol>
+<li>Crie um movimento com <strong>Fase <code>861</code> — Arquivamento</strong>.</li>
+<li>Em <strong>Tipo</strong>, selecione <strong><code>246</code> — Definitivo</strong>.</li>
+<li>Em <strong>Destino</strong>, informe <strong><code>17902</code> — 9ª Câmara Criminal</strong>.</li>
+<li><strong>Salve o movimento.</strong> O processo já estará arquivado.</li>
+<li>Abra o movimento salvo e aplique o <strong>Carimbo <code>7666</code> — SAÍDA DE ACERVO</strong>.</li>
+</ol>
+<div class="icon-note"><strong>Onde fica o Destino?</strong> O campo é estreito e fica logo acima da barra inferior da janela.</div>
+<img class="manual-img grande" src="/manualejud/Imagens/destinoarq.png" alt="Localização do campo Destino na tela de arquivamento do eJUD">
+<div class="icon-note"><strong>Resumo:</strong> conferir prazos → Certidão <code>50002</code> / Complemento 1 <code>9999</code> → salvar → Carimbo <code>7604</code> + matrícula → Arquivamento <code>861</code> / Tipo <code>246</code> / Destino <code>17902</code> → salvar → Carimbo <code>7666</code>.</div>
+<h2 id="25-3-baixa-primeira-instancia">25.3. Baixa à primeira instância — processos recebidos por recurso</h2>
+<p>Quando o processo chegou à Câmara <strong>por recurso</strong>, após conferir os prazos e emitir a <strong>Certidão de Não Interposição de Recurso</strong> do item 25.1, o destino é a <strong>baixa à primeira instância</strong>, e não o arquivamento definitivo na Câmara.</p>
+<div class="icon-note"><strong>Procedimento de baixa:</strong> etapas e códigos específicos ainda não registrados neste manual.</div>
+<hr />
 <h1 id="a-camaras-e-grupos-anotados">A. Câmaras e grupos anotados</h1>
 <p>Dois números aparecem em mais de uma fonte:</p>
 <table>
@@ -2334,7 +2361,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.80 — 09-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.81 — 13-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.81:</strong> criado o <strong>tópico 25 — Arquivamento</strong>, com conferência de prazos, distinção entre arquivamento definitivo de processos originários e baixa à primeira instância de recursos, Certidão de Não Interposição de Recurso (Fase <code>50002</code>, Complemento 1 <code>9999</code>, Carimbo <code>7604</code>) e fluxo de arquivamento definitivo (Fase <code>861</code>, Tipo <code>246</code>, Destino <code>17902</code>, Carimbo <code>7666</code>), incluindo imagem do campo Destino. A rotina específica de baixa permanece pendente de detalhamento.</p>
 <p><strong>Alteração da versão 1.80:</strong> acrescentada <strong>REVISÃO CRIMINAL</strong> à tabela do item <strong>12.6.1.4</strong>, com o mesmo prazo de REsp utilizado nos demais casos: <code>[ADV]</code>/<code>[MP]</code> = <strong>15 dias</strong> e <code>[DP]</code> = <strong>30 dias</strong>. Também foram acrescentados os marcadores visuais <strong>❌</strong> em <strong>HABEAS CORPUS DENEGADO</strong> e <strong>✅</strong> em <strong>HABEAS CORPUS CONCEDIDO</strong>.</p>
 <p><strong>Alteração da versão 1.79:</strong> reorganizada a tabela do item <strong>12.6.1.4</strong>: <strong>APELAÇÃO / RESE</strong> passou a ocupar uma única linha, com os prazos de <code>[ADV]</code>/<code>[MP]</code> e <code>[DP]</code> lado a lado; corrigido o caso do Ministério Público em <strong>HABEAS CORPUS</strong> para <strong>HABEAS CORPUS CONCEDIDO</strong>, com prazo de <strong>15 dias para REsp</strong>. Os nomes dos recursos passaram a ser exibidos em <strong>CAIXA ALTA</strong>, dentro de etiquetas douradas próprias, e “HC” foi substituído por <strong>HABEAS CORPUS</strong> por extenso.</p>
 <p><strong>Alteração da versão 1.78:</strong> compactada a linha de <strong>HC denegado</strong> no item <strong>12.6.1.4</strong>, reunindo <strong>[ADV]</strong> e <strong>[DP]</strong> na mesma linha com seus respectivos prazos de ROC. Criadas etiquetas visuais reutilizáveis para as partes: <strong>[ADV]</strong> com fundo azul, <strong>[DP]</strong> com fundo verde e <strong>[MP]</strong> com fundo vermelho, todas com texto preto e tons mais fechados para facilitar a leitura rápida da tabela.</p>
