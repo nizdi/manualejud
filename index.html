@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.82</div>
+    <div class="brand">eJUD · Manual interativo · v1.83</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.82 · 13-10-26</div>
+<div class="version-tag">Versão 1.83 · 13-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1515,20 +1515,19 @@ At.te,</code></pre>
 <li>uso posterior de carimbo e assinatura.</li>
 </ul>
 <p>Os demais códigos da linha estão pouco legíveis.</p>
-<h2 id="22-2-recurso-ordinario">22.2. Recurso Ordinário</h2>
-<p>As notas indicam:</p>
-<pre><code class="language-text">Novo
-→ Fase 123
-→ destinatário ligado à 2ª Vice-Presidência
-→ salvar
-→ duplo clique
-→ Carimbo
-→ assinar
-</code></pre>
-<p>O código <code>50666</code> aparece associado ao destinatário em uma das anotações.</p>
-<blockquote>
-<p><strong>CONFIRMAR:</strong> destinatário e cumprimento por F2.</p>
-</blockquote>
+<h2 id="22-2-recurso-ordinario">22.2. Recurso Ordinário — remessa para autuação</h2>
+<p>Quando houver interposição de <strong>Recurso Ordinário</strong>, primeiro junte a petição de recurso e depois remeta o processo à <strong>2ª Vice-Presidência</strong> para autuação.</p>
+<ol>
+<li><strong>Junte a petição de recurso</strong> ao processo, selecionando o tipo <strong>“Recurso Ordinário”</strong>.</li>
+<li>Crie uma nova movimentação com <strong>Fase <code>123</code> — Remessa</strong>.</li>
+<li>Em <strong>Destinatário</strong>, informe <strong><code>50666</code></strong>.</li>
+<li>No campo <strong>Motivo</strong>, localizado mais abaixo, selecione <strong>“Autuar”</strong>.</li>
+<li>Quando aparecer a caixa de confirmação, clique em <strong>“Sim”</strong>.</li>
+<li><strong>Salve</strong> a movimentação.</li>
+<li>Abra o movimento criado e clique em <strong>Carimbo</strong>.</li>
+<li>Selecione o <strong>Carimbo <code>7591</code></strong> e <strong>carimbe</strong>.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> juntar petição como <strong>Recurso Ordinário</strong> → Remessa <code>123</code> → Destinatário <code>50666</code> → Motivo <strong>Autuar</strong> → confirmar <strong>Sim</strong> → Salvar → abrir movimento → Carimbo <code>7591</code>.</div>
 <h2 id="22-3-recurso-extraordinario">22.3. Recurso Extraordinário</h2>
 <p>Há início de rotina semelhante no manuscrito, mas os códigos não estão completos.</p>
 <blockquote>
@@ -2371,7 +2370,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.82 — 13-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.83 — 13-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.83:</strong> atualizado o tópico <strong>22.2. Recurso Ordinário</strong> com a juntada da petição pelo tipo “Recurso Ordinário” e a remessa para autuação na 2ª Vice-Presidência: Fase <code>123</code>, Destinatário <code>50666</code>, Motivo <strong>Autuar</strong>, confirmação <strong>Sim</strong>, salvamento e Carimbo <code>7591</code>.</p>
 <p><strong>Alteração da versão 1.82:</strong> acrescentado o acompanhamento dos prazos de cumprimento de mandados no tópico 7; registrada a remessa à 2ª Vice-Presidência por erro material no Termo de Recebimento (Fase <code>123</code>, Destinatário <code>50663</code>); incluído alerta de intimação pessoal do MP e da DP quando decisão “Indefinido” determina ciência; separados os prazos recursais no tópico <strong>12.7</strong>, com embargos infringentes na Apelação, hipóteses de REsp/RE em HC denegado e Agravo de Execução com prazos ainda pendentes.</p>
 <p><strong>Alteração da versão 1.81:</strong> criado o <strong>tópico 25 — Arquivamento</strong>, com conferência de prazos, distinção entre arquivamento definitivo de processos originários e baixa à primeira instância de recursos, Certidão de Não Interposição de Recurso (Fase <code>50002</code>, Complemento 1 <code>9999</code>, Carimbo <code>7604</code>) e fluxo de arquivamento definitivo (Fase <code>861</code>, Tipo <code>246</code>, Destino <code>17902</code>, Carimbo <code>7666</code>), incluindo imagem do campo Destino. A rotina específica de baixa permanece pendente de detalhamento.</p>
 <p><strong>Alteração da versão 1.80:</strong> acrescentada <strong>REVISÃO CRIMINAL</strong> à tabela do item <strong>12.6.1.4</strong>, com o mesmo prazo de REsp utilizado nos demais casos: <code>[ADV]</code>/<code>[MP]</code> = <strong>15 dias</strong> e <code>[DP]</code> = <strong>30 dias</strong>. Também foram acrescentados os marcadores visuais <strong>❌</strong> em <strong>HABEAS CORPUS DENEGADO</strong> e <strong>✅</strong> em <strong>HABEAS CORPUS CONCEDIDO</strong>.</p>
