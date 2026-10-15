@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.86</div>
+    <div class="brand">eJUD · Manual interativo · v1.87</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.86 · 15-10-26</div>
+<div class="version-tag">Versão 1.87 · 15-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1511,20 +1511,31 @@ At.te,</code></pre>
 </blockquote>
 <hr />
 <h1 id="22-recursos-e-remessas">22. Recursos e remessas</h1>
-<h2 id="22-1-recurso-especial">22.1. Recurso Especial</h2>
-<p>Há anotação de:</p>
-<ul>
-<li>Fase <code>123</code>;</li>
-<li>juntada/encaminhamento relacionado à Vice-Presidência;</li>
-<li>uso posterior de carimbo e assinatura.</li>
-</ul>
-<p>Os demais códigos da linha estão pouco legíveis.</p>
+<h2 id="22-1-recurso-especial">22.1. Recurso Especial (REsp) / Recurso Extraordinário (RE)</h2>
+<p>Para remessa pelas Secretarias das Câmaras Criminais à <strong>2ª Vice-Presidência</strong>, confira antes se o recurso <strong>já foi autuado</strong>. A fase e o destinatário são iguais; <strong>o Destino muda</strong> conforme a situação.</p>
+<h3 id="22-1-1-re-resp-nao-autuados">22.1.1. REsp / RE — ainda não autuados</h3>
+<p>Utilize quando for a <strong>primeira remessa para autuação</strong> na 2ª Vice-Presidência.</p>
+<table><thead><tr><th>Campo</th><th>Código</th><th>Descrição</th></tr></thead><tbody>
+<tr><td>Fase</td><td><code>123</code></td><td>Remessa</td></tr>
+<tr><td>Destinatário</td><td><code>70296</code></td><td>2VP — Serviço de Autuação</td></tr>
+<tr><td>Destino</td><td><code>10684</code></td><td>2VP — DEARE Serviço de Autuação</td></tr>
+</tbody></table>
+<h3 id="22-1-2-re-resp-ja-autuados">22.1.2. REsp / RE — já autuados na 2ª Vice-Presidência</h3>
+<p>Utilize quando o recurso <strong>já foi autuado na 2ª Vice-Presidência</strong> e retornou à Câmara, por exemplo para <strong>reconsideração de decisão pelo Desembargador</strong>, sendo necessária nova remessa.</p>
+<table><thead><tr><th>Campo</th><th>Código</th><th>Descrição</th></tr></thead><tbody>
+<tr><td>Fase</td><td><code>123</code></td><td>Remessa</td></tr>
+<tr><td>Destinatário</td><td><code>70296</code></td><td>2VP — Serviço de Autuação</td></tr>
+<tr><td>Destino</td><td><code>10685</code></td><td>2VP — DEARE Serviço de Processamento</td></tr>
+</tbody></table>
+<div class="critical"><strong>ATENÇÃO — RECURSO JÁ AUTUADO:</strong> o eJUD preenche automaticamente o <strong>Destino <code>10684</code></strong>. <strong>Altere para <code>10685</code></strong> antes de salvar a remessa. Não encaminhe para nova autuação um recurso que já foi autuado.</div>
+<div class="icon-note"><strong>Resumo:</strong> primeira remessa (não autuado) → Destino <code>10684</code> · retorno à 2ª Vice após autuação → Destino <code>10685</code>. Em ambos: <strong>Fase <code>123</code></strong> e <strong>Destinatário <code>70296</code></strong>.</div>
 <h2 id="22-2-recurso-ordinario">22.2. Recurso Ordinário — remessa para autuação</h2>
 <p>Quando houver interposição de <strong>Recurso Ordinário</strong>, primeiro junte a petição de recurso e depois remeta o processo à <strong>2ª Vice-Presidência</strong> para autuação.</p>
 <ol>
 <li><strong>Junte a petição de recurso</strong> ao processo, selecionando o tipo <strong>“Recurso Ordinário”</strong>.</li>
 <li>Crie uma nova movimentação com <strong>Fase <code>123</code> — Remessa</strong>.</li>
 <li>Em <strong>Destinatário</strong>, informe <strong><code>50666</code></strong>.</li>
+<li>Confirme que em <strong>Destino</strong>, apareceu o codógio <strong><code>2085</code></strong> (deve entrar automaticamente).</li>
 <li>No campo <strong>Motivo</strong>, localizado mais abaixo, selecione <strong>“Autuar”</strong>.</li>
 <li>Quando aparecer a caixa de confirmação, clique em <strong>“Sim”</strong>.</li>
 <li><strong>Salve</strong> a movimentação.</li>
@@ -1532,11 +1543,6 @@ At.te,</code></pre>
 <li>Selecione o <strong>Carimbo <code>7591</code></strong> e <strong>carimbe</strong>.</li>
 </ol>
 <div class="icon-note"><strong>Resumo:</strong> juntar petição como <strong>Recurso Ordinário</strong> → Remessa <code>123</code> → Destinatário <code>50666</code> → Motivo <strong>Autuar</strong> → confirmar <strong>Sim</strong> → Salvar → abrir movimento → Carimbo <code>7591</code>.</div>
-<h2 id="22-3-recurso-extraordinario">22.3. Recurso Extraordinário</h2>
-<p>Há início de rotina semelhante no manuscrito, mas os códigos não estão completos.</p>
-<blockquote>
-<p>Use a mesma lógica de conferência: fase → destinatário → cumprimento/motivo → salvar → carimbo → assinatura, sempre pesquisando pela descrição.</p>
-</blockquote>
 <hr />
 <h1 id="23-redistribuicao">23. Redistribuição (impedimento/distribuição errônea)</h1>
 <div class="video-note"><strong>🎥 VÍDEO — Redistribuição para 2ª Vice-Presidência</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FBNMP%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2Eae595489%2Dedd5%2D430b%2D95e4%2D072972cef7b6" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
@@ -1845,7 +1851,7 @@ At.te,</code></pre>
 <ol>
 <li>Crie um movimento com <strong>Fase <code>50002</code> — Certidão</strong> e <strong>Complemento 1 <code>9999</code></strong>.</li>
 <li><strong>Salve</strong> o movimento.</li>
-<li>Abra o movimento salvo e aplique o <strong>Carimbo <code>7604</code> — Certidão de Não Interposição de Recurso 2026 Para Baixa</strong>.</li>
+<li>Abra o movimento salvo e aplique o <strong>Carimbo <code>7604</code> — Certidão de Não Interposição de Recurso 2026 Para Baixa ou Arquivamento</strong>.</li>
 <li>Informe a <strong>matrícula do servidor</strong> e <strong>confirme o carimbo</strong>.</li>
 </ol>
 <h2 id="25-2-arquivamento-definitivo">25.2. Arquivamento definitivo — processos originários da Câmara</h2>
@@ -2376,7 +2382,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.86 — 15-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.87 — 15-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.87:</strong> reunidos <strong>REsp e RE</strong> no item <strong>22.1</strong>, substituindo anotações incompletas pelas rotinas de remessa à 2ª Vice-Presidência. Para recursos ainda não autuados: Fase <code>123</code>, Destinatário <code>70296</code> e Destino <code>10684</code>. Para recursos já autuados que retornaram à Câmara: mesmos Fase e Destinatário, mas Destino <code>10685</code>, com alerta para corrigir o preenchimento automático <code>10684</code>. Removido o antigo item 22.3, agora incorporado ao 22.1.</p>
 <p><strong>Alteração da versão 1.86:</strong> embargos infringentes/de nulidade transferidos para linha autônoma do item 12.7, com prazos mantidos e cabimento condicionado a acórdão não unânime desfavorável ao réu em Apelação, RESE e Agravo em Execução; explicitado o não cabimento em HC, Revisão Criminal e decisão monocrática. Acrescentada nota informativa no item 12.6: voto vencido não é publicado separadamente e o Acórdão aguarda sua lavratura para publicação.</p>
 <p><strong>Alteração da versão 1.85:</strong> incluído no item <strong>19.1</strong> o fluxo dos Embargos de Declaração: prazo de 48 horas em matéria criminal, ressalvados os processos do ECA, juntada da petição, certificação de tempestividade ou intempestividade e abertura de conclusão. Mantido o carimbo <code>7585</code> somente para embargos tempestivos.</p>
 <p><strong>Alteração da versão 1.84:</strong> incluído na seção <strong>D.2 — Como criar carimbos</strong> o link para a tabela de carimbos da 9ª Câmara Criminal, útil para verificar se um carimbo existe e visualizar sua prévia.</p>
