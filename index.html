@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.90</div>
+    <div class="brand">eJUD · Manual interativo · v1.91</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.90 · 19-10-26</div>
+<div class="version-tag">Versão 1.91 · 19-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -999,14 +999,14 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <h2 id="13-1-comunicar-decisao-juizo-origem">13.1. Comunicar decisão ao juízo de origem</h2>
 <p>Depois do julgamento ou de decisão que exija comunicação, verifique se é necessário <strong>oficiar o juízo de 1ª instância de origem</strong> para dar ciência e permitir o cumprimento do que foi decidido.</p>
 <div class="critical"><strong>QUANDO FAZER:</strong> se o <strong>Habeas Corpus for concedido</strong>, deve ser feita a comunicação ao juízo de origem. A comunicação também deve ser realizada sempre que a <strong>decisão determinar expressamente</strong> que o juízo de origem seja comunicado ou oficiado.</div>
-<div class="icon-note"><strong>Quando não é necessário:</strong> se o Habeas Corpus <strong>não for concedido</strong> e a decisão <strong>não determinar comunicação</strong> ao juízo de origem, não é necessário expedir o ofício de Comunica Decisão.</div>
+<div class="icon-note"><strong>Quando não é necessário:</strong> se o Habeas Corpus <strong>não for concedido</strong> e a decisão <strong>não determinar comunicação</strong> ao juízo de origem, não é necessário expedir ofício de comunicação.</div>
 <p><strong>Escolha o carimbo conforme o que será encaminhado:</strong></p>
 <ul>
-<li><strong>Comunicar a decisão sem enviar o Acórdão:</strong> utilize o <strong>Carimbo <code>7626</code> — “Comunica decisão”</strong>, adaptando o texto à determinação e ao processo de origem.</li>
-<li><strong>Encaminhar o Acórdão ao juízo de origem ou à VEP:</strong> confeccione um <strong>Ofício</strong> com <strong>Fase <code>60</code> → Tipo <code>50007</code> → Carimbo <code>7662</code></strong>.</li>
+<li><strong>Outras decisões, em qualquer momento do processo:</strong> utilize o <strong>Carimbo <code>7626</code> — “Comunica decisão”</strong>. É o modelo mais antigo, próprio para comunicar decisões sem encaminhamento de Acórdão. Adapte o texto ao caso concreto.</li>
+<li><strong>Comunicação decorrente de Acórdão:</strong> prefira o <strong>Carimbo <code>7662</code> — “ENCAMINHO ACÓRDÃO”</strong>, especialmente quando houver necessidade de cumprimento pelo juízo de origem ou pela VEP. O modelo já contém <strong>texto padrão mais genérico</strong> para essa finalidade. Confeccione o <strong>Ofício</strong> com <strong>Fase <code>60</code> → Tipo <code>50007</code> → Carimbo <code>7662</code></strong>.</li>
 </ul>
 <p>Depois de confeccionar e finalizar o ofício, encaminhe-o ao <strong>destinatário competente pelo Malote Digital</strong>, conforme a determinação do julgamento.</p>
-<div class="icon-note"><strong>Resumo:</strong> comunicação sem envio do Acórdão → <strong>Carimbo <code>7626</code></strong> · envio do Acórdão ao juízo de origem/VEP → <strong>Fase <code>60</code> / Tipo <code>50007</code> / Carimbo <code>7662</code></strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> <strong>outra decisão</strong> (sem Acórdão) → Carimbo <code>7626</code> — Comunica decisão · <strong>Acórdão</strong> → preferir Ofício <strong>Fase <code>60</code> / Tipo <code>50007</code> / Carimbo <code>7662</code> — ENCAMINHO ACÓRDÃO</strong>.</div>
 <div class="critical"><strong>ATENÇÃO AO PARÂMETRO DO CARIMBO:</strong> quando o parâmetro automático puxar o nome como <strong>“JOÃO e Outros”</strong>, apague o parâmetro no documento e digite manualmente os nomes específicos, por exemplo <strong>“JOÃO e MARIA”</strong>. Esse comportamento também pode ser corrigido no próprio carimbo, substituindo o parâmetro <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong>.</div>
 
 <h2 id="13-2-voto-vencido">13.2. Voto vencido — abrir conclusão ao Vogal</h2>
@@ -1059,10 +1059,10 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <thead><tr><th>Classe / resultado</th><th>Providência pós-sessão</th></tr></thead>
 <tbody>
 <tr><td><strong>Habeas Corpus — DENEGADO</strong></td><td>Não precisa comunicar nem oficiar ninguém, <strong>salvo se a decisão determinar expressamente</strong> alguma comunicação ou providência.</td></tr>
-<tr><td><strong>Habeas Corpus — CONCEDIDO</strong></td><td>Comunicar a <strong>Vara de origem</strong> utilizando o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>.</td></tr>
+<tr><td><strong>Habeas Corpus — CONCEDIDO</strong></td><td>Comunicar a <strong>Vara de origem</strong>. Se a comunicação decorrer de <strong>Acórdão</strong>, preferir o Carimbo <code>7662</code> — <strong>ENCAMINHO ACÓRDÃO</strong>; se decorrer de <strong>outra decisão</strong>, utilizar <code>7626</code> — <strong>Comunica decisão</strong>.</td></tr>
 <tr><td><strong>Agravo em Execução Penal</strong></td><td>Deve haver comunicação à <strong>VEP</strong>, <strong>seja o recurso provido ou não</strong>. Se houver pedido de <strong>contrarrazões</strong>, expedir também <strong>ofício à VEP</strong>.</td></tr>
 <tr><td><strong>Apelação — réu preso + sentença modificada</strong></td><td>Somente há comunicação neste fluxo quando estiverem presentes <strong>as duas condições</strong>: <strong>réu preso</strong> e <strong>modificação da sentença pelo julgamento</strong>. Nesse caso, comunique a <strong>VEP</strong>; se houver <strong>alteração do regime</strong>, comunique também a <strong>SEAP</strong>. Exemplo: mudança do regime fechado para o semiaberto → oficiar a SEAP <strong>por e-mail</strong>. Se o réu estiver preso, mas a sentença for <strong>integralmente mantida</strong>, não é necessário comunicar nada, salvo se houver <strong>determinação expressa no voto</strong> para comunicar ou oficiar o juízo ou outro órgão.<br><span class="small"><strong>PENDENTE:</strong> acrescentar posteriormente a anotação específica referente a violência doméstica.</span></td></tr>
-<tr><td><strong>Recurso em Sentido Estrito (RESE)</strong></td><td>Se o julgamento <strong>modificar a decisão recorrida</strong> e exigir providência do juízo de origem, comunique a <strong>Vara de origem</strong>, utilizando o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>. Se houver determinação relacionada à <strong>prisão ou liberdade</strong>, providencie a comunicação necessária e verifique eventual <strong>urgência</strong>. Se a decisão for <strong>integralmente mantida</strong>, em regra não há necessidade de comunicação imediata por ofício, salvo <strong>determinação expressa no Acórdão</strong>.</td></tr>
+<tr><td><strong>Recurso em Sentido Estrito (RESE)</strong></td><td>Se o julgamento <strong>modificar a decisão recorrida</strong> e exigir providência do juízo de origem, comunique a <strong>Vara de origem</strong>, preferencialmente com o Carimbo <code>7662</code> — <strong>ENCAMINHO ACÓRDÃO</strong> quando a comunicação decorrer do Acórdão; para outras decisões, utilize <code>7626</code> — <strong>Comunica decisão</strong>. Se houver determinação relacionada à <strong>prisão ou liberdade</strong>, providencie a comunicação necessária e verifique eventual <strong>urgência</strong>. Se a decisão for <strong>integralmente mantida</strong>, em regra não há necessidade de comunicação imediata por ofício, salvo <strong>determinação expressa no Acórdão</strong>.</td></tr>
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
@@ -2133,7 +2133,7 @@ At.te,</code></pre>
 </tr>
 <tr>
 <td style="text-align:right"><code>7626</code></td>
-<td>Carimbo “Comunica decisão”</td>
+<td>Carimbo “Comunica decisão” — decisões em geral (modelo mais antigo; não preferencial para Acórdãos)</td>
 <td>alta</td>
 </tr>
 <tr>
@@ -2408,7 +2408,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.90 — 19-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.91 — 19-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.91:</strong> diferenciados os carimbos de comunicação no tópico 13.1 e no quadro de providências pós-sessão: <code>7626</code> — Comunica decisão, modelo mais antigo utilizável para decisões em geral; <code>7662</code> — ENCAMINHO ACÓRDÃO, preferencial quando a comunicação decorrer de Acórdão, por possuir texto padrão genérico para cumprimento. Atualizada também a descrição na tabela rápida de códigos.</p>
 <p><strong>Alteração da versão 1.90:</strong> reorganizados os capítulos: <strong>12. Pauta</strong> (antigos 12.1–12.4) e <strong>13. Julgamento</strong> (comunicação da decisão 13.1, voto vencido 13.2, pós-sessão 13.3 e prazos recursais 13.4); renumeradas Publicação para 14 e Solicitação de Informações para 15; reunidos os comprovantes de Malote e e-mail no capítulo <strong>16</strong>, com itens 16.1 e 16.2. Referências internas correspondentes atualizadas.</p>
 <p><strong>Alteração da versão 1.89:</strong> no tópico 12.6.1, adotada escolha de pastas a partir dos prazos do 12.7, com margem de segurança e preferência por Aguardando 15 e 30; os itens antigos 2 e 3 foram recolhidos como entendimento superado. No tópico 24.2, registrada a importação automática do Alvará pelo BNMP; instruções de juntada manual, inclusive 24.2.4, preservadas em blocos recolhidos e marcadas como suspensas.</p>
 <p><strong>Alteração da versão 1.88:</strong> diferenciado no tópico <strong>12.5.A</strong> o Carimbo <code>7626</code> para comunicação de decisão sem envio de Acórdão e o Ofício (Fase <code>60</code>, Tipo <code>50007</code>, Carimbo <code>7662</code>) para encaminhar Acórdão à origem/VEP. No tópico <strong>12.6.1</strong>, adotada a orientação interna simplificada: HC em <strong>Aguardando 15</strong> e demais recursos em <strong>Aguardando 30</strong> após as ciências necessárias; quando vermelho, verificar recursos, tempestividade e decurso real dos prazos antes de certificar e baixar ou arquivar. A sistemática anterior foi preservada em bloco recolhível, identificada como em discussão.</p>
