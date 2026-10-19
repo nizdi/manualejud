@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v1.89</div>
+    <div class="brand">eJUD · Manual interativo · v1.90</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 1.89 · 19-10-26</div>
+<div class="version-tag">Versão 1.90 · 19-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -923,7 +923,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <p><strong>CONFIRMAR:</strong> a anotação manuscrita deste ponto é incompleta. Não use automaticamente o nome/código do magistrado titular se houver informação de afastamento.</p>
 </blockquote>
 <hr />
-<h1 id="12-pauta-e-sessao-de-julgamento">12. Pauta e sessão de julgamento</h1>
+<h1 id="12-pauta-e-sessao-de-julgamento">12. Pauta</h1>
 <p>As anotações distinguem:</p>
 <ul>
 <li>pauta;</li>
@@ -995,7 +995,8 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <li>cabe à parte acompanhar eletronicamente o processo para verificar a informação sobre o julgamento.</li>
 </ul>
 </div>
-<h2 id="12-5-a-comunicar-decisao-juizo-origem">12.5.A. Comunicar decisão ao juízo de origem</h2>
+<h1 id="13-julgamento">13. Julgamento</h1>
+<h2 id="13-1-comunicar-decisao-juizo-origem">13.1. Comunicar decisão ao juízo de origem</h2>
 <p>Depois do julgamento ou de decisão que exija comunicação, verifique se é necessário <strong>oficiar o juízo de 1ª instância de origem</strong> para dar ciência e permitir o cumprimento do que foi decidido.</p>
 <div class="critical"><strong>QUANDO FAZER:</strong> se o <strong>Habeas Corpus for concedido</strong>, deve ser feita a comunicação ao juízo de origem. A comunicação também deve ser realizada sempre que a <strong>decisão determinar expressamente</strong> que o juízo de origem seja comunicado ou oficiado.</div>
 <div class="icon-note"><strong>Quando não é necessário:</strong> se o Habeas Corpus <strong>não for concedido</strong> e a decisão <strong>não determinar comunicação</strong> ao juízo de origem, não é necessário expedir o ofício de Comunica Decisão.</div>
@@ -1008,7 +1009,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="icon-note"><strong>Resumo:</strong> comunicação sem envio do Acórdão → <strong>Carimbo <code>7626</code></strong> · envio do Acórdão ao juízo de origem/VEP → <strong>Fase <code>60</code> / Tipo <code>50007</code> / Carimbo <code>7662</code></strong>.</div>
 <div class="critical"><strong>ATENÇÃO AO PARÂMETRO DO CARIMBO:</strong> quando o parâmetro automático puxar o nome como <strong>“JOÃO e Outros”</strong>, apague o parâmetro no documento e digite manualmente os nomes específicos, por exemplo <strong>“JOÃO e MARIA”</strong>. Esse comportamento também pode ser corrigido no próprio carimbo, substituindo o parâmetro <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong>.</div>
 
-<h2 id="12-5-b-voto-vencido">12.5.B. Voto vencido — abrir conclusão ao Vogal</h2>
+<h2 id="13-2-voto-vencido">13.2. Voto vencido — abrir conclusão ao Vogal</h2>
 <div class="critical"><strong>ATENÇÃO AO PROCESSAR A CERTIDÃO DE JULGAMENTO:</strong> quando a <strong>Certidão de Julgamento</strong> chegar no local virtual <strong>“Para Processar”</strong>, confira se houve <strong>voto vencido</strong>. Se houver, o processo exige uma providência adicional antes de seguir normalmente.</div>
 <p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. <strong>Não é necessário fazer atribuição prévia ao Vogal:</strong> a indicação do Vogal e do Desembargador responsável é feita diretamente na própria conclusão.</p>
 
@@ -1049,7 +1050,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="icon-note"><strong>Não usar Encaminhar:</strong> como se trata de <strong>conclusão</strong>, depois de salvar/finalizar a movimentação o processo sobe para o gabinete correspondente. Não use o comando <strong>Encaminhar</strong> como substituto da conclusão.</div>
 <div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>)</strong> → selecionar o Desembargador que proferiu o voto vencido → Motivo <strong><code>13</code> — Lavratura de Voto Vencido</strong> → salvar → abrir a movimentação → <strong>Carimbo</strong> → finalizar/assinar → Vogal lavra o voto vencido. <strong>Em dia de sessão, essa conclusão pode ser aberta mesmo após as 17h.</strong></div>
 
-<h2 id="12-6-pos-sessao-acordaos-publicados">12.6. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
+<h2 id="13-3-pos-sessao-acordaos-publicados">13.3. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
 <p>Após a sessão de julgamento, os processos chegam no local virtual <strong>“Para Publicar”</strong>. <strong>Não retire o processo dessa pasta antes da publicação do Acórdão.</strong> Enquanto aguarda, porém, adiante tudo o que já puder ser cumprido, como ofícios, comunicações e outras providências decorrentes do julgamento.</p>
 <div class="icon-note"><strong>PARA CONHECIMENTO — PUBLICAÇÃO:</strong> o <strong>voto vencido não é publicado separadamente</strong>. É o <strong>Acórdão</strong> que será publicado, <strong>somente após a lavratura do voto vencido</strong>.</div>
 <div class="icon-note"><strong>VOTO VENCIDO NÃO IMPEDE ADIANTAR OS OFÍCIOS:</strong> se houver voto vencido ainda pendente de redação pelo Vogal, isso <strong>não impede a confecção e o envio dos ofícios e comunicações que já puderem ser definidos pelo resultado do julgamento</strong>. Portanto, enquanto o voto vencido é lavrado, adiante os ofícios cabíveis sempre que a providência já estiver clara pela Certidão de Julgamento ou pelo resultado proclamado.</div>
@@ -1065,13 +1066,13 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
-<h3 id="12-6-1-depois-publicacao-acordao">12.6.1. Depois da publicação do Acórdão — escolha da pasta</h3>
-<div class="icon-note"><strong>ENTENDIMENTO ATUAL DA SECRETARIA — CONTROLE SIMPLIFICADO:</strong> após a publicação do Acórdão e as ciências necessárias (expressas ou tácitas), consulte os <a href="#12-7-prazos-recursais"><strong>prazos recursais do tópico 12.7</strong></a> e escolha uma pasta com <strong>margem de alguns dias além do prazo aplicável</strong>. Priorize <strong>Aguardando 15</strong> e <strong>Aguardando 30</strong>, conforme o prazo mais longo a acompanhar. A pasta é apenas um controle interno e <strong>não altera nem prorroga o prazo legal</strong>.</div>
+<h3 id="13-3-1-depois-publicacao-acordao">13.3.1. Depois da publicação do Acórdão — escolha da pasta</h3>
+<div class="icon-note"><strong>ENTENDIMENTO ATUAL DA SECRETARIA — CONTROLE SIMPLIFICADO:</strong> após a publicação do Acórdão e as ciências necessárias (expressas ou tácitas), consulte os <a href="#13-4-prazos-recursais"><strong>prazos recursais do tópico 13.4</strong></a> e escolha uma pasta com <strong>margem de alguns dias além do prazo aplicável</strong>. Priorize <strong>Aguardando 15</strong> e <strong>Aguardando 30</strong>, conforme o prazo mais longo a acompanhar. A pasta é apenas um controle interno e <strong>não altera nem prorroga o prazo legal</strong>.</div>
 <table><thead><tr><th>Prazo a acompanhar</th><th>Pasta preferencial</th></tr></thead><tbody><tr><td>Ex.: <strong>10 dias</strong> para a DP interpor ROC</td><td><strong>Aguardando 15</strong> — margem de segurança</td></tr><tr><td>Ex.: <strong>15 ou 20 dias</strong> para recurso</td><td><strong>Aguardando 30</strong> — margem de segurança</td></tr><tr><td><strong>30 dias</strong> para recurso</td><td><strong>Aguardando 30</strong> — conferir o vencimento real antes de finalizar; não há margem adicional nessa pasta</td></tr></tbody></table>
 <p>É aceitável que a conferência para baixa ou arquivamento ocorra <strong>alguns dias após o encerramento do prazo recursal</strong>, desde que não haja providência urgente pendente. A margem serve para evitar encerramento prematuro, <strong>não para dispensar a conferência do prazo processual</strong>.</p>
 <p>Quando o processo <strong>ficar vermelho</strong>, confira se houve interposição de recurso. <strong>Se houver:</strong> verifique a tempestividade e dê andamento ao recurso. <strong>Se não houver:</strong> confira se os prazos legais realmente decorreram, certifique a ausência de recurso e providencie a <strong>baixa à origem ou o arquivamento</strong>, conforme o caso (tópico <a href="#25-arquivamento">25</a>).</p>
 <div class="critical"><strong>CONFERÊNCIA FINAL OBRIGATÓRIA:</strong> a cor vermelha ou o período de uma pasta não substitui a verificação do efetivo decurso dos prazos, inclusive os de intimação pessoal do MP e da DP. Não finalize o processo com prazo ainda em curso.</div>
-<details class="collapse-block" id="12-6-1-controle-antigo">
+<details class="collapse-block" id="13-3-1-controle-antigo">
 <summary>Controle anterior de prazos e interesse recursal — EM DISCUSSÃO (não utilizar como rotina atual)</summary>
 <div class="collapse-content">
 <div class="critical"><strong>NÃO RETIRE ANTES DA PUBLICAÇÃO:</strong> enquanto o Acórdão ainda não tiver sido publicado, o processo permanece em <strong>“Para Publicar”</strong>, mesmo que as comunicações e os ofícios possíveis já tenham sido adiantados.</div>
@@ -1125,8 +1126,8 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </div>
 </details>
 <hr />
-<h1 id="12-7-prazos-recursais">12.7. Prazos recursais</h1>
-<p>Consulte os prazos abaixo após identificar <strong>qual recurso é cabível</strong> e <strong>quem possui interesse recursal</strong>. Para a escolha das pastas, siga a rotina atual do tópico 12.6.1, sempre conferindo o decurso efetivo dos prazos legais.</p>
+<h2 id="13-4-prazos-recursais">13.4. Prazos recursais</h2>
+<p>Consulte os prazos abaixo após identificar <strong>qual recurso é cabível</strong> e <strong>quem possui interesse recursal</strong>. Para a escolha das pastas, siga a rotina atual do tópico 13.3.1, sempre conferindo o decurso efetivo dos prazos legais.</p>
 <table>
 <thead><tr><th>Classe / resultado</th><th>Recurso e prazo de referência</th></tr></thead>
 <tbody>
@@ -1142,12 +1143,12 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </table>
 <div class="critical"><strong>CONFERIR CABIMENTO:</strong> o prazo da tabela não significa que todos os recursos sejam cabíveis em qualquer decisão. Para embargos infringentes/de nulidade, confira se há <strong>acórdão não unânime desfavorável ao réu</strong> e limite o recurso à matéria divergente (art. 609, parágrafo único, CPP). <strong>Não cabem em HC, Revisão Criminal ou decisão monocrática.</strong> Em Habeas Corpus denegado, a existência de ROC e de eventual REsp/RE exige conferir a hipótese concreta.</div>
 <hr />
-<h1 id="13-publicacao">13. Publicação</h1>
+<h1 id="14-publicacao">14. Publicação</h1>
 <div class="critical"><strong>DIVISÃO DE RESPONSABILIDADE:</strong> os <strong>despachos</strong> que precisam ser publicados são publicados pelo <strong>próprio servidor</strong>. As <strong>decisões</strong> ficam a cargo da <strong>Secretária</strong>. Portanto, não envie uma decisão para publicação por conta própria.</div>
 <div class="critical"><strong>QUANDO PUBLICAR UM DESPACHO:</strong> o servidor deve realizar a publicação quando o despacho exigir <strong>intimação de uma parte para praticar algum ato ou cumprir uma determinação</strong>, desde que a intimação deva ocorrer por publicação. <strong>Não aguarde a Secretaria nesses casos.</strong> O <strong>Ministério Público</strong> e a <strong>Defensoria Pública</strong> seguem os procedimentos de <strong>intimação pessoal</strong>, que não são substituídos por esta publicação; para a intimação do MP destinada a parecer, consulte o <a href="#6-intimacao-do-ministerio-publico-para-parecer"><strong>tópico 6</strong></a>.</div>
 <div class="critical"><strong>DECISÃO “INDEFINIDO” COM ORDEM DE CIÊNCIA:</strong> quando constar <strong>“Dê-se ciência às partes e à d. Procuradoria de Justiça”</strong> e a árvore do processo mostrar <strong>“Decisão Indefinido”</strong>, confira se existe efetiva intimação de cada destinatário. <strong>Publicação para advogado particular não substitui intimação pessoal do MP e da DP</strong>. Mesmo após a publicação, se não houver peça/movimentação de intimação do MP, providencie a intimação eletrônica: <strong>Fase <code>8</code> → MP <code>50675</code> → Motivo Ciência <code>50056</code></strong>. Para a DP, observe também o fluxo próprio de intimação pessoal descrito no <a href="#6-2-envio-defensoria-publica"><strong>tópico 6</strong></a>. Antes de encaminhar o processo, verifique que cada parte cuja ciência foi determinada possua a respectiva forma de comunicação.</div>
 <div class="critical"><strong>MEGA ATENÇÃO — PUBLICADOS:</strong> não mover processos que estejam na pasta <strong>PUBLICADOS</strong> antes de a Secretaria realizar as devidas intimações.</div>
-<h2 id="13-1-publicar-despacho">13.1. Publicar despacho</h2>
+<h2 id="14-1-publicar-despacho">14.1. Publicar despacho</h2>
 <div class="video-note"><strong>🎥 VÍDEO — Publicação de despacho</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FPUBLICA%C3%87%C3%83O%20DESPACHO%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2E986ff7e1%2D0a40%2D4d50%2Db704%2Dab673b736c9d" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <p>Utilize este procedimento para despachos que determinem a prática de ato pela parte e que exijam <strong>publicação para sua intimação</strong>. Exemplos:</p>
 <div class="icon-note exemplo-publicacao"><div>• <strong>Apresentar razões recursais</strong>;</div><div>• <strong>Recolher ou comprovar o pagamento de custas</strong>;</div><div>• <strong>Manifestar-se ou apresentar documentos</strong> em cumprimento ao despacho.</div></div>
@@ -1174,11 +1175,11 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="critical"><strong>ETAPA FINAL OBRIGATÓRIA — NÃO ENCERRA NO “ENVIAR AO DJEN”:</strong> depois de colocar o despacho na fila, volte ao processo pela <strong>Movimentação Unitária</strong>, clique em <strong>Encaminhar</strong> e envie obrigatoriamente o processo para a pasta <strong>“Para publicar”</strong>. Não deixe o processo na mesa após concluir o envio ao DJEN.</div>
 <div class="icon-note"><strong>Resumo:</strong> <img class="ejud-icon" src="/manualejud/Imagens/jornal.png" alt="Ícone Jornal - Publicação"> Publicação → Central de Publicações → Expedientes → Local <code>17902</code> → Tipo <code>1</code> (Despachos) → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Novo/F5 → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → Fila... → maximizar → colar nº do processo → Enter → conferir tick em Publicar → fechar a Fila → Enviar ao DJEN → Movimentação Unitária → Encaminhar → <strong>Para publicar</strong>.</div>
 <hr />
-<h1 id="14-pedido-de-informacao">14. Solicitação de Informações — expedição de ofício e envio pelo Malote Digital</h1>
+<h1 id="15-pedido-de-informacao">15. Solicitação de Informações — expedição de ofício e envio pelo Malote Digital</h1>
 <p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
 <div class="video-note"><strong>🎥 VÍDEO — Expedição de ofício</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/gabriel_diniz_tjrj_jus_br/Documents/Expedi%C3%A7%C3%A3o%20de%20of%C3%ADcio.mp4?d=wf66eb5d26a2043059f0ba3ecb1fd412f&amp;csf=1&amp;web=1&amp;e=tTxcG2&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote. Nesta rotina de solicitação de informações, como há prazo para resposta, a prioridade é <strong>Alta</strong>.</div>
-<h2 id="14-1-primeira-movimentacao-expedir-oficio">14.1. Primeira movimentação — expedir e preparar o ofício</h2>
+<h2 id="15-1-primeira-movimentacao-expedir-oficio">15.1. Primeira movimentação — expedir e preparar o ofício</h2>
 <ol>
 <li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma nova movimentação.</li>
@@ -1216,7 +1217,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <li>Salve os arquivos na <strong>pasta compartilhada de ofícios</strong>. Esse salvamento continua necessário, pois os PDFs serão utilizados depois como anexos no envio pelo <strong>Malote Digital</strong>.</li>
 </ol>
 <div class="icon-note"><strong>Ordem correta:</strong> <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> nova movimentação → Fase <code>60</code> → Tipo <code>50007</code> → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar</strong> → <strong>duplo clique no novo movimento</strong> → Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar/editar texto e prazo → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> <strong>salvar novamente</strong> → <strong>reservar o próximo número na planilha, colocando primeiro seu nome e depois o número do processo</strong> → <img class="ejud-icon" src="/manualejud/Imagens/assinarcarimbo.png" alt="Ícone Assinar/Carimbo"> assinar → informar <strong>número/ano</strong> no eJUD (ex.: <code>11/2026</code>) → salvar os PDFs na pasta compartilhada para uso posterior no Malote.</div>
-<h2 id="14-2-enviar-pelo-malote-digital">14.2. Enviar o ofício pelo Malote Digital</h2>
+<h2 id="15-2-enviar-pelo-malote-digital">15.2. Enviar o ofício pelo Malote Digital</h2>
 <ol>
 <li>Abra o <strong>Malote Digital</strong>.</li>
 <li>Vá em <strong>Enviar</strong> → <strong>Informações processuais</strong>.</li>
@@ -1242,7 +1243,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </li>
 </ol>
 <div class="critical"><strong>DESTINO ESPECIAL NO MALOTE — VARAS DE ORCRIM:</strong> quando o ofício for direcionado a uma <strong>Vara Criminal Especializada</strong> — denominação que aparece dessa forma no processo, mas se refere às Varas de Organização Criminosa — encaminhe o Malote para <strong>“CENTRAL DAS 1,2 E 3 VARAS ORGANIZAÇÃO CRIMINOSA”</strong>.</div>
-<h2 id="14-3-segunda-movimentacao-comprovante-de-malote">14.3. Segunda movimentação — comprovante de Malote</h2>
+<h2 id="15-3-segunda-movimentacao-comprovante-de-malote">15.3. Segunda movimentação — comprovante de Malote</h2>
 <ol>
 <li>Volte ao processo e abra uma nova movimentação com <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir">.</li>
 <li>Fase: <code>60</code>.</li>
@@ -1259,7 +1260,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </ul>
 <div class="critical"><strong>ATENÇÃO AO PRAZO:</strong> se a solicitação for referente a <strong>liminar</strong>, o prazo deve ser de <strong>5 dias</strong> tanto no texto do ofício quanto na pasta final do processo. Nos demais casos deste fluxo, utilize <strong>10 dias</strong>.</div>
 <div class="critical"><strong>FLUXO COMPLETO:</strong> criar o ofício → salvar → aplicar Carimbo <code>7582</code> (indeferimento de liminar) ou <code>7623</code> (solicitação simples) → revisar texto/prazo → salvar novamente → <strong>reservar o número na planilha</strong> (primeiro o nome do servidor e depois o número do processo) → assinar e informar nº do ofício → salvar ofício + decisão em PDFs numerados → enviar ambos pelo Malote Digital com prioridade <strong>Alta</strong> quando houver urgência/prazo determinado pelo magistrado ou <strong>Normal</strong> quando não houver prazo → tirar print do comprovante → criar a movimentação <code>60 / 66721</code> → colar o print em TEXTO → salvar pelo Word ou fechar e confirmar o salvamento → <strong>reabrir com duplo clique o movimento criado</strong> → assinar pela canetinha → encaminhar para a pasta de <strong>10 dias</strong> ou, se for liminar, de <strong>5 dias</strong>.</div>
-<h2 id="14-4-registrar-oficio-no-controle">14.4. Controle de Ofícios — reservar o número antes de usar</h2>
+<h2 id="15-4-registrar-oficio-no-controle">15.4. Controle de Ofícios — reservar o número antes de usar</h2>
 <p>O número do ofício deve ser <strong>reservado na planilha antes de ser informado no eJUD</strong>. Essa regra evita que dois servidores emitam ofícios diferentes com o mesmo número.</p>
 <p><a class="excel-link" href="https://tjrj-my.sharepoint.com/:x:/g/personal/anacfm_tjrj_jus_br/IQB1Pzzf6HdWT4M8Gn9L603XAUZzmWfjjuV3mzYkQOvc9-M?isSPOFile=1&amp;ovuser=ce4e1164-986f-4132-85d1-1e3c17cf7d6e%2Cgabriel.diniz%40tjrj.jus.br&amp;wdExp=TEAMS-TREATMENT&amp;web=1&amp;clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNjA4MTMxOTMxNyJ9" target="_blank" rel="noopener noreferrer">▦ Abrir Controle de Ofícios Expedidos</a></p>
 <ol>
@@ -1269,7 +1270,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <li>Só então utilize esse número na emissão do ofício no eJUD.</li>
 </ol>
 <div class="critical"><strong>NÃO PEGUE O NÚMERO APENAS “DE CABEÇA”:</strong> a planilha é o controle que impede a duplicidade. O simples fato de ver qual foi o último número não reserva o próximo; a reserva ocorre quando o servidor registra o próprio nome na linha correspondente.</div>
-<h2 id="14-5-oficio-seap-email">14.5. Ofício à SEAP — envio por e-mail</h2>
+<h2 id="15-5-oficio-seap-email">15.5. Ofício à SEAP — envio por e-mail</h2>
 <div class="critical"><strong>FLUXO ESPECÍFICO DA SEAP:</strong> quando o ofício for destinado à <strong>Secretaria de Administração Penitenciária (SEAP)</strong>, faça o encaminhamento por <strong>e-mail</strong> aos destinatários indicados abaixo e depois junte ao processo o comprovante desse envio.</div>
 <h3 id="14-5-destinatarios-seap">Destinatários</h3>
 <p>O destinatário principal é:</p>
@@ -1296,7 +1297,9 @@ At.te,</code></pre>
 <div class="critical"><strong>NÃO ENCERRA NO ENVIO DO E-MAIL:</strong> após encaminhar o ofício à SEAP, é necessário <strong>juntar ao processo o comprovante do envio</strong>. O print do e-mail enviado deve ficar registrado no movimento de <strong>Comprovante de e-mail</strong>.</div>
 <div class="icon-note"><strong>Resumo:</strong> preparar o ofício → enviar para <code>chefiadegabinete@ppenal.rj.gov.br</code> → se o preso estiver sob tratamento, enviar também para <code>subgesp@ppenal.rj.gov.br</code> → anexar ofício e complementos → enviar → tirar print do e-mail enviado → Movimentação Unitária → Fase <code>60</code> → Tipo <code>70230</code> → TEXTO → colar o comprovante → salvar → reabrir → finalizar/assinar.</div>
 <hr />
-<h1 id="15-juntar-comprovante-de-malote">15. Juntar comprovante de Malote</h1>
+<h1 id="16-juntar-comprovantes">16. Juntar Comprovante de Malote/E-mail</h1>
+<div class="icon-note"><strong>Qual comprovante juntar?</strong> Ambos utilizam <strong>Fase <code>60</code></strong>. Para <strong>Malote Digital</strong>, use <strong>Tipo <code>66721</code></strong>; para <strong>e-mail</strong>, use <strong>Tipo <code>70230</code></strong>. Em seguida, insira o comprovante, salve e finalize/assine a movimentação.</div>
+<h2 id="16-1-juntar-comprovante-de-malote">16.1. Juntar comprovante de Malote</h2>
 <p>Anotação específica:</p>
 <pre><code class="language-text">Movimentar
 → Novo
@@ -1328,8 +1331,7 @@ At.te,</code></pre>
 <blockquote>
 <p><strong>CONFIRMAR:</strong> descrição do tipo no F2.</p>
 </blockquote>
-<hr />
-<h1 id="16-juntar-comprovante-de-e-mail">16. Juntar comprovante de e-mail</h1>
+<h2 id="16-2-juntar-comprovante-de-e-mail">16.2. Juntar comprovante de e-mail</h2>
 <p>Fluxo anotado:</p>
 <pre><code class="language-text">Movimentar
 → Novo
@@ -1806,7 +1808,7 @@ At.te,</code></pre>
 → reabrir com duplo clique
 → finalizar/assinar
 </code></pre>
-<p>Esse é o mesmo procedimento descrito no tópico <a href="#16-juntar-comprovante-de-e-mail"><strong>16. Juntar comprovante de e-mail</strong></a>.</p>
+<p>Esse é o mesmo procedimento descrito no tópico <a href="#16-2-juntar-comprovante-de-e-mail"><strong>16.2. Juntar comprovante de e-mail</strong></a>.</p>
 <div class="icon-note"><strong>Opção 2 — Estagiário <span class="tag-estagiarios">[ESTAGIÁRIOS]</span>:</strong> como o estagiário não tem acesso ao Word para inserir o print no documento, deve <strong>imprimir o e-mail enviado como PDF</strong> e <strong>juntar esse PDF diretamente ao processo</strong>, pelo mesmo procedimento de importação/digitalização explicado no tópico <a href="#18-1-juntar-informacoes-recebidas-pdf-externo"><strong>18.1. Juntar no processo as informações recebidas (PDF externo)</strong></a>.</div>
 <ol>
 <li>No Outlook institucional, abra o <strong>e-mail enviado à SARQ</strong> e utilize <strong>Imprimir → Imprimir como PDF</strong>.</li>
@@ -2406,7 +2408,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>1.89 — 19-10-26</strong>.</p>
+<p>Versão consolidada: <strong>1.90 — 19-10-26</strong>.</p>
+<p><strong>Alteração da versão 1.90:</strong> reorganizados os capítulos: <strong>12. Pauta</strong> (antigos 12.1–12.4) e <strong>13. Julgamento</strong> (comunicação da decisão 13.1, voto vencido 13.2, pós-sessão 13.3 e prazos recursais 13.4); renumeradas Publicação para 14 e Solicitação de Informações para 15; reunidos os comprovantes de Malote e e-mail no capítulo <strong>16</strong>, com itens 16.1 e 16.2. Referências internas correspondentes atualizadas.</p>
 <p><strong>Alteração da versão 1.89:</strong> no tópico 12.6.1, adotada escolha de pastas a partir dos prazos do 12.7, com margem de segurança e preferência por Aguardando 15 e 30; os itens antigos 2 e 3 foram recolhidos como entendimento superado. No tópico 24.2, registrada a importação automática do Alvará pelo BNMP; instruções de juntada manual, inclusive 24.2.4, preservadas em blocos recolhidos e marcadas como suspensas.</p>
 <p><strong>Alteração da versão 1.88:</strong> diferenciado no tópico <strong>12.5.A</strong> o Carimbo <code>7626</code> para comunicação de decisão sem envio de Acórdão e o Ofício (Fase <code>60</code>, Tipo <code>50007</code>, Carimbo <code>7662</code>) para encaminhar Acórdão à origem/VEP. No tópico <strong>12.6.1</strong>, adotada a orientação interna simplificada: HC em <strong>Aguardando 15</strong> e demais recursos em <strong>Aguardando 30</strong> após as ciências necessárias; quando vermelho, verificar recursos, tempestividade e decurso real dos prazos antes de certificar e baixar ou arquivar. A sistemática anterior foi preservada em bloco recolhível, identificada como em discussão.</p>
 <p><strong>Alteração da versão 1.87:</strong> reunidos <strong>REsp e RE</strong> no item <strong>22.1</strong>, substituindo anotações incompletas pelas rotinas de remessa à 2ª Vice-Presidência. Para recursos ainda não autuados: Fase <code>123</code>, Destinatário <code>70296</code> e Destino <code>10684</code>. Para recursos já autuados que retornaram à Câmara: mesmos Fase e Destinatário, mas Destino <code>10685</code>, com alerta para corrigir o preenchimento automático <code>10684</code>. Removido o antigo item 22.3, agora incorporado ao 22.1.</p>
