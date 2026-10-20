@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formatador de textos jurídicos</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#252a32;color-scheme:light;font-size:14px}
+*{box-sizing:border-box}
+body{margin:0;padding:12px;background:transparent}
+.tool{width:100%;max-width:1200px;margin:auto}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:10px}
+label{font-weight:600}
+select,button,textarea{font:inherit}
+select,button{border:1px solid #bec6d1;border-radius:5px;background:#fff;padding:8px 11px;color:#263142}
+button{cursor:pointer}
+button:hover{background:#f1f4f8}
+button.primary{background:#225da8;border-color:#225da8;color:white}
+button.primary:hover{background:#1a4c89}
+button:disabled{opacity:.45;cursor:default}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.panel{display:flex;flex-direction:column;gap:6px;min-width:0}
+.heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.heading small{font-weight:normal;color:#667283}
+textarea{display:block;width:100%;min-height:320px;resize:vertical;line-height:1.55;border:1px solid #b8c2d0;border-radius:6px;padding:12px;background:#fff;color:#18212e;tab-size:4}
+textarea:focus{outline:2px solid #8db9ee;outline-offset:0}
+.options{display:flex;gap:15px;flex-wrap:wrap;align-items:center;margin:0 0 10px}
+.options label{font-weight:normal;display:flex;gap:5px;align-items:center}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+.status{font-size:12px;color:#526174;min-height:18px;margin-top:7px}
+.note{font-size:12px;color:#647084;margin:7px 0 0;line-height:1.4}
+@media(max-width:720px){body{padding:8px}.panels{grid-template-columns:1fr}textarea{min-height:230px}}
+</style>
+</head>
+<body>
+<main class="tool">
+  <div class="toolbar">
+    <label for="mode">Tratamento</label>
+    <select id="mode">
+      <option value="basic">Básico — limpar espaços e quebras</option>
+      <option value="paragraphs" selected>Parágrafos — recompor linhas</option>
+      <option value="complete">Completo — incluir pontuação</option>
+    </select>
+    <button type="button" id="format" class="primary">Corrigir texto</button>
+  </div>
+  <div class="options">
+    <label><input id="preserve" type="checkbox" checked> Preservar parágrafos existentes</label>
+    <label><input id="hyphens" type="checkbox" checked> Unir palavras divididas no fim da linha</label>
+  </div>
+  <div class="panels">
+    <section class="panel">
+      <div class="heading"><label for="source">Texto original</label><small id="sourceCount">0 caracteres</small></div>
+      <textarea id="source" placeholder="Cole aqui a decisão judicial ou outro texto extraído de PDF, sistema ou documento..." spellcheck="false"></textarea>
+    </section>
+    <section class="panel">
+      <div class="heading"><label for="result">Texto corrigido (editável)</label><small id="resultCount">0 caracteres</small></div>
+      <textarea id="result" placeholder="O resultado aparecerá aqui..." spellcheck="false"></textarea>
+    </section>
+  </div>
+  <div class="actions">
+    <button type="button" id="copy">Copiar resultado</button>
+    <button type="button" id="undo" disabled>Desfazer correção</button>
+    <button type="button" id="swap">Resultado → Original</button>
+    <button type="button" id="clear">Limpar</button>
+  </div>
+  <div id="status" class="status" role="status" aria-live="polite"></div>
+  <p class="note">Processamento local no navegador. Confira especialmente citações, listas, ementas e trechos originalmente formatados em colunas: a reconstrução é aproximada e não altera deliberadamente o conteúdo jurídico.</p>
+</main>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const source = $('source'), result = $('result');
+  let previous = null;
+
+  const normalize = text => text
+    .replace(/\r\n?/g, '\n')
+    .replace(/[\u00a0\u2007\u202f]/g, ' ')
+    .replace(/[\u200b\u200c\u200d\ufeff]/g, '')
+    .replace(/[\t ]+$/gm, '')
+    .replace(/^[\t ]+/gm, '')
+    .replace(/[ \t]{2,}/g, ' ')
+    .replace(/\n{4,}/g, '\n\n\n')
+    .trim();
+
+  const isHeading = s => /^(?:Vistos(?:[,\.]|$)|Relat[oó]rio\b|Fundamenta[cç][aã]o\b|Dispositivo\b|Decis[aã]o\b|Ante o exposto\b|Isto posto\b|Publique-se\b|Intimem-se\b|Cumpra-se\b|É o relat[oó]rio\b|Ementa\b)/i.test(s)
+    || (/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ\d \-–—:]{5,75}$/.test(s) && /[A-ZÁÉÍÓÚÂÊÔÃÕÇ]/.test(s));
+  const isList = s => /^(?:[-•●▪]\s+|\(?\d{1,3}[.)]\s+|[a-z][.)]\s+|[IVXLCDM]{1,8}[.)]\s+)/i.test(s);
+  const isParagraphStart = s => /^(?:Trata-se\b|Cuida-se\b|Alega\b|Afirma\b|Sustenta\b|Conforme\b|Diante disso\b|Dessa forma\b|Nesse sentido\b|Por sua vez\b|Por outro lado\b|Com efeito\b|Ademais\b|Outrossim\b|Portanto\b|Assim,?\b|No caso\b|É necessário\b|Em conclusão\b)/i.test(s);
+  const endsSentence = s => /[.!?;:][”"'»)]?$/.test(s);
+  const continuationStart = s => /^[a-záàâãéêíóôõúüç(“"']/u.test(s);
+  const hyphenSplit = (a,b) => /[\p{L}]-$/u.test(a) && /^[\p{Ll}]/u.test(b) && !/[–—]$/.test(a);
+
+  function rebuild(text, preserve, joinHyphens) {
+    const blocks = preserve ? text.split(/\n\s*\n+/) : [text.replace(/\n\s*\n+/g, '\n')];
+    const output = [];
+    for (const block of blocks) {
+      const lines = block.split('\n').map(s => s.trim()).filter(Boolean);
+      if (!lines.length) continue;
+      let current = lines[0];
+      for (let i = 1; i < lines.length; i++) {
+        const next = lines[i];
+        const breakBefore = isHeading(next) || isList(next) || isHeading(current)
+          || (endsSentence(current) && isParagraphStart(next) && !continuationStart(next));
+        if (breakBefore) {
+          output.push(current);
+          current = next;
+        } else if (joinHyphens && hyphenSplit(current, next)) {
+          current = current.slice(0, -1) + next;
+        } else {
+          current += ' ' + next;
+        }
+      }
+      output.push(current);
+    }
+    return output.join('\n\n');
+  }
+
+  function typography(text) {
+    return text.split('\n').map(line => line
+      .replace(/\s+([,;!?])/g, '$1')
+      .replace(/([,;!?])(?=[\p{L}])/gu, '$1 ')
+      .replace(/([.!?]) {2,}/g, '$1 ')
+      .replace(/ {2,}/g, ' ')
+    ).join('\n');
+  }
+
+  function process(text, mode, preserve, joinHyphens) {
+    let cleaned = normalize(text);
+    if (!cleaned) return '';
+    if (mode === 'basic') {
+      if (joinHyphens) cleaned = cleaned.replace(/([\p{L}])-\n(?=[\p{Ll}])/gu, '$1');
+      return cleaned;
+    }
+    cleaned = rebuild(cleaned, preserve, joinHyphens);
+    if (mode === 'complete') cleaned = typography(cleaned);
+    return cleaned;
+  }
+
+  function updateCounts() {
+    $('sourceCount').textContent = source.value.length.toLocaleString('pt-BR') + ' caracteres';
+    $('resultCount').textContent = result.value.length.toLocaleString('pt-BR') + ' caracteres';
+  }
+  const status = message => { $('status').textContent = message; };
+  source.addEventListener('input', updateCounts);
+  result.addEventListener('input', updateCounts);
+  $('format').addEventListener('click', () => {
+    if (!source.value.trim()) return status('Cole algum texto no campo original.');
+    previous = result.value;
+    result.value = process(source.value, $('mode').value, $('preserve').checked, $('hyphens').checked);
+    $('undo').disabled = false;
+    updateCounts();
+    status('Texto tratado. Revise o resultado antes de utilizar em documento judicial.');
+  });
+  $('undo').addEventListener('click', () => {
+    if (previous === null) return;
+    result.value = previous; previous = null;
+    $('undo').disabled = true;
+    updateCounts(); status('Última correção desfeita.');
+  });
+  $('copy').addEventListener('click', async () => {
+    if (!result.value) return status('Não há resultado para copiar.');
+    try {
+      await navigator.clipboard.writeText(result.value);
+      status('Resultado copiado.');
+    } catch {
+      result.focus(); result.select();
+      status('Selecionei o resultado. Use Ctrl+C para copiar.');
+    }
+  });
+  $('swap').addEventListener('click', () => {
+    if (!result.value) return status('Não há resultado para transferir.');
+    source.value = result.value;
+    updateCounts(); status('Resultado transferido para o texto original.');
+  });
+  $('clear').addEventListener('click', () => {
+    source.value = ''; result.value = ''; previous = null;
+    $('undo').disabled = true; updateCounts(); status('Campos limpos.');
+  });
+  updateCounts();
+})();
+</script>
+</body>
+</html>

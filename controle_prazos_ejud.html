@@ -15,12 +15,13 @@
 <div class="layout">
 <section class="panel">
 <h2>1. Informações do prazo</h2>
+<div class="field"><label for="recipient">Destinatário da intimação</label><select id="recipient"><option value="adv">Advogado (publicação)</option><option value="mpdp">Ministério Público / Defensoria Pública (intimação eletrônica)</option></select><small>Para MP/DP, informe a data do envio da intimação no campo abaixo. A ciência pode ocorrer antes do décimo dia.</small></div>
 <div class="two">
-<div class="field"><label for="pub">Data da publicação</label><input id="pub" type="date"></div>
+<div class="field"><label for="pub">Data da publicação / envio da intimação</label><input id="pub" type="date"></div>
 <div class="field"><label for="science">Data da ciência (opcional)</label><input id="science" type="date"></div>
 </div>
 <div class="two">
-<div class="field"><label for="base">Data de referência para a contagem</label><select id="base"><option value="auto">Automático (ciência, senão publicação)</option><option value="pub">Usar publicação</option><option value="science">Usar ciência</option></select><small>Exclui-se a data de referência. No automático, a ciência tem prioridade. O início manual substitui esta escolha.</small></div>
+<div class="field"><label for="base">Data de referência para a contagem</label><select id="base"><option value="auto">Automático (ciência efetiva ou tácita, senão publicação)</option><option value="pub">Usar publicação</option><option value="science">Usar ciência</option></select><small>No automático: advogado usa publicação; MP/DP usa ciência expressa ou tácita (10 dias corridos do envio). Exclui-se a data-base. O início manual substitui esta escolha.</small></div>
 <div class="field"><label for="daysCount">Quantidade de dias</label><input id="daysCount" type="number" min="1" max="9999" value="15"></div>
 </div>
 <div class="two">
@@ -28,12 +29,12 @@
 <div class="field"><label for="manual">Início manual (opcional)</label><input id="manual" type="date"></div>
 </div>
 <label class="check"><input id="court" type="checkbox" checked> Incluir datas adicionais do TJRJ/RJ cadastradas (2026)</label>
-<label class="check"><input id="pause" type="checkbox"> Aplicar suspensão de 20/12 a 20/01 (somente quando cabível; não é padrão no CPP)</label>
+<label class="check"><input id="pause" type="checkbox" checked> Suspender a contagem de 20/12 a 20/01 (art. 798-A do CPP; desmarque nas exceções legais)</label>
 <div class="result" aria-live="polite">
 <div class="muted">Fim do prazo (estimado)</div><div class="value" id="deadline">—</div>
 <div class="meta" id="starting">Início: —</div><div class="meta" id="excluded">Data-base excluída: —</div>
 <hr style="border:0;border-top:1px solid #c4d8f4;margin:14px 0">
-<div class="muted">Sugestão de pasta</div><strong id="folder">—</strong>
+<div class="muted">Sugestão de pasta (conforme estágio da ciência)</div><strong id="folder">—</strong>
 <div class="meta" id="explanation"></div>
 </div>
 <div class="notice"><b>Aviso de responsabilidade:</b> esta calculadora é ferramenta meramente auxiliar, sem caráter oficial e sem garantia de exatidão. Em regra, os prazos processuais penais são contados em dias corridos (art. 798 do CPP), excluído o dia do começo e incluído o do vencimento, sujeito à prorrogação legal quando cabível. Intimações eletrônicas, marcos iniciais, feriados locais, indisponibilidades, suspensões e procedimentos especiais exigem conferência própria. A responsabilidade pela verificação do prazo e pela movimentação processual permanece com o usuário. Consulte os autos, a legislação e os atos oficiais do TJRJ.</div>
@@ -75,7 +76,9 @@ function isBlocked(d){return Boolean(label(d));}
 function compute(){
 const pub=parse($("pub").value),sci=parse($("science").value),manual=parse($("manual").value);
 const requested=$("base").value;
-const base=requested==="pub"?pub:requested==="science"?sci:(sci||pub);
+const tacit=$("recipient").value==="mpdp"&&pub?add(pub,10):null;
+const effectiveScience=sci&&tacit?(sci<=tacit?sci:tacit):(sci||tacit);
+const base=requested==="pub"?pub:requested==="science"?effectiveScience:($("recipient").value==="mpdp"?(effectiveScience||pub):(pub||sci));
 const ref=manual||base;
 const amount=Number($("daysCount").value);
 let err="";
@@ -95,13 +98,15 @@ if(end&&$("mode").value==="calendar"){
 while(weekday(end)===0||weekday(end)===6||isBlocked(end)){end=add(end,1);}
 }
 }
-const scienceIsBase=!manual&&(requested==="science"||(requested==="auto"&&!!sci));
-const folder=scienceIsBase?"AGUARDANDO 10":amount<=15?"AGUARDANDO 15 APÓS CIÊNCIA":"AGUARDANDO 30 APÓS CIÊNCIA";
+const isMpDp=$("recipient").value==="mpdp";
+const notifiedAt=isMpDp?effectiveScience:(pub||sci);
+const alreadyNotified=Boolean(notifiedAt)&&key(notifiedAt)<=todayKey;
+const folder=!alreadyNotified?(isMpDp?"AGUARDANDO 10":"Aguardando ciência/publicação"):amount<=15?"Aguardando Decurso de Prazo - 15 Dias":"Aguardando Decurso de Prazo - 30 Dias";
 $("deadline").textContent=err?"—":format(end);
 $("starting").textContent=err?err:"Primeiro dia da contagem: "+format(start);
 $("excluded").textContent="Data-base excluída: "+format(ref);
 $("folder").textContent=err?"—":folder;
-$("explanation").textContent=err?"":scienceIsBase?"Ciência informada e usada como referência: sugestão operacional de pasta 10.":"Prazo de "+amount+" dia(s): classificação operacional sugerida. Não altera o vencimento legal.";
+$("explanation").textContent=err?"":!alreadyNotified?"Ciência ainda pendente. Para MP/DP, AGUARDANDO 10 é utilizado somente até a ciência expressa ou tácita. Não mover para pasta de decurso antes da ciência.": "Ciência "+(sci&&(!tacit||sci<=tacit)?"informada":isMpDp?"tácita estimada":"associada à publicação")+" em "+format(notifiedAt)+". Pasta de decurso somente após ciência; sugestão operacional, não altera o prazo legal.";
 calculation={base:ref,start,end,amount,folder,err};
 renderCalendar();
 }
@@ -127,7 +132,7 @@ function shift(n){const [y,m]=$("month").value.split("-").map(Number),d=new Date
 $("month").value=todayKey.slice(0,7);
 $("pub").value=todayKey;
 $("extras").value=localStorage.getItem("ejudPrazosExtras")||"";
-for(const id of ["pub","science","base","daysCount","mode","manual","court","pause"])$(id).addEventListener("input",compute);
+for(const id of ["recipient","pub","science","base","daysCount","mode","manual","court","pause"])$(id).addEventListener("input",compute);
 $("month").addEventListener("input",renderCalendar);
 $("extras").addEventListener("input",()=>{localStorage.setItem("ejudPrazosExtras",$("extras").value);compute();});
 $("prev").onclick=()=>shift(-1);$("next").onclick=()=>shift(1);
