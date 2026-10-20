@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Calculadora auxiliar de prazos — Câmaras Criminais</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color-scheme:light;--ink:#182536;--sub:#64748b;--line:#dce3eb;--blue:#234c87;--light:#edf4ff}
+*{box-sizing:border-box}body{margin:0;background:#f5f7fa;color:var(--ink)}main{max-width:1050px;margin:32px auto;padding:0 20px}h1{font-size:1.65rem;margin:0 0 5px}p{line-height:1.48}.muted,small{color:var(--sub)}.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.panel{background:#fff;border:1px solid var(--line);border-radius:13px;padding:22px;box-shadow:0 3px 15px #13243b08}h2{font-size:1.05rem;margin:0 0 20px}label{display:block;font-size:.87rem;font-weight:650;margin-bottom:7px}.field{margin-bottom:16px}input,select,textarea,button{font:inherit}input[type=date],input[type=number],input[type=month],select,textarea{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:8px;background:white;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #93baf2;outline-offset:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:9px;align-items:flex-start;font-size:.87rem;font-weight:500;margin:12px 0}.check input{margin-top:3px}.result{background:var(--light);border:1px solid #bfd4f4;padding:18px;border-radius:11px}.result strong{font-size:1.2rem;color:#173f79}.value{font-size:1.75rem;font-weight:750;color:#173f79;margin:5px 0 12px}.meta{margin:7px 0;font-size:.9rem}.notice{font-size:.82rem;color:#6f4a05;background:#fff9e8;padding:12px;border-radius:8px;border:1px solid #f1dfb2;margin-top:14px}.calendar-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.calendar-head h2{margin:0}.months{display:flex;gap:6px}button{padding:8px 11px;border:1px solid #cad5e4;background:white;border-radius:8px;cursor:pointer}button:hover{background:#eef4fc}.week,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}.week{font-size:.75rem;color:var(--sub);margin:18px 0 8px}.day{min-height:41px;padding:9px 2px;border-radius:8px;font-size:.84rem;border:1px solid transparent;position:relative}.day.out{color:#c4ccd6}.day.holiday{background:#fff0f0;color:#a12639}.day.today{border:2px solid #2563eb}.day.start{background:#dff6e8;color:#166534;font-weight:750}.day.end{background:#234c87;color:white;font-weight:750}.day .dot{position:absolute;bottom:3px;left:calc(50% - 2px);height:4px;width:4px;border-radius:50%;background:currentColor}.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.76rem;color:var(--sub);margin-top:15px}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:12px;height:12px;border-radius:3px;background:#fff0f0;border:1px solid #f6c4c4}.swatch.s{background:#dff6e8;border-color:#9fd7b8}.swatch.e{background:#234c87;border-color:#234c87}.holiday-list{font-size:.8rem;margin-top:15px;color:var(--sub);line-height:1.7}.bottom{margin-top:18px}.bottom textarea{min-height:85px;resize:vertical}.action{background:#234c87;color:white;border-color:#234c87;margin-top:10px}.action:hover{background:#163a6e}.invalid{color:#a12639;font-weight:650}.pill{font-size:.73rem;background:#f0f4fa;border:1px solid #dde6f0;padding:4px 8px;border-radius:30px}footer{font-size:.79rem;color:var(--sub);margin:18px 0 30px}@media(max-width:760px){.layout{grid-template-columns:1fr}.panel{padding:17px}main{margin-top:18px}.two{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<main>
+<header><h1>Calculadora auxiliar de prazos — Câmaras Criminais</h1><p class="muted">Ferramenta de apoio à conferência de datas e à organização de movimentações e pastas no EJUD. Não substitui a conferência dos autos e das regras aplicáveis.</p></header>
+<div class="layout">
+<section class="panel">
+<h2>1. Informações do prazo</h2>
+<div class="two">
+<div class="field"><label for="pub">Data da publicação</label><input id="pub" type="date"></div>
+<div class="field"><label for="science">Data da ciência (opcional)</label><input id="science" type="date"></div>
+</div>
+<div class="two">
+<div class="field"><label for="base">Data de referência para a contagem</label><select id="base"><option value="auto">Automático (ciência, senão publicação)</option><option value="pub">Usar publicação</option><option value="science">Usar ciência</option></select><small>Exclui-se a data de referência. No automático, a ciência tem prioridade. O início manual substitui esta escolha.</small></div>
+<div class="field"><label for="daysCount">Quantidade de dias</label><input id="daysCount" type="number" min="1" max="9999" value="15"></div>
+</div>
+<div class="two">
+<div class="field"><label for="mode">Forma de contagem</label><select id="mode"><option value="calendar">Dias corridos (padrão CPP)</option><option value="business">Dias úteis (outras hipóteses)</option></select></div>
+<div class="field"><label for="manual">Início manual (opcional)</label><input id="manual" type="date"></div>
+</div>
+<label class="check"><input id="court" type="checkbox" checked> Incluir datas adicionais do TJRJ/RJ cadastradas (2026)</label>
+<label class="check"><input id="pause" type="checkbox"> Aplicar suspensão de 20/12 a 20/01 (somente quando cabível; não é padrão no CPP)</label>
+<div class="result" aria-live="polite">
+<div class="muted">Fim do prazo (estimado)</div><div class="value" id="deadline">—</div>
+<div class="meta" id="starting">Início: —</div><div class="meta" id="excluded">Data-base excluída: —</div>
+<hr style="border:0;border-top:1px solid #c4d8f4;margin:14px 0">
+<div class="muted">Sugestão de pasta</div><strong id="folder">—</strong>
+<div class="meta" id="explanation"></div>
+</div>
+<div class="notice"><b>Aviso de responsabilidade:</b> esta calculadora é ferramenta meramente auxiliar, sem caráter oficial e sem garantia de exatidão. Em regra, os prazos processuais penais são contados em dias corridos (art. 798 do CPP), excluído o dia do começo e incluído o do vencimento, sujeito à prorrogação legal quando cabível. Intimações eletrônicas, marcos iniciais, feriados locais, indisponibilidades, suspensões e procedimentos especiais exigem conferência própria. A responsabilidade pela verificação do prazo e pela movimentação processual permanece com o usuário. Consulte os autos, a legislação e os atos oficiais do TJRJ.</div>
+</section>
+<section class="panel">
+<div class="calendar-head"><h2>2. Calendário</h2><div class="months"><button type="button" id="prev" aria-label="Mês anterior">‹</button><input type="month" id="month" aria-label="Selecionar mês" style="width:145px;padding:7px"><button type="button" id="next" aria-label="Próximo mês">›</button></div></div>
+<div class="week"><span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span></div><div class="days" id="calendar"></div>
+<div class="legend"><span><i class="swatch"></i>Feriado/suspensão</span><span><i class="swatch s"></i>Início</span><span><i class="swatch e"></i>Fim</span><span><span style="border:2px solid #2563eb;border-radius:4px;width:12px;height:12px"></span>Hoje</span></div>
+<div id="holidays" class="holiday-list"></div>
+<div class="bottom"><label for="extras">Datas extras sem expediente (uma por linha: DD/MM/AAAA)</label><textarea id="extras" spellcheck="false" placeholder="03/11/2026&#10;04/11/2026"></textarea><small>Permite cadastrar feriados municipais e suspensões posteriores. As datas são salvas apenas neste navegador.</small></div>
+<button class="action" type="button" id="copy">Copiar resumo do prazo</button><p id="copyStatus" class="muted" style="font-size:.82rem" aria-live="polite"></p>
+</section>
+</div>
+<footer>Versão inicial · HTML, CSS e JavaScript puros · Sem servidor e sem bibliotecas externas.</footer>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const national={
+"2026-01-01":"Confraternização Universal","2026-04-03":"Paixão de Cristo","2026-04-21":"Tiradentes","2026-05-01":"Dia do Trabalho",
+"2026-09-07":"Independência do Brasil","2026-10-12":"Nossa Senhora Aparecida","2026-11-02":"Finados",
+"2026-11-15":"Proclamação da República","2026-11-20":"Consciência Negra","2026-12-25":"Natal"};
+// Cadastro inicial e NÃO exaustivo de datas de suspensão no TJRJ.
+const tjrj={
+"2026-02-16":"Carnaval (conferir expediente TJRJ)","2026-02-17":"Carnaval (conferir expediente TJRJ)",
+"2026-04-02":"Semana Santa — TJRJ","2026-04-23":"São Jorge — RJ","2026-04-24":"Suspensão TJRJ (Ato Executivo 79/2026)",
+"2026-10-30":"Dia do Servidor — suspensão TJRJ","2026-12-08":"Dia da Justiça — TJRJ"};
+const format=d=>d?d.toLocaleDateString("pt-BR",{timeZone:"UTC"}):"—";
+const key=d=>d?d.toISOString().slice(0,10):"";
+const parse=s=>s?new Date(s+"T12:00:00Z"):null;
+const add=(d,n)=>new Date(d.getTime()+n*86400000);
+const weekday=d=>d.getUTCDay();
+const today=new Date(),todayKey=[today.getFullYear(),String(today.getMonth()+1).padStart(2,"0"),String(today.getDate()).padStart(2,"0")].join("-");
+let calculation={};
+function extras(){return new Set($("extras").value.split(/\s+/).map(v=>{const m=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v);if(!m)return null;const iso=m[3]+"-"+m[2]+"-"+m[1];return key(parse(iso))===iso?iso:null;}).filter(Boolean));}
+function paused(d){const m=d.getUTCMonth()+1,day=d.getUTCDate();return (m===12&&day>=20)||(m===1&&day<=20);}
+function label(d){const s=key(d);return national[s]||($("court").checked?tjrj[s]:null)|| (extras().has(s)?"Data extra cadastrada":null)||($("pause").checked&&paused(d)?"Suspensão 20/12–20/01":null);}
+function isBlocked(d){return Boolean(label(d));}
+function compute(){
+const pub=parse($("pub").value),sci=parse($("science").value),manual=parse($("manual").value);
+const requested=$("base").value;
+const base=requested==="pub"?pub:requested==="science"?sci:(sci||pub);
+const ref=manual||base;
+const amount=Number($("daysCount").value);
+let err="";
+if(!ref)err=requested==="science"?"Informe a data da ciência ou use a referência automática.":requested==="pub"?"Informe a data da publicação ou use a referência automática.":"Informe publicação, ciência ou início manual.";
+else if(!Number.isInteger(amount)||amount<1||amount>9999)err="Informe um prazo entre 1 e 9999 dias.";
+let start=null,end=null,count=0;
+if(!err){
+let current=add(ref,1);
+for(let loop=0;loop<16000;loop++,current=add(current,1)){
+const eligible=$("mode").value==="business"?(weekday(current)!==0&&weekday(current)!==6&&!isBlocked(current)):!($("pause").checked&&paused(current));
+// Para dias corridos, o vencimento é prorrogado para o dia útil seguinte quando cair em dia não útil.
+if(eligible){if(!start)start=new Date(current);count++;}
+if(count>=amount){end=new Date(current);break;}
+}
+if(!end)err="Prazo longo demais para simular.";
+if(end&&$("mode").value==="calendar"){
+while(weekday(end)===0||weekday(end)===6||isBlocked(end)){end=add(end,1);}
+}
+}
+const scienceIsBase=!manual&&(requested==="science"||(requested==="auto"&&!!sci));
+const folder=scienceIsBase?"AGUARDANDO 10":amount<=15?"AGUARDANDO 15 APÓS CIÊNCIA":"AGUARDANDO 30 APÓS CIÊNCIA";
+$("deadline").textContent=err?"—":format(end);
+$("starting").textContent=err?err:"Primeiro dia da contagem: "+format(start);
+$("excluded").textContent="Data-base excluída: "+format(ref);
+$("folder").textContent=err?"—":folder;
+$("explanation").textContent=err?"":scienceIsBase?"Ciência informada e usada como referência: sugestão operacional de pasta 10.":"Prazo de "+amount+" dia(s): classificação operacional sugerida. Não altera o vencimento legal.";
+calculation={base:ref,start,end,amount,folder,err};
+renderCalendar();
+}
+function renderCalendar(){
+const mm=$("month").value||todayKey.slice(0,7),[year,month]=mm.split("-").map(Number);
+const first=new Date(Date.UTC(year,month-1,1,12)),offset=weekday(first);
+const box=$("calendar");box.replaceChildren();
+const used=[];
+for(let i=0;i<42;i++){
+const d=add(first,i-offset),k=key(d),other=d.getUTCMonth()!==month-1;
+const el=document.createElement("div");el.className="day"+(other?" out":"");
+if(!other&&label(d)){el.classList.add("holiday");used.push([d,label(d)]);}
+if(k===todayKey)el.classList.add("today");
+if(k===key(calculation.start))el.classList.add("start");
+if(k===key(calculation.end))el.classList.add("end");
+el.textContent=d.getUTCDate();el.title=[format(d),label(d)||"",k===key(calculation.start)?"Início da contagem":"",k===key(calculation.end)?"Vencimento":""].filter(Boolean).join(" · ");
+if(!other&&label(d)){const dot=document.createElement("i");dot.className="dot";el.append(dot);}
+box.append(el);
+}
+$("holidays").textContent=used.length?used.map(([d,t])=>format(d)+" — "+t).join("  •  "):"Nenhum feriado ou suspensão cadastrado neste mês.";
+}
+function shift(n){const [y,m]=$("month").value.split("-").map(Number),d=new Date(Date.UTC(y,m-1+n,1,12));$("month").value=key(d).slice(0,7);renderCalendar();}
+$("month").value=todayKey.slice(0,7);
+$("pub").value=todayKey;
+$("extras").value=localStorage.getItem("ejudPrazosExtras")||"";
+for(const id of ["pub","science","base","daysCount","mode","manual","court","pause"])$(id).addEventListener("input",compute);
+$("month").addEventListener("input",renderCalendar);
+$("extras").addEventListener("input",()=>{localStorage.setItem("ejudPrazosExtras",$("extras").value);compute();});
+$("prev").onclick=()=>shift(-1);$("next").onclick=()=>shift(1);
+$("copy").onclick=async()=>{
+if(calculation.err||!calculation.end){$("copyStatus").textContent="Preencha os dados para gerar o resumo.";return;}
+const summary="Prazo: "+calculation.amount+" dia(s) ("+($("mode").value==="business"?"úteis":"corridos")+")\nPublicação: "+format(parse($("pub").value))+"\nCiência: "+format(parse($("science").value))+"\nData-base: "+format(calculation.base)+"\nPrimeiro dia: "+format(calculation.start)+"\nVencimento estimado: "+format(calculation.end)+"\nPasta sugerida: "+calculation.folder;
+try{await navigator.clipboard.writeText(summary);$("copyStatus").textContent="Resumo copiado.";}catch{const t=document.createElement("textarea");t.value=summary;document.body.append(t);t.select();const copied=document.execCommand("copy");t.remove();$("copyStatus").textContent=copied?"Resumo copiado.":"Não foi possível copiar automaticamente.";}
+};
+compute();
+</script>
+</body>
+</html>
