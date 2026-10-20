@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v2.00</div>
+    <div class="brand">eJUD · Manual interativo · v2.01</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 2.00 · 20-10-26</div>
+<div class="version-tag">Versão 2.01 · 20-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1177,6 +1177,18 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </ol>
 <div class="critical"><strong>ETAPA FINAL OBRIGATÓRIA — NÃO ENCERRA NO “ENVIAR AO DJEN”:</strong> depois de colocar o despacho na fila, volte ao processo pela <strong>Movimentação Unitária</strong>, clique em <strong>Encaminhar</strong> e envie obrigatoriamente o processo para a pasta <strong>“Para publicar”</strong>. Não deixe o processo na mesa após concluir o envio ao DJEN.</div>
 <div class="icon-note"><strong>Resumo:</strong> <img class="ejud-icon" src="/manualejud/Imagens/jornal.png" alt="Ícone Jornal - Publicação"> Publicação → Central de Publicações → Expedientes → Local <code>17902</code> → Tipo <code>1</code> (Despachos) → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Novo/F5 → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → Fila... → maximizar → colar nº do processo → Enter → conferir tick em Publicar → fechar a Fila → Enviar ao DJEN → Movimentação Unitária → Encaminhar → <strong>Para publicar</strong>.</div>
+<h3 id="14-1-1-despacho-nao-aparece">14.1.1. O que fazer quando o despacho que quero publicar não aparece?</h3>
+<p>Quando houver mais de um despacho publicável no mesmo processo, a fila pode selecionar automaticamente o <strong>último despacho</strong>. Para visualizar os demais e escolher corretamente:</p>
+<ol>
+<li>Abra a janela <strong>“Fila...”</strong> e <strong>maximize</strong>.</li>
+<li><strong>Antes de colar o número do processo</strong>, clique no cabeçalho da coluna <strong>“Processo”</strong> para ordenar a tabela por número de processo.</li>
+<li>Cole o <strong>número do processo</strong> e pressione <strong>Enter</strong>.</li>
+<li>O sistema selecionará o <strong>último despacho</strong>, mas exibirá também os <strong>outros despachos publicáveis</strong> daquele processo. Veja na imagem a área destacada em verde.</li>
+<li>Clique no <strong>despacho específico</strong> que pretende publicar.</li>
+<li>Na parte inferior direita, clique em <strong>“Texto...”</strong> para conferir o conteúdo e confirmar que é o despacho correto antes de prosseguir.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/exemplodespachos.png" alt="Fila de publicação mostrando vários despachos publicáveis, destacados em verde, e o botão Texto para conferência">
+<div class="critical"><strong>CONFIRA ANTES DE PUBLICAR:</strong> quando existirem vários despachos para o mesmo processo, não presuma que o selecionado automaticamente é aquele que você deseja publicar. Confira o teor em <strong>“Texto...”</strong> e selecione o despacho correto antes de salvar e enviar ao DJEN.</div>
 <hr />
 <h1 id="15-pedido-de-informacao">15. Solicitação de Informações — expedição de ofício e envio pelo Malote Digital</h1>
 <p>Para a <strong>Solicitação de Informações</strong>, o fluxo é composto pela expedição do ofício, envio pelo Malote Digital e, depois, uma segunda movimentação para juntar o comprovante do Malote.</p>
@@ -2485,7 +2497,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.00 — 20-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.01 — 20-10-26</strong>.</p>
+<p><strong>Alteração da versão 2.01:</strong> acrescentado o tópico <strong>14.1.1</strong>, explicando como localizar outros despachos publicáveis no mesmo processo: ordenar a fila pela coluna Processo antes da pesquisa, visualizar os despachos disponíveis e conferir o teor pelo botão <strong>Texto...</strong>; incluída a imagem <code>exemplodespachos.png</code>.</p>
 <p><strong>Alteração da versão 2.00:</strong> incluído o <strong>Carimbo <code>7676</code></strong> para ofícios de requisição de inclusão/disponibilização de mídias no tópico <strong>15</strong> e na tabela rápida de códigos.</p>
 <p><strong>Alteração da versão 1.99:</strong> incluídos <strong>Embargos de Declaração</strong> na tabela do item <strong>13.4</strong>, com prazo geral de <strong>48 horas (2 dias)</strong> em matéria criminal, ressalvadas hipóteses com regramento específico, como o ECA.</p>
 <p><strong>Alteração da versão 1.98:</strong> incluída nota informativa abaixo da tabela do tópico <strong>13.4</strong>, esclarecendo que o acórdão que julga embargos infringentes/de nulidade pode ser objeto de REsp e/ou RE, conforme os requisitos de admissibilidade, sem alterar a estrutura da tabela.</p>
