@@ -18,7 +18,7 @@
 <div class="field"><label for="recipient">Destinatário da intimação</label><select id="recipient"><option value="adv">Advogado (publicação)</option><option value="mpdp">Ministério Público / Defensoria Pública (intimação eletrônica)</option></select><small>Para MP/DP, informe a data do envio da intimação no campo abaixo. A ciência pode ocorrer antes do décimo dia.</small></div>
 <div class="two">
 <div class="field"><label for="pub">Data da publicação / envio da intimação</label><input id="pub" type="date"></div>
-<div class="field"><label for="science">Data da ciência (opcional)</label><input id="science" type="date"></div>
+<div class="field"><label for="science">Data da ciência (opcional)</label><input id="science" type="date"><small>Para MP/DP, em branco: utilizar ciência tácita estimada em 10 dias corridos do envio.</small></div>
 </div>
 <div class="two">
 <div class="field"><label for="base">Data de referência para a contagem</label><select id="base"><option value="auto">Automático (ciência efetiva ou tácita, senão publicação)</option><option value="pub">Usar publicação</option><option value="science">Usar ciência</option></select><small>No automático: advogado usa publicação; MP/DP usa ciência expressa ou tácita (10 dias corridos do envio). Exclui-se a data-base. O início manual substitui esta escolha.</small></div>
@@ -35,7 +35,7 @@
 <div class="meta" id="starting">Início: —</div><div class="meta" id="excluded">Data-base excluída: —</div>
 <hr style="border:0;border-top:1px solid #c4d8f4;margin:14px 0">
 <div class="muted">Sugestão de pasta (conforme estágio da ciência)</div><strong id="folder">—</strong>
-<div class="meta" id="explanation"></div>
+<div class="meta" id="explanation"></div><div class="meta" id="nextFolder"></div>
 </div>
 <div class="notice"><b>Aviso de responsabilidade:</b> esta calculadora é ferramenta meramente auxiliar, sem caráter oficial e sem garantia de exatidão. Em regra, os prazos processuais penais são contados em dias corridos (art. 798 do CPP), excluído o dia do começo e incluído o do vencimento, sujeito à prorrogação legal quando cabível. Intimações eletrônicas, marcos iniciais, feriados locais, indisponibilidades, suspensões e procedimentos especiais exigem conferência própria. A responsabilidade pela verificação do prazo e pela movimentação processual permanece com o usuário. Consulte os autos, a legislação e os atos oficiais do TJRJ.</div>
 </section>
@@ -101,12 +101,15 @@ while(weekday(end)===0||weekday(end)===6||isBlocked(end)){end=add(end,1);}
 const isMpDp=$("recipient").value==="mpdp";
 const notifiedAt=isMpDp?effectiveScience:(pub||sci);
 const alreadyNotified=Boolean(notifiedAt)&&key(notifiedAt)<=todayKey;
-const folder=!alreadyNotified?(isMpDp?"AGUARDANDO 10":"Aguardando ciência/publicação"):amount<=15?"Aguardando Decurso de Prazo - 15 Dias":"Aguardando Decurso de Prazo - 30 Dias";
+const afterScienceFolder=amount<=15?"Aguardando Decurso de Prazo - 15 Dias":"Aguardando Decurso de Prazo - 30 Dias";
+const folder=!alreadyNotified?(isMpDp?"Aguardando Decurso de Prazo - 10 Dias":"Aguardando ciência/publicação"):afterScienceFolder;
 $("deadline").textContent=err?"—":format(end);
 $("starting").textContent=err?err:"Primeiro dia da contagem: "+format(start);
 $("excluded").textContent="Data-base excluída: "+format(ref);
 $("folder").textContent=err?"—":folder;
-$("explanation").textContent=err?"":!alreadyNotified?"Ciência ainda pendente. Para MP/DP, AGUARDANDO 10 é utilizado somente até a ciência expressa ou tácita. Não mover para pasta de decurso antes da ciência.": "Ciência "+(sci&&(!tacit||sci<=tacit)?"informada":isMpDp?"tácita estimada":"associada à publicação")+" em "+format(notifiedAt)+". Pasta de decurso somente após ciência; sugestão operacional, não altera o prazo legal.";
+
+$("explanation").textContent=err?"":isMpDp&&tacit?"Ciência tácita "+(sci&&sci<=tacit?"não utilizada (houve ciência expressa anterior)":"estimada")+" = envio em "+format(pub)+" + 10 dias corridos = "+format(tacit)+". "+(alreadyNotified?"Ciência já ocorrida.":"Ciência ainda não ocorrida; pasta AGUARDANDO 10 até a ciência."):(alreadyNotified?"Ciência registrada em "+format(notifiedAt)+".":"Aguardando a ciência.");
+$("nextFolder").textContent=err?"":!alreadyNotified&&notifiedAt?"Após a ciência prevista em "+format(notifiedAt)+", utilizar: "+afterScienceFolder+".":"";
 calculation={base:ref,start,end,amount,folder,err};
 renderCalendar();
 }
