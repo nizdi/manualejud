@@ -102,15 +102,17 @@ const isMpDp=$("recipient").value==="mpdp";
 const notifiedAt=isMpDp?effectiveScience:(pub||sci);
 const alreadyNotified=Boolean(notifiedAt)&&key(notifiedAt)<=todayKey;
 const afterScienceFolder=amount<=15?"Aguardando Decurso de Prazo - 15 Dias":"Aguardando Decurso de Prazo - 30 Dias";
-const folder=!alreadyNotified?(isMpDp?"Aguardando Decurso de Prazo - 10 Dias":"Aguardando ciência/publicação"):afterScienceFolder;
+const expired=Boolean(end)&&key(end)<todayKey;
+const dueToday=Boolean(end)&&key(end)===todayKey;
+const folder=expired?"PRAZO ENCERRADO":dueToday?"PRAZO VENCE HOJE":!alreadyNotified?(isMpDp?"AGUARDANDO 10":"Aguardando ciência/publicação"):afterScienceFolder;
 $("deadline").textContent=err?"—":format(end);
 $("starting").textContent=err?err:"Primeiro dia da contagem: "+format(start);
 $("excluded").textContent="Data-base excluída: "+format(ref);
 $("folder").textContent=err?"—":folder;
 
 $("explanation").textContent=err?"":isMpDp&&tacit?"Ciência tácita "+(sci&&sci<=tacit?"não utilizada (houve ciência expressa anterior)":"estimada")+" = envio em "+format(pub)+" + 10 dias corridos = "+format(tacit)+". "+(alreadyNotified?"Ciência já ocorrida.":"Ciência ainda não ocorrida; pasta AGUARDANDO 10 até a ciência."):(alreadyNotified?"Ciência registrada em "+format(notifiedAt)+".":"Aguardando a ciência.");
-$("nextFolder").textContent=err?"":!alreadyNotified&&notifiedAt?"Após a ciência prevista em "+format(notifiedAt)+", utilizar: "+afterScienceFolder+".":"";
-calculation={base:ref,start,end,amount,folder,err};
+$("nextFolder").textContent=err?"":expired?"Prazo estimado encerrado em "+format(end)+". Conferir eventual cumprimento, suspensão ou necessidade de certificação antes de movimentar.":dueToday?"Vencimento estimado hoje ("+format(end)+"). Verifique o horário-limite e a situação processual.":!alreadyNotified&&notifiedAt?"Após a ciência prevista em "+format(notifiedAt)+", utilizar: "+afterScienceFolder+".":"";
+calculation={base:ref,start,end,amount,folder,err,expired,dueToday};
 renderCalendar();
 }
 function renderCalendar(){
@@ -141,7 +143,7 @@ $("extras").addEventListener("input",()=>{localStorage.setItem("ejudPrazosExtras
 $("prev").onclick=()=>shift(-1);$("next").onclick=()=>shift(1);
 $("copy").onclick=async()=>{
 if(calculation.err||!calculation.end){$("copyStatus").textContent="Preencha os dados para gerar o resumo.";return;}
-const summary="Prazo: "+calculation.amount+" dia(s) ("+($("mode").value==="business"?"úteis":"corridos")+")\nPublicação: "+format(parse($("pub").value))+"\nCiência: "+format(parse($("science").value))+"\nData-base: "+format(calculation.base)+"\nPrimeiro dia: "+format(calculation.start)+"\nVencimento estimado: "+format(calculation.end)+"\nPasta sugerida: "+calculation.folder;
+const summary="Prazo: "+calculation.amount+" dia(s) ("+($("mode").value==="business"?"úteis":"corridos")+")\nPublicação: "+format(parse($("pub").value))+"\nCiência: "+format(parse($("science").value))+"\nData-base: "+format(calculation.base)+"\nPrimeiro dia: "+format(calculation.start)+"\nVencimento estimado: "+format(calculation.end)+"\nSituação / encaminhamento: "+calculation.folder;
 try{await navigator.clipboard.writeText(summary);$("copyStatus").textContent="Resumo copiado.";}catch{const t=document.createElement("textarea");t.value=summary;document.body.append(t);t.select();const copied=document.execCommand("copy");t.remove();$("copyStatus").textContent=copied?"Resumo copiado.":"Não foi possível copiar automaticamente.";}
 };
 compute();
