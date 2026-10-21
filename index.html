@@ -118,7 +118,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v2.02</div>
+    <div class="brand">eJUD · Manual interativo · v2.03</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -144,7 +144,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 2.02 · 21-10-26</div>
+<div class="version-tag">Versão 2.03 · 21-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -589,6 +589,14 @@ Sim   Não
 <div class="icon-note"><strong>Resumo:</strong> Fase <code>8</code> → Ministério Público <code>50675</code> → escolher o motivo da intimação → <strong>Entidades</strong> → clicar no número em <strong>DESTINO</strong> → <strong>F2</strong> → pesquisar a Promotoria → conferir no processo originário qual MP atua no feito → selecionar o destino correto.</div>
 <hr />
 <h1 id="7-intimacoes-pessoais">7. Intimações Pessoais</h1>
+<h2 id="7-1-decisao-monocratica-indefinido">7.1. Atenção — Decisão Monocrática classificada como “Decisão — Indefinido”</h2>
+<div class="critical"><strong>ATENÇÃO — DECISÃO MONOCRÁTICA / “INDEFINIDO”:</strong> uma <strong>decisão monocrática</strong> pode aparecer na árvore do eJUD como <strong>“Decisão — Indefinido”</strong>, em vez de estar corretamente identificada como decisão monocrática. Nessa situação, a <strong>Secretária não consegue realizar a publicação normalmente em lote</strong>, pois precisaria abrir e conferir os expedientes individualmente. <strong>O processante deve verificar se foram efetivadas as intimações pessoais do Ministério Público e da Defensoria Pública</strong>, além de conferir a providência de publicação cabível.</div>
+<ol>
+<li><strong>MP:</strong> dê atenção especial à intimação pessoal. Quando o movimento está como <strong>“Indefinido”</strong>, é possível que a intimação <strong>não tenha sido feita</strong>; não presuma que foi realizada. Confira a árvore e os registros de intimação e, se estiver ausente, providencie a intimação eletrônica: <strong>Fase <code>8</code> → MP <code>50675</code> → Motivo Ciência <code>50056</code></strong>, observando o destinatário correto.</li>
+<li><strong>DP:</strong> a rotina da unidade prevê que a <strong>Secretaria realize a intimação pessoal da Defensoria Pública</strong>. Ainda assim, o processante deve <strong>verificar se ela consta efetivamente do processo</strong> e, se estiver pendente, comunicar a pendência à Secretaria, seguindo o fluxo de intimação da <a href="#6-2-envio-defensoria-publica"><strong>Defensoria no tópico 6</strong></a>.</li>
+</ol>
+<div class="icon-note"><strong>Conferência final:</strong> classificação <strong>“Decisão — Indefinido”</strong> não equivale a publicação nem comprova ciência. Verifique separadamente o que foi feito para <strong>advogado, MP e DP</strong>, conforme a determinação judicial. Veja também o alerta do <a href="#14-publicacao"><strong>tópico 14 — Publicação</strong></a>.</div>
+<hr />
 <p>Esta rotina trata da <strong>expedição de Mandado de Intimação pessoal de uma pessoa física</strong>, a ser cumprido na unidade prisional ou no endereço residencial, conforme a situação do intimando. <strong>Antes de criar a movimentação</strong>, reúna os dados necessários e identifique a Central de Mandados responsável.</p>
 <h3 id="7-consulta-sipen">Antes de expedir: consultar o SIPEN e reunir os dados</h3>
 <div class="critical"><strong>PRIMEIRO, VERIFIQUE A SITUAÇÃO PRISIONAL:</strong> acesse o <strong>SIPEN</strong> e pesquise a pessoa pelo <strong>nome e pelo nome da mãe</strong>. Confira se ela está presa e, em caso positivo, identifique exatamente o <strong>presídio/unidade prisional</strong> informado pelo sistema. Essa verificação deve ser feita <strong>antes de preparar a intimação</strong>.</div>
@@ -2512,7 +2520,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.02 — 21-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.03 — 21-10-26</strong>.</p>
+<p><strong>Alteração da versão 2.03:</strong> criado o alerta <strong>7.1</strong> para decisões monocráticas classificadas como <strong>“Decisão — Indefinido”</strong>, orientando a conferência da publicação e das intimações pessoais do MP e da DP, com atenção especial à possível ausência de intimação do MP.</p>
 <p><strong>Alteração da versão 2.02:</strong> criado o item <strong>26.5 — Certidão de Cumprimento de Monitoramento Eletrônico</strong>, com localização da pessoa no BNMP, inclusão da peça, identificação do oficial responsável, data do cumprimento, Unidade Comunicante (COOME ou SSP) e conferência da alteração do mandado de pendente para cumprido.</p>
 <p><strong>Alteração da versão 2.01:</strong> acrescentado o tópico <strong>14.1.1</strong>, explicando como localizar outros despachos publicáveis no mesmo processo: ordenar a fila pela coluna Processo antes da pesquisa, visualizar os despachos disponíveis e conferir o teor pelo botão <strong>Texto...</strong>; incluída a imagem <code>exemplodespachos.png</code>.</p>
 <p><strong>Alteração da versão 2.00:</strong> incluído o <strong>Carimbo <code>7676</code></strong> para ofícios de requisição de inclusão/disponibilização de mídias no tópico <strong>15</strong> e na tabela rápida de códigos.</p>
