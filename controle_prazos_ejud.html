@@ -32,11 +32,13 @@
 <label class="check"><input id="pause" type="checkbox" checked> Suspender a contagem de 20/12 a 20/01 (art. 798-A do CPP; desmarque nas exceções legais)</label>
 <div class="result" aria-live="polite">
 <div class="muted">Fim do prazo (estimado)</div><div class="value" id="deadline">—</div>
+<div class="meta" id="prorrogacao" aria-live="polite"></div>
 <div class="meta" id="starting">Início: —</div><div class="meta" id="excluded">Data-base excluída: —</div>
 <hr style="border:0;border-top:1px solid #c4d8f4;margin:14px 0">
 <div class="muted">Sugestão de pasta (conforme estágio da ciência)</div><strong id="folder">—</strong>
 <div class="meta" id="explanation"></div><div class="meta" id="nextFolder"></div>
 </div>
+<div class="notice"><b>Contagem em dias corridos (CPP):</b> sábados, domingos e feriados <b>entram na contagem</b>; não são dias descartados. O art. 798, § 3º, do CPP estabelece: <em>“O prazo que terminar em domingo ou dia feriado considerar-se-á prorrogado até o dia útil imediato.”</em> A calculadora também prorroga o vencimento que caia em <b>sábado</b>, conforme a prática forense. <b>Exemplo:</b> publicação em 20/10/2026, cinco dias de 21 a 25/10 (domingo), vencimento prorrogado para 26/10/2026 (segunda-feira). A prorrogação afeta somente a data final.</div>
 <div class="notice"><b>Aviso de responsabilidade:</b> esta calculadora é ferramenta meramente auxiliar, sem caráter oficial e sem garantia de exatidão. Em regra, os prazos processuais penais são contados em dias corridos (art. 798 do CPP), excluído o dia do começo e incluído o do vencimento, sujeito à prorrogação legal quando cabível. Intimações eletrônicas, marcos iniciais, feriados locais, indisponibilidades, suspensões e procedimentos especiais exigem conferência própria. A responsabilidade pela verificação do prazo e pela movimentação processual permanece com o usuário. Consulte os autos, a legislação e os atos oficiais do TJRJ.</div>
 </section>
 <section class="panel">
@@ -84,7 +86,7 @@ const amount=Number($("daysCount").value);
 let err="";
 if(!ref)err=requested==="science"?"Informe a data da ciência ou use a referência automática.":requested==="pub"?"Informe a data da publicação ou use a referência automática.":"Informe publicação, ciência ou início manual.";
 else if(!Number.isInteger(amount)||amount<1||amount>9999)err="Informe um prazo entre 1 e 9999 dias.";
-let start=null,end=null,count=0;
+let start=null,end=null,count=0,originalEnd=null;
 if(!err){
 let current=add(ref,1);
 for(let loop=0;loop<16000;loop++,current=add(current,1)){
@@ -95,6 +97,7 @@ if(count>=amount){end=new Date(current);break;}
 }
 if(!end)err="Prazo longo demais para simular.";
 if(end&&$("mode").value==="calendar"){
+originalEnd=new Date(end);
 while(weekday(end)===0||weekday(end)===6||isBlocked(end)){end=add(end,1);}
 }
 }
@@ -106,6 +109,7 @@ const expired=Boolean(end)&&key(end)<todayKey;
 const dueToday=Boolean(end)&&key(end)===todayKey;
 const folder=expired?"PRAZO ENCERRADO":dueToday?"PRAZO VENCE HOJE":!alreadyNotified?(isMpDp?"AGUARDANDO 10":"Aguardando ciência/publicação"):afterScienceFolder;
 $("deadline").textContent=err?"—":format(end);
+$("prorrogacao").textContent=!err&&originalEnd&&key(originalEnd)!==key(end)?"Vencimento inicial: "+format(originalEnd)+" → prorrogado para "+format(end)+" (sábado, domingo, feriado ou suspensão). Os dias corridos anteriores foram contados normalmente.":"";
 $("starting").textContent=err?err:"Primeiro dia da contagem: "+format(start);
 $("excluded").textContent="Data-base excluída: "+format(ref);
 $("folder").textContent=err?"—":folder;
