@@ -121,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v2.19</div>
+    <div class="brand">eJUD · Manual interativo · v2.20</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 2.19 · 27-10-26</div>
+<div class="version-tag">Versão 2.20 · 27-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1475,6 +1475,18 @@ At.te,</code></pre>
 </ol>
 <div class="critical"><strong>ATENÇÃO — DATA/HORA:</strong> durante o fluxo, o eJUD pode desmarcar o tick de <strong>Data/Hora</strong> após salvar ou assinar. Confira antes de prosseguir e marque novamente sempre que necessário.</div>
 <div class="icon-note"><strong>Resumo:</strong> receber a resposta pelo Malote → abrir PDF → <strong>Imprimir como PDF</strong> e salvar com o <strong>número completo do processo</strong>, por exemplo <code>0055766-23.2026.8.19.0000.pdf</code>, em <code>C:\EJUD</code> → se houver mais de um documento, acrescentar uma descrição ao nome de cada arquivo ou <strong>uni-los pelo PJe, mantendo o ofício da serventia judicial como primeiro documento</strong> → Movimentação Unitária → Processo Eletrônico → Digitalização de documentos → ACERVO → <img class="ejud-icon" src="/manualejud/Imagens/importar.png" alt="Ícone Importar"> Importar → conferir/preencher o número do processo → <strong>não marcar Anexo</strong> → descrição “Informações” → Data/Hora marcado → <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> Salvar → conferir Data/Hora → <img class="ejud-icon" src="/manualejud/Imagens/assinar.png" alt="Ícone Assinar"> Assinar → conferir Data/Hora → Carimbar.</div>
+<div class="icon-note" id="18-1-email-e-informacoes"><strong>COMO JUNTAR O E-MAIL E AS INFORMAÇÕES EM UM ÚNICO PDF?</strong><p>Quando as informações chegarem por e-mail e for necessário juntar também o próprio e-mail, prepare primeiro o PDF do e-mail:</p>
+<ol>
+<li>Tire um <strong>print do e-mail</strong> recebido.</li>
+<li>Abra o <strong>Word</strong> e cole o print no documento.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/printemail.png" alt="Exemplo do print do e-mail colado no Word">
+<ol start="3">
+<li>No Word, clique em <strong>Salvar como → Procurar</strong>.</li>
+<li>Em <strong>Tipo</strong>, selecione <strong>PDF</strong> (e não DOCX) e salve o arquivo.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/salvarcomopdf.png" alt="Seleção do formato PDF na janela Salvar como do Word">
+<p>Depois, siga o <a href="#d-4-unir-pdfs-pje"><strong>D.4. Unir PDFs pelo PJe</strong></a> para reunir o <strong>PDF do e-mail</strong> com os <strong>PDFs das informações recebidas</strong> em um único arquivo. Para juntar o resultado ao processo, utilize <strong>Processo Eletrônico → Digitalização de documentos</strong>, conforme os passos anteriores deste tópico.</p></div>
 <h2 id="18-4-atribuir-processante-informacoes">18.4. Atribuir ao processante após a juntada <span class="tag-estagiarios">[ESTAGIÁRIOS]</span></h2>
 <p>Depois de concluir a <strong>juntada das Informações no processo</strong>, atribua o processo ao processante responsável conforme o <strong>número final do processo</strong>.</p>
 <ol>
@@ -2536,7 +2548,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.19 — 27-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.20 — 27-10-26</strong>.</p>
+<p><strong>Alteração da versão 2.20:</strong> incluído no final do item <strong>18.1</strong> quadro independente sobre transformar o print do e-mail em PDF pelo Word e uni-lo às informações recebidas pelo procedimento <strong>D.4</strong>, com as imagens <code>printemail.png</code> e <code>salvarcomopdf.png</code>.</p>
 <p><strong>Alteração da versão 2.19:</strong> destacado como <strong>OPCIONAL</strong> e recuado visualmente o passo de inclusão da Nota da Secretaria no item <strong>14.1</strong>.</p>
 <p><strong>Alteração da versão 2.18:</strong> no item <strong>13.2</strong>, contemplado o Relator vencido (Magistrado <code>50006</code>) além do Vogal (<code>50023</code>); no item <strong>14.1</strong>, incluída a possibilidade de inserir <strong>Nota da Secretaria</strong> antes do envio ao DJEN, com exemplo para apresentação de razões recursais.</p>
 <p><strong>Alteração da versão 2.17:</strong> coluna Pasta Virtual do tópico <strong>13.4</strong> passou a mostrar de forma compacta 📁 15 ou 🟩 DP 30, eliminando o asterisco e mantendo a regra geral de uma única pasta por processo.</p>
