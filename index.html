@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual eJUD — Interativo</title>
+<title>Manual EJUD - V2.21</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -121,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v2.20</div>
+    <div class="brand">Manual EJUD · v2.21</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 2.20 · 27-10-26</div>
+<div class="version-tag" id="manual-version">Versão 2.21 · 27-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -2548,7 +2548,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.20 — 27-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.21 — 27-10-26</strong>.</p>
+<p><strong>Alteração da versão 2.21:</strong> título da aba alterado para <strong>Manual EJUD - V2.21</strong>, com atualização automática a partir da versão exibida no corpo do manual; removido “interativo” do nome.</p>
 <p><strong>Alteração da versão 2.20:</strong> incluído no final do item <strong>18.1</strong> quadro independente sobre transformar o print do e-mail em PDF pelo Word e uni-lo às informações recebidas pelo procedimento <strong>D.4</strong>, com as imagens <code>printemail.png</code> e <code>salvarcomopdf.png</code>.</p>
 <p><strong>Alteração da versão 2.19:</strong> destacado como <strong>OPCIONAL</strong> e recuado visualmente o passo de inclusão da Nota da Secretaria no item <strong>14.1</strong>.</p>
 <p><strong>Alteração da versão 2.18:</strong> no item <strong>13.2</strong>, contemplado o Relator vencido (Magistrado <code>50006</code>) além do Vogal (<code>50023</code>); no item <strong>14.1</strong>, incluída a possibilidade de inserir <strong>Nota da Secretaria</strong> antes do envio ao DJEN, com exemplo para apresentação de razões recursais.</p>
@@ -2687,6 +2688,10 @@ Complemento 1: 9999
 </div>
 
 <script>
+// O título da aba acompanha automaticamente a versão exibida no manual.
+const versionLabel = document.getElementById('manual-version')?.textContent || '';
+const versionMatch = versionLabel.match(/Versão\s+(\d+(?:\.\d+)+)/i);
+if (versionMatch) document.title = `Manual EJUD - V${versionMatch[1]}`;
 const disclaimerModal = document.getElementById('disclaimerModal');
 const closeDisclaimer = document.getElementById('closeDisclaimer');
 closeDisclaimer.addEventListener('click',()=>{
