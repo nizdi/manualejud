@@ -57,6 +57,8 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .critical{margin:18px 0;padding:14px 16px;border:2px solid #c62828;border-left-width:7px;border-radius:10px;background:#fff0f0;color:#7f1d1d;font-weight:650}
 .despacho-texto{font-size:1.22em;font-weight:900}
 .exemplo-publicacao{font-size:1.22em;font-weight:850;line-height:1.5}
+.tag-opcional{display:inline-block;padding:2px 7px;border-radius:5px;background:var(--accent2);color:var(--accent);font-size:.75em;font-weight:800;vertical-align:1px}
+.passo-opcional{margin:7px 0 7px 14px;padding-left:12px;border-left:3px solid var(--border)}
 .tag-estagiarios{display:inline-block;margin-left:8px;padding:3px 8px;border-radius:999px;background:#725400;color:#fff4c7;border:1px solid #9a7410;font-size:.72em;font-weight:900;vertical-align:2px;letter-spacing:.02em}
 .party-tag{display:inline-block;padding:1px 6px;border-radius:5px;color:#111!important;border:1px solid transparent;font:900 .82em/1.35 ui-monospace,SFMono-Regular,Consolas,monospace;vertical-align:1px;letter-spacing:.02em}
 .party-adv{background:#8faed8;border-color:#557caf}
@@ -119,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">eJUD · Manual interativo · v2.17</div>
+    <div class="brand">eJUD · Manual interativo · v2.19</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -145,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag">Versão 2.17 · 26-10-26</div>
+<div class="version-tag">Versão 2.19 · 27-10-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1021,9 +1023,9 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="icon-note"><strong>Resumo:</strong> <strong>outra decisão</strong> (sem Acórdão) → Carimbo <code>7626</code> — Comunica decisão · <strong>Acórdão</strong> → preferir Ofício <strong>Fase <code>60</code> / Tipo <code>50007</code> / Carimbo <code>7662</code> — ENCAMINHO ACÓRDÃO</strong>.</div>
 <div class="critical"><strong>ATENÇÃO AO PARÂMETRO DO CARIMBO:</strong> quando o parâmetro automático puxar o nome como <strong>“JOÃO e Outros”</strong>, apague o parâmetro no documento e digite manualmente os nomes específicos, por exemplo <strong>“JOÃO e MARIA”</strong>. Esse comportamento também pode ser corrigido no próprio carimbo, substituindo o parâmetro <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong>.</div>
 
-<h2 id="13-2-voto-vencido">13.2. Voto vencido — abrir conclusão ao Vogal</h2>
+<h2 id="13-2-voto-vencido">13.2. Voto vencido — abrir conclusão ao Vogal ou Relator</h2>
 <div class="critical"><strong>ATENÇÃO AO PROCESSAR A CERTIDÃO DE JULGAMENTO:</strong> quando a <strong>Certidão de Julgamento</strong> chegar no local virtual <strong>“Para Processar”</strong>, confira se houve <strong>voto vencido</strong>. Se houver, o processo exige uma providência adicional antes de seguir normalmente.</div>
-<p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. <strong>Não é necessário fazer atribuição prévia ao Vogal:</strong> a indicação do Vogal e do Desembargador responsável é feita diretamente na própria conclusão.</p>
+<p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. <strong>Não é necessário fazer atribuição prévia:</strong> a indicação do Vogal ou Relator vencido é feita diretamente na própria conclusão.</p>
 
 <pre><code class="language-text">Certidão de Julgamento em “Para Processar”
 → conferir se houve voto vencido
@@ -1032,35 +1034,35 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 → Movimentar
 → Novo / folha em branco
 → Fase 51 — Conclusão
-→ Magistrado: 50023 — Vogal
+→ Magistrado: 50023 — Vogal / 50006 — Relator (se vencido)
 → selecionar o Desembargador que proferiu o voto vencido
 → Motivo: 13 — Lavratura de Voto Vencido
 → Salvar
 → abrir a movimentação
 → Carimbo
 → finalizar/assinar
-→ a conclusão sobe para o gabinete do Vogal
-→ o Vogal lavra o voto vencido
+→ a conclusão sobe para o gabinete do magistrado vencido
+→ o Vogal ou Relator vencido lavra o voto vencido
 </code></pre>
 
-<div class="critical"><strong>NÃO FAZER ATRIBUIÇÃO PRÉVIA:</strong> para voto vencido, <strong>não utilize Fase <code>50009</code>, Complemento <code>59998</code> nem qualquer etapa separada de atribuição ao Vogal</strong>. O Vogal é definido diretamente na <strong>Conclusão — Fase 51</strong>.</div>
+<div class="critical"><strong>NÃO FAZER ATRIBUIÇÃO PRÉVIA:</strong> para voto vencido, <strong>não utilize Fase <code>50009</code>, Complemento <code>59998</code> nem qualquer etapa separada de atribuição ao Vogal ou Relator</strong>. O magistrado vencido é definido diretamente na <strong>Conclusão — Fase 51</strong>.</div>
 
 <table>
 <thead><tr><th>Campo</th><th style="text-align:right">Código</th><th>Preenchimento</th></tr></thead>
 <tbody>
 <tr><td>Fase</td><td style="text-align:right"><code>51</code></td><td>Conclusão</td></tr>
-<tr><td>Magistrado</td><td style="text-align:right"><code>50023</code></td><td>Vogal — depois selecionar o Desembargador que proferiu o voto vencido</td></tr>
+<tr><td>Magistrado</td><td style="text-align:right"><code>50023</code> / <code>50006</code></td><td><code>50023</code> — Vogal; <code>50006</code> — Relator, quando vencido. Selecione o Desembargador que proferiu o voto vencido.</td></tr>
 <tr><td>Motivo</td><td style="text-align:right"><code>13</code></td><td>Lavratura de Voto Vencido</td></tr>
 </tbody>
 </table>
 
 <div class="critical"><strong>EXCEÇÃO DE HORÁRIO — DIA DE SESSÃO:</strong> a conclusão ao <strong>Vogal para lavratura de voto vencido</strong> pode ser aberta <strong>mesmo após as 17h quando for dia de sessão</strong>. Essa é uma exceção específica para esse processamento pós-sessão e não altera a regra geral de horário das demais conclusões.</div>
 
-<div class="icon-note"><strong>Magistrado:</strong> informe <code>50023</code> — <strong>Vogal</strong> — e, no campo do magistrado, selecione o <strong>Desembargador específico que proferiu o voto vencido</strong>. Em <strong>Motivo</strong>, utilize <code>13</code> — <strong>Lavratura de Voto Vencido</strong>. Depois de salvar, abra a movimentação e <strong>carimbe</strong>.</div>
+<div class="icon-note"><strong>Magistrado:</strong> informe <code>50023</code> — <strong>Vogal</strong> — ou <code>50006</code> — <strong>Relator</strong>, caso o Relator tenha sido vencido. Selecione o <strong>Desembargador específico que proferiu o voto vencido</strong>. Em <strong>Motivo</strong>, utilize <code>13</code> — <strong>Lavratura de Voto Vencido</strong>. Depois de salvar, abra a movimentação e <strong>carimbe</strong>.</div>
 <div class="icon-note"><strong>Quando houver mais de um Vogal:</strong> alguns processos possuem <strong>dois Vogais</strong>; em outros, a composição exibirá o <strong>Relator e apenas um Vogal</strong>. Se houver dois Vogais, não basta selecionar genericamente “Vogal”: depois de informar o código <code>50023</code>, escolha exatamente o <strong>Desembargador que proferiu o voto vencido</strong>, conforme a Certidão de Julgamento.</div>
-<div class="critical"><strong>NÃO DEIXAR PASSAR:</strong> se a Certidão de Julgamento indicar voto vencido, abra a <strong>conclusão ao Vogal correto</strong>. É esse magistrado que irá <strong>lavrar o voto vencido</strong>. Não encaminhe ao Relator apenas por ser o gabinete principal do processo.</div>
+<div class="critical"><strong>NÃO DEIXAR PASSAR:</strong> se a Certidão de Julgamento indicar voto vencido, abra a <strong>conclusão ao magistrado vencido (Vogal ou Relator)</strong>. É ele quem irá <strong>lavrar o voto vencido</strong>. Não encaminhe ao Relator apenas por ser o gabinete principal do processo; utilize-o somente quando ele tiver sido vencido.</div>
 <div class="icon-note"><strong>Não usar Encaminhar:</strong> como se trata de <strong>conclusão</strong>, depois de salvar/finalizar a movimentação o processo sobe para o gabinete correspondente. Não use o comando <strong>Encaminhar</strong> como substituto da conclusão.</div>
-<div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>)</strong> → selecionar o Desembargador que proferiu o voto vencido → Motivo <strong><code>13</code> — Lavratura de Voto Vencido</strong> → salvar → abrir a movimentação → <strong>Carimbo</strong> → finalizar/assinar → Vogal lavra o voto vencido. <strong>Em dia de sessão, essa conclusão pode ser aberta mesmo após as 17h.</strong></div>
+<div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>) ou Relator vencido (<code>50006</code>)</strong> → selecionar o Desembargador que proferiu o voto vencido → Motivo <strong><code>13</code> — Lavratura de Voto Vencido</strong> → salvar → abrir a movimentação → <strong>Carimbo</strong> → finalizar/assinar → magistrado vencido lavra o voto. <strong>Em dia de sessão, essa conclusão pode ser aberta mesmo após as 17h.</strong></div>
 
 <h2 id="13-3-pos-sessao-acordaos-publicados">13.3. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
 <p>Após a sessão de julgamento, os processos chegam no local virtual <strong>“Para Publicar”</strong>. <strong>Não retire o processo dessa pasta antes da publicação do Acórdão.</strong> Enquanto aguarda, porém, adiante tudo o que já puder ser cumprido, como ofícios, comunicações e outras providências decorrentes do julgamento.</p>
@@ -1190,6 +1192,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <li>Cole o <strong>número do processo</strong> no campo correspondente e pressione <strong>Enter</strong>.</li>
 <li>Ao confirmar com Enter, o eJUD selecionará o processo automaticamente. Confira se ele ficou marcado com o <strong>tick na coluna “Publicar”</strong>. Verificado isso, <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> clique em <strong>Salvar</strong>.</li>
 <li>Depois de confirmar a seleção, <strong>feche a janela da Fila</strong>. O sistema retornará à tela de <strong>Expedientes</strong>. Nessa tela, será necessário novamente <img class="ejud-icon" src="/manualejud/Imagens/salvar.png" alt="Ícone Salvar"> clicar em <strong>Salvar</strong>.</li>
+<li style="list-style:none"><div class="passo-opcional"><span class="tag-opcional">OPCIONAL</span> <strong>Nota da Secretaria:</strong> antes de <strong>Enviar ao DJEN</strong>, dê <strong>dois cliques no expediente</strong> e, se necessário, preencha <strong>“Nota da Secretaria”</strong> para orientar o destinatário. Exemplo: <em>“Ao Apelante para apresentação de razões recursais.”</em> Salve antes de prosseguir.</div></li>
 <li>Clique em <strong>Enviar ao DJEN</strong>. A partir desse momento, o despacho estará colocado na fila para publicação.</li>
 <li>Se abrir novamente o movimento de publicação, será possível conferir o <strong>número atribuído na fila</strong>.</li>
 </ol>
@@ -2533,7 +2536,9 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.17 — 26-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.19 — 27-10-26</strong>.</p>
+<p><strong>Alteração da versão 2.19:</strong> destacado como <strong>OPCIONAL</strong> e recuado visualmente o passo de inclusão da Nota da Secretaria no item <strong>14.1</strong>.</p>
+<p><strong>Alteração da versão 2.18:</strong> no item <strong>13.2</strong>, contemplado o Relator vencido (Magistrado <code>50006</code>) além do Vogal (<code>50023</code>); no item <strong>14.1</strong>, incluída a possibilidade de inserir <strong>Nota da Secretaria</strong> antes do envio ao DJEN, com exemplo para apresentação de razões recursais.</p>
 <p><strong>Alteração da versão 2.17:</strong> coluna Pasta Virtual do tópico <strong>13.4</strong> passou a mostrar de forma compacta 📁 15 ou 🟩 DP 30, eliminando o asterisco e mantendo a regra geral de uma única pasta por processo.</p>
 <p><strong>Alteração da versão 2.16:</strong> padronizada no tópico <strong>13.4</strong> a pasta virtual: 15 dias sem DP e 30 dias com DP, independentemente do prazo recursal; células simplificadas com remissão à regra geral e preservado o traço dos Embargos de Declaração.</p>
 <p><strong>Alteração da versão 2.15:</strong> esclarecida nos itens <strong>13.4</strong> e <strong>19.1</strong> a rotina interna de certificar tempestividade apenas de recursos julgados pela Câmara (como Embargos de Declaração e Agravo Interno), sem exigir cálculo ou certidão para o processamento de ROC, REsp e RE; diferenciada a contagem destinada ao controle de prazo, pastas e arquivamento.</p>
