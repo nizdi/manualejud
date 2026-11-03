@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.21</title>
+<title>Manual EJUD - V2.22</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -121,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.21</div>
+    <div class="brand">Manual EJUD · v2.22</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.21 · 27-10-26</div>
+<div class="version-tag" id="manual-version">Versão 2.22 · 03-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1035,7 +1035,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 → Novo / folha em branco
 → Fase 51 — Conclusão
 → Magistrado: 50023 — Vogal / 50006 — Relator (se vencido)
-→ selecionar o Desembargador que proferiu o voto vencido
+→ selecionar o Desembargador que irá redigir o voto vencido
 → Motivo: 13 — Lavratura de Voto Vencido
 → Salvar
 → abrir a movimentação
@@ -1076,7 +1076,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <tr><td><strong>Habeas Corpus — CONCEDIDO</strong></td><td>Comunicar a <strong>Vara de origem</strong>. Se a comunicação decorrer de <strong>Acórdão</strong>, preferir o Carimbo <code>7662</code> — <strong>ENCAMINHO ACÓRDÃO</strong>; se decorrer de <strong>outra decisão</strong>, utilizar <code>7626</code> — <strong>Comunica decisão</strong>.</td></tr>
 <tr><td><strong>Agravo em Execução Penal</strong></td><td>Deve haver comunicação à <strong>VEP</strong>, <strong>seja o recurso provido ou não</strong>. Se houver pedido de <strong>contrarrazões</strong>, expedir também <strong>ofício à VEP</strong>.</td></tr>
 <tr><td><strong>Apelação — réu <span style="color:#c62828;font-weight:900">PRESO</span> + sentença modificada</strong></td><td><strong>Réu solto:</strong> não expedir ofício nesta rotina. <strong>Vara de origem:</strong> não oficiar como regra*.<br><strong>Réu preso:</strong> somente oficiar quando o julgamento <strong>modificar a sentença</strong>. Nesse caso, comunique a <strong>VEP</strong>; se houver <strong>alteração do regime</strong>, comunique também a <strong>SEAP</strong>. Exemplo: mudança do regime fechado para o semiaberto → oficiar a SEAP <strong>por e-mail</strong>. Se a sentença for <strong>integralmente mantida</strong>, não há ofício de rotina; observe a ressalva abaixo para determinações expressas.<br><span class="small"><strong>PENDENTE:</strong> acrescentar posteriormente a anotação específica referente a violência doméstica.</span></td></tr>
-<tr><td><strong>Recurso em Sentido Estrito (RESE)</strong></td><td>Se o julgamento <strong>modificar a decisão recorrida</strong> e exigir providência do juízo de origem, comunique a <strong>Vara de origem</strong>, preferencialmente com o Carimbo <code>7662</code> — <strong>ENCAMINHO ACÓRDÃO</strong> quando a comunicação decorrer do Acórdão; para outras decisões, utilize <code>7626</code> — <strong>Comunica decisão</strong>. Se houver determinação relacionada à <strong>prisão ou liberdade</strong>, providencie a comunicação necessária e verifique eventual <strong>urgência</strong>. Se a decisão for <strong>integralmente mantida</strong>, em regra não há necessidade de comunicação imediata por ofício, salvo <strong>determinação expressa no Acórdão</strong>.</td></tr>
+<tr><td><strong>Recurso em Sentido Estrito (RESE)</strong></td><td>A comunicação à <strong>Vara de origem</strong> somente será necessária quando o julgamento determinar <strong>soltura, decretação de prisão ou cessação de constrangimento ilegal</strong>, ou quando houver <strong>determinação expressa no Acórdão</strong>. Nesses casos, utilize preferencialmente o Carimbo <code>7662</code> — <strong>ENCAMINHO ACÓRDÃO</strong>, quando a comunicação decorrer do Acórdão; para outras decisões, utilize o Carimbo <code>7626</code> — <strong>Comunica decisão</strong>. Confira eventual <strong>urgência</strong> da providência. <strong>Nos demais casos, não é necessário comunicar a Vara de origem</strong>, ainda que o julgamento modifique a decisão recorrida, salvo determinação expressa no Acórdão.</td></tr>
 <tr><td><strong>Revisão Criminal</strong></td><td>Se o julgamento <strong>alterar a situação anterior</strong>, comunicar a <strong>Vara de origem</strong> e a <strong>VEP</strong>.</td></tr>
 </tbody>
 </table>
@@ -2548,7 +2548,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.21 — 27-10-26</strong>.</p>
+<p>Versão consolidada: <strong>2.22 — 03-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.22:</strong> restringida a comunicação à Vara de origem em RESE (item <strong>13.3</strong>) às hipóteses de soltura, decretação de prisão, cessação de constrangimento ilegal ou determinação expressa no Acórdão; preservados os carimbos <code>7662</code> e <code>7626</code>.</p>
 <p><strong>Alteração da versão 2.21:</strong> título da aba alterado para <strong>Manual EJUD - V2.21</strong>, com atualização automática a partir da versão exibida no corpo do manual; removido “interativo” do nome.</p>
 <p><strong>Alteração da versão 2.20:</strong> incluído no final do item <strong>18.1</strong> quadro independente sobre transformar o print do e-mail em PDF pelo Word e uni-lo às informações recebidas pelo procedimento <strong>D.4</strong>, com as imagens <code>printemail.png</code> e <code>salvarcomopdf.png</code>.</p>
 <p><strong>Alteração da versão 2.19:</strong> destacado como <strong>OPCIONAL</strong> e recuado visualmente o passo de inclusão da Nota da Secretaria no item <strong>14.1</strong>.</p>
