@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.22</title>
+<title>Manual EJUD - V2.23</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -121,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.22</div>
+    <div class="brand">Manual EJUD · v2.23</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.22 · 03-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.23 · 03-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1944,6 +1944,7 @@ At.te,</code></pre>
 <li>Abra o movimento salvo e aplique o <strong>Carimbo <code>7604</code> — Certidão de Não Interposição de Recurso 2026 Para Baixa ou Arquivamento</strong>.</li>
 <li>Informe a <strong>matrícula do servidor</strong> e <strong>confirme o carimbo</strong>.</li>
 </ol>
+<div class="icon-note"><strong>PRÓXIMO PASSO — ARQUIVAMENTO OU BAIXA:</strong> a <strong>Certidão de Não Interposição de Recurso (25.1)</strong> serve para as duas situações. Após certificá-la, siga o <a href="#25-2-arquivamento-definitivo"><strong>25.2 — Arquivamento definitivo</strong></a> se o processo for originário da Câmara, ou o <a href="#25-3-baixa-primeira-instancia"><strong>25.3 — Baixa à primeira instância</strong></a> se tiver chegado por recurso.</div>
 <h2 id="25-2-arquivamento-definitivo">25.2. Arquivamento definitivo — processos originários da Câmara</h2>
 <p>Após a certidão, quando for caso de <strong>arquivamento definitivo</strong>:</p>
 <ol>
@@ -1958,7 +1959,16 @@ At.te,</code></pre>
 <div class="icon-note"><strong>Resumo:</strong> conferir prazos → Certidão <code>50002</code> / Complemento 1 <code>9999</code> → salvar → Carimbo <code>7604</code> + matrícula → Arquivamento <code>861</code> / Tipo <code>246</code> / Destino <code>17902</code> → salvar → Carimbo <code>7666</code>.</div>
 <h2 id="25-3-baixa-primeira-instancia">25.3. Baixa à primeira instância — processos recebidos por recurso</h2>
 <p>Quando o processo chegou à Câmara <strong>por recurso</strong>, após conferir os prazos e emitir a <strong>Certidão de Não Interposição de Recurso</strong> do item 25.1, o destino é a <strong>baixa à primeira instância</strong>, e não o arquivamento definitivo na Câmara.</p>
-<div class="icon-note"><strong>Procedimento de baixa:</strong> etapas e códigos específicos ainda não registrados neste manual.</div>
+<ol>
+<li>Crie um movimento com <strong>Fase <code>22</code> — Baixa definitiva</strong>.</li>
+<li>Em <strong>Complemento</strong>, informe <code>9999</code>.</li>
+<li>Em <strong>Motivo</strong>, selecione <strong>Baixa Definitiva</strong>.</li>
+<li>Confira se o campo <strong>Destino</strong> foi preenchido com o <strong>juízo de origem</strong>.</li>
+<li><strong>Salve</strong> o movimento.</li>
+<li>Abra o movimento salvo e aplique o <strong>Carimbo <code>10137</code> — Baixa Definitiva</strong>.</li>
+</ol>
+<img class="manual-img grande" src="/manualejud/Imagens/baixadefinitiva.png" alt="Tela de Baixa Definitiva com os campos e códigos destacados em amarelo">
+<div class="icon-note"><strong>Resumo:</strong> após a Certidão do <a href="#25-1-certidao-sem-recurso"><strong>25.1</strong></a> → Fase <code>22</code> — Baixa definitiva → Complemento <code>9999</code> → Motivo <strong>Baixa Definitiva</strong> → conferir <strong>Destino: juízo de origem</strong> → Salvar → abrir o movimento → Carimbo <code>10137</code>.</div>
 <hr />
 <h1 id="26-monitoracao-eletronica-botao-panico">26. Monitoração Eletrônica com Botão do Pânico</h1>
 <p>Quando a decisão determinar <strong>soltura com monitoração eletrônica</strong> e, se for o caso, <strong>botão do pânico à vítima</strong>, siga integralmente o fluxo normal do <a href="#24-alvara-de-soltura"><strong>24. Alvará de Soltura</strong></a>: conferir a <strong>Certidão / Nada Consta</strong>, expedir o Alvará no BNMP, cumprir as etapas de assinatura e encaminhamento de <strong>e-mail à SARQ</strong> e demais providências aplicáveis. <strong>Além disso</strong>, providencie os documentos e controles específicos abaixo.</p>
@@ -2548,7 +2558,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.22 — 03-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.23 — 03-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.23:</strong> esclarecido no item <strong>25.1</strong> que a certidão precede tanto o arquivamento (25.2) quanto a baixa à primeira instância (25.3); detalhado o procedimento de baixa definitiva com Fase <code>22</code>, Complemento <code>9999</code>, Motivo Baixa Definitiva, conferência do juízo de origem, Carimbo <code>10137</code> e imagem <code>baixadefinitiva.png</code>.</p>
 <p><strong>Alteração da versão 2.22:</strong> restringida a comunicação à Vara de origem em RESE (item <strong>13.3</strong>) às hipóteses de soltura, decretação de prisão, cessação de constrangimento ilegal ou determinação expressa no Acórdão; preservados os carimbos <code>7662</code> e <code>7626</code>.</p>
 <p><strong>Alteração da versão 2.21:</strong> título da aba alterado para <strong>Manual EJUD - V2.21</strong>, com atualização automática a partir da versão exibida no corpo do manual; removido “interativo” do nome.</p>
 <p><strong>Alteração da versão 2.20:</strong> incluído no final do item <strong>18.1</strong> quadro independente sobre transformar o print do e-mail em PDF pelo Word e uni-lo às informações recebidas pelo procedimento <strong>D.4</strong>, com as imagens <code>printemail.png</code> e <code>salvarcomopdf.png</code>.</p>
