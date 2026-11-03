@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.25</title>
+<title>Manual EJUD - V2.26</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -121,7 +121,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.25</div>
+    <div class="brand">Manual EJUD · v2.26</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +147,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.25 · 03-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.26 · 03-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1503,6 +1503,7 @@ At.te,</code></pre>
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
 <div class="icon-note"><strong>REGRA DA SECRETARIA — QUANDO CERTIFICAR:</strong> certifique a tempestividade dos recursos que serão julgados nesta Câmara, como <strong>Embargos de Declaração</strong> e <strong>Agravo Interno</strong>. Para recursos destinados a julgamento por outro órgão, como <strong>ROC, Recurso Especial (REsp) e Recurso Extraordinário (RE)</strong>, <strong>não elaborar certidão de tempestividade nem calcular o prazo como etapa de processamento</strong>: basta realizar o processamento e encaminhamento cabíveis. A calculadora de prazos continua útil para <strong>controle de decurso, escolha de pasta virtual, arquivamento e outras movimentações</strong> que dependam da conferência de prazo. Esta é uma orientação operacional interna; observe eventual determinação expressa em sentido diverso.</div>
+<div class="icon-note"><strong>AGRAVO INTERNO TEMPESTIVO — CARIMBO <code>608</code>:</strong> após conferir a tempestividade do <strong>Agravo Interno</strong>, utilize o <strong>Carimbo <code>608</code> — Certidão de Agravo Interno Tempestivo</strong> para certificar o recurso tempestivo antes de abrir conclusão. Para <strong>Embargos de Declaração tempestivos</strong>, permanece o Carimbo <code>7585</code>. <strong>Não utilize carimbo de tempestividade</strong> se o recurso for intempestivo.</div>
 <div class="critical"><strong>EMBARGOS DE DECLARAÇÃO — PRAZO:</strong> em matéria criminal, o prazo de interposição é de <strong>48 horas</strong> (2 dias), <strong>exceto nos processos regidos pelo ECA</strong>, nos quais deve ser observado o prazo próprio. Antes de certificar, confira o termo inicial, a data de interposição e as regras de contagem aplicáveis.</div>
 <div class="icon-note"><strong>Fluxo obrigatório após a interposição:</strong> <strong>juntar os Embargos de Declaração</strong> → conferir o prazo → <strong>certificar se são tempestivos ou intempestivos</strong> → <strong>abrir conclusão</strong>, inclusive se forem intempestivos, para apreciação do magistrado.</div>
 <p>Para criar a certidão de tempestividade dos embargos:</p>
@@ -2560,7 +2561,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.25 — 03-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.26 — 03-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.26:</strong> incluído no item <strong>19.1</strong> o carimbo <code>608</code> — Certidão de Agravo Interno Tempestivo, distinguindo-o do carimbo <code>7585</code> para Embargos de Declaração tempestivos; incluído na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 2.25:</strong> no item <strong>5.3</strong>, acrescentada orientação para usar o carimbo <code>7683</code> — CERTIDÃO - NÃO APRESENTAÇÃO RAZÕES - ART. 600 após o decurso do prazo sem apresentação das razões e antes de abrir conclusão; incluído o código na consulta rápida.</p>
 <p><strong>Alteração da versão 2.24:</strong> no passo 3 do item <strong>15.2</strong>, acrescentada após as imagens a orientação específica para localizar a VEP no Malote Digital pela busca <code>CAPITAL VARA DE EXECUCOES PENAIS VEP RJ</code>.</p>
 <p><strong>Alteração da versão 2.23:</strong> esclarecido no item <strong>25.1</strong> que a certidão precede tanto o arquivamento (25.2) quanto a baixa à primeira instância (25.3); detalhado o procedimento de baixa definitiva com Fase <code>22</code>, Complemento <code>9999</code>, Motivo Baixa Definitiva, conferência do juízo de origem, Carimbo <code>10137</code> e imagem <code>baixadefinitiva.png</code>.</p>
@@ -2724,7 +2726,7 @@ const codeData = [
 ["50040","Recurso Ordinário"],["50042","Despacho/Decisão"],["50055","Contrarrazões"],
 ["50056","Ciência"],["50083","Parecer"],["50126","Para apreciação"],["50127","Razões"],
 ["50666","Destinatário ligado à 2ª Vice-Presidência — confirmar"],["50671","Defensoria Pública"],
-["50675","Ministério Público"],["59998","Cumprimento em certidões"],["66235","Mandado de Intimação — Tipo (Fase 60)"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["7623","Carimbo SOLICITA INFORMAÇÕES - SIMPLES"],["7626","Carimbo Comunica decisão"],["7632","Carimbo Mandado de Intimação"],["7635","Carimbo CERTIDÃO - DECURSO DE PRAZO"],["7683","Carimbo CERTIDÃO - NÃO APRESENTAÇÃO RAZÕES - ART. 600"],["7647","Carimbo Termo de Compromisso"],["7652","Carimbo MANDADO DE INTIMAÇÃO - PESSOAL - RAZÕES RECURSAIS"],["10401","Carimbo BNMP 3.0 Decisão c/ cautelares"],["66721","Comprovante de Malote"],
+["50675","Ministério Público"],["59998","Cumprimento em certidões"],["66235","Mandado de Intimação — Tipo (Fase 60)"],["7582","Carimbo Solicita informações - Indeferimento Liminar"],["7623","Carimbo SOLICITA INFORMAÇÕES - SIMPLES"],["7626","Carimbo Comunica decisão"],["7632","Carimbo Mandado de Intimação"],["608","Carimbo Certidão de Agravo Interno Tempestivo"],["7635","Carimbo CERTIDÃO - DECURSO DE PRAZO"],["7683","Carimbo CERTIDÃO - NÃO APRESENTAÇÃO RAZÕES - ART. 600"],["7647","Carimbo Termo de Compromisso"],["7652","Carimbo MANDADO DE INTIMAÇÃO - PESSOAL - RAZÕES RECURSAIS"],["10401","Carimbo BNMP 3.0 Decisão c/ cautelares"],["66721","Comprovante de Malote"],
 ["70230","Comprovante de e-mail"],["17902","9ª Câmara Criminal — Consulta > Composição"],["23429","5º Grupo de Câmaras Criminais — Consulta > Composição"]
 ];
 
