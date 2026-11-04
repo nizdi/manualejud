@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.26</title>
+<title>Manual EJUD - V2.28</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -64,6 +64,8 @@ mark{background:#ffe581;color:#111;border-radius:3px;padding:0 2px}
 .party-adv{background:#8faed8;border-color:#557caf}
 .party-dp{background:#8fbd98;border-color:#4f8759}
 .party-mp{background:#d99191;border-color:#aa5454}
+.tag-eca{display:inline-block;padding:2px 7px;border-radius:5px;background:#f7d87e;color:#362600;font-weight:850;border:1px solid #c49b35}
+.tag-militar{display:inline-block;padding:2px 7px;border-radius:5px;color:#fff;font-weight:850;border:1px solid #304c29;background:repeating-linear-gradient(135deg,#344f2b 0 8px,#527044 8px 16px)}
 .resource-tag{display:inline-block;padding:2px 7px;border-radius:5px;background:#c9a84b;border:1px solid #8e7426;color:#111;font-weight:900;letter-spacing:.035em;line-height:1.3}
 body.dark .critical{background:#351b1b;color:#ffd5d5;border-color:#ef6a6a}
 .version-tag{display:inline-block;margin:2px 0 12px;padding:4px 9px;border-radius:999px;background:var(--accent2);color:var(--accent);font-size:12px;font-weight:800}
@@ -121,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.26</div>
+    <div class="brand">Manual EJUD · v2.28</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -147,7 +149,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.26 · 03-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.28 · 04-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -557,6 +559,8 @@ Sim   Não
 </tr>
 </tbody>
 </table>
+<div class="icon-note"><strong>CONTRARRAZÕES — QUAL DEFENSORIA?</strong> <strong>Agravo de Instrumento:</strong> encaminhe à <strong>Defensoria Pública que atua no 2º grau</strong>. <strong>Agravo de Execução:</strong> é necessário <strong>OFICIAR a Defensoria Pública que atua na VEP</strong>; <strong>não faça a intimação pela Fase <code>8</code> (Citação/Intimação)</strong> para apresentação das contrarrazões. Confira a espécie do recurso antes de prosseguir.</div>
+<div class="critical"><strong>ATENÇÃO, PROCESSANTES — AGRAVO DE EXECUÇÃO:</strong> antes de realizar o ofício à DP atuante na VEP, <strong>conversem com as secretárias</strong> para confirmar o procedimento. <strong>PENDENTE:</strong> complementar este tópico com o passo a passo específico após essa orientação.</div>
 <h3 id="codigos-uteis-defensoria">Códigos úteis da Defensoria</h3>
 <ul>
 <li><strong>Defensoria Pública (destinatário): <code>50671</code></strong></li>
@@ -1152,7 +1156,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <table id="tabela-prazos-recursais">
 <thead><tr><th>Classe / resultado</th><th>Recurso e prazo de referência</th><th>Pasta Virtual</th></tr></thead>
 <tbody>
-<tr><td><span class="resource-tag">EMBARGOS DE DECLARAÇÃO</span><p class="small">Em matéria criminal, contra decisões com omissão, contradição, obscuridade ou ambiguidade, quando cabíveis.</p></td><td><strong>48 horas (2 dias)</strong> — prazo geral de referência no CPP. <span class="small">Ressalvados os procedimentos com disciplina própria, como o ECA; conferir a contagem aplicável.</span></td><td>—</td></tr>
+<tr><td><span class="resource-tag">EMBARGOS DE DECLARAÇÃO</span><p class="small">Em matéria criminal, contra decisões com omissão, contradição, obscuridade ou ambiguidade, quando cabíveis.</p></td><td><div><strong>48 horas (2 dias)</strong> — prazo geral de referência no CPP</div><div style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px"><strong>5 dias</strong> — <span class="tag-eca">ECA</span> e <span class="tag-militar">Código Militar</span></div></td><td>—</td></tr>
 <tr><td><span class="resource-tag">APELAÇÃO</span></td><td><span class="resource-tag">REsp / RE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td><td>📁 <strong>15</strong> · 🟩 <strong>DP 30</strong></td></tr>
 <tr><td><span class="resource-tag">EMBARGOS INFRINGENTES / DE NULIDADE</span><p class="small">Cabíveis em Apelação, RESE e Agravo em Execução, quando houver acórdão não unânime e desfavorável ao réu. Não cabem em HC (concedido ou denegado), Revisão Criminal ou decisão monocrática.</p></td><td><span class="party-tag party-adv">[ADV]</span>: <strong>10 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>20 dias</strong> · <s><span class="party-tag party-mp">[MP]</span></s>: não cabe como recurso próprio.</td><td>📁 <strong>15</strong> · 🟩 <strong>DP 30</strong></td></tr>
 <tr><td><span class="resource-tag">RESE</span></td><td><span class="resource-tag">REsp / RE</span> — <span class="party-tag party-adv">[ADV]</span> / <span class="party-tag party-mp">[MP]</span>: <strong>15 dias</strong> · <span class="party-tag party-dp">[DP]</span>: <strong>30 dias</strong>.</td><td>📁 <strong>15</strong> · 🟩 <strong>DP 30</strong></td></tr>
@@ -1503,22 +1507,21 @@ At.te,</code></pre>
 <h1 id="19-certidoes">19. Certidões</h1>
 <h2 id="19-1-certidao-de-tempestividade">19.1. Certidão de tempestividade</h2>
 <div class="icon-note"><strong>REGRA DA SECRETARIA — QUANDO CERTIFICAR:</strong> certifique a tempestividade dos recursos que serão julgados nesta Câmara, como <strong>Embargos de Declaração</strong> e <strong>Agravo Interno</strong>. Para recursos destinados a julgamento por outro órgão, como <strong>ROC, Recurso Especial (REsp) e Recurso Extraordinário (RE)</strong>, <strong>não elaborar certidão de tempestividade nem calcular o prazo como etapa de processamento</strong>: basta realizar o processamento e encaminhamento cabíveis. A calculadora de prazos continua útil para <strong>controle de decurso, escolha de pasta virtual, arquivamento e outras movimentações</strong> que dependam da conferência de prazo. Esta é uma orientação operacional interna; observe eventual determinação expressa em sentido diverso.</div>
-<div class="icon-note"><strong>AGRAVO INTERNO TEMPESTIVO — CARIMBO <code>608</code>:</strong> após conferir a tempestividade do <strong>Agravo Interno</strong>, utilize o <strong>Carimbo <code>608</code> — Certidão de Agravo Interno Tempestivo</strong> para certificar o recurso tempestivo antes de abrir conclusão. Para <strong>Embargos de Declaração tempestivos</strong>, permanece o Carimbo <code>7585</code>. <strong>Não utilize carimbo de tempestividade</strong> se o recurso for intempestivo.</div>
-<div class="critical"><strong>EMBARGOS DE DECLARAÇÃO — PRAZO:</strong> em matéria criminal, o prazo de interposição é de <strong>48 horas</strong> (2 dias), <strong>exceto nos processos regidos pelo ECA</strong>, nos quais deve ser observado o prazo próprio. Antes de certificar, confira o termo inicial, a data de interposição e as regras de contagem aplicáveis.</div>
+<div class="critical"><strong>EMBARGOS DE DECLARAÇÃO — PRAZO:</strong> <strong>48 horas (2 dias)</strong> pela regra geral do CPP; <strong>5 dias</strong> nos procedimentos regidos pelo <strong>ECA</strong> ou pelo <strong>Código de Processo Penal Militar</strong>. Antes de certificar, confira o regime processual aplicável, o termo inicial e a data de interposição.</div>
 <div class="icon-note"><strong>Fluxo obrigatório após a interposição:</strong> <strong>juntar os Embargos de Declaração</strong> → conferir o prazo → <strong>certificar se são tempestivos ou intempestivos</strong> → <strong>abrir conclusão</strong>, inclusive se forem intempestivos, para apreciação do magistrado.</div>
-<p>Para criar a certidão de tempestividade dos embargos:</p>
+<p>Para criar a certidão de tempestividade dos <strong>Embargos de Declaração ou do Agravo Interno</strong>:</p>
 <ol>
 <li>Localize o processo.</li>
 <li>Clique com o <strong>botão direito</strong> no processo e escolha <strong>MOVIMENTAR</strong>.</li>
 <li><img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Abra uma <strong>Nova fase (F5)</strong>. O ícone de Inserir representa o novo movimento.</li>
 <li>Em <strong>Certidão</strong>, informe <code>50002</code>.</li>
 <li>Em <strong>Complemento 1</strong>, informe <code>9999</code>.</li>
-<li>Se forem <strong>tempestivos</strong>, em <strong>Carimbo</strong>, selecione <code>7585</code> — <strong>“Certidão Embargos Tempestivos”</strong>. Se forem <strong>intempestivos</strong>, utilize uma certidão adequada, registrando o resultado da conferência (não use o carimbo de tempestividade).</li>
+<li>Se o recurso for <strong>tempestivo</strong>, escolha o carimbo correspondente: <strong>Embargos de Declaração → <code>7585</code> — “Certidão Embargos Tempestivos”</strong>; <strong>Agravo Interno → <code>608</code> — “Certidão de Agravo Interno Tempestivo”</strong>. Se for <strong>intempestivo</strong>, utilize uma certidão adequada, sem aplicar carimbo de tempestividade.</li>
 <li>Revise a certidão escolhida e <strong>assine com a canetinha</strong>.</li>
 <li>Depois da certidão, <strong>abra a conclusão</strong> seguindo o procedimento de conclusão já explicado neste manual.</li>
 </ol>
 <blockquote>
-<p><strong>Resumo:</strong> juntar embargos → conferir prazo (48 horas; ECA: regra própria) → MOVIMENTAR → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova fase/F5 → Certidão <code>50002</code> → Complemento 1 <code>9999</code> → certificar tempestividade (<code>7585</code>) ou intempestividade → assinar → abrir conclusão.</p>
+<p><strong>Resumo:</strong> juntar o recurso → conferir o prazo aplicável (Embargos: CPP 48 horas; ECA/CPPM 5 dias) → MOVIMENTAR → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova fase/F5 → Certidão <code>50002</code> → Complemento 1 <code>9999</code> → certificar tempestividade (Embargos <code>7585</code> ou Agravo Interno <code>608</code>) ou intempestividade → assinar → abrir conclusão.</p>
 </blockquote>
 <div class="icon-note"><strong>OUTRO CARIMBO — <code>7635</code> — “CERTIDÃO - DECURSO DE PRAZO”:</strong> utilize-o, de forma geral, quando o prazo concedido em <strong>despacho ou decisão do Desembargador</strong> tiver transcorrido <strong>sem que a determinação tenha sido cumprida</strong>. Confira o prazo, registre o decurso na certidão e adapte o texto ao processo. <strong>Em regra, depois de certificar o decurso de prazo, abra conclusão ao Desembargador</strong> para que ele delibere sobre a providência seguinte.</div>
 <h2 id="19-2-certidao-livre">19.2. Certidão livre</h2>
@@ -2338,6 +2341,7 @@ At.te,</code></pre>
 → Salvar
 → Encaminhar
 </code></pre>
+<div class="icon-note"><strong>Destino conforme o recurso:</strong> contrarrazões de <strong>Agravo de Instrumento</strong> → DP atuante no <strong>2º grau</strong> (fluxo acima). <strong>Agravo de Execução</strong> → <strong>OFICIAR a DP atuante na VEP; NÃO utilizar a Fase <code>8</code></strong> para contrarrazões. <strong>Processantes:</strong> conversar com as secretárias antes de fazer; detalhamento do ofício pendente de inclusão no manual.</div>
 <h2 id="c-3-conclusao-ao-relator">C.3. Conclusão ao relator</h2>
 <pre><code class="language-text">Movimentar
 → Novo
@@ -2561,7 +2565,9 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.26 — 03-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.28 — 04-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.28:</strong> nos itens <strong>6.2</strong> e <strong>C.2</strong>, esclarecido que as contrarrazões de Agravo de Execução exigem ofício à DP atuante na VEP, sem intimação pela Fase <code>8</code>; incluído aviso aos processantes para consultar as secretárias e pendência de detalhamento do procedimento.</p>
+<p><strong>Alteração da versão 2.27:</strong> no item <strong>13.4</strong>, dividida visualmente a célula dos Embargos de Declaração entre CPP (48 horas) e ECA/Código Militar (5 dias), com etiquetas destacadas; nos itens <strong>6.2</strong> e <strong>C.2</strong>, diferenciada a DP competente para contrarrazões de Agravo de Instrumento (2º grau) e de Agravo de Execução (VEP); no item <strong>19.1</strong>, reunidos os carimbos <code>7585</code> e <code>608</code> como alternativas no mesmo fluxo de certidão.</p>
 <p><strong>Alteração da versão 2.26:</strong> incluído no item <strong>19.1</strong> o carimbo <code>608</code> — Certidão de Agravo Interno Tempestivo, distinguindo-o do carimbo <code>7585</code> para Embargos de Declaração tempestivos; incluído na consulta rápida de códigos.</p>
 <p><strong>Alteração da versão 2.25:</strong> no item <strong>5.3</strong>, acrescentada orientação para usar o carimbo <code>7683</code> — CERTIDÃO - NÃO APRESENTAÇÃO RAZÕES - ART. 600 após o decurso do prazo sem apresentação das razões e antes de abrir conclusão; incluído o código na consulta rápida.</p>
 <p><strong>Alteração da versão 2.24:</strong> no passo 3 do item <strong>15.2</strong>, acrescentada após as imagens a orientação específica para localizar a VEP no Malote Digital pela busca <code>CAPITAL VARA DE EXECUCOES PENAIS VEP RJ</code>.</p>
