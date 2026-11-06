@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.29</title>
+<title>Manual EJUD - V2.30</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.29</div>
+    <div class="brand">Manual EJUD · v2.30</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -149,7 +149,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.29 · 04-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.30 · 06-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1550,6 +1550,25 @@ At.te,</code></pre>
 <blockquote>
 <p><strong>CONFIRMAR:</strong> carimbo/modelo de cada hipótese antes de assinar.</p>
 </blockquote>
+<h2 id="19-4-situacao-processual-vinculacao">19.4. Certificação da situação processual e vinculação de feitos (apensamento)</h2>
+<p>Quando o magistrado determinar que a Secretaria <strong>certifique a situação processual atual de outro processo</strong> (por exemplo, de Habeas Corpus relacionado), consulte os respectivos autos e registre em certidão a situação efetivamente verificada: andamento atual, providências pendentes, eventual decisão liminar e existência ou não de julgamento definitivo, conforme o caso.</p>
+<div class="icon-note"><strong>Modelo adaptável — certidão de situação processual:</strong> substitua os campos e informe somente os dados confirmados nos autos consultados.</div>
+<blockquote><p>Em cumprimento à determinação do Exmo. Relator, constante no Id [ID DO DESPACHO], certifico que o Habeas Corpus nº [NÚMERO DO PROCESSO] se encontra [SITUAÇÃO PROCESSUAL ATUAL]. Consigno, ainda, que [INFORMAÇÕES RELEVANTES SOBRE LIMINAR E OUTRAS PROVIDÊNCIAS] e que o feito [SE ENCONTRA PENDENTE DE JULGAMENTO DEFINITIVO / JÁ FOI JULGADO DEFINITIVAMENTE], conforme consulta realizada em [DATA].</p></blockquote>
+<p>Quando o despacho determinar a <strong>vinculação administrativa dos feitos para julgamento na mesma sessão</strong>, o procedimento operacional correspondente no eJUD é o <strong>APENSAMENTO</strong>. Observe eventual condição expressa na decisão, como a exigência de que o outro processo ainda esteja pendente de julgamento definitivo.</p>
+<ol>
+<li>Confirme a situação dos processos e se a condição estabelecida no despacho para o apensamento foi atendida.</li>
+<li>Realize o <strong>apensamento</strong> no eJUD com <strong>Movimento <code>135</code></strong> e <strong>Complemento <code>1 - 59998</code></strong>, identificando o processo a apensar e conferindo o vínculo.</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/apensamento.png" alt="Tela de apensamento no eJUD: Movimento 135 e Complemento 1 - 59998">
+<ol start="3">
+<li>Inclua um <strong>lembrete em cada um dos processos</strong>, indicando o apensamento e a necessidade de inclusão na mesma sessão de julgamento, depois de concluídas as respectivas instruções processuais.</li>
+</ol>
+<div class="icon-note"><strong>Modelo de lembrete (adaptar o número em cada processo):</strong><p>Processo apenso ao processo nº [NÚMERO DO OUTRO PROCESSO]. Ambos deverão ser incluídos na mesma sessão de julgamento, após a conclusão das respectivas instruções processuais.</p></div>
+<ol start="4">
+<li>Depois de efetivado o apensamento, <strong>certifique nos autos em que ele foi realizado</strong> o cumprimento da determinação.</li>
+</ol>
+<div class="icon-note"><strong>Modelo de certidão de apensamento:</strong><p>Certifico que, em atendimento ao r. despacho, apensei o Habeas Corpus nº [NÚMERO DO PROCESSO APENSADO] nestes autos.</p></div>
+<div class="critical"><strong>ATENÇÃO:</strong> a determinação de certificar a situação processual não implica, por si só, ordem de apensamento. Efetue o apensamento quando houver determinação nesse sentido e estiverem preenchidas as condições estabelecidas pelo magistrado.</div>
 <hr />
 <h1 id="20-baixa-dos-autos-em-diligencia">20. Baixa dos autos em diligência</h1>
 <p>O material possui uma rotina intitulada <strong>“Baixar autos em diligência”</strong>, ligada principalmente a apelação/RSE.</p>
@@ -2568,7 +2587,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.29 — 04-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.30 — 06-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.30:</strong> criado o item <strong>19.4</strong> com modelo de certidão sobre a situação processual de feito relacionado e procedimento de apensamento por determinação judicial (Movimento <code>135</code>, Complemento <code>1 - 59998</code>), imagem <code>apensamento.png</code>, lembrete em ambos os processos e certidão de cumprimento.</p>
 <p><strong>Alteração da versão 2.29:</strong> no item <strong>24.2.2</strong>, incluído o acesso ao modelo de e-mail do Alvará no Outlook, com imagem e ressalva de conferência das demais etapas; adicionada ferramenta <strong>E.3. PDF para PNG (Alvará)</strong>, com atalho no passo de inserção da imagem no e-mail.</p>
 <p><strong>Alteração da versão 2.28:</strong> nos itens <strong>6.2</strong> e <strong>C.2</strong>, esclarecido que as contrarrazões de Agravo de Execução exigem ofício à DP atuante na VEP, sem intimação pela Fase <code>8</code>; incluído aviso aos processantes para consultar as secretárias e pendência de detalhamento do procedimento.</p>
 <p><strong>Alteração da versão 2.27:</strong> no item <strong>13.4</strong>, dividida visualmente a célula dos Embargos de Declaração entre CPP (48 horas) e ECA/Código Militar (5 dias), com etiquetas destacadas; nos itens <strong>6.2</strong> e <strong>C.2</strong>, diferenciada a DP competente para contrarrazões de Agravo de Instrumento (2º grau) e de Agravo de Execução (VEP); no item <strong>19.1</strong>, reunidos os carimbos <code>7585</code> e <code>608</code> como alternativas no mesmo fluxo de certidão.</p>
