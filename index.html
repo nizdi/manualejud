@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.31</title>
+<title>Manual EJUD - V2.32</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.31</div>
+    <div class="brand">Manual EJUD · v2.32</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -149,7 +149,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.31 · 09-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.32 · 09-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1221,6 +1221,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="video-note"><strong>🎥 VÍDEO — Expedição de ofício</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/gabriel_diniz_tjrj_jus_br/Documents/Expedi%C3%A7%C3%A3o%20de%20of%C3%ADcio.mp4?d=wf66eb5d26a2043059f0ba3ecb1fd412f&amp;csf=1&amp;web=1&amp;e=tTxcG2&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
 <div class="critical"><strong>PRIORIDADE NO MALOTE:</strong> use <strong>Normal</strong> quando o envio <strong>não tiver prazo</strong>. Quando houver prazo — por exemplo, <strong>48 horas</strong> ou qualquer outro prazo indicado — use prioridade <strong>Alta</strong>, para destacar a urgência ao órgão que receberá o Malote. Nesta rotina de solicitação de informações, como há prazo para resposta, a prioridade é <strong>Alta</strong>.</div>
 <div class="icon-note"><strong>OFÍCIO PARA INCLUSÃO DE MÍDIAS:</strong> quando for necessário requisitar a <strong>inclusão ou disponibilização de mídias</strong> (por exemplo, gravações de audiência no PJe Mídias), utilize o <strong>Carimbo <code>7676</code></strong>. Confira quais mídias faltam e adapte o texto ao despacho, indicando o processo e a unidade destinatária.</div>
+<div class="critical"><strong>INCIDENTE DE CONFLITO DE JURISDIÇÃO — JUÍZO SUSCITADO:</strong> quando o despacho determinar <strong>“Solicitem-se informações ao Juízo suscitado”</strong>, <strong>não utilize automaticamente o juízo preenchido pelos parâmetros do eJUD</strong>: esse juízo pode corresponder ao <strong>suscitante</strong>. Consulte os autos do incidente e identifique <strong>o primeiro juízo que se declarou incompetente</strong>, que é o <strong>juízo suscitado</strong> ao qual as informações devem ser solicitadas nesta rotina. Confira o destinatário no ofício e no Malote antes do envio. Se houver dúvida sobre a identificação dos juízos, confira os documentos do conflito antes de expedir.</div>
 <h2 id="15-1-primeira-movimentacao-expedir-oficio">15.1. Primeira movimentação — expedir e preparar o ofício</h2>
 <ol>
 <li>Localize o processo e escolha <strong>MOVIMENTAR</strong>.</li>
@@ -1571,8 +1572,9 @@ At.te,</code></pre>
 <div class="critical"><strong>ATENÇÃO:</strong> a determinação de certificar a situação processual não implica, por si só, ordem de apensamento. Efetue o apensamento quando houver determinação nesse sentido e estiverem preenchidas as condições estabelecidas pelo magistrado.</div>
 <hr />
 <h1 id="20-baixa-dos-autos-em-diligencia">20. Baixa dos autos em diligência</h1>
-<p>O material possui uma rotina intitulada <strong>“Baixar autos em diligência”</strong>, ligada principalmente a apelação/RSE.</p>
-<h2 id="etapa-documental">Etapa documental</h2>
+<p>Quando o magistrado determinar a <strong>baixa dos autos ao juízo de origem para cumprimento de diligência</strong>, inclusive em <strong>Apelação</strong> ou <strong>Recurso em Sentido Estrito (RESE)</strong>, utilize o procedimento de baixa em diligência abaixo.</p>
+<div class="icon-note"><strong>BAIXA EM DILIGÊNCIA — CÓDIGOS:</strong> Movimento <code>50007</code> → Complemento <code>9999</code> → Carimbo <code>7692</code>. Confira o <strong>juízo de origem</strong> como destino antes de finalizar.</div>
+<h2 id="etapa-documental">Etapa documental — anotações anteriores</h2>
 <p>As anotações indicam uso de:</p>
 <ul>
 <li>Fase <code>50002</code>;</li>
@@ -1580,20 +1582,15 @@ At.te,</code></pre>
 <li>código <code>59998</code>;</li>
 <li>escolha de carimbo/modelo.</li>
 </ul>
-<h2 id="remessa">Remessa</h2>
-<p>Também consta:</p>
-<pre><code class="language-text">Novo
-→ código/fase 50007
-→ Cumprimento 9999
-→ selecionar destino
-→ Salvar
-→ duplo clique
-→ Carimbo
-→ assinar
-</code></pre>
-<blockquote>
-<p><strong>CONFIRMAR:</strong> esta parte varia bastante conforme a diligência. Verifique destino e modelo antes de efetivar a baixa.</p>
-</blockquote>
+<h2 id="remessa">Baixa ao juízo de origem para diligência</h2>
+<ol>
+<li>Após conferir a determinação judicial, abra uma nova movimentação.</li>
+<li>Informe <strong>Movimento <code>50007</code></strong> e <strong>Complemento <code>9999</code></strong>.</li>
+<li>Selecione e confira o <strong>destino: juízo de origem</strong>.</li>
+<li><strong>Salve</strong> a movimentação e abra o movimento salvo com <strong>duplo clique</strong>.</li>
+<li>Aplique o <strong>Carimbo <code>7692</code></strong>, confira o conteúdo e <strong>assine</strong>.</li>
+</ol>
+<div class="critical"><strong>NÃO CONFUNDIR:</strong> a <strong>baixa em diligência</strong> cumpre determinação judicial de retorno temporário à origem para diligência. Não é a <strong>baixa definitiva</strong> do <a href="#25-3-baixa-primeira-instancia"><strong>item 25.3</strong></a>. Verifique a determinação e o destino antes de movimentar.</div>
 <hr />
 <h1 id="21-recebimento-de-autos-externos">21. Recebimento de autos externos</h1>
 <p>Anotação:</p>
@@ -2588,7 +2585,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.31 — 09-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.32 — 09-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.32:</strong> na seção <strong>15</strong>, incluído alerta para identificar corretamente o juízo suscitado em Incidente de Conflito de Jurisdição, sem confiar automaticamente no parâmetro do eJUD; na seção <strong>20</strong>, detalhada a baixa em diligência determinada pelo magistrado (Movimento <code>50007</code>, Complemento <code>9999</code>, Carimbo <code>7692</code>), diferenciando-a da baixa definitiva.</p>
 <p><strong>Alteração da versão 2.31:</strong> no item <strong>19.1</strong>, incluídos os Embargos Infringentes entre os recursos com certificação de tempestividade na Secretaria (carimbo <code>7691</code>); na seção <strong>25</strong> e nos itens <strong>25.1, 25.2 e 25.3</strong>, diferenciados o arquivamento na Secretaria dos finais <code>0000</code> e <code>0500</code> (Agravo em Execução Penal) e a baixa ao juízo de origem de Apelação, RESE e Agravo de Instrumento.</p>
 <p><strong>Alteração da versão 2.30:</strong> criado o item <strong>19.4</strong> com modelo de certidão sobre a situação processual de feito relacionado e procedimento de apensamento por determinação judicial (Movimento <code>135</code>, Complemento <code>1 - 59998</code>), imagem <code>apensamento.png</code>, lembrete em ambos os processos e certidão de cumprimento.</p>
 <p><strong>Alteração da versão 2.29:</strong> no item <strong>24.2.2</strong>, incluído o acesso ao modelo de e-mail do Alvará no Outlook, com imagem e ressalva de conferência das demais etapas; adicionada ferramenta <strong>E.3. PDF para PNG (Alvará)</strong>, com atalho no passo de inserção da imagem no e-mail.</p>
