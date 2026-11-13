@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.33</title>
+<title>Manual EJUD - V2.36</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.33</div>
+    <div class="brand">Manual EJUD · v2.36</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -150,7 +150,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.33 · 09-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.36 · 13-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1520,8 +1520,9 @@ At.te,</code></pre>
 <li>Em <strong>Complemento 1</strong>, informe <code>9999</code>.</li>
 <li>Se o recurso for <strong>tempestivo</strong>, escolha o carimbo correspondente: <strong>Embargos de Declaração → <code>7585</code> — “Certidão Embargos Tempestivos”</strong>; <strong>Agravo Interno → <code>608</code> — “Certidão de Agravo Interno Tempestivo”</strong>; <strong>Embargos Infringentes → <code>7691</code> — certidão de tempestividade dos Embargos Infringentes</strong>. Se for <strong>intempestivo</strong>, utilize uma certidão adequada, sem aplicar carimbo de tempestividade.</li>
 <li>Revise a certidão escolhida e <strong>assine com a canetinha</strong>.</li>
-<li>Depois da certidão, <strong>abra a conclusão</strong> seguindo o procedimento de conclusão já explicado neste manual.</li>
+<li>Depois da certidão, <strong>abra a conclusão</strong> seguindo o procedimento de conclusão já explicado neste manual. Para <strong>Embargos de Declaração</strong> ou <strong>Embargos Infringentes</strong>, observe obrigatoriamente a regra do <strong>redator do acórdão</strong> indicada abaixo.</li>
 </ol>
+<div class="critical"><strong>ATENÇÃO — CONCLUSÃO DOS EMBARGOS DE DECLARAÇÃO E EMBARGOS INFRINGENTES:</strong> a conclusão deve ser aberta para o <strong>DESEMBARGADOR OU JDS REDATOR DO ACÓRDÃO</strong>, ou seja, o magistrado responsável pela redação do acórdão, <strong>independentemente de ser ou não o relator original</strong>. Confira quem efetivamente redigiu o acórdão antes de selecionar o magistrado na conclusão. Se o relator original foi vencido, o <strong>Relator Designado</strong> (denominação utilizada no eJUD) é quem deve elaborar o acórdão; nesse caso, abra a conclusão para esse magistrado, <strong>e não para o relator vencido</strong>. O critério é sempre o <strong>REDATOR DO ACÓRDÃO</strong>.</div>
 <blockquote>
 <p><strong>Resumo:</strong> juntar o recurso → conferir o prazo aplicável (Embargos: CPP 48 horas; ECA/CPPM 5 dias) → MOVIMENTAR → <img class="ejud-icon" src="/manualejud/Imagens/inserir.png" alt="Ícone Inserir"> Nova fase/F5 → Certidão <code>50002</code> → Complemento 1 <code>9999</code> → certificar tempestividade (Embargos de Declaração <code>7585</code>, Agravo Interno <code>608</code> ou Embargos Infringentes <code>7691</code>) ou intempestividade → assinar → abrir conclusão.</p>
 </blockquote>
@@ -1638,6 +1639,18 @@ At.te,</code></pre>
 <li>Selecione o <strong>Carimbo <code>7591</code></strong> e <strong>carimbe</strong>.</li>
 </ol>
 <div class="icon-note"><strong>Resumo:</strong> juntar petição como <strong>Recurso Ordinário</strong> → Remessa <code>123</code> → Destinatário <code>50666</code> → Motivo <strong>Autuar</strong> → confirmar <strong>Sim</strong> → Salvar → abrir movimento → Carimbo <code>7591</code>.</div>
+<h2 id="22-3-embargos-infringentes">22.3. Embargos Infringentes — remessa à 2ª Vice-Presidência</h2>
+<p>Após a interposição dos <strong>Embargos Infringentes</strong>, realize a certificação e abra conclusão ao <strong>redator do acórdão</strong>, conforme o <a href="#19-1-certidao-de-tempestividade"><strong>item 19.1</strong></a>. <strong>Quando retornar despacho recebendo os embargos</strong>, providencie a remessa à <strong>2ª Vice-Presidência</strong>.</p>
+<ol>
+<li>Confira se há <strong>despacho determinando o prosseguimento dos Embargos Infringentes</strong>, frequentemente com a redação <em>“Dê-se prosseguimento na forma do Regimento Interno do Tribunal de Justiça.”</em> A remessa descrita aqui ocorre <strong>após esse despacho</strong>, não imediatamente após a interposição. Verifique o contexto do despacho antes de movimentar.</li>
+<li>Crie uma nova movimentação com <strong>Fase <code>123</code> — Remessa</strong>.</li>
+<li>Em <strong>Destinatário</strong>, informe <code>50663</code>.</li>
+<li>Em <strong>Complemento 2</strong>, informe <code>50080</code>.</li>
+<li>Em <strong>Motivo</strong>, selecione obrigatoriamente <strong>Embargos Infringentes</strong>.</li>
+<li><strong>Confirme que o campo Destino foi preenchido com <code>3205</code></strong> antes de salvar. Se aparecer outro código, não conclua a remessa sem conferir o destino correto.</li>
+<li>Conferidos os dados, <strong>salve a movimentação</strong>.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> interposição dos Embargos Infringentes → certidão → conclusão ao redator do acórdão → <strong>despacho recebendo os embargos</strong> → Fase <code>123</code> → Destinatário <code>50663</code> → Complemento 2 <code>50080</code> → <strong>Motivo: Embargos Infringentes</strong> → <strong>confirmar Destino <code>3205</code></strong> → salvar.</div>
 <hr />
 <h1 id="23-redistribuicao">23. Redistribuição (impedimento/distribuição errônea)</h1>
 <div class="video-note"><strong>🎥 VÍDEO — Redistribuição para 2ª Vice-Presidência</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/personal/gabriel_diniz_tjrj_jus_br/_layouts/15/stream.aspx?id=%2Fpersonal%2Fgabriel%5Fdiniz%5Ftjrj%5Fjus%5Fbr%2FDocuments%2FBNMP%2Emp4&amp;referrer=StreamWebApp%2EWeb&amp;referrerScenario=AddressBarCopied%2Eview%2Eae595489%2Dedd5%2D430b%2D95e4%2D072972cef7b6" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
@@ -2586,7 +2599,10 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.33 — 09-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.36 — 13-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.36:</strong> no item <strong>22.3</strong>, incluída a redação habitual do despacho de prosseguimento na forma do Regimento Interno e tornado expresso o preenchimento obrigatório do campo <strong>Motivo: Embargos Infringentes</strong> na remessa à 2ª Vice-Presidência.</p>
+<p><strong>Alteração da versão 2.35:</strong> criado o item <strong>22.3 — Embargos Infringentes</strong>, com o fluxo de remessa à 2ª Vice-Presidência após despacho de recebimento dos embargos: Fase <code>123</code>, Destinatário <code>50663</code>, Complemento 2 <code>50080</code> e conferência obrigatória do Destino <code>3205</code>.</p>
+<p><strong>Alteração da versão 2.34:</strong> no item <strong>19.1</strong>, esclarecido que a conclusão após Embargos de Declaração ou Embargos Infringentes deve ser dirigida ao <strong>redator do acórdão</strong> (Desembargador ou JDS), inclusive ao <strong>Relator Designado</strong> quando o relator original tiver sido vencido.</p>
 <p><strong>Alteração da versão 2.33:</strong> inserido alerta temporário em vermelho, na janela de abertura do manual, sobre não encaminhar para a pasta “Pedindo dia” os processos com despacho do Dr. Marcelo nesse sentido entre 9 e 13 de novembro de 2026.</p>
 <p><strong>Alteração da versão 2.32:</strong> na seção <strong>15</strong>, incluído alerta para identificar corretamente o juízo suscitado em Incidente de Conflito de Jurisdição, sem confiar automaticamente no parâmetro do eJUD; na seção <strong>20</strong>, detalhada a baixa em diligência determinada pelo magistrado (Movimento <code>50007</code>, Complemento <code>9999</code>, Carimbo <code>7692</code>), diferenciando-a da baixa definitiva.</p>
 <p><strong>Alteração da versão 2.31:</strong> no item <strong>19.1</strong>, incluídos os Embargos Infringentes entre os recursos com certificação de tempestividade na Secretaria (carimbo <code>7691</code>); na seção <strong>25</strong> e nos itens <strong>25.1, 25.2 e 25.3</strong>, diferenciados o arquivamento na Secretaria dos finais <code>0000</code> e <code>0500</code> (Agravo em Execução Penal) e a baixa ao juízo de origem de Apelação, RESE e Agravo de Instrumento.</p>
