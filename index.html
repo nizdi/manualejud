@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.38</title>
+<title>Manual EJUD - V2.39</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.38</div>
+    <div class="brand">Manual EJUD · v2.39</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -135,6 +135,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
   <div class="disclaimer-modal">
     <h2 id="disclaimerTitle">Aviso importante</h2>
     <p>Este manual é independente e não possui vínculo ou filiação com o Tribunal de Justiça do Estado do Rio de Janeiro. O conteúdo é apenas informativo e não há responsabilidade por uso incorreto, interpretação equivocada ou consequências decorrentes de sua utilização.</p>
+    <div class="critical" style="margin:18px 0 0;font-size:1.05rem;line-height:1.5"><strong>AVISO — AFASTAMENTO DE 23 A 27/11/2026</strong><div style="margin-top:8px">O <strong>Dr. Marcelo Oliveira</strong> estará afastado nesse período. <strong>NÃO ENCAMINHAR PROCESSOS PARA REVISÃO A ELE</strong> entre os dias 23 e 27 de novembro.</div></div>
     <div class="disclaimer-modal-actions">
       <button id="closeDisclaimer" type="button">Entendi</button>
     </div>
@@ -149,7 +150,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.38 · 16-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.39 · 18-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -2013,9 +2014,10 @@ At.te,</code></pre>
 <li>Confira se o campo <strong>Destino</strong> foi preenchido com o <strong>juízo de origem</strong>.</li>
 <li><strong>Salve</strong> o movimento.</li>
 <li>Abra o movimento salvo e aplique o <strong>Carimbo <code>10137</code> — Baixa Definitiva</strong>.</li>
+<li>Na <strong>Mesa / Local Virtual</strong>, recomenda-se selecionar <strong>“Baixa Definitiva”</strong> no campo <strong>Motivo</strong>, para identificar corretamente a movimentação.</li>
 </ol>
 <img class="manual-img grande" src="/manualejud/Imagens/baixadefinitiva.png" alt="Tela de Baixa Definitiva com os campos e códigos destacados em amarelo">
-<div class="icon-note"><strong>Resumo:</strong> após a Certidão do <a href="#25-1-certidao-sem-recurso"><strong>25.1</strong></a> → Fase <code>22</code> — Baixa definitiva → Complemento <code>9999</code> → Motivo <strong>Baixa Definitiva</strong> → conferir <strong>Destino: juízo de origem</strong> → Salvar → abrir o movimento → Carimbo <code>10137</code>.</div>
+<div class="icon-note"><strong>Resumo:</strong> após a Certidão do <a href="#25-1-certidao-sem-recurso"><strong>25.1</strong></a> → Fase <code>22</code> — Baixa definitiva → Complemento <code>9999</code> → Motivo <strong>Baixa Definitiva</strong> → conferir <strong>Destino: juízo de origem</strong> → Salvar → abrir o movimento → Carimbo <code>10137</code> → na <strong>Mesa / Local Virtual</strong>, usar o motivo <strong>“Baixa Definitiva”</strong>.</div>
 <hr />
 <h1 id="26-monitoracao-eletronica-botao-panico">26. Monitoração Eletrônica com Botão do Pânico</h1>
 <p>Quando a decisão determinar <strong>soltura com monitoração eletrônica</strong> e, se for o caso, <strong>botão do pânico à vítima</strong>, siga integralmente o fluxo normal do <a href="#24-alvara-de-soltura"><strong>24. Alvará de Soltura</strong></a>: conferir a <strong>Certidão / Nada Consta</strong>, expedir o Alvará no BNMP, cumprir as etapas de assinatura e encaminhamento de <strong>e-mail à SARQ</strong> e demais providências aplicáveis. <strong>Além disso</strong>, providencie os documentos e controles específicos abaixo.</p>
@@ -2609,7 +2611,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.38 — 16-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.39 — 18-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.39:</strong> no item <strong>25.3</strong>, recomendada a seleção do motivo “Baixa Definitiva” na Mesa / Local Virtual; na janela inicial, incluído aviso temporário de afastamento do Dr. Marcelo Oliveira entre 23 e 27/11/2026, sem replicá-lo em outras seções.</p>
 <p><strong>Alteração da versão 2.38:</strong> removido da janela inicial o aviso temporário relativo aos despachos “Pedindo dia” de 9 a 13 de novembro de 2026, mantendo o aviso importante permanente.</p>
 <p><strong>Alteração da versão 2.37:</strong> criado o item <strong>19.5 — Arrecadação Integrada</strong>, com acesso por Sistemas, pesquisa de GRERJ por guia ou processo, certificação em Manutenção, indicação do motivo e vídeo de certificação de custas; etapas não documentadas permanecem marcadas como <strong>PENDENTE</strong>.</p>
 <p><strong>Alteração da versão 2.36:</strong> no item <strong>22.3</strong>, incluída a redação habitual do despacho de prosseguimento na forma do Regimento Interno e tornado expresso o preenchimento obrigatório do campo <strong>Motivo: Embargos Infringentes</strong> na remessa à 2ª Vice-Presidência.</p>
