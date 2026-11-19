@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.41</title>
+<title>Manual EJUD - V2.42</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.41</div>
+    <div class="brand">Manual EJUD · v2.42</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -150,7 +150,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.41 · 18-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.42 · 19-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -1029,7 +1029,8 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="icon-note"><strong>Resumo:</strong> <strong>outra decisão</strong> (sem Acórdão) → Carimbo <code>7626</code> — Comunica decisão · <strong>Acórdão</strong> → preferir Ofício <strong>Fase <code>60</code> / Tipo <code>50007</code> / Carimbo <code>7662</code> — ENCAMINHO ACÓRDÃO</strong>.</div>
 <div class="critical"><strong>ATENÇÃO AO PARÂMETRO DO CARIMBO:</strong> quando o parâmetro automático puxar o nome como <strong>“JOÃO e Outros”</strong>, apague o parâmetro no documento e digite manualmente os nomes específicos, por exemplo <strong>“JOÃO e MARIA”</strong>. Esse comportamento também pode ser corrigido no próprio carimbo, substituindo o parâmetro <strong>“1ª Parte Passiva”</strong> por <strong>“Partes Passivas separados por (,)”</strong>.</div>
 
-<h2 id="13-2-voto-vencido">13.2. Voto vencido — abrir conclusão ao Vogal ou Relator</h2>
+<h2 id="13-2-voto-vencido">13.2. Voto vencido e declaração de voto — abertura de conclusão</h2>
+<div class="icon-note"><strong>Dois procedimentos diferentes:</strong> se houver <strong>voto vencido</strong>, use o <strong>Motivo <code>13</code></strong>; se a Certidão de Julgamento registrar <strong>“Fará declaração de voto o Des. X”</strong>, use o <strong>Motivo <code>14</code></strong>, conforme o item <a href="#13-2-declaracao-de-voto"><strong>13.2.1</strong></a>.</div>
 <div class="critical"><strong>ATENÇÃO AO PROCESSAR A CERTIDÃO DE JULGAMENTO:</strong> quando a <strong>Certidão de Julgamento</strong> chegar no local virtual <strong>“Para Processar”</strong>, confira se houve <strong>voto vencido</strong>. Se houver, o processo exige uma providência adicional antes de seguir normalmente.</div>
 <p>Quando um dos integrantes do colegiado <strong>diverge do resultado vencedor</strong>, esse magistrado é o responsável por <strong>lavrar o voto vencido</strong>. <strong>Não é necessário fazer atribuição prévia:</strong> a indicação do Vogal ou Relator vencido é feita diretamente na própria conclusão.</p>
 
@@ -1069,6 +1070,19 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <div class="critical"><strong>NÃO DEIXAR PASSAR:</strong> se a Certidão de Julgamento indicar voto vencido, abra a <strong>conclusão ao magistrado vencido (Vogal ou Relator)</strong>. É ele quem irá <strong>lavrar o voto vencido</strong>. Não encaminhe ao Relator apenas por ser o gabinete principal do processo; utilize-o somente quando ele tiver sido vencido.</div>
 <div class="icon-note"><strong>Não usar Encaminhar:</strong> como se trata de <strong>conclusão</strong>, depois de salvar/finalizar a movimentação o processo sobe para o gabinete correspondente. Não use o comando <strong>Encaminhar</strong> como substituto da conclusão.</div>
 <div class="icon-note"><strong>Resumo:</strong> Certidão de Julgamento em <strong>Para Processar</strong> → houve voto vencido? → identificar quem divergiu → pegar o Acórdão → abrir <strong>Conclusão (Fase 51)</strong> → Magistrado <strong>Vogal (<code>50023</code>) ou Relator vencido (<code>50006</code>)</strong> → selecionar o Desembargador que proferiu o voto vencido → Motivo <strong><code>13</code> — Lavratura de Voto Vencido</strong> → salvar → abrir a movimentação → <strong>Carimbo</strong> → finalizar/assinar → magistrado vencido lavra o voto. <strong>Em dia de sessão, essa conclusão pode ser aberta mesmo após as 17h.</strong></div>
+
+<h3 id="13-2-declaracao-de-voto">13.2.1. Declaração de voto — conclusão ao Vogal ou Revisor</h3>
+<div class="critical"><strong>ATENÇÃO — “FARÁ DECLARAÇÃO DE VOTO O DES. X”:</strong> quando a <strong>Certidão de Julgamento</strong> indicar que determinado Desembargador ou JDS <strong>fará declaração de voto</strong>, abra <strong>conclusão para esse magistrado</strong>, na condição de <strong>Vogal ou Revisor</strong>, utilizando <strong>Fase <code>51</code></strong> e <strong>Motivo <code>14</code> — Declaração de Voto</strong>. <strong>Não utilize o Motivo <code>13</code></strong>, reservado à lavratura de voto vencido.</div>
+<ol>
+<li>Na <strong>Certidão de Julgamento</strong>, identifique o magistrado mencionado na expressão <strong>“Fará declaração de voto o Des. [NOME]”</strong>.</li>
+<li>Localize o processo, acesse <strong>MOVIMENTAR</strong> e abra uma <strong>Nova fase (F5)</strong>.</li>
+<li>Selecione <strong>Fase <code>51</code> — Conclusão</strong>.</li>
+<li>Em <strong>Magistrado</strong>, escolha <strong>Vogal ou Revisor</strong>, conforme a função exercida no julgamento, e <strong>selecione nominalmente o Desembargador/JDS que fará a declaração de voto</strong>.</li>
+<li>No campo <strong>Motivo</strong>, informe <strong><code>14</code> — Declaração de Voto</strong>.</li>
+<li><strong>Salve</strong> a movimentação e realize os procedimentos de <strong>carimbo/assinatura</strong> cabíveis à conclusão, conferindo o gabinete destinatário.</li>
+</ol>
+<div class="icon-note"><strong>Não confundir:</strong> <strong>Voto vencido → Motivo <code>13</code></strong> (magistrado que divergiu do resultado vencedor); <strong>Declaração de voto → Motivo <code>14</code></strong> (magistrado expressamente indicado para declarar voto). A declaração de voto <strong>não significa, por si só, que o magistrado tenha sido vencido</strong>.</div>
+<div class="icon-note"><strong>Resumo:</strong> “Fará declaração de voto o Des. X” → <strong>Conclusão (Fase <code>51</code>)</strong> → <strong>Vogal ou Revisor</strong> → selecionar <strong>Des. X</strong> → <strong>Motivo <code>14</code> — Declaração de Voto</strong> → salvar → carimbar/assinar conforme a rotina.</div>
 
 <h2 id="13-3-pos-sessao-acordaos-publicados">13.3. Pós-sessão — comunicações e publicação dos Acórdãos</h2>
 <p>Após a sessão de julgamento, os processos chegam no local virtual <strong>“Para Publicar”</strong>. <strong>Não retire o processo dessa pasta antes da publicação do Acórdão.</strong> Enquanto aguarda, porém, adiante tudo o que já puder ser cumprido, como ofícios, comunicações e outras providências decorrentes do julgamento.</p>
@@ -1269,7 +1283,7 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 <li>Selecione a <strong>vara de origem do processo</strong>. Se não for comarca da Capital, entre em <strong>“Comarcas Judiciais”</strong>.
 <div class="icon-note"><strong>Bizu para localizar a Vara:</strong> copie no eJUD o <strong>nome da Vara</strong> responsável pelo processo e cole esse nome no campo de busca do Malote. Isso facilita encontrar rapidamente a unidade correta.</div>
 <img class="manual-img media" src="/manualejud/Imagens/varamalote.png" alt="Nome da Vara no eJUD para copiar e pesquisar no Malote Digital"><img class="manual-img media" src="/manualejud/Imagens/varaencontradamalote.png" alt="Vara localizada no campo de busca do Malote Digital">
-<div class="icon-note"><strong>Exceção — busca da VEP:</strong> para localizar a <strong>Vara de Execuções Penais (VEP)</strong> no Malote, o bizu de copiar o nome exibido no eJUD pode não funcionar. Nesse caso, digite exatamente na busca: <code>CAPITAL VARA DE EXECUCOES PENAIS VEP RJ</code>.</div>
+<div class="icon-note"><strong>Exceção — busca da VEP:</strong> para localizar a <strong>Vara de Execuções Penais (VEP)</strong> no Malote, o bizu de copiar o nome exibido no eJUD pode não funcionar. Nesse caso, digite exatamente na busca: <code>CAPITAL VARA DE EXECUCOES PENAIS  VEP RJ</code>.</div>
 </li>
 <li>Clique em <strong>Avançar</strong>.</li>
 <li><strong>Prioridade:</strong> siga a determinação do magistrado. Use <strong>Alta</strong> quando houver indicação de urgência, prazo curto — por exemplo, <strong>48 horas</strong> — ou outra determinação que exija resposta célere. Se o magistrado <strong>não tiver definido prazo nem indicado urgência</strong>, selecione <strong>Normal</strong>.</li>
@@ -2636,7 +2650,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.41 — 18-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.42 — 19-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.42:</strong> ampliado o item <strong>13.2</strong> para voto vencido e declaração de voto; criado o item <strong>13.2.1</strong>, com conclusão ao Vogal ou Revisor responsável pela declaração (Fase <code>51</code>, Motivo <code>14</code>), distinguindo-o da lavratura de voto vencido (Motivo <code>13</code>).</p>
 <p><strong>Alteração da versão 2.41:</strong> criado o item <strong>19.6 — Custas do RESE (2026)</strong>, com distinção do recolhimento em ação penal pública e privada, tratamento da determinação de verificação de custas, referência interna de R$ 1.308,36, roteiro de consulta ao valor na GRERJ Eletrônica e encaminhamento à certificação do item 19.5.</p>
 <p><strong>Alteração da versão 2.40:</strong> criado o item <strong>22.4 — Recebimento de decisão do STJ</strong>, com conferência inicial pela Secretaria e pelo gabinete, abertura de conclusão ao Desembargador e posterior cumprimento das determinações recebidas.</p>
 <p><strong>Alteração da versão 2.39:</strong> no item <strong>25.3</strong>, recomendada a seleção do motivo “Baixa Definitiva” na Mesa / Local Virtual; na janela inicial, incluído aviso temporário de afastamento do Dr. Marcelo Oliveira entre 23 e 27/11/2026, sem replicá-lo em outras seções.</p>
