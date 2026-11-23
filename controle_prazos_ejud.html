@@ -29,7 +29,7 @@
 <div class="field"><label for="manual">Início manual (opcional)</label><input id="manual" type="date"></div>
 </div>
 <label class="check"><input id="court" type="checkbox" checked> Incluir datas adicionais do TJRJ/RJ cadastradas (2026)</label>
-<label class="check"><input id="pause" type="checkbox"> Aplicar a suspensão de 20/12 a 20/01 (art. 798-A do CPP)</label><small>Não se aplica a processos vinculados à prisão de réu preso, Lei Maria da Penha e medidas urgentes determinadas fundamentadamente. Marque apenas quando couber ao processo.</small>
+<label class="check"><input id="pause" type="checkbox" checked> Aplicar a suspensão de 20/12 a 20/01 (art. 798-A do CPP)</label><small>Não se aplica a processos vinculados à prisão de réu preso, Lei Maria da Penha e medidas urgentes determinadas fundamentadamente. Marque apenas quando couber ao processo.</small>
 <div class="result" aria-live="polite">
 <div class="muted">Fim do prazo (estimado)</div><div class="value" id="deadline">—</div>
 <div class="meta" id="prorrogacao" aria-live="polite"></div>
@@ -38,6 +38,7 @@
 <div class="muted">Sugestão de pasta (conforme estágio da ciência)</div><strong id="folder">—</strong>
 <div class="meta" id="explanation"></div><div class="meta" id="nextFolder"></div>
 </div>
+<div class="notice"><b>Datas específicas de 2026:</b> 29/10 possui regra própria de prorrogação de início/vencimento no eJUD/DCP, e não suspensão geral. Para 05/11, foi incluído o bloqueio solicitado, mas o fundamento ainda precisa ser confirmado. Em processos alcançados por esses atos, confira a data real de normalização do serviço e o marco inicial antes de usar o resultado. 12 e 13/11 foram tratados como dias de suspensão do curso do prazo, conforme determinação do CNJ.</div>
 <div class="notice"><b>Contagem em dias corridos (CPP):</b> sábados, domingos e feriados <b>entram na contagem</b>; não são dias descartados. O art. 798, § 3º, do CPP estabelece: <em>“O prazo que terminar em domingo ou dia feriado considerar-se-á prorrogado até o dia útil imediato.”</em> A calculadora também prorroga o vencimento que caia em <b>sábado</b>, conforme a prática forense. <b>Exemplo:</b> publicação em 20/10/2026, cinco dias de 21 a 25/10 (domingo), vencimento prorrogado para 26/10/2026 (segunda-feira). A prorrogação afeta somente a data final.</div>
 <div class="notice"><b>Aviso de responsabilidade:</b> esta calculadora é ferramenta meramente auxiliar, sem caráter oficial e sem garantia de exatidão. Em regra, os prazos processuais penais são contados em dias corridos (art. 798 do CPP), excluído o dia do começo e incluído o do vencimento, sujeito à prorrogação legal quando cabível. Intimações eletrônicas, marcos iniciais, feriados locais, indisponibilidades, suspensões e procedimentos especiais exigem conferência própria. A responsabilidade pela verificação do prazo e pela movimentação processual permanece com o usuário. Consulte os autos, a legislação e os atos oficiais do TJRJ.</div>
 </section>
@@ -55,15 +56,31 @@
 <script>
 "use strict";
 const $=id=>document.getElementById(id);
+// CADASTROS: edite as datas no formato AAAA-MM-DD e a descrição à direita.
+// Feriados nacionais (usados para identificar dias sem expediente/vencimento).
 const national={
 "2026-01-01":"Confraternização Universal","2026-04-03":"Paixão de Cristo","2026-04-21":"Tiradentes","2026-05-01":"Dia do Trabalho",
 "2026-09-07":"Independência do Brasil","2026-10-12":"Nossa Senhora Aparecida","2026-11-02":"Finados",
 "2026-11-15":"Proclamação da República","2026-11-20":"Consciência Negra","2026-12-25":"Natal"};
-// Cadastro inicial e NÃO exaustivo de datas de suspensão no TJRJ.
+// Datas do TJRJ: cadastro inicial, não exaustivo.
 const tjrj={
 "2026-02-16":"Carnaval (conferir expediente TJRJ)","2026-02-17":"Carnaval (conferir expediente TJRJ)",
 "2026-04-02":"Semana Santa — TJRJ","2026-04-23":"São Jorge — RJ","2026-04-24":"Suspensão TJRJ (Ato Executivo 79/2026)",
-"2026-10-30":"Dia do Servidor — suspensão TJRJ","2026-12-08":"Dia da Justiça — TJRJ"};
+"2026-12-08":"Dia da Justiça — TJRJ"};
+// DATAS EXCEPCIONAIS DE 2026: editar/adicionar/remover aqui.
+// Atenção: 29/10 teve prorrogação de prazos com INÍCIO ou VENCIMENTO nessa data
+// para eJUD/DCP (Ato Executivo TJ 177/2026), não suspensão geral de todos os prazos.
+// 05/11 foi informado para inclusão; o ato específico ainda precisa ser conferido.
+const datasExcepcionais2026={
+"2026-10-29":{motivo:"Prorrogação de início/vencimento eJUD/DCP — Ato TJ 177/2026",tipo:"marco"},
+"2026-10-30":{motivo:"Dia do Servidor Público — suspensão TJRJ",tipo:"semExpediente"},
+"2026-11-05":{motivo:"Data informada — confirmar ato de suspensão",tipo:"semExpediente"},
+"2026-11-12":{motivo:"Suspensão nacional de prazos — CNJ",tipo:"suspensao"},
+"2026-11-13":{motivo:"Suspensão nacional de prazos — CNJ",tipo:"suspensao"}
+};
+// 02/11/2026 já consta nos feriados nacionais (Finados).
+// Tipos: "marco" = apenas início ou vencimento; "suspensao" = parar a contagem
+// mesmo em dias corridos; "semExpediente" = prorrogar vencimento/ignorar dia útil.
 const format=d=>d?d.toLocaleDateString("pt-BR",{timeZone:"UTC"}):"—";
 const key=d=>d?d.toISOString().slice(0,10):"";
 const parse=s=>s?new Date(s+"T12:00:00Z"):null;
@@ -71,10 +88,13 @@ const add=(d,n)=>new Date(d.getTime()+n*86400000);
 const weekday=d=>d.getUTCDay();
 const today=new Date(),todayKey=[today.getFullYear(),String(today.getMonth()+1).padStart(2,"0"),String(today.getDate()).padStart(2,"0")].join("-");
 let calculation={};
-function extras(){return new Set($("extras").value.split(/\s+/).map(v=>{const m=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v);if(!m)return null;const iso=m[3]+"-"+m[2]+"-"+m[1];return key(parse(iso))===iso?iso:null;}).filter(Boolean));}
+function extras(){const result={};for(const line of $("extras").value.split(/\r?\n/)){const m=/^\s*(\d{2})\/(\d{2})\/(\d{4})(?:\s*[-—:]\s*(.*))?\s*$/.exec(line);if(!m)continue;const iso=m[3]+"-"+m[2]+"-"+m[1];if(key(parse(iso))===iso)result[iso]={motivo:(m[4]||"Data extra cadastrada").trim(),tipo:"semExpediente"};}return result;}
 function paused(d){const m=d.getUTCMonth()+1,day=d.getUTCDate();return (m===12&&day>=20)||(m===1&&day<=20);}
-function label(d){const s=key(d);return national[s]||($("court").checked?tjrj[s]:null)|| (extras().has(s)?"Data extra cadastrada":null)||($("pause").checked&&paused(d)?"Suspensão 20/12–20/01":null);}
-function isBlocked(d){return Boolean(label(d));}
+function special(d){const s=key(d);return $("court").checked?(extras()[s]||datasExcepcionais2026[s]|| (tjrj[s]?{motivo:tjrj[s],tipo:"semExpediente"}:null)):extras()[s]||null;}
+function label(d){const s=key(d),x=special(d);return national[s]||(x?x.motivo:null)||($("pause").checked&&paused(d)?"Suspensão 20/12–20/01":null);}
+function isBlocked(d){const x=special(d);return Boolean(national[key(d)]||x||$("pause").checked&&paused(d));}
+function isSuspended(d){const x=special(d);return Boolean($("pause").checked&&paused(d)||x&&x.tipo==="suspensao");}
+function isDateCounted(d){return Boolean(calculation.start&&calculation.countEnd&&d>=calculation.start&&d<=calculation.countEnd&&!isSuspended(d)&&($("mode").value==="calendar"||weekday(d)!==0&&weekday(d)!==6&&!isBlocked(d)));}
 function compute(){
 const pub=parse($("pub").value),sci=parse($("science").value),manual=parse($("manual").value);
 const requested=$("base").value;
@@ -86,16 +106,17 @@ const amount=Number($("daysCount").value);
 let err="";
 if(!ref)err=requested==="science"?"Informe a data da ciência ou use a referência automática.":requested==="pub"?"Informe a data da publicação ou use a referência automática.":"Informe publicação, ciência ou início manual.";
 else if(!Number.isInteger(amount)||amount<1||amount>9999)err="Informe um prazo entre 1 e 9999 dias.";
-let start=null,end=null,count=0,originalEnd=null;
+let start=null,end=null,count=0,originalEnd=null,countEnd=null;
 if(!err){
 let current=add(ref,1);
 for(let loop=0;loop<16000;loop++,current=add(current,1)){
-const eligible=$("mode").value==="business"?(weekday(current)!==0&&weekday(current)!==6&&!isBlocked(current)):!($("pause").checked&&paused(current));
+const eligible=$("mode").value==="business"?(weekday(current)!==0&&weekday(current)!==6&&!isBlocked(current)):!isSuspended(current);
 // Para dias corridos, o vencimento é prorrogado para o dia útil seguinte quando cair em dia não útil.
 if(eligible){if(!start)start=new Date(current);count++;}
 if(count>=amount){end=new Date(current);break;}
 }
 if(!end)err="Prazo longo demais para simular.";
+if(end)countEnd=new Date(end);
 if(end&&$("mode").value==="calendar"){
 originalEnd=new Date(end);
 while(weekday(end)===0||weekday(end)===6||isBlocked(end)){end=add(end,1);}
@@ -116,7 +137,7 @@ $("folder").textContent=err?"—":folder;
 
 $("explanation").textContent=err?"":isMpDp&&tacit?"Ciência tácita "+(sci&&sci<=tacit?"não utilizada (houve ciência expressa anterior)":"estimada")+" = envio em "+format(pub)+" + 10 dias corridos = "+format(tacit)+". "+(alreadyNotified?"Ciência já ocorrida.":"Ciência ainda não ocorrida; pasta AGUARDANDO 10 até a ciência."):(alreadyNotified?"Ciência registrada em "+format(notifiedAt)+".":"Aguardando a ciência.");
 $("nextFolder").textContent=err?"":expired?"Prazo estimado encerrado em "+format(end)+". Conferir eventual cumprimento, suspensão ou necessidade de certificação antes de movimentar.":dueToday?"Vencimento estimado hoje ("+format(end)+"). Verifique o horário-limite e a situação processual.":!alreadyNotified&&notifiedAt?"Após a ciência prevista em "+format(notifiedAt)+", utilizar: "+afterScienceFolder+".":"";
-calculation={base:ref,start,end,amount,folder,err,expired,dueToday};
+calculation={base:ref,start,end,countEnd,amount,folder,err,expired,dueToday};
 renderCalendar();
 }
 function renderCalendar(){
@@ -128,10 +149,12 @@ for(let i=0;i<42;i++){
 const d=add(first,i-offset),k=key(d),other=d.getUTCMonth()!==month-1;
 const el=document.createElement("div");el.className="day"+(other?" out":"");
 if(!other&&label(d)){el.classList.add("holiday");used.push([d,label(d)]);}
+if(!other&&$("pause").checked&&paused(d))el.classList.add("paused");
+if(!other&&isDateCounted(d))el.classList.add("counted");
 if(k===todayKey)el.classList.add("today");
 if(k===key(calculation.start))el.classList.add("start");
 if(k===key(calculation.end))el.classList.add("end");
-el.textContent=d.getUTCDate();el.title=[format(d),label(d)||"",k===key(calculation.start)?"Início da contagem":"",k===key(calculation.end)?"Vencimento":""].filter(Boolean).join(" · ");
+el.textContent=d.getUTCDate();el.title=[format(d),label(d)||"",isDateCounted(d)?"Dia contado":"",k===key(calculation.start)?"Início da contagem":"",k===key(calculation.end)?"Vencimento":""].filter(Boolean).join(" · ");
 if(!other&&label(d)){const dot=document.createElement("i");dot.className="dot";el.append(dot);}
 box.append(el);
 }
