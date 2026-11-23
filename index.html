@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.42</title>
+<title>Manual EJUD - V2.43</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.42</div>
+    <div class="brand">Manual EJUD · v2.43</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -150,7 +150,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.42 · 19-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.43 · 23-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -932,16 +932,17 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </table>
 <hr />
 <h1 id="11-relator-ou-revisor-ausente">11. Relator ou revisor ausente</h1>
-<p>Há anotações específicas para férias/licença/recesso.</p>
-<p>A lógica registrada é:</p>
-<pre><code class="language-text">Antes de concluir
-→ consultar as movimentações/documentos do processo
-→ verificar quem está atuando no lugar do magistrado ausente
-→ somente então criar a conclusão
-</code></pre>
-<blockquote>
-<p><strong>CONFIRMAR:</strong> a anotação manuscrita deste ponto é incompleta. Não use automaticamente o nome/código do magistrado titular se houver informação de afastamento.</p>
-</blockquote>
+<div class="critical"><strong>ATENÇÃO — RELATOR AFASTADO:</strong> quando o relator estiver afastado (férias, licença ou outro afastamento), <strong>NÃO ABRA CONCLUSÃO PARA ELE</strong> durante o período. Consulte as movimentações e os documentos do processo para confirmar o afastamento e sua data de término.</div>
+<p>Quando o processo <strong>precisaria ser encaminhado à conclusão ao relator</strong>, mas ele estiver afastado e a providência puder aguardar seu retorno, proceda assim:</p>
+<ol>
+<li>Verifique a <strong>data prevista para o término do afastamento</strong> e quantos dias restam.</li>
+<li>Em <strong>MOVIMENTAR</strong>, crie uma certidão com <strong>Fase <code>50002</code></strong> e <strong>Complemento 1 <code>9999</code></strong>.</li>
+<li>Utilize o <strong>Carimbo <code>7699</code> — CERTIDÃO - AUSÊNCIA DE MOVIMENTAÇÃO POR AFASTAMENTO DO RELATOR</strong>. Confira as informações da certidão e assine.</li>
+<li>Coloque o processo em uma <strong>pasta virtual de espera compatível com o prazo restante até o término do afastamento</strong>, para permitir o acompanhamento e evitar conclusão prematura.</li>
+<li><strong>Encerrado o afastamento</strong>, retire o processo da pasta de espera, confira se o relator já retornou e <strong>abra a conclusão</strong> para que a providência pendente seja apreciada.</li>
+</ol>
+<div class="icon-note"><strong>Resumo:</strong> conclusão necessária + relator afastado → <strong>não concluir</strong> → Certidão <code>50002</code> / Complemento 1 <code>9999</code> → Carimbo <code>7699</code> → pasta virtual conforme os dias restantes de afastamento → terminado o afastamento, <strong>abrir conclusão</strong>.</div>
+<div class="critical"><strong>RESSALVA:</strong> antes de aguardar, verifique se existe <strong>urgência, prazo ou determinação que exija providência imediata</strong>, bem como eventual designação de magistrado substituto. Nessas hipóteses, confira o encaminhamento adequado com a unidade, em vez de deixar o processo simplesmente aguardando o retorno do titular.</div>
 <hr />
 <h1 id="12-pauta-e-sessao-de-julgamento">12. Pauta</h1>
 <p>As anotações distinguem:</p>
@@ -2650,7 +2651,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.42 — 19-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.43 — 23-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.43:</strong> reformulado o item <strong>11</strong> com a proibição de abrir conclusão ao relator afastado, certificação pela Fase <code>50002</code> / Complemento 1 <code>9999</code> / Carimbo <code>7699</code>, espera em pasta virtual conforme o prazo de afastamento e conclusão após o retorno, ressalvadas situações urgentes ou substituição.</p>
 <p><strong>Alteração da versão 2.42:</strong> ampliado o item <strong>13.2</strong> para voto vencido e declaração de voto; criado o item <strong>13.2.1</strong>, com conclusão ao Vogal ou Revisor responsável pela declaração (Fase <code>51</code>, Motivo <code>14</code>), distinguindo-o da lavratura de voto vencido (Motivo <code>13</code>).</p>
 <p><strong>Alteração da versão 2.41:</strong> criado o item <strong>19.6 — Custas do RESE (2026)</strong>, com distinção do recolhimento em ação penal pública e privada, tratamento da determinação de verificação de custas, referência interna de R$ 1.308,36, roteiro de consulta ao valor na GRERJ Eletrônica e encaminhamento à certificação do item 19.5.</p>
 <p><strong>Alteração da versão 2.40:</strong> criado o item <strong>22.4 — Recebimento de decisão do STJ</strong>, com conferência inicial pela Secretaria e pelo gabinete, abertura de conclusão ao Desembargador e posterior cumprimento das determinações recebidas.</p>
