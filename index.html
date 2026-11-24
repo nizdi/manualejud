@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Manual EJUD - V2.44</title>
+<title>Manual EJUD - V2.45</title>
 <style>
 :root {
   --bg:#f5f7fb; --panel:#ffffff; --text:#1d2433; --muted:#64748b;
@@ -123,7 +123,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 <body>
 <header>
   <div class="toolbar">
-    <div class="brand">Manual EJUD · v2.44</div>
+    <div class="brand">Manual EJUD · v2.45</div>
     <input id="search" type="search" placeholder="Pesquisar no manual…">
     <button id="clearSearch">Limpar</button>
     <button id="theme">Tema</button>
@@ -150,7 +150,7 @@ details.collapse-block>.collapse-content{padding:0 16px 14px}
 
   <main id="content">
     <h1 id="manual-pratico-de-utilizacao-do-ejud">Manual prático de utilização do eJUD</h1>
-<div class="version-tag" id="manual-version">Versão 2.44 · 23-11-26</div>
+<div class="version-tag" id="manual-version">Versão 2.45 · 24-11-26</div>
 <h2 id="rotinas-de-processamento-criminal-2o-grau">Rotinas de processamento criminal – 2º grau</h2>
 <div class="critical"><strong>ATENÇÃO — JANELA DE HORÁRIO PARA CONCLUSÃO:</strong> na <strong>9ª Câmara Criminal</strong> e no <strong>5º Grupo de Câmaras Criminais</strong>, a conclusão <strong>só pode ser aberta entre as 11h e as 17h</strong>. <strong>Não abra antes das 11h nem após as 17h.</strong></div>
 <blockquote>
@@ -943,6 +943,58 @@ Antes de fazer <strong>qualquer atribuição ao revisor</strong>, confirme obrig
 </ol>
 <div class="icon-note"><strong>Resumo:</strong> conclusão necessária + relator afastado → <strong>não concluir</strong> → Certidão <code>50002</code> / Complemento 1 <code>9999</code> → Carimbo <code>7699</code> → pasta virtual <strong>“Aguardando - Afastamento de Desembargador”</strong> → terminado o afastamento, <strong>abrir conclusão</strong>.</div>
 <div class="critical"><strong>RESSALVA:</strong> antes de aguardar, verifique se existe <strong>urgência, prazo ou determinação que exija providência imediata</strong>, bem como eventual designação de magistrado substituto. Nessas hipóteses, confira o encaminhamento adequado com a unidade, em vez de deixar o processo simplesmente aguardando o retorno do titular.</div>
+<h2 id="11-1-sorteio-revisor-afastamento">11.1. Sorteio de revisor quando o relator estiver afastado</h2>
+<p>Quando for necessário realizar o <strong>sorteio de revisor em razão do afastamento do relator</strong>, siga a sequência abaixo. Confira a indicação de revisão e o resultado do sorteio no processo antes de concluir.</p>
+<div class="video-note"><strong>🎥 VÍDEO — Sorteio de revisor com relator afastado</strong><a class="video-link" href="https://tjrj-my.sharepoint.com/:v:/r/personal/lais_gallozio_tjrj_jus_br/Documents/Arquivos%20de%20Chat%20do%20Microsoft%20Teams/Sorteio%20de%20revisor%20quando%20o%20relator%20estiver%20afastado.mp4?d=wcf82a16cfde5461aa203ac4560e1a449&amp;csf=1&amp;web=1&amp;e=EB41N9&amp;nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener noreferrer">Abrir vídeo</a></div>
+<h3 id="11-1-1-sorteio-designacao">11.1.1. Sorteio e designação do revisor</h3>
+<ol>
+<li><strong>Antes de tudo, copie o número do processo.</strong></li>
+<li>Acesse <strong>Movimentação → Designação → Designação de Revisor</strong>.</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/sorteiorevisor1.png" alt="Tela de Designação de Revisor — sorteio, etapa 1">
+<ol start="3">
+<li>Informe <strong>Local Físico <code>17902</code></strong>.</li>
+<li><strong>Cole o número do processo</strong> no campo correspondente.</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/sorteiorevisor2.png" alt="Tela do sorteio de revisor com local físico e número do processo">
+<ol start="5">
+<li>Clique em <strong>Salvar</strong> e depois em <strong>Designar Revisores</strong>.</li>
+<li>Na caixa de confirmação, selecione <strong>Sim</strong>.</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/sorteiorevisor3.png" alt="Confirmação do sorteio de revisor">
+<div class="critical"><strong>ATENÇÃO — MENSAGEM DE ERRO:</strong> após confirmar, o sistema pode exibir uma caixa de erro mesmo quando a designação tiver sido registrada. <strong>Não repita o sorteio automaticamente.</strong> Retorne ao processo e confira se o movimento de atribuição foi efetivamente criado. Se não houver registro, verifique a situação antes de tentar novamente.</div>
+<ol start="7">
+<li>No processo, confira a fase criada pelo sistema/usuário com a descrição <strong>“Atribuição de Revisor — Sorteio Informatizado”</strong> (ou texto equivalente exibido pelo eJUD).</li>
+</ol>
+<img class="manual-img media" src="/manualejud/Imagens/sorteiorevisor4.png" alt="Movimentação criada pelo sorteio informatizado de revisor — primeira tela">
+<img class="manual-img media" src="/manualejud/Imagens/sorteiorevisor5.png" alt="Movimentação criada pelo sorteio informatizado de revisor — segunda tela">
+<ol start="8">
+<li><strong>Abra o movimento criado e confirme</strong> a designação do revisor.</li>
+</ol>
+<h3 id="11-1-2-atribuicao-revisor">11.1.2. Atribuição ao revisor sorteado</h3>
+<p>Depois de verificar e confirmar o sorteio, crie um <strong>novo movimento</strong> no processo:</p>
+<table>
+<thead><tr><th>Campo</th><th>Preenchimento</th></tr></thead>
+<tbody>
+<tr><td>Fase</td><td><code>50009</code></td></tr>
+<tr><td>Complemento 1</td><td><code>59998</code></td></tr>
+<tr><td>Revisor</td><td><strong>Selecione o magistrado designado pelo sorteio</strong></td></tr>
+<tr><td>Motivo</td><td><strong>Revisor</strong></td></tr>
+</tbody>
+</table>
+<p>Salve a movimentação, conferindo se a atribuição corresponde ao <strong>revisor efetivamente sorteado</strong>.</p>
+<h3 id="11-1-3-conclusao-revisor">11.1.3. Conclusão ao revisor</h3>
+<p>Após a atribuição, <strong>abra conclusão ao revisor</strong>:</p>
+<table>
+<thead><tr><th>Campo</th><th>Código / preenchimento</th></tr></thead>
+<tbody>
+<tr><td>Fase</td><td><code>51</code> — Conclusão</td></tr>
+<tr><td>Magistrado</td><td><code>50010</code> — Revisor</td></tr>
+<tr><td>Motivo</td><td><code>50126</code></td></tr>
+</tbody>
+</table>
+<p><strong>Salve</strong> a conclusão, abra a movimentação e <strong>aplique o carimbo</strong>, conferindo o gabinete destinatário.</p>
+<div class="icon-note"><strong>Resumo:</strong> copiar número do processo → Movimentação / Designação / Designação de Revisor → Local Físico <code>17902</code> → colar processo → Salvar → Designar Revisores → Sim → <strong>conferir movimentação criada</strong> → abrir e confirmar → atribuição <code>50009</code> / Complemento 1 <code>59998</code> / Motivo <strong>Revisor</strong> → conclusão Fase <code>51</code> / Magistrado <code>50010</code> / Motivo <code>50126</code> → salvar e carimbar.</div>
 <hr />
 <h1 id="12-pauta-e-sessao-de-julgamento">12. Pauta</h1>
 <p>As anotações distinguem:</p>
@@ -2651,7 +2703,8 @@ Complemento 1: 9999
 <details class="collapse-block" id="historico-versoes">
 <summary>Histórico de versões</summary>
 <div class="collapse-content">
-<p>Versão consolidada: <strong>2.44 — 23-11-26</strong>.</p>
+<p>Versão consolidada: <strong>2.45 — 24-11-26</strong>.</p>
+<p><strong>Alteração da versão 2.45:</strong> criado o item <strong>11.1 — Sorteio de revisor quando o relator estiver afastado</strong>, com vídeo, imagens <code>sorteiorevisor1.png</code> a <code>sorteiorevisor5.png</code> em tamanho médio, conferência da atribuição informatizada, atribuição ao revisor (Fase <code>50009</code>, Complemento 1 <code>59998</code>) e conclusão (Fase <code>51</code>, Magistrado <code>50010</code>, Motivo <code>50126</code>).</p>
 <p><strong>Alteração da versão 2.44:</strong> no item <strong>11</strong>, corrigida a orientação de espera durante o afastamento do relator: utilizar a pasta virtual específica <strong>“Aguardando - Afastamento de Desembargador”</strong>, em vez de escolher pasta conforme a quantidade de dias restantes.</p>
 <p><strong>Alteração da versão 2.43:</strong> reformulado o item <strong>11</strong> com a proibição de abrir conclusão ao relator afastado, certificação pela Fase <code>50002</code> / Complemento 1 <code>9999</code> / Carimbo <code>7699</code>, espera em pasta virtual conforme o prazo de afastamento e conclusão após o retorno, ressalvadas situações urgentes ou substituição.</p>
 <p><strong>Alteração da versão 2.42:</strong> ampliado o item <strong>13.2</strong> para voto vencido e declaração de voto; criado o item <strong>13.2.1</strong>, com conclusão ao Vogal ou Revisor responsável pela declaração (Fase <code>51</code>, Motivo <code>14</code>), distinguindo-o da lavratura de voto vencido (Motivo <code>13</code>).</p>
